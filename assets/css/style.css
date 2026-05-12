@@ -1,3 +1,30 @@
+/* Всплывающая панель для Чуйской области */
+.chu-info-panel {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    min-width: 280px;
+    max-width: 340px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(33,108,61,0.13);
+    border: 1.5px solid #c8e6c9;
+    padding: 24px 28px;
+    color: #216c3d;
+    font-size: 16px;
+    transition: opacity 0.25s, transform 0.25s;
+    opacity: 0.98;
+    pointer-events: auto;
+}
+.chu-info-panel h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #216c3d;
+}
+.chu-info-panel strong {
+    color: #388e3c;
+}
 * {
     margin: 0;
     padding: 0;
