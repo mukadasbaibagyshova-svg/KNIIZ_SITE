@@ -1,0 +1,398 @@
+<?php
+include_once 'includes/lang.php';
+$page_title = t('page_title_structure');
+include 'includes/header.php';
+
+$structureDetails = [
+    'wheat' => [
+        'photoClass' => 'wheat',
+        'hero_image' => 'assets/images/wheet1.jpg',
+        'leader_image' => 'assets/images/wheet1.jpg',
+        'badge' => 'Отдел пшеницы',
+        'title' => 'structure_detail_wheat_title',
+        'summary' => 'Отдел селекции и первичного семеноводства пшеницы занимается созданием новых конкурентоспособных сортов мягкой и твердой пшеницы, сочетая высокую урожайность с устойчивостью к биотическим и абиотическим стрессам.',
+        'activity' => 'Отдел проводит полный цикл работ: от подбора родительских пар и гибридизации до экологического сортоиспытания. Важнейший этап — первичное семеноводство, обеспечивающее сохранение сортовой чистоты и биологических свойств созданных сортов.',
+        'keypoints' => [
+            ['title' => 'Комплексная селекция', 'text' => 'Генетическое улучшение мягкой и твердой пшеницы.'],
+            ['title' => 'Устойчивость', 'text' => 'Селекция на устойчивость к засухе, холоду и патогенам.'],
+            ['title' => 'Семенное обеспечение', 'text' => 'Производство оригинальных семян P-1 и P-2 с сохранением чистоты.']
+        ],
+        'research' => [
+            'Генетическое улучшение пшеницы по показателям продуктивности и качества зерна.',
+            'Селекция на устойчивость к засухе, низким температурам и патогенам (ржавчина, фузариоз и др.).',
+            'Изучение мировой коллекции пшеницы для поиска новых источников ценных признаков.',
+            'Производство оригинальных семян (питомники Р-1, Р-2) и поддержание чистосортности.',
+            'Разработка и оптимизация сортовой агротехники для новых линий.'
+        ],
+        'results' => 'Создана линейка сортов пшеницы с потенциалом урожайности свыше 80–90 ц/га. Получены патенты и авторские свидетельства на новые сорта, включенные в Государственный реестр.',
+        'international_projects' => 'Отдел участвует в международных программах по обмену селекционным материалом, включая сотрудничество с CIMMYT и ICARDA.',
+        'publications' => 'Сотрудники публикуют статьи в рецензируемых журналах (ВАК, Scopus), освещая наследование признаков, результаты экологического испытания и новые методики ускоренной селекции.',
+        'services' => [
+            'Генетический анализ сортов пшеницы.',
+            'Производство оригинальных и элитных семян для семеноводческих хозяйств.',
+            'Методическое сопровождение по агротехнике выращивания пшеницы.',
+            'Консультации по организации семеноводства и сертификации.',
+            'Разработка рекомендаций для разных агроклиматических зон.'
+        ],
+        'no_partners' => 'Основные партнёры и сотрудничество пока не указаны.',
+        'no_grants' => 'Участие в грантах и программах пока не указано.',
+        'no_patents' => 'Патенты и разработки пока не указаны.'
+    ],
+    'barley' => [
+        'photoClass' => 'barley',
+        'hero_image' => 'assets/images/wheet1.jpg',
+        'leader_image' => 'assets/images/wheet1.jpg',
+        'badge' => 'Отдел ячменя',
+        'title' => 'structure_detail_barley_title',
+        'summary' => 'Отдел селекции и первичного семеноводства ячменя — это структурное подразделение Кыргызского научно-исследовательского института земледелия имени К.К. Азыкова, которое занимается созданием новых сортов ячменя и обеспечением их исходным семенным материалом для дальнейшего размножения.',
+        'activity' => 'Отдел селекции и первичного семеноводства ячменя осуществляет разработку и внедрение новых сортов культуры, отличающихся высокой урожайностью, устойчивостью к неблагоприятным условиям и соответствием требованиям производства. Основными направлениями работы являются проведение гибридизации, отбор перспективных линий, организация полевых испытаний и научно-методическое сопровождение селекционного процесса. Подразделение обеспечивает получение и поддержание чистоты исходного семенного материала (суперэлита, элита), необходимого для дальнейшего размножения и передачи в хозяйства. Деятельность отдела направлена на укрепление семенной базы, повышение эффективности аграрного сектора и обеспечение продовольственной безопасности страны.',
+        'keypoints' => [
+            ['title' => 'Устойчивость', 'text' => 'Сорта адаптированы к засухе, стрессам и болезням.'],
+            ['title' => 'Семенная чистота', 'text' => 'Контролируется чистота суперэлиты и элитного семенного материала.'],
+            ['title' => 'Экологичность', 'text' => 'Сорта подходят для богарных и орошаемых земель с низкими затратами.']
+        ],
+        'research' => [
+            'Разработка сортов ячменя с высокой урожайностью, устойчивостью к болезням, засухе и другим стрессовым факторам.',
+            'Изучение наследуемости признаков, проведение гибридизации и отбор перспективных линий.',
+            'Исследование питательной ценности, технологических свойств и пригодности сортов для пищевой и кормовой промышленности.',
+            'Получение и поддержание чистоты исходного семенного материала (суперэлита, элита), контроль сортовой идентичности.',
+            'Оценка сортов в различных агроклиматических зонах для выявления наиболее устойчивых и продуктивных форм.',
+            'Разработка методов защиты от болезней и вредителей, повышение иммунитета растений.'
+        ],
+        'current_project' => 'Выполняется НИР по теме: «Создать новые низкозатратные по ресурсам сорта ячменя, адаптированные к стрессовым факторам среды и обладающие высоким уровнем хозяйственно-полезных признаков и провести экологическое сортоиспытание».',
+        'completed_projects' => [
+            '2019–2021 гг. выполнено по НИР по теме: «Создать сорта ячменя для орошаемых и богарных земель, устойчивые к стрессовым факторам среды и обладающие высоким уровнем хозяйственно-полезных признаков, и провести экологическое испытание».',
+            '2022–2025 гг. выполнено по НИР по теме: «Создать сорта ячменя для орошаемых и богарных земель, устойчивые к стрессовым факторам среды и обладающие высоким уровнем хозяйственно-полезных признаков и провести экологическое испытание».'
+        ],
+        'results' => 'Выведены сорта ярового ячменя Нарын 27, Нутанс 970, Нутанс 89, Таалай, Бестам, Ватан, Владлен, Кылым, Максат и новые сорта, озимые сорта ячменя Ардак, Жениш 60, Гаухар, Белек, Адель, Альта. В 2025 году выведены новые перспективные сорта ярового ячменя рабочим номером 7100/5 и 7012.',
+        'head' => [
+            'name' => 'Иманалиев Бакытбек Табылдыевич',
+            'position' => 'Зав. отделом',
+            'phone' => '+996 505 011019',
+            'honors' => 'Ардактуу кызматкер, 6 сентября 2025 года',
+            'degree' => 'Магистр агрономии',
+            'education' => 'Высшее'
+        ],
+        'staff' => [
+            ['name' => 'Иманалиев Бакытбек Табылдыевич', 'experience' => '7', 'position' => 'Зав. отдела', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее'],
+            ['name' => 'Аккулаков Талантбек Мараимович', 'experience' => '2,5', 'position' => 'с.н.с.', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее'],
+            ['name' => 'Эралиева Асель Мукамбетовна', 'experience' => '22', 'position' => 'с.н.с.', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее'],
+            ['name' => 'Тараненко Татьяна Алексеевна', 'experience' => '1', 'position' => 'н.с.', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее'],
+            ['name' => 'Кузнецова Валентина Леонидовна', 'experience' => '24', 'position' => 'ст. лаборант', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Среднее специальное'],
+            ['name' => 'Немцова Любовь Васильевна', 'experience' => '17', 'position' => 'ст. лаборант', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Среднее специальное']
+        ],
+        'infrastructure' => 'Селекционные питомники находятся на территории Кыргызского научно-производственного объединения по земледелию в селе Первомайском Сокулукского района Чуйской области.',
+        'events' => '12.07.2025 года проведён День поля на тему «Особенности возделывания зерновых и кормовых культур в условиях высокогорья Кыргызстана».',
+        'prospects' => [
+            'Разработка новых сортов ячменя, устойчивых к абиотическим стрессам и основным заболеваниям, с повышенным потенциалом урожайности.',
+            'Совершенствование системы сертификации и контроля качества семян, расширение производственных участков.',
+            'Модернизация лабораторной базы, подготовка молодых специалистов и повышение квалификации сотрудников.',
+            'Участие в государственных и международных программах, привлечение грантовых средств.'
+        ],
+        'prospects_summary' => 'Ожидаемый результат: формирование конкурентоспособных сортов, рост объёмов сертифицированных семян и укрепление научно-производственного потенциала отдела в национальном и региональном масштабе.',
+        'services' => [
+            'Генетический и морфологический анализ сортов.',
+            'Лабораторные исследования качества семян (всхожесть, чистота, энергия прорастания).',
+            'Экспертиза сортовых посевов и семенного материала.',
+            'Реализация оригинальных и элитных семян ячменя.',
+            'Предоставление саженцев и коллекционных образцов.',
+            'Создание демонстрационных участков для апробации сортов.',
+            'Методическое сопровождение фермеров и хозяйств по агротехнике выращивания ячменя.',
+            'Консультации по организации семеноводства и сертификации.',
+            'Подготовка рекомендаций по адаптации сортов к различным природно-климатическим зонам.',
+            'Проведение семинаров, тренингов и стажировок для специалистов и студентов.',
+            'Издание методических материалов, каталогов сортов и семян.',
+            'Организация научных и практических конференций.',
+            'Разработка инновационных технологий в селекции и семеноводстве.',
+            'Формирование семенного банка и базы данных сортов.'
+        ],
+        'no_projects' => 'Международные проекты отсутствуют.',
+        'no_partners' => 'Основные партнёры и сотрудничество отсутствуют.',
+        'no_grants' => 'Участие в грантах и программах отсутствует.',
+        'no_publications' => 'Публикации отдела пока не указаны.',
+        'no_patents' => 'Патенты и разработки пока не указаны.'
+    ],
+    'corn' => [
+        'photoClass' => 'corn',
+        'title' => 'structure_detail_corn_title',
+        'text' => 'structure_detail_corn_text'
+    ],
+    'fruit_veg' => [
+        'photoClass' => 'fruit-veg',
+        'title' => 'structure_detail_fruit_veg_title',
+        'text' => 'structure_detail_fruit_veg_text'
+    ],
+    'agrochemistry' => [
+        'photoClass' => 'agrochemistry',
+        'title' => 'structure_detail_agrochemistry_title',
+        'text' => 'structure_detail_agrochemistry_text'
+    ],
+    'soil' => [
+        'photoClass' => 'soil',
+        'title' => 'structure_detail_soil_title',
+        'text' => 'structure_detail_soil_text'
+    ],
+    'sugarbeet' => [
+        'photoClass' => 'sugarbeet',
+        'hero_image' => 'assets/images/svekla.png',
+        'leader_image' => 'assets/images/svekla.png',
+        'badge' => 'Отдел сахарной свеклы',
+        'title' => 'structure_detail_sugarbeet_title',
+        'summary' => 'Отдел селекции и первичного семеноводства сахарной свеклы проводит комплексные НИР по созданию высокопродуктивных гибридов на основе цитоплазматической мужской стерильности (ЦМС).',
+        'activity' => 'Основная задача отдела — селекция компонентов гибридов с высокой сахаристостью и технологическими качествами для промышленной переработки, а также первичное семеноводство для сохранения генетической чистоты линий.',
+        'research' => [
+            'Создание новых диплоидных и тетраплоидных многосемянных и односемянных линий-опылителей.',
+            'Селекция на повышение сахаристости и технологических качеств сока.',
+            'Оценка устойчивости к основным патогенам (церкоспороз, мучнистая роса, корнеед).',
+            'Совершенствование выращивания маточников и высадков для максимального выхода кондиционных семян.',
+            'Разработка адаптивных технологий возделывания гибридов, минимизирующих потери сахара при хранении.'
+        ],
+        'results' => 'Созданы гибриды сахарной свеклы с потенциальным сбором сахара 8–10 т/га и высокой чистотой сока. Внедрена система двулетнего цикла семеноводства и разработаны регламенты защиты семенников от вредителей и болезней.',
+        'international_projects' => 'Отдел осуществляет обмен генетическими ресурсами сахарной свеклы с зарубежными селекционными центрами и проводит совместные экологические испытания гибридов.',
+        'publications' => 'Результаты исследований регулярно публикуются в ВАК и Scopus; основные темы — генетика ЦМС, корреляция массы корнеплода с сахаристостью и предпосевная подготовка семян.',
+        'patents' => 'Получены патенты на новые компоненты и гибриды, успешно прошедшие Государственное испытание.',
+        'services' => [
+            'Оценка качества корнеплодов и содержание сахара.',
+            'Разработка гибридных линий и первичное семеноводство.',
+            'Консультации по технологиям возделывания и хранению свёклы.',
+            'Поддержка семеноводческих хозяйств методическими рекомендациями.'
+        ],
+        'no_partners' => 'Основные партнёры и сотрудничество пока не указаны.',
+        'no_grants' => 'Участие в грантах и программах пока не указано.'
+    ],
+    'issyk' => [
+        'photoClass' => 'issyk',
+        'title' => 'structure_detail_issyk_title',
+        'text' => 'structure_detail_issyk_text'
+    ]
+];
+
+$itemId = $_GET['item'] ?? '';
+if (!isset($structureDetails[$itemId])) {
+    header('Location: structure.php?lang=' . currentLang());
+    exit;
+}
+
+$detail = $structureDetails[$itemId];
+?>
+
+<main>
+    <div class="container">
+        <a href="structure.php?lang=<?php echo currentLang(); ?>" class="structure-back">&larr; <?php echo t('structure_detail_back'); ?></a>
+        <h2 class="section-title"><?php echo t($detail['title']); ?></h2>
+
+        <div class="structure-detail">
+            <div class="structure-detail-hero">
+                <div class="structure-detail-image <?php echo $detail['photoClass']; ?>"<?php if (!empty($detail['hero_image'])): ?> style="background-image:url('<?php echo $detail['hero_image']; ?>');"<?php endif; ?>>
+                    <span><?php echo t($detail['title']); ?></span>
+                    <div class="photo-badge"><?php echo $detail['badge'] ?? t($detail['title']); ?></div>
+                </div>
+                <div>
+                    <?php if (!empty($detail['summary'])): ?>
+                        <p><?php echo $detail['summary']; ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($detail['activity'])): ?>
+                        <div class="detail-section">
+                            <h3>Краткое описание деятельности</h3>
+                            <p><?php echo $detail['activity']; ?></p>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if (!empty($detail['keypoints'])): ?>
+                        <div class="detail-keypoints">
+                            <?php foreach ($detail['keypoints'] as $point): ?>
+                                <div class="detail-keypoint-card">
+                                    <strong><?php echo $point['title']; ?></strong>
+                                    <p><?php echo $point['text']; ?></p>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+        <section class="detail-highlight-grid">
+            <?php if (!empty($detail['activity'])): ?>
+                <article class="detail-highlight-card">
+                    <h4>Задачи и направления</h4>
+                    <p><?php echo $detail['activity']; ?></p>
+                </article>
+            <?php endif; ?>
+            <?php if (!empty($detail['current_project'])): ?>
+                <article class="detail-highlight-card">
+                    <h4>Текущий проект</h4>
+                    <p><?php echo $detail['current_project']; ?></p>
+                </article>
+            <?php endif; ?>
+            <?php if (!empty($detail['head'])): ?>
+                <article class="detail-highlight-card">
+                    <h4>Команда отдела</h4>
+                    <p>Руководитель: <?php echo $detail['head']['name']; ?>. Главная задача — развивать сортовую базу и обеспечивать высококачественное семеноводство.</p>
+                </article>
+            <?php endif; ?>
+        </section>
+
+            <?php if (!empty($detail['research'])): ?>
+                <section class="detail-section">
+                    <h3>Основные направления исследований</h3>
+                    <ul class="detail-list">
+                        <?php foreach ($detail['research'] as $researchItem): ?>
+                            <li><?php echo $researchItem; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </section>
+            <?php endif; ?>
+
+            <div class="structure-detail-photo-row">
+                <div class="detail-photo-placeholder"<?php if (!empty($detail['hero_image'])): ?> style="background-image:url('<?php echo $detail['hero_image']; ?>');"<?php endif; ?>>
+                    <span>Отдел в работе</span>
+                </div>
+                <div class="detail-leader-card">
+                    <div class="detail-leader-photo"<?php if (!empty($detail['leader_image'])): ?> style="background-image:url('<?php echo $detail['leader_image']; ?>');"<?php endif; ?>></div>
+                    <div class="detail-leader-info">
+                        <?php if (!empty($detail['head'])): ?>
+                            <h3><?php echo $detail['head']['name']; ?></h3>
+                            <p><strong>Должность:</strong> <?php echo $detail['head']['position']; ?></p>
+                            <p><strong>Телефон:</strong> <?php echo $detail['head']['phone']; ?></p>
+                            <p><strong>Звания:</strong> <?php echo $detail['head']['honors']; ?></p>
+                            <p><strong>Ученая степень:</strong> <?php echo $detail['head']['degree']; ?></p>
+                            <p><strong>Образование:</strong> <?php echo $detail['head']['education']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+
+            <?php if (!empty($detail['current_project'])): ?>
+                <section class="detail-section">
+                    <h3>Текущий научный проект</h3>
+                    <p><?php echo $detail['current_project']; ?></p>
+                </section>
+            <?php endif; ?>
+
+            <?php if (!empty($detail['international_projects'])): ?>
+                <section class="detail-section">
+                    <h3>Международные проекты</h3>
+                    <p><?php echo $detail['international_projects']; ?></p>
+                </section>
+            <?php endif; ?>
+
+            <?php if (!empty($detail['completed_projects'])): ?>
+                <section class="detail-section">
+                    <h3>Завершённые проекты за последние 5 лет</h3>
+                    <ul class="detail-list">
+                        <?php foreach ($detail['completed_projects'] as $project): ?>
+                            <li><?php echo $project; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </section>
+            <?php endif; ?>
+
+            <?php if (!empty($detail['results'])): ?>
+                <section class="detail-section">
+                    <h3>Ключевые результаты и достижения</h3>
+                    <p><?php echo $detail['results']; ?></p>
+                </section>
+            <?php endif; ?>
+
+            <section class="detail-section">
+                <h3>Партнёры и гранты</h3>
+                <p><?php echo $detail['no_partners']; ?></p>
+                <p><?php echo $detail['no_grants']; ?></p>
+            </section>
+
+            <section class="detail-section">
+                <h3>Публикации и патенты</h3>
+                <?php if (!empty($detail['publications'])): ?>
+                    <p><?php echo $detail['publications']; ?></p>
+                <?php else: ?>
+                    <p><?php echo $detail['no_publications']; ?></p>
+                <?php endif; ?>
+                <?php if (!empty($detail['patents'])): ?>
+                    <p><?php echo $detail['patents']; ?></p>
+                <?php else: ?>
+                    <p><?php echo $detail['no_patents']; ?></p>
+                <?php endif; ?>
+            </section>
+
+            <?php if (!empty($detail['infrastructure'])): ?>
+                <section class="detail-section">
+                    <h3>Материально-техническая база</h3>
+                    <p><?php echo $detail['infrastructure']; ?></p>
+                </section>
+            <?php endif; ?>
+
+            <?php if (!empty($detail['events'])): ?>
+                <section class="detail-section">
+                    <h3>Научные мероприятия</h3>
+                    <p><?php echo $detail['events']; ?></p>
+                </section>
+            <?php endif; ?>
+
+            <?php if (!empty($detail['prospects'])): ?>
+                <section class="detail-section">
+                    <h3>Перспективы развития</h3>
+                    <ul class="detail-list">
+                        <?php foreach ($detail['prospects'] as $prospect): ?>
+                            <li><?php echo $prospect; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <p><?php echo $detail['prospects_summary']; ?></p>
+                </section>
+            <?php endif; ?>
+
+            <?php if (!empty($detail['services'])): ?>
+                <section class="detail-section">
+                    <h3>Услуги и товары отдела</h3>
+                    <ul class="detail-list">
+                        <?php foreach ($detail['services'] as $service): ?>
+                            <li><?php echo $service; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </section>
+            <?php endif; ?>
+
+            <section class="detail-section">
+                <h3>Фотогалерея отдела</h3>
+                <div class="detail-gallery">
+                    <div class="gallery-item">Фото отдела 1</div>
+                    <div class="gallery-item">Фото отдела 2</div>
+                    <div class="gallery-item">Фото отдела 3</div>
+                </div>
+            </section>
+
+            <?php if (!empty($detail['staff'])): ?>
+                <section class="detail-section">
+                    <h3>Состав отдела</h3>
+                    <div class="table-wrap">
+                        <table class="detail-table">
+                            <thead>
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>Стаж</th>
+                                    <th>Должность</th>
+                                    <th>Уч. степень</th>
+                                    <th>Звание</th>
+                                    <th>Образование</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($detail['staff'] as $member): ?>
+                                    <tr>
+                                        <td><?php echo $member['name']; ?></td>
+                                        <td><?php echo $member['experience']; ?></td>
+                                        <td><?php echo $member['position']; ?></td>
+                                        <td><?php echo $member['degree']; ?></td>
+                                        <td><?php echo $member['title']; ?></td>
+                                        <td><?php echo $member['education']; ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            <?php endif; ?>
+        </div>
+    </div>
+</main>
+
+<?php include 'includes/footer.php'; ?>
