@@ -33,7 +33,7 @@
 
 body {
     background: #f4f6f1;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     color: #333;
     line-height: 1.6;
 }
@@ -48,6 +48,7 @@ input,
 select,
 textarea {
     font-family: inherit;
+    border-radius: 8px;
 }
 
 /* Header Styles */
@@ -153,7 +154,7 @@ header {
     justify-content: center;
     text-align: center;
     padding: 0 20px;
-    background: linear-gradient(180deg, rgba(33, 108, 61, 0.65), rgba(33, 108, 61, 0.65)), url('../images/wheet.png') center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(33, 108, 61, 0.385), rgba(89, 149, 111, 0)), url('../images/wheet.png') center/cover no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -177,21 +178,37 @@ header {
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
+
 .hero-btn {
     display: inline-flex;
     margin-top: 30px;
-    padding: 14px 28px;
-    border-radius: 999px;
+    padding: 14px 36px;
+    border-radius: 16px;
     background: #f7c948;
-    color: #1f3f1d;
+    color: #17411d;
     text-decoration: none;
     font-weight: 700;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1.15rem;
+    min-width: 180px;
+    max-width: 240px;
+    width: 220px;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+
+.contact-btn {
+    border-radius: 8px !important;
 }
 
 .hero-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.14);
+    background: #ffe082;
+    color: #17411d;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 
 .about-section,
@@ -199,6 +216,98 @@ header {
 .stations-section {
     padding: 80px 0;
     background: #ffffff;
+}
+
+/* Новый стиль для раздела об институте */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    color: #17411d;
+}
+
+.about-text h2 {
+    font-size: 2.6rem;
+    margin-bottom: 24px;
+    font-weight: 800;
+    color: #17411d;
+    text-align: left;
+}
+.about-text h2 {
+    font-size: 2.6rem;
+    margin-bottom: 24px;
+    font-weight: 800;
+    color: #17411d;
+    text-align: left;
+
+    display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+}
+.about-image img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    
+    box-shadow: none;
+}
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+    margin-bottom: 36px;
+    margin-top: 18px;
+}
+.about-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.about-stat strong {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2px;
+    line-height: 1.1;
+}
+.about-stat span {
+    font-size: 1rem;
+    color: #444;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+/* .about-section .hero-btn removed to unify button size */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-image {
+        justify-content: center;
+        margin-top: 32px;
+    }
+}
+@media (min-width: 900px) {
+    .about-image img {
+        height: 100%;
+        min-height: 420px;
+        max-height: 1000px;
+    }
+    .about-image {
+        height: auto;
+    }
+    .about-grid {
+        align-items: stretch;
+    }
 }
 
 .about-grid {
@@ -209,8 +318,15 @@ header {
 }
 
 .about-text h2,
-.goals-section h2,
+.goals-section h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #17411d;
+    text-align: center;
+    margin-bottom: 24px;
+}
 .stations-section h2 {
+    color: #17411d;
     margin-bottom: 24px;
 }
 
@@ -230,14 +346,7 @@ header {
 .stat-card {
     background: #f1f7f0;
     border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 12px 30px rgba(33, 108, 61, 0.06);
-}
 
-.stat-card strong {
-    display: block;
-    font-size: 36px;
-    color: #216c3d;
     margin-bottom: 10px;
 }
 
@@ -350,9 +459,7 @@ header {
 }
 
 .section-title {
-    font-size: 34px;
-    color: #216c3d;
-    margin-bottom: 20px;
+    /* Стили для других секций, кроме целей */
 }
 
 .section-text {

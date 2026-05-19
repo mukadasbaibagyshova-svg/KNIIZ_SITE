@@ -8,7 +8,7 @@ include 'includes/header.php';
     <div class="overlay">
         <h1><?php echo t('hero_title'); ?></h1>
         <p><?php echo t('hero_text'); ?></p>
-        <a href="history.php?lang=<?php echo currentLang(); ?>" class="hero-btn"><?php echo t('hero_button_more'); ?></a>
+        <!-- <a href="history.php?lang=<?php echo currentLang(); ?>" class="hero-btn"><?php echo t('hero_button_more'); ?></a> -->
     </div>
 </section>
 
@@ -18,25 +18,28 @@ include 'includes/header.php';
             <h2><?php echo t('about_title'); ?></h2>
             <p><?php echo t('about_text'); ?></p>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <strong>120+</strong>
-                    <span><?php echo t('stats_projects'); ?></span>
+            <div class="about-stats">
+                <div class="about-stat">
+                    <strong>+100</strong>
+                    <span>Лет исследований</span>
                 </div>
-                <div class="stat-card">
-                    <strong>10</strong>
-                    <span><?php echo t('stats_experience'); ?></span>
+                <div class="about-stat">
+                    <strong>+50</strong>
+                    <span>Научных сотрудников</span>
                 </div>
-                <div class="stat-card">
-                    <strong>5</strong>
-                    <span><?php echo t('stats_stations'); ?></span>
+                <div class="about-stat">
+                    <strong>~70</strong>
+                    <span>Научных публикаций</span>
+                </div>
+                <div class="about-stat">
+                    <strong>25</strong>
+                    <span>Докторов и кандидатов наук</span>
                 </div>
             </div>
-
-            <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="hero-btn"><?php echo t('hero_button_contact'); ?></a>
+            <a href="history.php?lang=<?php echo currentLang(); ?>" class="hero-btn"><?php echo t('hero_button_more'); ?></a>
         </div>
         <div class="about-image">
-            <img src="assets/images/about-us.svg" alt="<?php echo t('about_title'); ?>" />
+            <img src="assets/images/about-photo.jpg" alt="<?php echo t('about_title'); ?>" />
         </div>
     </div>
 </section>
