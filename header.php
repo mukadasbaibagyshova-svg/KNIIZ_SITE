@@ -27,6 +27,7 @@
         <a href="index.php" class="nav-link">Главная</a>
         <a href="history.php" class="nav-link">История</a>
         <a href="maps.php" class="nav-link">Карты</a>
+        <a href="structure.php" class="nav-link">Структура института</a>
         <a href="science.php" class="nav-link">Наука</a>
         <a href="products.php" class="nav-link">Продукция</a>
         <a href="news.php" class="nav-link">Новости</a>
