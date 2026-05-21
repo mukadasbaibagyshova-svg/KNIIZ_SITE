@@ -60,8 +60,8 @@ include 'includes/header.php';
     </div>
 </div>
 
-<link rel="stylesheet" href="assets/css/style.css?v=2">
-<link rel="stylesheet" href="assets/css/news-modal.css?v=1">
+<link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="assets/css/news-modal.css?v=<?php echo time(); ?>">
 <script src="assets/js/news-modal.js"></script>
 
 <?php include 'includes/footer.php'; ?>

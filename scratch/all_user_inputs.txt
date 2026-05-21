@@ -1,0 +1,129 @@
+--- USER INPUT 0 ---
+<USER_REQUEST>
+как мнее загрузить проекст
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-05-20T11:42:08+06:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.5 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+--- USER INPUT 5 ---
+<USER_REQUEST>
+0294b41..4ea4794  main -> main
+PS C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE> git push origin main
+Everything up-to-date
+PS C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE> 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-05-20T11:42:34+06:00.
+</ADDITIONAL_METADATA>
+
+--- USER INPUT 15 ---
+<USER_REQUEST>
+Create a modern premium website design for the Kyrgyz Scientific Research Institute of Agriculture (KNIIZ) inspired by the Syngenta website style.
+
+Use a clean modern corporate UI with agriculture and scientific aesthetics. The website should feel innovative, professional, ecological, and technologically advanced.
+
+Style requirements:
+
+* Modern corporate agriculture style
+* Syngenta-inspired layout and animations
+* Premium UI/UX design
+* Large fullscreen hero section with agricultural background images
+* Dark green, emerald, white, and natural color palette
+* Smooth gradients and soft shadows
+* Glassmorphism elements for cards and overlays
+* Modern typography with large bold headings
+* Smooth hover animations and transitions
+* Responsive design for desktop, tablet, and mobile
+* Modern navbar with transparent background that becomes solid on scroll
+* Elegant footer with contacts and quick links
+* Rounded cards and modern buttons
+* Professional scientific institute atmosphere
+
+Website structure:
+
+1. Hero section
+2. About institute
+3. Scientific departments
+4. Research and innovation
+5. Interactive institute structure
+6. News and events
+7. Gallery
+8. Agricultural products and seeds
+9. Research maps and laboratories
+10. Contact section
+
+Department cards should contain:
+
+* Full-width background images
+* Dark gradient overlay
+* Hover zoom animation
+* Animated buttons
+* Detailed pages for each department
+
+Add:
+
+* Smooth scrolling
+* Animated statistics counters
+* Floating effects
+* Modern section dividers
+* Animated image overlays
+* Interactive cards
+* Professional agriculture photography
+
+The design should combine:
+
+* Syngenta visual style
+* Modern agriculture technology
+* Scientific institution branding
+* Premium university/research center aesthetics
+
+Use Bootstrap 5, modern CSS animations, responsive grid layout, and clean semantic HTML structure.
+
+The final result should look like a real international agricultural research institute website.
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-05-20T11:44:34+06:00.
+</ADDITIONAL_METADATA>
+
+--- USER INPUT 59 ---
+<USER_REQUEST>
+одобряю и проверь все файлы чтобы они работали все коррект а сойт он ломанный сломанный исправь все это стили оень важно кря не надо менять содеримое я сама ьуду менять или скаду
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-05-20T11:46:40+06:00.
+</ADDITIONAL_METADATA>
+
+--- USER INPUT 145 ---
+<USER_REQUEST>
+а почему главная стр сломанная 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-05-20T11:53:01+06:00.
+</ADDITIONAL_METADATA>
+
+--- USER INPUT 228 ---
+<USER_REQUEST>
+Классно, короче, прям мне нравится главная страница, хедер вот эти все стили, мне всё-всё-всё нравится. Вот оставляем, да, и главная страница, то есть здесь пусть выходит, но давай сделаем информацию, я хочу сейчас скину, что на русском будет сначала, да, и потом уже добавим типа translation на трёх языках должно она поддерживать на английском, на кыргызском и на русском. Вот, в конце можем ещё это сделать, да, перевод, а пока делаем на русском. Всё. Короче, шрифт мне нравится на главной странице, там, где Кыргызский институт и так далее, да, шрифт такой основной, но типа на русском, да, вот туда пойдёт лока, да, и короче нужно исправить то, что в подменю должно быть только главная, потом идёт наука, новости, галерея и контакты. А когда нажимается типа на главную, и там уже выходит подраздел типа бургер-меню, да, история, потом может продукты или же о нас, то, что она что-то так нравится. Короче, главная страница должна находиться там. Сначала вот типа название, да, и института, это сейчас оставляем, да, потом about us, да, о нас. И мне нравится вот это, да. И потом уже должно идти карты, мы забыли, по-моему, короче, нужно сделать кар
+<truncated 45215 bytes>
+н негизин түзөт.
+3. Изилдөөлөрдүн негизги багыттары:
+•	Түшүмдүүлүк жана дандын сапатынын көрсөткүчтөрү боюнча буудайды генетикалык жактан өркүндөтүү;
+•	Кургакчылыкка, төмөнкү температурага жана патогендерге (дат, фузариоз ж.б.) туруктуулукка селекция жүргүзүү;
+•	Баалуу белгилердин жаңы булактарын табуу үчүн буудайдын дүйнөлүк коллекциясын изилдөө;
+•	Оригиналдуу үрөндөрдү өндүрүү (Р-1, Р-2 питомниктери) жана сорттук тазалыкты сактоо;
+•	Жаңы линиялар үчүн сорттук агротехниканы иштеп чыгуу жана оптималдаштыруу.
+4. Бөлүмдүн негизги жыйынтыктары жана жетишкендиктери:
+•	Түшүмдүүлүк потенциалы 80–90 ц/га жогору болгон буудай сортторунун линиясы түзүлдү;
+•	Мамлекеттик реестрге киргизилген жаңы сортторго патенттер жана автордук күбөлүктөр алынды;
+•	Үрөнчүлүк чарбаларынын муктаждыктарын камсыз кылуу үчүн жогорку репродукциядагы сапаттуу үрөндөрдү өндүрүү системасы жолго коюлду;
+•	Дыйканчылыктын ар кандай интенсификациялоо деңгээлине ылайыкташтырылган сорттордун моделдери иштелип чыкты.
+5. Эл аралык долбоор
+<truncated 54800 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
+

@@ -1,0 +1,9 @@
+Found matches in 8 files:
+C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE\structure-detail.php: ['Нарын 27', 'Иманалиев', 'Аккулаков']
+C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE\includes\lang.php: ['Изилдөөлөрдүн', 'Түшүмдүүлүк']
+C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE\scratch\all_user_inputs.txt: ['Изилдөөлөрдүн', 'Түшүмдүүлүк']
+C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE\scratch\find_in_files.py: ['Изилдөөлөрдүн', 'Түшүмдүүлүк', 'Нарын 27', 'Иманалиев', 'Аккулаков']
+C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE\scratch\questionnaires_clean.txt: ['Иманалиев', 'Аккулаков']
+C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE\scratch\questionnaire_full.txt: ['Изилдөөлөрдүн', 'Түшүмдүүлүк']
+C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE\scratch\questionnaire_text.txt: ['Иманалиев', 'Аккулаков']
+C:\Users\Asylzat\Desktop\ssssssssss\htdocs\KNIIZ_SITE\scratch\search_results.txt: ['Иманалиев', 'Аккулаков']

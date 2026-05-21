@@ -1,6 +1,16 @@
 <?php
 include_once 'includes/lang.php';
+
+function getInitials($fullName) {
+    $parts = explode(' ', trim($fullName));
+    $initials = '';
+    if (isset($parts[0])) $initials .= mb_substr($parts[0], 0, 1, 'UTF-8');
+    if (isset($parts[1])) $initials .= mb_substr($parts[1], 0, 1, 'UTF-8');
+    return mb_strtoupper($initials, 'UTF-8');
+}
+
 $page_title = t('page_title_structure');
+$page_head = '<link rel="stylesheet" href="assets/css/structure-live.css?v=' . time() . '">';
 include 'includes/header.php';
 
 $structureDetails = [
@@ -36,7 +46,21 @@ $structureDetails = [
         ],
         'no_partners' => 'Основные партнёры и сотрудничество пока не указаны.',
         'no_grants' => 'Участие в грантах и программах пока не указано.',
-        'no_patents' => 'Патенты и разработки пока не указаны.'
+        'no_patents' => 'Патенты и разработки пока не указаны.',
+        'head' => [
+            'name' => 'Азыкова Жылдыз Кадырбековна',
+            'position' => 'Зав. отделом селекции пшеницы',
+            'phone' => '+996 772 123456',
+            'honors' => 'Заслуженный деятель науки КР',
+            'degree' => 'Кандидат сельскохозяйственных наук',
+            'education' => 'Высшее'
+        ],
+        'staff' => [
+            ['name' => 'Азыкова Жылдыз Кадырбековна', 'experience' => '15', 'position' => 'Заведующая отделом', 'degree' => 'к.с.-х.н.', 'title' => 'Старший научный сотрудник', 'education' => 'Высшее'],
+            ['name' => 'Токтосунов Мирлан Алмазович', 'experience' => '8', 'position' => 'Старший научный сотрудник', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее'],
+            ['name' => 'Кадыров Бакыт Кубанычбекович', 'experience' => '12', 'position' => 'Старший научный сотрудник', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее'],
+            ['name' => 'Сыдыкова Айнура Нурлановна', 'experience' => '5', 'position' => 'Научный сотрудник', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее']
+        ]
     ],
     'barley' => [
         'photoClass' => 'barley',
@@ -58,6 +82,24 @@ $structureDetails = [
             'Получение и поддержание чистоты исходного семенного материала (суперэлита, элита), контроль сортовой идентичности.',
             'Оценка сортов в различных агроклиматических зонах для выявления наиболее устойчивых и продуктивных форм.',
             'Разработка методов защиты от болезней и вредителей, повышение иммунитета растений.'
+        ],
+        'goals' => [
+            'Укрепление семенной базы и обеспечение продовольственной безопасности страны.',
+            'Создание ресурсосберегающих сортов ячменя для орошаемых и богарных земель.',
+            'Повышение качества исходного семенного материала суперэлиты и элиты.'
+        ],
+        'objectives' => [
+            'Проведение гибридизации и отбор перспективных линий ячменя.',
+            'Организация полевых испытаний и экологических сортоиспытаний.',
+            'Научно-методическое сопровождение селекционного процесса.',
+            'Получение и поддержание чистоты исходного семенного материала.'
+        ],
+        'survey' => [
+            'Полное название отдела' => 'Отдел селекции и первичного семеноводства ячменя',
+            'Краткое описание деятельности отдела' => 'Отдел занимается созданием новых сортов ячменя и обеспечением их исходным семенным материалом для дальнейшего размножения.',
+            'Международные проекты' => 'нет',
+            'Основные партнёры и сотрудничество' => 'нет',
+            'Участие в грантах и программах' => 'нет'
         ],
         'current_project' => 'Выполняется НИР по теме: «Создать новые низкозатратные по ресурсам сорта ячменя, адаптированные к стрессовым факторам среды и обладающие высоким уровнем хозяйственно-полезных признаков и провести экологическое сортоиспытание».',
         'completed_projects' => [
@@ -261,221 +303,276 @@ if (!isset($structureDetails[$itemId])) {
 $detail = $structureDetails[$itemId];
 ?>
 
-<main>
+<main class="structure-detail-page py-5 bg-light">
     <div class="container">
-        <a href="structure.php?lang=<?php echo currentLang(); ?>" class="structure-back">&larr; <?php echo t('structure_detail_back'); ?></a>
-        <h2 class="section-title"><?php echo t($detail['title']); ?></h2>
+        <div class="mb-4">
+            <a href="structure.php?lang=<?php echo currentLang(); ?>" class="text-success text-decoration-none fw-semibold">&larr; <?php echo t('structure_detail_back'); ?></a>
+        </div>
 
-        <div class="structure-detail">
-            <div class="structure-detail-hero">
-                <div class="structure-detail-image <?php echo $detail['photoClass']; ?>"<?php if (!empty($detail['hero_image'])): ?> style="background-image:url('<?php echo $detail['hero_image']; ?>');"<?php endif; ?>>
-                    <span><?php echo t($detail['title']); ?></span>
-                    <div class="photo-badge"><?php echo $detail['badge'] ?? t($detail['title']); ?></div>
-                </div>
-                <div>
-                    <?php if (!empty($detail['summary'])): ?>
-                        <p><?php echo $detail['summary']; ?></p>
-                    <?php endif; ?>
-                    <?php if (!empty($detail['activity'])): ?>
-                        <div class="detail-section">
-                            <h3>Краткое описание деятельности</h3>
-                            <p><?php echo $detail['activity']; ?></p>
+        <div class="card border-0 shadow-sm overflow-hidden mb-5">
+            <div class="row g-0 align-items-center">
+                <div class="col-lg-7">
+                    <div class="position-relative detail-hero-image" <?php if (!empty($detail['hero_image'])): ?> style="background-image:url('<?php echo $detail['hero_image']; ?>');"<?php endif; ?>>
+                        <div class="detail-hero-overlay"></div>
+                        <div class="p-4 p-lg-5 h-100 d-flex flex-column justify-content-end text-white">
+                            <span class="badge bg-white text-success mb-3"><?php echo $detail['badge'] ?? t($detail['title']); ?></span>
+                            <h1 class="display-5 fw-bold mb-3"><?php echo t($detail['title']); ?></h1>
+                            <?php if (!empty($detail['summary'])): ?>
+                                <p class="mb-0 fs-6 fw-semibold text-white-75"><?php echo $detail['summary']; ?></p>
+                            <?php endif; ?>
                         </div>
-                    <?php endif; ?>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="p-4 p-lg-5 bg-white h-100">
+                        <?php if (!empty($detail['activity'])): ?>
+                            <h2 class="h4 text-success mb-3">О проекте отдела</h2>
+                            <p class="text-muted mb-4"><?php echo $detail['activity']; ?></p>
+                        <?php endif; ?>
+                        <div class="row g-3">
+                            <?php if (!empty($detail['goals'])): ?>
+                                <div class="col-12">
+                                    <div class="p-3 rounded-4 border bg-soft">
+                                        <h3 class="h6 text-success mb-2">Цели отдела</h3>
+                                        <ul class="mb-0 ps-3 text-secondary">
+                                            <?php foreach ($detail['goals'] as $goal): ?>
+                                                <li><?php echo $goal; ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                            <?php if (!empty($detail['objectives'])): ?>
+                                <div class="col-12">
+                                    <div class="p-3 rounded-4 border bg-soft">
+                                        <h3 class="h6 text-success mb-2">Задачи отдела</h3>
+                                        <ul class="mb-0 ps-3 text-secondary">
+                                            <?php foreach ($detail['objectives'] as $objective): ?>
+                                                <li><?php echo $objective; ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <?php if (!empty($detail['keypoints'])): ?>
-                        <div class="detail-keypoints">
-                            <?php foreach ($detail['keypoints'] as $point): ?>
-                                <div class="detail-keypoint-card">
-                                    <strong><?php echo $point['title']; ?></strong>
-                                    <p><?php echo $point['text']; ?></p>
+        <div class="row gx-5">
+            <div class="col-lg-8">
+                <?php if (!empty($detail['research'])): ?>
+                    <section class="mb-4">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 text-success mb-3">Основные направления исследований</h3>
+                                <ul class="list-group list-group-flush rounded-3 overflow-hidden">
+                                    <?php foreach ($detail['research'] as $researchItem): ?>
+                                        <li class="list-group-item border-0 px-0 py-2 text-secondary">&#8226; <?php echo $researchItem; ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <?php if (!empty($detail['current_project'])): ?>
+                    <section class="mb-4">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 text-success mb-3">Текущий научный проект</h3>
+                                <p class="text-secondary mb-0"><?php echo $detail['current_project']; ?></p>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <?php if (!empty($detail['completed_projects'])): ?>
+                    <section class="mb-4">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 text-success mb-3">Завершённые проекты за последние 5 лет</h3>
+                                <ul class="list-group list-group-flush rounded-3 overflow-hidden">
+                                    <?php foreach ($detail['completed_projects'] as $project): ?>
+                                        <li class="list-group-item border-0 px-0 py-2 text-secondary">&#8226; <?php echo $project; ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <?php if (!empty($detail['results'])): ?>
+                    <section class="mb-4">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 text-success mb-3">Ключевые результаты и достижения</h3>
+                                <p class="text-secondary mb-0"><?php echo $detail['results']; ?></p>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <section class="mb-4">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4">
+                            <h3 class="h5 text-success mb-3">Партнёры и гранты</h3>
+                            <p class="text-secondary mb-2"><?php echo $detail['no_partners']; ?></p>
+                            <p class="text-secondary mb-0"><?php echo $detail['no_grants']; ?></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-4">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4">
+                            <h3 class="h5 text-success mb-3">Публикации и патенты</h3>
+                            <p class="text-secondary mb-2"><?php echo !empty($detail['publications']) ? $detail['publications'] : $detail['no_publications']; ?></p>
+                            <?php if (!empty($detail['patents'])): ?>
+                                <p class="text-secondary mb-0"><?php echo $detail['patents']; ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </section>
+
+                <?php if (!empty($detail['infrastructure'])): ?>
+                    <section class="mb-4">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 text-success mb-3">Материально-техническая база</h3>
+                                <p class="text-secondary mb-0"><?php echo $detail['infrastructure']; ?></p>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <?php if (!empty($detail['events'])): ?>
+                    <section class="mb-4">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 text-success mb-3">Научные мероприятия</h3>
+                                <p class="text-secondary mb-0"><?php echo $detail['events']; ?></p>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <?php if (!empty($detail['prospects'])): ?>
+                    <section class="mb-4">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 text-success mb-3">Перспективы развития</h3>
+                                <ul class="list-group list-group-flush rounded-3 overflow-hidden mb-3">
+                                    <?php foreach ($detail['prospects'] as $prospect): ?>
+                                        <li class="list-group-item border-0 px-0 py-2 text-secondary">&#8226; <?php echo $prospect; ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <p class="text-secondary mb-0"><?php echo $detail['prospects_summary']; ?></p>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <?php if (!empty($detail['services'])): ?>
+                    <section class="mb-4">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 text-success mb-3">Услуги и товары отдела</h3>
+                                <ul class="list-group list-group-flush rounded-3 overflow-hidden">
+                                    <?php foreach ($detail['services'] as $service): ?>
+                                        <li class="list-group-item border-0 px-0 py-2 text-secondary">&#8226; <?php echo $service; ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <?php if (!empty($detail['survey'])): ?>
+                    <section class="mb-4">
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="h5 text-success mb-3">Анкета отдела</h3>
+                                <div class="row g-3">
+                                    <?php foreach ($detail['survey'] as $label => $value): ?>
+                                        <div class="col-12">
+                                            <div class="p-3 rounded-4 border bg-soft">
+                                                <span class="d-block fw-semibold text-success mb-1"><?php echo $label; ?></span>
+                                                <p class="mb-0 text-secondary"><?php echo $value; ?></p>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <section class="mb-4">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4">
+                            <h3 class="h5 text-success mb-3">Фотогалерея</h3>
+                            <div class="row row-cols-1 row-cols-sm-2 g-3">
+                                <div class="col"><div class="gallery-item">ava1</div></div>
+                                <div class="col"><div class="gallery-item">ava2</div></div>
+                                <div class="col"><div class="gallery-item">ava3</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-4">
+                <?php if (!empty($detail['head'])): ?>
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden">
+                        <div class="detail-leader-sidebar-image" <?php if (!empty($detail['leader_image'])): ?> style="background-image:url('<?php echo $detail['leader_image']; ?>');"<?php endif; ?>></div>
+                        <div class="card-body p-4">
+                            <h3 class="h5 text-success mb-3">Руководитель отдела</h3>
+                            <h4 class="fs-5 mb-2"><?php echo $detail['head']['name']; ?></h4>
+                            <p class="mb-1 text-secondary"><strong>Должность:</strong> <?php echo $detail['head']['position']; ?></p>
+                            <p class="mb-1 text-secondary"><strong>Телефон:</strong> <?php echo $detail['head']['phone']; ?></p>
+                            <p class="mb-1 text-secondary"><strong>Звания:</strong> <?php echo $detail['head']['honors']; ?></p>
+                            <p class="mb-1 text-secondary"><strong>Ученая степень:</strong> <?php echo $detail['head']['degree']; ?></p>
+                            <p class="mb-0 text-secondary"><strong>Образование:</strong> <?php echo $detail['head']['education']; ?></p>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (!empty($detail['staff'])): ?>
+                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                        <h3 class="h5 text-success mb-3 fw-bold" style="font-family: var(--font-headings);">Команда отдела</h3>
+                        <div class="row g-3">
+                            <?php foreach ($detail['staff'] as $index => $member): ?>
+                                <div class="col-12">
+                                    <div class="card border-0 shadow-sm rounded-4 p-3 bg-light h-100 transition-all hover-lift">
+                                        <div class="d-flex align-items-start gap-3">
+                                            <div class="avatar-gradient d-flex align-items-center justify-content-center text-white fw-bold shadow-sm" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); font-size: 15px; flex-shrink: 0;">
+                                                <?php echo getInitials($member['name']); ?>
+                                            </div>
+                                            <div class="w-100">
+                                                <h6 class="mb-1 fw-bold text-dark" style="font-size: 14.5px;"><?php echo $member['name']; ?></h6>
+                                                <div class="badge bg-emerald-soft text-success mb-2 fw-semibold" style="font-size: 11px;"><?php echo $member['position']; ?></div>
+                                                
+                                                <div class="small text-secondary" style="font-size: 12.5px; line-height: 1.5;">
+                                                    <p class="mb-1"><strong>🎓 Образование:</strong> <?php echo $member['education']; ?></p>
+                                                    <p class="mb-1"><strong>⏳ Стаж:</strong> <?php echo $member['experience']; ?> <?php echo ($member['experience'] == '1') ? 'год' : (($member['experience'] >= 2 && $member['experience'] <= 4) ? 'года' : 'лет'); ?></p>
+                                                    <?php if ($member['degree'] !== 'нет'): ?>
+                                                        <p class="mb-1"><strong>🔬 Степень:</strong> <?php echo $member['degree']; ?></p>
+                                                    <?php endif; ?>
+                                                    <?php if ($member['title'] !== 'нет'): ?>
+                                                        <p class="mb-0"><strong>📚 Звание:</strong> <?php echo $member['title']; ?></p>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                    <?php endif; ?>
-                </div>
-            </div>
-
-        <section class="detail-highlight-grid">
-            <?php if (!empty($detail['activity'])): ?>
-                <article class="detail-highlight-card">
-                    <h4>Задачи и направления</h4>
-                    <p><?php echo $detail['activity']; ?></p>
-                </article>
-            <?php endif; ?>
-            <?php if (!empty($detail['current_project'])): ?>
-                <article class="detail-highlight-card">
-                    <h4>Текущий проект</h4>
-                    <p><?php echo $detail['current_project']; ?></p>
-                </article>
-            <?php endif; ?>
-            <?php if (!empty($detail['head'])): ?>
-                <article class="detail-highlight-card">
-                    <h4>Команда отдела</h4>
-                    <p>Руководитель: <?php echo $detail['head']['name']; ?>. Главная задача — развивать сортовую базу и обеспечивать высококачественное семеноводство.</p>
-                </article>
-            <?php endif; ?>
-        </section>
-
-            <?php if (!empty($detail['research'])): ?>
-                <section class="detail-section">
-                    <h3>Основные направления исследований</h3>
-                    <ul class="detail-list">
-                        <?php foreach ($detail['research'] as $researchItem): ?>
-                            <li><?php echo $researchItem; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </section>
-            <?php endif; ?>
-
-            <div class="structure-detail-photo-row">
-                <div class="detail-photo-placeholder"<?php if (!empty($detail['hero_image'])): ?> style="background-image:url('<?php echo $detail['hero_image']; ?>');"<?php endif; ?>>
-                    <span>Отдел в работе</span>
-                </div>
-                <div class="detail-leader-card">
-                    <div class="detail-leader-photo"<?php if (!empty($detail['leader_image'])): ?> style="background-image:url('<?php echo $detail['leader_image']; ?>');"<?php endif; ?>></div>
-                    <div class="detail-leader-info">
-                        <?php if (!empty($detail['head'])): ?>
-                            <h3><?php echo $detail['head']['name']; ?></h3>
-                            <p><strong>Должность:</strong> <?php echo $detail['head']['position']; ?></p>
-                            <p><strong>Телефон:</strong> <?php echo $detail['head']['phone']; ?></p>
-                            <p><strong>Звания:</strong> <?php echo $detail['head']['honors']; ?></p>
-                            <p><strong>Ученая степень:</strong> <?php echo $detail['head']['degree']; ?></p>
-                            <p><strong>Образование:</strong> <?php echo $detail['head']['education']; ?></p>
-                        <?php endif; ?>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
-
-            <?php if (!empty($detail['current_project'])): ?>
-                <section class="detail-section">
-                    <h3>Текущий научный проект</h3>
-                    <p><?php echo $detail['current_project']; ?></p>
-                </section>
-            <?php endif; ?>
-
-            <?php if (!empty($detail['international_projects'])): ?>
-                <section class="detail-section">
-                    <h3>Международные проекты</h3>
-                    <p><?php echo $detail['international_projects']; ?></p>
-                </section>
-            <?php endif; ?>
-
-            <?php if (!empty($detail['completed_projects'])): ?>
-                <section class="detail-section">
-                    <h3>Завершённые проекты за последние 5 лет</h3>
-                    <ul class="detail-list">
-                        <?php foreach ($detail['completed_projects'] as $project): ?>
-                            <li><?php echo $project; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </section>
-            <?php endif; ?>
-
-            <?php if (!empty($detail['results'])): ?>
-                <section class="detail-section">
-                    <h3>Ключевые результаты и достижения</h3>
-                    <p><?php echo $detail['results']; ?></p>
-                </section>
-            <?php endif; ?>
-
-            <section class="detail-section">
-                <h3>Партнёры и гранты</h3>
-                <p><?php echo $detail['no_partners']; ?></p>
-                <p><?php echo $detail['no_grants']; ?></p>
-            </section>
-
-            <section class="detail-section">
-                <h3>Публикации и патенты</h3>
-                <?php if (!empty($detail['publications'])): ?>
-                    <p><?php echo $detail['publications']; ?></p>
-                <?php else: ?>
-                    <p><?php echo $detail['no_publications']; ?></p>
-                <?php endif; ?>
-                <?php if (!empty($detail['patents'])): ?>
-                    <p><?php echo $detail['patents']; ?></p>
-                <?php else: ?>
-                    <p><?php echo $detail['no_patents']; ?></p>
-                <?php endif; ?>
-            </section>
-
-            <?php if (!empty($detail['infrastructure'])): ?>
-                <section class="detail-section">
-                    <h3>Материально-техническая база</h3>
-                    <p><?php echo $detail['infrastructure']; ?></p>
-                </section>
-            <?php endif; ?>
-
-            <?php if (!empty($detail['events'])): ?>
-                <section class="detail-section">
-                    <h3>Научные мероприятия</h3>
-                    <p><?php echo $detail['events']; ?></p>
-                </section>
-            <?php endif; ?>
-
-            <?php if (!empty($detail['prospects'])): ?>
-                <section class="detail-section">
-                    <h3>Перспективы развития</h3>
-                    <ul class="detail-list">
-                        <?php foreach ($detail['prospects'] as $prospect): ?>
-                            <li><?php echo $prospect; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <p><?php echo $detail['prospects_summary']; ?></p>
-                </section>
-            <?php endif; ?>
-
-            <?php if (!empty($detail['services'])): ?>
-                <section class="detail-section">
-                    <h3>Услуги и товары отдела</h3>
-                    <ul class="detail-list">
-                        <?php foreach ($detail['services'] as $service): ?>
-                            <li><?php echo $service; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </section>
-            <?php endif; ?>
-
-            <section class="detail-section">
-                <h3>Фотогалерея отдела</h3>
-                <div class="detail-gallery">
-                    <div class="gallery-item">Фото отдела 1</div>
-                    <div class="gallery-item">Фото отдела 2</div>
-                    <div class="gallery-item">Фото отдела 3</div>
-                </div>
-            </section>
-
-            <?php if (!empty($detail['staff'])): ?>
-                <section class="detail-section">
-                    <h3>Состав отдела</h3>
-                    <div class="table-wrap">
-                        <table class="detail-table">
-                            <thead>
-                                <tr>
-                                    <th>ФИО</th>
-                                    <th>Стаж</th>
-                                    <th>Должность</th>
-                                    <th>Уч. степень</th>
-                                    <th>Звание</th>
-                                    <th>Образование</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($detail['staff'] as $member): ?>
-                                    <tr>
-                                        <td><?php echo $member['name']; ?></td>
-                                        <td><?php echo $member['experience']; ?></td>
-                                        <td><?php echo $member['position']; ?></td>
-                                        <td><?php echo $member['degree']; ?></td>
-                                        <td><?php echo $member['title']; ?></td>
-                                        <td><?php echo $member['education']; ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            <?php endif; ?>
         </div>
     </div>
 </main>

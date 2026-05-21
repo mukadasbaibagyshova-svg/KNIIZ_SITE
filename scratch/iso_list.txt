@@ -1,0 +1,8 @@
+ISO: KG-Y, RU: Иссык-Кульская область, KY: Ысык-Көл облусу, EN: Issyk-Kul Region
+ISO: KG-N, RU: Нарынская область, KY: Нарын облусу, EN: Naryn Region
+ISO: KG-O, RU: Ошская область, KY: Ош облусу, EN: Osh Region
+ISO: KG-C, RU: Чуйская область, KY: Чүй облусу, EN: Chuy Region
+ISO: KG-T, RU: Таласская область, KY: Талас облусу, EN: Talas Region
+ISO: KG-J, RU: Джалал-Абадская область, KY: Жалал-Абад облусу, EN: Jalal-Abad Region
+ISO: KG-B, RU: Баткенская область, KY: Баткен облусу, EN: Batken Region
+ISO: KG-GB, RU: Бишкек, KY: Бишкек, EN: Bishkek

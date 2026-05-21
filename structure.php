@@ -1,6 +1,7 @@
 <?php
 include_once 'includes/lang.php';
 $page_title = t('page_title_structure');
+$page_head = '<link rel="stylesheet" href="assets/css/structure-live.css?v=' . time() . '">';
 include 'includes/header.php';
 
 $departments = [
@@ -41,7 +42,7 @@ $departments = [
         'image' => 'assets/images/hlopok.png'
     ],
     [
-        'id' => 'beet',
+        'id' => 'sugarbeet',
         'title' => 'Отдел сахарной свеклы',
         'description' => 'Селекция сахарной свеклы на основе CMS и первичное семеноводство для получения высококачественных гибридов.',
         'image' => 'assets/images/svekla.png'
@@ -56,68 +57,45 @@ $departments = [
 ?>
 
 <main class="structure-page">
+    <section class="tree-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">Иерархия</span>
+                <h1 class="section-title-premium text-dark mb-3">Структура института</h1>
+                <p class="section-subtitle-premium text-muted mx-auto" style="max-width: 760px;">Все подразделения и региональные опытные станции института в единой научно-производственной системе.</p>
+            </div>
 
-<section class="tree-section">
+            <!-- Root of the tree hierarchy - matches structure-live.css -->
+            <div class="tree-root">
+                <div class="root-card">
+                    <div class="root-icon">🔬</div>
+                    <h2>КНИИЗ</h2>
+                    <p>Кыргызский научно-исследовательский институт земледелия имени К.К. Азыкова</p>
+                </div>
+            </div>
 
-<div class="container">
+            <div class="tree-line"></div>
 
-<h1 class="section-title">Структура института</h1>
-
-<div class="structure-tree">
-    <div class="structure-root-card">
-        <div class="structure-root-title">КНИИЗ</div>
-        <p>Кыргызский научно-исследовательский институт земледелия имени К.К. Азыкова</p>
-    </div>
-
-    <div class="structure-branches">
-        <div class="structure-branch-card">
-            <strong>Отделы</strong>
-            <span>Селекция, семеноводство, почвоведение, агрохимия и растениеводство</span>
+            <div class="departments-grid">
+                <?php foreach ($departments as $department): ?>
+                    <a href="structure-detail.php?item=<?php echo $department['id']; ?>&lang=<?php echo currentLang(); ?>" class="department-card">
+                        <div class="department-image" style="background-image: url('<?php echo $department['image']; ?>');">
+                            <div class="image-overlay"></div>
+                            <div class="department-title">
+                                <?php echo $department['title']; ?>
+                            </div>
+                        </div>
+                        <div class="department-content">
+                            <p><?php echo $department['description']; ?></p>
+                            <span class="department-button">
+                                Подробнее &rarr;
+                            </span>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            </div>
         </div>
-        <div class="structure-branch-card">
-            <strong>Филиалы</strong>
-            <span>Региональные опытные станции и опорные пункты</span>
-        </div>
-    </div>
-</div>
-
-<div class="departments-grid">
-
-<?php foreach ($departments as $department): ?>
-
-<a href="structure-detail.php?item=<?php echo $department['id']; ?>&lang=<?php echo currentLang(); ?>" class="department-card">
-
-    <div class="department-image"
-         style="background-image: url('<?php echo $department['image']; ?>');">
-
-        <div class="image-overlay"></div>
-
-        <div class="department-title">
-            <?php echo $department['title']; ?>
-        </div>
-
-    </div>
-
-    <div class="department-content">
-
-        <p><?php echo $department['description']; ?></p>
-
-        <span class="department-button">
-            Подробнее →
-        </span>
-
-    </div>
-
-</a>
-
-<?php endforeach; ?>
-
-</div>
-
-</div>
-
-</section>
-
+    </section>
 </main>
 
 <?php include 'includes/footer.php'; ?>

@@ -1,29 +1,45 @@
-<footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3><?php echo t('footer_about_title'); ?></h3>
-            <p><?php echo t('footer_about_line1'); ?></p>
-            <p><?php echo t('footer_about_line2'); ?></p>
+<footer class="site-footer text-white py-5">
+    <div class="container">
+        <div class="row gy-4 align-items-center">
+            <!-- Column 1: Brand & Contacts -->
+            <div class="col-lg-4">
+                <h3 class="mb-3 fw-bold" style="color: var(--accent-color); font-family: var(--font-headings);"><?php echo t('logo'); ?></h3>
+                <p class="mb-4" style="font-size: 14px; opacity: 0.8; line-height: 1.6;"><?php echo t('footer_about_line1'); ?></p>
+                
+                <div style="font-size: 14.5px; opacity: 0.9; line-height: 1.7;" class="mb-4">
+                    <p class="mb-2"><strong>📍 <?php echo t('contacts_address_title'); ?>:</strong><br><?php echo t('contacts_address_text'); ?></p>
+                    <p class="mb-2"><strong>📞 Телефон:</strong> <?php echo t('contacts_phone'); ?></p>
+                    <p class="mb-0"><strong>✉️ Email:</strong> <?php echo t('contacts_email'); ?></p>
+                </div>
+                
+                <div class="d-flex gap-3">
+                    <a href="#" class="icon-button" aria-label="Facebook">FB</a>
+                    <a href="#" class="icon-button" aria-label="YouTube">YT</a>
+                    <a href="#" class="icon-button" aria-label="Instagram">IG</a>
+                </div>
+            </div>
+            
+            <!-- Column 2: 2GIS Widget Map -->
+            <div class="col-lg-8">
+                <style>
+                    .dg-widget-container iframe {
+                        width: 100% !important;
+                        height: 350px !important;
+                        border-radius: 12px;
+                    }
+                </style>
+                <div class="p-2 bg-white shadow-lg" style="border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15);">
+                    <div class="w-100 dg-widget-container" style="height: 350px; border-radius: 12px; overflow: hidden;">
+                        <iframe frameborder="no" style="border: 1px solid #e2ebdc; box-sizing: border-box; width: 100%; height: 350px; border-radius: 12px;" src="https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A42.85399265864424%2C%22lon%22%3A74.53481197357179%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22bishkek%22%7D%2C%22org%22%3A%2270000001021237453%22%7D"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer-section">
-            <h3><?php echo t('footer_contacts_title'); ?></h3>
-            <p><?php echo t('contacts_address_text'); ?></p>
-            <p><?php echo t('contacts_phone'); ?></p>
-            <p><?php echo t('contacts_email'); ?></p>
-        </div>
-        <div class="footer-section">
-            <h3><?php echo t('footer_menu_title'); ?></h3>
-            <ul>
-                <li><a href="index.php?lang=<?php echo currentLang(); ?>"><?php echo t('footer_menu_home'); ?></a></li>
-                <li><a href="history.php?lang=<?php echo currentLang(); ?>"><?php echo t('footer_menu_history'); ?></a></li>
-                <li><a href="maps.php?lang=<?php echo currentLang(); ?>"><?php echo t('footer_menu_maps'); ?></a></li>
-                <li><a href="science.php?lang=<?php echo currentLang(); ?>"><?php echo t('footer_menu_science'); ?></a></li>
-                <li><a href="products.php?lang=<?php echo currentLang(); ?>"><?php echo t('footer_menu_products'); ?></a></li>
-                <li><a href="news.php?lang=<?php echo currentLang(); ?>"><?php echo t('footer_menu_news'); ?></a></li>
-            </ul>
+        
+        <div class="footer-bottom text-center pt-4 mt-5 border-top border-white-10" style="opacity: 0.6; font-size: 13px;">
+            <?php echo t('footer_copyright'); ?>
         </div>
     </div>
-    <div class="footer-bottom"><?php echo t('footer_copyright'); ?></div>
 </footer>
 </body>
 </html>
