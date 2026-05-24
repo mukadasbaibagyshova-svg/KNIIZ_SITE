@@ -1,0 +1,56 @@
+Created At: 2026-05-20T05:44:58Z
+Completed At: 2026-05-20T05:44:58Z
+File Path: `file:///C:/Users/Asylzat/Desktop/ssssssssss/htdocs/KNIIZ_SITE/includes/lang.php`
+Total Lines: 489
+Total Bytes: 49103
+Showing lines 1 to 489
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: <?php
+2: $availableLangs = [
+3:     'ru' => 'Рус',
+4:     'en' => 'Eng',
+5:     'ky' => 'Кыргыз'
+6: ];
+7: $defaultLang = 'ru';
+8: $currentLang = $defaultLang;
+9: if (!empty($_GET['lang']) && array_key_exists($_GET['lang'], $availableLangs)) {
+10:     $currentLang = $_GET['lang'];
+11:     setcookie('lang', $currentLang, time() + 30 * 24 * 3600, '/');
+12: } elseif (!empty($_COOKIE['lang']) && array_key_exists($_COOKIE['lang'], $availableLangs)) {
+13:     $currentLang = $_COOKIE['lang'];
+14: }
+15: 
+16: $_lang = [
+17:     'ru' => [
+18:         'page_title_home' => 'Главная',
+19:         'page_title_history' => 'История',
+20:         'page_title_maps' => 'Карты',
+21:         'page_title_science' => 'Наука',
+22:         'page_title_products' => 'Продукция',
+23:         'page_title_news' => 'Новости',
+24:         'page_title_gallery' => 'Галерея',
+25:         'page_title_structure' => 'Структура',
+26:         'structure_detail_back' => 'Вернуться к структуре',
+27:         'structure_detail_wheat_title' => 'Отдел селекции и первичного семеноводства пшеницы',
+28:         'structure_detail_barley_title' => 'Отдел селекции и первичного семеноводства ячменя',
+29:         'structure_detail_sugarbeet_title' => 'Отдел селекции и первичного семеноводства сахарной свеклы',
+30:         'structure_detail_corn_title' => 'Отде
+<truncated 45283 bytes>
+ун иштеп чыкты',
+419:         'news_article_1_date' => 'Жарыяланган: 2024-05-11',
+420:         'news_article_1_text' => 'КНИИЗ Кыргыз тоолуу аймактардын шарттарына ылайыкталган жаңы жогорку түшүмдүү буудай сортун тартуулайт...',
+421:         'news_article_2_title' => 'Айыл чарба илимдери боюнча эл аралык конференция',
+422:         'news_article_2_date' => 'Жарыяланган: 2024-05-05',
+423:         'news_article_2_text' => 'КНИИЗ өсүмдүк өстүрүү жаатындагы акыркы өнүгүүлөрдү сунуштаган эл аралык конференцияга катышты...',
+424:         'news_article_3_title' => 'Чет өлкөлүк уюмдар менен өнөктөштүктү кеңейтүү',
+425:         'news_article_3_date' => 'Жарыяланган: 2024-04-28',
+426:         'news_article_3_text' => 'КНИИЗ бир нече алдыңкы илимий борборлор менен кызматташууну бекитти...',
+427:         'gallery_title' => 'Галерея',
+428:         'gallery_text' => 'КНИИЗдин иш-чараларынын, изилдөөлөрүнүн жана объекттеринин сүрөттөрү.',
+429:         'contacts_title' => 'Контакттар',
+430:         'contacts_text' => 'К.К. Aзыкoв атындагы Кыргыз дыйканчылык илим изилдөө институту менен изилдөө, өнүмдөр жана кызматташуу боюнча байланышкыла.',
+431:         'contacts_address_title' => 'Биздин дарек',
+432:         'contacts_address_text' => 'К.К. Азыкoв атындагы Кыргыз дыйканчылык илим 
+<truncated 2765 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.

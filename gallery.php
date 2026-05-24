@@ -19,6 +19,39 @@ include 'includes/header.php';
                 <div class="col-md-6 col-lg-4">
                     <div class="gallery-card shadow-sm border-0 overflow-hidden bg-white" style="border-radius: 20px;">
                         <div class="gallery-img-wrapper" style="overflow: hidden; height: 260px;">
+                            <img src="assets/images/hero1.jpg" alt="Поля института" class="w-100 h-100 object-fit-cover transition-all" style="transition: transform 0.5s ease;">
+                        </div>
+                        <div class="p-3">
+                            <span class="badge bg-emerald mb-2">Общее</span>
+                            <h4 class="h6 mb-0 text-dark fw-bold">Поля института</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card shadow-sm border-0 overflow-hidden bg-white" style="border-radius: 20px;">
+                        <div class="gallery-img-wrapper" style="overflow: hidden; height: 260px;">
+                            <img src="assets/images/hero2.jpg" alt="Коллаж культур" class="w-100 h-100 object-fit-cover transition-all" style="transition: transform 0.5s ease;">
+                        </div>
+                        <div class="p-3">
+                            <span class="badge bg-emerald mb-2">Культуры</span>
+                            <h4 class="h6 mb-0 text-dark fw-bold">Разнообразие культур</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card shadow-sm border-0 overflow-hidden bg-white" style="border-radius: 20px;">
+                        <div class="gallery-img-wrapper" style="overflow: hidden; height: 260px;">
+                            <img src="assets/images/hero3.jpg" alt="Пшеница и кукуруза" class="w-100 h-100 object-fit-cover transition-all" style="transition: transform 0.5s ease;">
+                        </div>
+                        <div class="p-3">
+                            <span class="badge bg-emerald mb-2">Посевы</span>
+                            <h4 class="h6 mb-0 text-dark fw-bold">Пшеница и кукуруза</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card shadow-sm border-0 overflow-hidden bg-white" style="border-radius: 20px;">
+                        <div class="gallery-img-wrapper" style="overflow: hidden; height: 260px;">
                             <img src="assets/images/wheet1.jpg" alt="Пшеничные поля" class="w-100 h-100 object-fit-cover transition-all" style="transition: transform 0.5s ease;">
                         </div>
                         <div class="p-3">

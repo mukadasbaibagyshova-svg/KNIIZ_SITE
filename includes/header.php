@@ -23,7 +23,11 @@ $languageOptions = getLanguages();
 </head>
 <body>
 <a class="skip-link" href="#main-content"><?php echo t('top_navigation'); ?></a>
-<header class="site-header">
+<?php
+$isHome = (basename($_SERVER['SCRIPT_NAME']) === 'index.php');
+$headerClass = $isHome ? 'site-header' : 'site-header header-solid';
+?>
+<header class="<?php echo $headerClass; ?>">
     <div class="top-bar container d-flex align-items-center justify-content-between">
         <div class="top-left d-flex align-items-center gap-3">
             <span class="top-chip"><?php echo t('top_navigation'); ?></span>
@@ -46,28 +50,26 @@ $languageOptions = getLanguages();
         <a class="brand" href="index.php?lang=<?php echo currentLang(); ?>"><?php echo t('logo'); ?></a>
         <nav class="main-nav d-none d-lg-flex">
             <ul class="main-menu d-flex gap-4 align-items-center mb-0 list-unstyled">
-                <li class="dropdown-li">
+                <li class="dropdown-li" style="position: relative;">
                     <a href="index.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('index.php'); ?> dropdown-trigger">
                         <?php echo t('nav_home'); ?> ▾
                     </a>
                     <ul class="dropdown-submenu">
                         <li><a href="index.php?lang=<?php echo currentLang(); ?>#about"><?php echo t('nav_about'); ?></a></li>
-                        <li><a href="history.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_history'); ?></a></li>
                         <li><a href="news.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_news'); ?></a></li>
                         <li><a href="maps.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_maps'); ?></a></li>
-                        <li><a href="contacts.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_contacts'); ?></a></li>
                     </ul>
                 </li>
-                <li class="dropdown-li">
-                    <a href="science.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('science.php'); ?> dropdown-trigger">
-                        <?php echo t('nav_science'); ?> ▾
+                <li class="dropdown-li" style="position: relative;">
+                    <a href="index.php?lang=<?php echo currentLang(); ?>#about" class="dropdown-trigger">
+                        <?php echo t('nav_about'); ?> ▾
                     </a>
                     <ul class="dropdown-submenu">
-                        <li><a href="science.php?lang=<?php echo currentLang(); ?>#management"><?php echo t('nav_management'); ?></a></li>
-                        <li><a href="science.php?lang=<?php echo currentLang(); ?>#departments"><?php echo t('nav_departments'); ?></a></li>
-                        <li><a href="science.php?lang=<?php echo currentLang(); ?>#branches"><?php echo t('nav_branches'); ?></a></li>
+                        <li><a href="history.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_history'); ?></a></li>
                     </ul>
                 </li>
+                <li><a href="news.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('news.php'); ?>"><?php echo t('nav_news'); ?></a></li>
+                <li><a href="science.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('science.php'); ?>"><?php echo t('nav_science'); ?></a></li>
                 <li><a href="gallery.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('gallery.php'); ?>"><?php echo t('nav_gallery'); ?></a></li>
                 <li><a href="contacts.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('contacts.php'); ?>"><?php echo t('nav_contacts'); ?></a></li>
             </ul>
@@ -94,25 +96,23 @@ $languageOptions = getLanguages();
         <button class="btn-close btn-close-white mb-4" type="button" aria-label="Close menu" onclick="toggleMobileMenu()"></button>
         <nav class="mobile-nav-list mb-4">
             <div class="mobile-nav-group mb-3">
-                <a href="index.php?lang=<?php echo currentLang(); ?>" class="mobile-link fw-bold text-success mb-2" style="font-size: 22px; text-align: left;"><?php echo t('nav_home'); ?></a>
+                <a href="index.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-2 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_home'); ?></a>
                 <div class="mobile-sublinks ps-3" style="display: flex; flex-direction: column; gap: 8px;">
                     <a href="index.php?lang=<?php echo currentLang(); ?>#about" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_about'); ?></a>
-                    <a href="history.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_history'); ?></a>
                     <a href="news.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_news'); ?></a>
                     <a href="maps.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_maps'); ?></a>
-                    <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_contacts'); ?></a>
                 </div>
             </div>
             <div class="mobile-nav-group mb-3">
-                <a href="science.php?lang=<?php echo currentLang(); ?>" class="mobile-link fw-bold text-success mb-2" style="font-size: 22px; text-align: left;"><?php echo t('nav_science'); ?></a>
+                <a href="index.php?lang=<?php echo currentLang(); ?>#about" class="mobile-link fw-bold mb-2" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_about'); ?></a>
                 <div class="mobile-sublinks ps-3" style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="science.php?lang=<?php echo currentLang(); ?>#management" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_management'); ?></a>
-                    <a href="science.php?lang=<?php echo currentLang(); ?>#departments" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_departments'); ?></a>
-                    <a href="science.php?lang=<?php echo currentLang(); ?>#branches" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_branches'); ?></a>
+                    <a href="history.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_history'); ?></a>
                 </div>
             </div>
-            <a href="gallery.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_gallery'); ?></a>
-            <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_contacts'); ?></a>
+            <a href="news.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_news'); ?></a>
+            <a href="science.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_science'); ?></a>
+            <a href="gallery.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_gallery'); ?></a>
+            <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_contacts'); ?></a>
         </nav>
         <div class="mobile-subtitle" style="text-align: left; margin-top: 20px;"><?php echo t('top_lang_selector'); ?></div>
         <div class="d-flex flex-column gap-2">

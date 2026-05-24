@@ -1,0 +1,29 @@
+<USER_REQUEST>
+и убери контактную форму которая на главной странице  размести нормально эту инфу на оделы Анкета
+1. Отдел селекции и первичного семеноводства ячменя
+Отдел селекции и первичного семеноводства ячменя — это структурное подразделение Кыргызского научно-исследовательского института земледелия имени К.К.Азыкова, которое занимается созданием новых сортов ячменя и обеспечением их исходным семенным материалом для дальнейшего размножения.
+2. Краткое описание деятельности отдела (3–6 предложений): 
+Отдел селекции и первичного семеноводства ячменя осуществляет разработку и внедрение новых сортов культуры, отличающихся высокой урожайностью, устойчивостью к неблагоприятным условиям и соответствием требованиям производства. Основными направлениями работы являются проведение гибридизации, отбор перспективных линий, организация полевых испытаний и научно-методическое сопровождение селекционного процесса. Подразделение обеспечивает получение и поддержание чистоты исходного семенного материала (суперэлита, элита), необходимого для дальнейшего размножения и передачи в хозяйства. Деятельность 
+<truncated 45214 bytes>
+
+•	Genetic improvement of wheat for enhanced productivity and grain quality;
+•	Breeding for resistance to drought, low temperatures, and pathogens (e.g., rust, Fusarium head blight);
+•	Evaluation of global germplasm collections to identify novel sources of valuable traits;
+•	Production of original seeds (P-1 and P-2 nurseries) and maintenance of varietal purity;
+•	Development and optimization of variety-specific cultivation technologies for new breeding lines.
+4. Key Results and Achievements:
+•	Developed a portfolio of wheat varieties with a yield potential exceeding 8.0–9.0 t/ha (80–90 c/ha);
+•	Secured patents and authorship certificates for new varieties officially registered in the State Register;
+•	Established a robust production system for high-quality, high-reproduction seeds to supply specialized seed farms;
+•	Designed ideotypes and variety models optimized for various levels of agricultural intensification.
+5. International Projects: The department actively participates in germplasm exchange within the framework of international programs such as CIMMYT and ICARDA. We conduct collaborative research on international wheat nurseries, focusing on resistance to stem rust and drought tolerance.
+6. Publications (Articles, Monographs): Staff members annually publish research in peer-reviewed journals (indexed in Scopus, Web of Science, etc.), covering inheritance patterns, ecological trial results, and advanced rapid breeding techniques. The department also produces technical guidelines on variety-specific management practices for agricultural producers.
+
+
+
+Анкета подразделения
+1. Полное название отдела: «Отдел селекции и первичного семеноводства кукурузы»
+2. Краткое описание деятельности отдела (3–6 предложе
+<truncated 51108 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.

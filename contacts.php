@@ -21,7 +21,7 @@ include 'includes/header.php';
                         <h3 class="h5 mb-3" style="font-family: var(--font-headings); font-weight: 700; color: var(--primary-color);"><?php echo t('contacts_address_title'); ?></h3>
                         <p class="text-secondary d-flex align-items-start gap-2 mb-0">
                             <span class="fs-5">📍</span>
-                            <span><?php echo t('contacts_address_text'); ?></span>
+                            <span>Кыргызская Республика, г. Бишкек, ул. Тимура Фрунзе 100/1</span>
                         </p>
                     </div>
 
@@ -31,19 +31,15 @@ include 'includes/header.php';
                         <h3 class="h5 mb-3" style="font-family: var(--font-headings); font-weight: 700; color: var(--primary-color);"><?php echo t('footer_contacts_title'); ?></h3>
                         <p class="text-secondary d-flex align-items-center gap-2 mb-2">
                             <span class="fs-5">📞</span>
-                            <span><?php echo t('contacts_phone'); ?></span>
+                            <span>0(312) 41 71 54</span>
                         </p>
                         <p class="text-secondary d-flex align-items-center gap-2 mb-2">
                             <span class="fs-5">📠</span>
-                            <span><?php echo t('contacts_fax'); ?></span>
+                            <span>0(312) 41 79 08</span>
                         </p>
                         <p class="text-secondary d-flex align-items-center gap-2 mb-2">
                             <span class="fs-5">✉</span>
-                            <a href="mailto:<?= strip_tags(t('contacts_email')) ?>" class="text-decoration-none text-secondary hover-green"><?php echo t('contacts_email'); ?></a>
-                        </p>
-                        <p class="text-secondary d-flex align-items-center gap-2 mb-0">
-                            <span class="fs-5">🌐</span>
-                            <a href="http://<?= strip_tags(t('contacts_website')) ?>" target="_blank" class="text-decoration-none text-secondary hover-green"><?php echo t('contacts_website'); ?></a>
+                            <a href="mailto:nauca.zemledel@gmail.com" class="text-decoration-none text-secondary hover-green">nauca.zemledel@gmail.com</a>
                         </p>
                     </div>
 
@@ -53,11 +49,7 @@ include 'includes/header.php';
                         <h3 class="h5 mb-3" style="font-family: var(--font-headings); font-weight: 700; color: var(--primary-color);"><?php echo t('contacts_work_title'); ?></h3>
                         <p class="text-secondary d-flex align-items-center gap-2 mb-2">
                             <span class="fs-5">⏰</span>
-                            <span><?php echo t('contacts_work_week'); ?></span>
-                        </p>
-                        <p class="text-secondary d-flex align-items-center gap-2 mb-0">
-                            <span class="fs-5">☕</span>
-                            <span><?php echo t('contacts_work_weekend'); ?></span>
+                            <span>Понедельник – Пятница: 9:00 – 18:00</span>
                         </p>
                     </div>
                 </div>

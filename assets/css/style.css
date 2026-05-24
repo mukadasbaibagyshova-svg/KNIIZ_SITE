@@ -452,6 +452,18 @@ a:hover {
     display: none !important;
 }
 
+/* SOLID HEADER FOR NON-HOME PAGES */
+.site-header.header-solid {
+    background: rgba(12, 62, 33, 0.97);
+    backdrop-filter: var(--glass-blur);
+    padding: 12px 0;
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.site-header.header-solid .top-bar {
+    display: none !important;
+}
+
 /* Popups & Panels */
 .search-popup {
     position: fixed;
@@ -564,7 +576,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(12, 62, 33, 0.88), rgba(15, 23, 42, 0.72)), url('../images/wheet.png') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('../images/wheet.png') center/cover no-repeat;
     overflow: hidden;
     padding-top: 100px;
 }
@@ -572,7 +584,6 @@ a:hover {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15), transparent 50%);
     pointer-events: none;
     z-index: 1;
 }
