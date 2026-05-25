@@ -1,0 +1,85 @@
+/* agro-map-dark.css – Dark mode overrides */
+body.agro-dashboard-page {
+    background: #0a0f0d;
+    color: #e0e8e3;
+}
+
+.agro-dashboard .section-tag {
+    background: rgba(0, 0, 0, 0.2);
+    color: #e8c547;
+}
+
+.agro-card {
+    background: linear-gradient(145deg, #111b18 0%, #0c110e 100%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.agro-card-accent {
+    border-left-color: var(--region-accent, #c9a227);
+}
+
+.agro-map-panel {
+    background: #0d1110;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.leaflet-container {
+    background: #0b1210;
+    color: #e8f0ec;
+}
+
+.leaflet-control-zoom a {
+    background: #1a2620;
+    color: #e8f0ec;
+    border-color: rgba(255,255,255,0.1);
+}
+
+.agro-filter-chip {
+    background: rgba(255,255,255,0.02);
+    color: rgba(232,240,236,0.75);
+    border-color: rgba(255,255,255,0.12);
+}
+
+.agro-filter-chip.active, .agro-filter-chip:hover {
+    background: rgba(201,162,39,0.25);
+    border-color: #c9a227;
+    color: #f4faf7;
+}
+
+.agro-btn-ghost {
+    background: rgba(255,255,255,0.04);
+    color: #e8f0ec;
+    border-color: rgba(255,255,255,0.15);
+}
+
+.agro-btn-ghost:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+
+.agro-map-tooltip {
+    background: rgba(10,18,14,0.96);
+    color: #f4faf7;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Ensure SVG map colors adapt */
+.agro-country-svg-wrap .region-path {
+    fill: #2a2e2c;
+    stroke: rgba(255,255,255,0.6);
+}
+
+/* Dark mode for GP markers */
+.gp-marker-pulse {
+    fill: rgba(255,255,255,0.2);
+}
+
+/* Scrollbar dark */
+.field-list-scroll::-webkit-scrollbar-track,
+.gp-list-scroll::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.03);
+}
+.field-list-scroll::-webkit-scrollbar-thumb,
+.gp-list-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.12);
+}

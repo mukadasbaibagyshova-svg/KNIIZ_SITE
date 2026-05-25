@@ -4,7 +4,8 @@ $page_title = t('page_title_home');
 include 'includes/header.php';
 
 // Read geographic paths for regions
-$paths_json = file_exists('scratch/extracted_paths.json') ? file_get_contents('scratch/extracted_paths.json') : '';
+$pathsFile = file_exists('data/kyrgyzstan_regions.json') ? 'data/kyrgyzstan_regions.json' : 'scratch/extracted_paths.json';
+$paths_json = file_exists($pathsFile) ? file_get_contents($pathsFile) : '';
 $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
 ?>
 
@@ -434,8 +435,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             path.style.cursor = 'pointer';
 
+            const regionSlugs = {
+                'KGB': 'batken', 'KGC': 'chuy', 'KGY': 'issyk_kul', 'KGJ': 'jalal_abad',
+                'KGN': 'naryn', 'KGO': 'osh', 'KGT': 'talas', 'KGGB': 'chuy'
+            };
             path.addEventListener('click', function() {
-                window.location.href = 'plot.php?id=' + id + '&lang=' + currentLang;
+                const slug = regionSlugs[id];
+                if (slug) {
+                    window.location.href = 'regions/' + slug + '.php?lang=' + currentLang;
+                }
             });
         }
     });

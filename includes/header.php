@@ -31,8 +31,9 @@ $scienceNavActive = in_array($currentFile, ['science.php', 'structure-detail.php
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
     <?php if (!empty($page_head)) { echo $page_head; } ?>
+<link rel="stylesheet" href="assets/css/agro-map-dark.css" media="(prefers-color-scheme: dark)">
 </head>
-<body>
+<body<?php echo !empty($body_class) ? ' class="' . htmlspecialchars($body_class) . '"' : ''; ?>>
 <a class="skip-link" href="#main-content"><?php echo t('top_navigation'); ?></a>
 <?php
 $isHome = (basename($_SERVER['SCRIPT_NAME']) === 'index.php');
@@ -101,12 +102,20 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
                     </ul>
                 </li>
 
+                <!-- Catalog -->
+                <li>
+                    <a href="katalog.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('katalog.php'); ?>">
+                        Каталог сортов
+                    </a>
+                </li>
+
                 <!-- Contacts (no dropdown) -->
                 <li>
                     <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('contacts.php'); ?>">
                         <?php echo t('nav_contacts'); ?>
                     </a>
                 </li>
+
             </ul>
         </nav>
         <button class="burger-button d-lg-none" type="button" aria-label="Open menu" onclick="toggleMobileMenu()">
@@ -163,6 +172,9 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
                     <a href="gallery.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_gallery'); ?></a>
                 </div>
             </div>
+
+            <!-- Catalog -->
+            <a href="katalog.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()">Каталог сортов</a>
 
             <!-- Contacts -->
             <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_contacts'); ?></a>

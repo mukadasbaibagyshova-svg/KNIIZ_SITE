@@ -1,0 +1,1329 @@
+{
+  "fields": [
+    {
+      "id": 1,
+      "region_slug": "naryn",
+      "name": "Поле №11",
+      "culture": "Пшеница",
+      "culture_key": "wheat",
+      "hectares": 6.4,
+      "year": 2025,
+      "moisture": 28,
+      "status": "good",
+      "coordinates": [
+        [
+          41.43,
+          75.99
+        ],
+        [
+          41.438,
+          75.99
+        ],
+        [
+          41.438,
+          76.002
+        ],
+        [
+          41.43,
+          76.002
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": 18.2,
+          "notes": ""
+        },
+        {
+          "year": 2024,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": 22.5,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 5
+    },
+    {
+      "id": 2,
+      "region_slug": "naryn",
+      "name": "Поле №12",
+      "culture": "Пшеница",
+      "culture_key": "wheat",
+      "hectares": 7.2,
+      "year": 2025,
+      "moisture": 31,
+      "status": "attention",
+      "coordinates": [
+        [
+          41.455,
+          75.99
+        ],
+        [
+          41.463,
+          75.99
+        ],
+        [
+          41.463,
+          76.002
+        ],
+        [
+          41.455,
+          76.002
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": 18.2,
+          "notes": ""
+        },
+        {
+          "year": 2024,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": 22.5,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 5
+    },
+    {
+      "id": 3,
+      "region_slug": "naryn",
+      "name": "Поле №13",
+      "culture": "Картофель",
+      "culture_key": "potato",
+      "hectares": 5.1,
+      "year": 2025,
+      "moisture": 35,
+      "status": "good",
+      "coordinates": [
+        [
+          41.44,
+          76.00999999999999
+        ],
+        [
+          41.448,
+          76.00999999999999
+        ],
+        [
+          41.448,
+          76.02199999999999
+        ],
+        [
+          41.44,
+          76.02199999999999
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Картофель",
+          "culture_key": "potato",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 5
+    },
+    {
+      "id": 4,
+      "region_slug": "naryn",
+      "name": "Поле №14",
+      "culture": "Ячмень",
+      "culture_key": "barley",
+      "hectares": 4.8,
+      "year": 2025,
+      "moisture": 26,
+      "status": "good",
+      "coordinates": [
+        [
+          41.464999999999996,
+          76.00999999999999
+        ],
+        [
+          41.473,
+          76.00999999999999
+        ],
+        [
+          41.473,
+          76.02199999999999
+        ],
+        [
+          41.464999999999996,
+          76.02199999999999
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 5
+    },
+    {
+      "id": 5,
+      "region_slug": "issyk_kul",
+      "name": "Блок А",
+      "culture": "Пшеница",
+      "culture_key": "wheat",
+      "hectares": 8.0,
+      "year": 2025,
+      "moisture": 29,
+      "status": "good",
+      "coordinates": [
+        [
+          42.49,
+          78.39
+        ],
+        [
+          42.498000000000005,
+          78.39
+        ],
+        [
+          42.498000000000005,
+          78.402
+        ],
+        [
+          42.49,
+          78.402
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": 18.2,
+          "notes": ""
+        },
+        {
+          "year": 2024,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": 22.5,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 4
+    },
+    {
+      "id": 6,
+      "region_slug": "issyk_kul",
+      "name": "Блок B",
+      "culture": "Овощи",
+      "culture_key": "vegetables",
+      "hectares": 3.5,
+      "year": 2025,
+      "moisture": 33,
+      "status": "good",
+      "coordinates": [
+        [
+          42.515,
+          78.39
+        ],
+        [
+          42.523,
+          78.39
+        ],
+        [
+          42.523,
+          78.402
+        ],
+        [
+          42.515,
+          78.402
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Овощи",
+          "culture_key": "vegetables",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 4
+    },
+    {
+      "id": 7,
+      "region_slug": "issyk_kul",
+      "name": "Блок C",
+      "culture": "Ячмень",
+      "culture_key": "barley",
+      "hectares": 6.2,
+      "year": 2025,
+      "moisture": 27,
+      "status": "good",
+      "coordinates": [
+        [
+          42.5,
+          78.41
+        ],
+        [
+          42.508,
+          78.41
+        ],
+        [
+          42.508,
+          78.422
+        ],
+        [
+          42.5,
+          78.422
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 4
+    },
+    {
+      "id": 8,
+      "region_slug": "issyk_kul",
+      "name": "Блок D",
+      "culture": "Кукуруза",
+      "culture_key": "corn",
+      "hectares": 5.5,
+      "year": 2025,
+      "moisture": 30,
+      "status": "attention",
+      "coordinates": [
+        [
+          42.525,
+          78.41
+        ],
+        [
+          42.533,
+          78.41
+        ],
+        [
+          42.533,
+          78.422
+        ],
+        [
+          42.525,
+          78.422
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Кукуруза",
+          "culture_key": "corn",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 4
+    },
+    {
+      "id": 9,
+      "region_slug": "chuy",
+      "name": "Участок С-1",
+      "culture": "Сахарная свекла",
+      "culture_key": "beet",
+      "hectares": 9.1,
+      "year": 2025,
+      "moisture": 32,
+      "status": "good",
+      "coordinates": [
+        [
+          42.87,
+          74.59
+        ],
+        [
+          42.878,
+          74.59
+        ],
+        [
+          42.878,
+          74.602
+        ],
+        [
+          42.87,
+          74.602
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Сахарная свекла",
+          "culture_key": "beet",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 1
+    },
+    {
+      "id": 10,
+      "region_slug": "chuy",
+      "name": "Участок С-2",
+      "culture": "Пшеница",
+      "culture_key": "wheat",
+      "hectares": 7.8,
+      "year": 2025,
+      "moisture": 30,
+      "status": "good",
+      "coordinates": [
+        [
+          42.894999999999996,
+          74.59
+        ],
+        [
+          42.903,
+          74.59
+        ],
+        [
+          42.903,
+          74.602
+        ],
+        [
+          42.894999999999996,
+          74.602
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": 18.2,
+          "notes": ""
+        },
+        {
+          "year": 2024,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": 22.5,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 1
+    },
+    {
+      "id": 11,
+      "region_slug": "chuy",
+      "name": "Участок С-3",
+      "culture": "Пшеница",
+      "culture_key": "wheat",
+      "hectares": 6.5,
+      "year": 2025,
+      "moisture": 28,
+      "status": "good",
+      "coordinates": [
+        [
+          42.879999999999995,
+          74.61
+        ],
+        [
+          42.888,
+          74.61
+        ],
+        [
+          42.888,
+          74.622
+        ],
+        [
+          42.879999999999995,
+          74.622
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": 18.2,
+          "notes": ""
+        },
+        {
+          "year": 2024,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": 22.5,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 2
+    },
+    {
+      "id": 12,
+      "region_slug": "chuy",
+      "name": "Участок С-4",
+      "culture": "Ячмень",
+      "culture_key": "barley",
+      "hectares": 4.2,
+      "year": 2025,
+      "moisture": 25,
+      "status": "good",
+      "coordinates": [
+        [
+          42.904999999999994,
+          74.61
+        ],
+        [
+          42.913,
+          74.61
+        ],
+        [
+          42.913,
+          74.622
+        ],
+        [
+          42.904999999999994,
+          74.622
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 2
+    },
+    {
+      "id": 13,
+      "region_slug": "osh",
+      "name": "Кара-Суу 1",
+      "culture": "Пшеница",
+      "culture_key": "wheat",
+      "hectares": 10.2,
+      "year": 2025,
+      "moisture": 24,
+      "status": "good",
+      "coordinates": [
+        [
+          40.53,
+          72.8
+        ],
+        [
+          40.538000000000004,
+          72.8
+        ],
+        [
+          40.538000000000004,
+          72.812
+        ],
+        [
+          40.53,
+          72.812
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": 18.2,
+          "notes": ""
+        },
+        {
+          "year": 2024,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": 22.5,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 3
+    },
+    {
+      "id": 14,
+      "region_slug": "osh",
+      "name": "Кара-Суу 2",
+      "culture": "Пшеница",
+      "culture_key": "wheat",
+      "hectares": 8.7,
+      "year": 2025,
+      "moisture": 22,
+      "status": "good",
+      "coordinates": [
+        [
+          40.555,
+          72.8
+        ],
+        [
+          40.563,
+          72.8
+        ],
+        [
+          40.563,
+          72.812
+        ],
+        [
+          40.555,
+          72.812
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": 18.2,
+          "notes": ""
+        },
+        {
+          "year": 2024,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": 22.5,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 3
+    },
+    {
+      "id": 15,
+      "region_slug": "osh",
+      "name": "Кара-Суу 3",
+      "culture": "Кукуруза",
+      "culture_key": "corn",
+      "hectares": 6.0,
+      "year": 2025,
+      "moisture": 26,
+      "status": "attention",
+      "coordinates": [
+        [
+          40.54,
+          72.82
+        ],
+        [
+          40.548,
+          72.82
+        ],
+        [
+          40.548,
+          72.832
+        ],
+        [
+          40.54,
+          72.832
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Кукуруза",
+          "culture_key": "corn",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 8
+    },
+    {
+      "id": 16,
+      "region_slug": "osh",
+      "name": "Кара-Суу 4",
+      "culture": "Ячмень",
+      "culture_key": "barley",
+      "hectares": 5.3,
+      "year": 2025,
+      "moisture": 23,
+      "status": "good",
+      "coordinates": [
+        [
+          40.565,
+          72.82
+        ],
+        [
+          40.573,
+          72.82
+        ],
+        [
+          40.573,
+          72.832
+        ],
+        [
+          40.565,
+          72.832
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 8
+    },
+    {
+      "id": 17,
+      "region_slug": "batken",
+      "name": "Хлопок-1",
+      "culture": "Хлопок",
+      "culture_key": "cotton",
+      "hectares": 12.0,
+      "year": 2025,
+      "moisture": 18,
+      "status": "good",
+      "coordinates": [
+        [
+          39.75,
+          71.0
+        ],
+        [
+          39.758,
+          71.0
+        ],
+        [
+          39.758,
+          71.012
+        ],
+        [
+          39.75,
+          71.012
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Хлопок",
+          "culture_key": "cotton",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 6
+    },
+    {
+      "id": 18,
+      "region_slug": "batken",
+      "name": "Хлопок-2",
+      "culture": "Хлопок",
+      "culture_key": "cotton",
+      "hectares": 9.5,
+      "year": 2025,
+      "moisture": 20,
+      "status": "good",
+      "coordinates": [
+        [
+          39.775,
+          71.0
+        ],
+        [
+          39.783,
+          71.0
+        ],
+        [
+          39.783,
+          71.012
+        ],
+        [
+          39.775,
+          71.012
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Хлопок",
+          "culture_key": "cotton",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 6
+    },
+    {
+      "id": 19,
+      "region_slug": "batken",
+      "name": "Хлопок-3",
+      "culture": "Хлопок",
+      "culture_key": "cotton",
+      "hectares": 7.8,
+      "year": 2025,
+      "moisture": 19,
+      "status": "attention",
+      "coordinates": [
+        [
+          39.76,
+          71.02
+        ],
+        [
+          39.768,
+          71.02
+        ],
+        [
+          39.768,
+          71.032
+        ],
+        [
+          39.76,
+          71.032
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Хлопок",
+          "culture_key": "cotton",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 6
+    },
+    {
+      "id": 20,
+      "region_slug": "jalal_abad",
+      "name": "Тогуз-Торо 1",
+      "culture": "Овощи",
+      "culture_key": "vegetables",
+      "hectares": 4.5,
+      "year": 2025,
+      "moisture": 34,
+      "status": "good",
+      "coordinates": [
+        [
+          41.25,
+          73.25
+        ],
+        [
+          41.258,
+          73.25
+        ],
+        [
+          41.258,
+          73.262
+        ],
+        [
+          41.25,
+          73.262
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Овощи",
+          "culture_key": "vegetables",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 7
+    },
+    {
+      "id": 21,
+      "region_slug": "jalal_abad",
+      "name": "Тогуз-Торо 2",
+      "culture": "Томаты",
+      "culture_key": "vegetables",
+      "hectares": 3.2,
+      "year": 2025,
+      "moisture": 36,
+      "status": "good",
+      "coordinates": [
+        [
+          41.275,
+          73.25
+        ],
+        [
+          41.283,
+          73.25
+        ],
+        [
+          41.283,
+          73.262
+        ],
+        [
+          41.275,
+          73.262
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Томаты",
+          "culture_key": "vegetables",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 7
+    },
+    {
+      "id": 22,
+      "region_slug": "jalal_abad",
+      "name": "Тогуз-Торо 3",
+      "culture": "Кукуруза",
+      "culture_key": "corn",
+      "hectares": 5.8,
+      "year": 2025,
+      "moisture": 31,
+      "status": "good",
+      "coordinates": [
+        [
+          41.26,
+          73.27
+        ],
+        [
+          41.268,
+          73.27
+        ],
+        [
+          41.268,
+          73.282
+        ],
+        [
+          41.26,
+          73.282
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Кукуруза",
+          "culture_key": "corn",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": 7
+    },
+    {
+      "id": 23,
+      "region_slug": "talas",
+      "name": "Фасоль-1",
+      "culture": "Фасоль",
+      "culture_key": "legumes",
+      "hectares": 5.0,
+      "year": 2025,
+      "moisture": 27,
+      "status": "good",
+      "coordinates": [
+        [
+          42.52,
+          72.24
+        ],
+        [
+          42.528000000000006,
+          72.24
+        ],
+        [
+          42.528000000000006,
+          72.252
+        ],
+        [
+          42.52,
+          72.252
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Фасоль",
+          "culture_key": "legumes",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": null
+    },
+    {
+      "id": 24,
+      "region_slug": "talas",
+      "name": "Фасоль-2",
+      "culture": "Горох",
+      "culture_key": "legumes",
+      "hectares": 4.4,
+      "year": 2025,
+      "moisture": 29,
+      "status": "good",
+      "coordinates": [
+        [
+          42.545,
+          72.24
+        ],
+        [
+          42.553000000000004,
+          72.24
+        ],
+        [
+          42.553000000000004,
+          72.252
+        ],
+        [
+          42.545,
+          72.252
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": "Пар"
+        },
+        {
+          "year": 2024,
+          "culture": "—",
+          "culture_key": "other",
+          "yield_tons": null,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Горох",
+          "culture_key": "legumes",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": null
+    },
+    {
+      "id": 25,
+      "region_slug": "talas",
+      "name": "Фасоль-3",
+      "culture": "Пшеница",
+      "culture_key": "wheat",
+      "hectares": 6.1,
+      "year": 2025,
+      "moisture": 26,
+      "status": "good",
+      "coordinates": [
+        [
+          42.53,
+          72.25999999999999
+        ],
+        [
+          42.538000000000004,
+          72.25999999999999
+        ],
+        [
+          42.538000000000004,
+          72.27199999999999
+        ],
+        [
+          42.53,
+          72.27199999999999
+        ]
+      ],
+      "history": [
+        {
+          "year": 2023,
+          "culture": "Ячмень",
+          "culture_key": "barley",
+          "yield_tons": 18.2,
+          "notes": ""
+        },
+        {
+          "year": 2024,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": 22.5,
+          "notes": ""
+        },
+        {
+          "year": 2025,
+          "culture": "Пшеница",
+          "culture_key": "wheat",
+          "yield_tons": null,
+          "notes": "Текущий сезон"
+        }
+      ],
+      "enterprise_id": null
+    }
+  ]
+}
