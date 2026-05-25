@@ -130,19 +130,23 @@
     }
 
     function buildPlotPopupHtml(plotName, hectares) {
-        var areaText = hectares != null ? formatHectares(hectares) : 'не указана в данных';
+        var areaText = hectares != null ? formatHectares(hectares) : (window.kniizLandFundLang && window.kniizLandFundLang.areaUnknown ? window.kniizLandFundLang.areaUnknown : 'не указана в данных');
+        var areaLabel = window.kniizLandFundLang && window.kniizLandFundLang.areaLabel ? window.kniizLandFundLang.areaLabel : 'Площадь';
         var html = '<div class="kml-plot-popup-inner">';
         if (plotName && !/^(поле|корпус)$/i.test(plotName)) {
             html += '<p class="kml-plot-popup-title">' + escapeHtml(plotName) + '</p>';
         }
-        html += '<p class="kml-plot-popup-area"><span>Площадь</span><strong>' + escapeHtml(areaText) + '</strong></p>';
+        html += '<p class="kml-plot-popup-area"><span>' + escapeHtml(areaLabel) + '</span><strong>' + escapeHtml(areaText) + '</strong></p>';
         html += '</div>';
         return html;
     }
 
-    function getStationLabelsFromPanel() {
+    function getStationLabelsFromPanel(legendRoot) {
         var labels = {};
-        document.querySelectorAll('.agro-land-fund-station-btn').forEach(function (btn) {
+        if (!legendRoot) {
+            return labels;
+        }
+        legendRoot.querySelectorAll('.agro-land-fund-station-btn').forEach(function (btn) {
             var folder = btn.getAttribute('data-folder');
             var nameEl = btn.querySelector('.agro-land-fund-station-name');
             if (folder && nameEl) {
@@ -172,14 +176,20 @@
         return geojson;
     }
 
-    function initLandFundMap() {
-        var container = document.getElementById('kml-map');
-        if (!container || typeof L === 'undefined' || typeof toGeoJSON === 'undefined') {
+    function initLandFundMap(container) {
+        if (!container || container.getAttribute('data-land-fund-initialized') === '1') {
+            return;
+        }
+        if (typeof L === 'undefined' || typeof toGeoJSON === 'undefined') {
             return;
         }
 
+        var widget = container.closest('[data-land-fund-widget]');
+        var legendRoot = widget ? widget.querySelector('[data-land-fund-legend]') : document;
+
         var kmlUrl = container.getAttribute('data-kml-url') || 'assets/data/kniiz-land-fund.kml';
         var map = L.map(container, { scrollWheelZoom: true }).setView([42.8, 75.5], 8);
+        container.setAttribute('data-land-fund-initialized', '1');
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -189,7 +199,7 @@
         var stationGroups = {};
         var layerFolder = new WeakMap();
         var stationMarkers = L.layerGroup().addTo(map);
-        var stationLabels = getStationLabelsFromPanel();
+        var stationLabels = getStationLabelsFromPanel(legendRoot);
         var geoLayer = null;
 
         function getStationLayers(folder) {
@@ -209,12 +219,14 @@
                     !activeFolder ? 'normal' : folder === activeFolder ? 'active' : 'dim';
                 layer.setStyle(polygonStyle(folder, state));
             });
-            document.querySelectorAll('.agro-land-fund-station-btn').forEach(function (btn) {
-                btn.classList.toggle(
-                    'is-active',
-                    activeFolder && btn.getAttribute('data-folder') === activeFolder
-                );
-            });
+            if (legendRoot) {
+                legendRoot.querySelectorAll('.agro-land-fund-station-btn').forEach(function (btn) {
+                    btn.classList.toggle(
+                        'is-active',
+                        activeFolder && btn.getAttribute('data-folder') === activeFolder
+                    );
+                });
+            }
         }
 
         /** Приближение ко всем полигонам станции (общий охват) */
@@ -296,24 +308,45 @@
         }
 
         function bindStationTriggers() {
-            document.querySelectorAll('.agro-land-fund-station-btn').forEach(function (btn) {
+            var buttons = widget
+                ? widget.querySelectorAll('.agro-land-fund-station-btn')
+                : legendRoot.querySelectorAll('.agro-land-fund-station-btn');
+            buttons.forEach(function (btn) {
+                if (btn.getAttribute('data-land-fund-bound') === '1') {
+                    return;
+                }
+                btn.setAttribute('data-land-fund-bound', '1');
                 btn.addEventListener('click', function () {
                     focusStation(btn.getAttribute('data-folder'));
                 });
             });
-            document.querySelectorAll('[data-station-focus]').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    focusStation(btn.getAttribute('data-station-focus'));
-                    var mapEl = document.getElementById('kml-map');
-                    if (mapEl) {
-                        mapEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                });
-            });
         }
 
-        window.kniizFocusLandStation = focusStation;
         bindStationTriggers();
+
+        container.kniizFocusStation = focusStation;
+        if (!window.kniizLandFundMaps) {
+            window.kniizLandFundMaps = [];
+        }
+        window.kniizLandFundMaps.push({ container: container, focusStation: focusStation });
+
+        document.querySelectorAll('[data-station-focus]').forEach(function (btn) {
+            if (btn.getAttribute('data-station-focus-bound') === '1') {
+                return;
+            }
+            btn.setAttribute('data-station-focus-bound', '1');
+            btn.addEventListener('click', function () {
+                var folder = btn.getAttribute('data-station-focus');
+                var targetMap = document.querySelector('[data-land-fund-map]');
+                if (window.kniizLandFundMaps && window.kniizLandFundMaps.length) {
+                    window.kniizLandFundMaps[0].focusStation(folder);
+                    targetMap = window.kniizLandFundMaps[0].container;
+                }
+                if (targetMap) {
+                    targetMap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        });
 
         fetch(kmlUrl)
             .then(function (response) {
@@ -358,16 +391,22 @@
             })
             .catch(function (err) {
                 console.error('Land fund KML:', err);
-                container.innerHTML =
-                    '<div class="kml-map-error">Не удалось загрузить карту участков.</div>';
+                var errorMessage = window.kniizLandFundLang && window.kniizLandFundLang.kmlLoadError ? window.kniizLandFundLang.kmlLoadError : 'Не удалось загрузить карту участков.';
+                container.innerHTML = '<div class="kml-map-error">' + escapeHtml(errorMessage) + '</div>';
             });
+    }
+
+    function initAllLandFundMaps() {
+        document.querySelectorAll('[data-land-fund-map]').forEach(function (el) {
+            initLandFundMap(el);
+        });
     }
 
     function start() {
         if (typeof L !== 'undefined' && typeof toGeoJSON !== 'undefined') {
-            initLandFundMap();
+            initAllLandFundMaps();
         } else {
-            window.addEventListener('load', initLandFundMap);
+            window.addEventListener('load', initAllLandFundMaps);
         }
     }
 

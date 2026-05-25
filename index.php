@@ -1,12 +1,17 @@
 <?php
 include_once 'includes/lang.php';
 $page_title = t('page_title_home');
-include 'includes/header.php';
+$page_head = require __DIR__ . '/includes/map/land-fund-assets.php';
 
-// Read geographic paths for regions
-$pathsFile = file_exists('data/kyrgyzstan_regions.json') ? 'data/kyrgyzstan_regions.json' : 'scratch/extracted_paths.json';
-$paths_json = file_exists($pathsFile) ? file_get_contents($pathsFile) : '';
-$paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
+$land_station_colors = [
+    'ИОСС' => '#2dc0fb',
+    'ЖАНЫ ПАХТА 482 га' => '#10b981',
+    'КОСС 239 га' => '#b73a67',
+    'Атай' => '#e9c46a',
+];
+$land_stations = require __DIR__ . '/includes/map/land-stations.php';
+
+include 'includes/header.php';
 ?>
 
 <main id="main-content">
@@ -138,49 +143,19 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
         </div>
     </section>
 
-    <!-- SECTION 4: Research Maps & Laboratories -->
-    <section id="maps-preview" class="bg-light py-5">
+    <!-- SECTION 4: Земельный фонд — интерактивная карта -->
+    <section id="maps-preview" class="home-land-fund-section py-5 bg-light">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7">
-                    <div class="about-card shadow-md p-4 bg-white" style="border-radius: 24px; position: relative;">
-                        <div class="map-wrapper w-100">
-                            <svg viewBox="0 0 800 392" width="100%" height="auto" class="kyrgyzstan-svg-map">
-                                <?php if (!empty($paths_data)): ?>
-                                    <?php foreach ($paths_data as $region): 
-                                        $iso = $region['iso'];
-                                        $id = str_replace('-', '', $iso); // KG-Y -> KGY
-                                    ?>
-                                        <path d="<?php echo $region['d']; ?>" 
-                                              id="path-home-<?php echo strtolower($id); ?>" 
-                                              data-id="<?php echo $id; ?>"
-                                              data-iso="<?php echo $iso; ?>"
-                                              class="region-path region-<?php echo strtolower($id); ?>" />
-                                    <?php endforeach; ?>
-                                <?php else: ?>
-                                    <text x="400" y="200" text-anchor="middle" fill="#ccc">Error loading map paths</text>
-                                <?php endif; ?>
-                            </svg>
-                        </div>
-                        
-                        <!-- Custom Mouse-Following Tooltip for homepage -->
-                        <div id="map-home-tooltip" style="position: absolute; display: none; background: rgba(7, 37, 19, 0.95); backdrop-filter: var(--glass-blur); color: white; padding: 12px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 100; pointer-events: none; transition: opacity 0.15s ease;">
-                            <h4 id="tooltip-home-title" style="margin: 0 0 6px 0; font-size: 14px; font-weight: 700; color: var(--accent-color); font-family: var(--font-headings);"></h4>
-                            <p id="tooltip-home-crops" style="margin: 0; font-size: 12px; color: rgba(255,255,255,0.85); font-family: var(--font-text);"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <h2 class="section-title-premium mb-4"><?php echo t('maps_title'); ?></h2>
-                    <p class="text-muted fs-5 mb-4"><?php echo t('maps_text'); ?></p>
-                    <p class="text-muted mb-4"><?php echo t('maps_description_1'); ?> <?php echo t('maps_description_2'); ?></p>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="badge bg-emerald-soft text-success py-2 px-3 fw-semibold">Чуй: Свекла</span>
-                        <span class="badge bg-emerald-soft text-success py-2 px-3 fw-semibold">Ош: Зерновые</span>
-                        <span class="badge bg-emerald-soft text-success py-2 px-3 fw-semibold">Баткен: Хлопок</span>
-                    </div>
-                    <a href="maps.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent">Открыть полную карту</a>
-                </div>
+            <div class="text-center mb-4">
+                <h2 class="section-title-premium mb-3"><?php echo t('maps_title'); ?></h2>
+                <p class="section-subtitle-premium mx-auto mb-0" style="max-width: 720px;"><?php echo t('maps_text'); ?></p>
+            </div>
+            <?php
+            $map_id = 'kml-map-home';
+            include __DIR__ . '/includes/map/land-fund-widget.php';
+            ?>
+            <div class="text-center mt-4">
+                <a href="maps.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent">Подробнее о станциях</a>
             </div>
         </div>
     </section>
@@ -363,91 +338,5 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
 
 <link rel="stylesheet" href="assets/css/news-modal.css?v=<?php echo time(); ?>">
 <script src="assets/js/news-modal.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const currentLang = '<?php echo currentLang(); ?>';
-    const regions = {
-        'KGB': {
-            title: 'Баткенская область', title_ky: 'Баткен облусу', title_en: 'Batken Region',
-            crops: 'Хлопок', crops_ky: 'Пахта', crops_en: 'Cotton'
-        },
-        'KGGB': {
-            title: 'г. Бишкек', title_ky: 'Бишкек ш.', title_en: 'Bishkek',
-            crops: 'Научные лаборатории', crops_ky: 'Илимий лабораториялар', crops_en: 'Scientific laboratories'
-        },
-        'KGC': {
-            title: 'Чуйская область', title_ky: 'Чүй облусу', title_en: 'Chuy Region',
-            crops: 'Сахарная свекла, зерновые, овощи', crops_ky: 'Кант кызылчасы, дан өсүмдүктөрү, жашылчалар', crops_en: 'Sugar beet, grains, vegetables'
-        },
-        'KGY': {
-            title: 'Иссык-Кульская область', title_ky: 'Ысык-Көл облусу', title_en: 'Issyk-Kul Region',
-            crops: 'Овощи, зерновые', crops_ky: 'Жашылчалар, дан өсүмдүктөрү', crops_en: 'Vegetables, grains'
-        },
-        'KGJ': {
-            title: 'Джалал-Абадская область', title_ky: 'Жалал-Абад облусу', title_en: 'Jalal-Abad Region',
-            crops: 'Овощные культуры', crops_ky: 'Жашылча өсүмдүктөрү', crops_en: 'Vegetable crops'
-        },
-        'KGN': {
-            title: 'Нарынская область', title_ky: 'Нарын облусу', title_en: 'Naryn Region',
-            crops: 'Семеноводство', crops_ky: 'Үрөнчүлүк', crops_en: 'Seed production'
-        },
-        'KGO': {
-            title: 'Ошская область', title_ky: 'Ош облусу', title_en: 'Osh Region',
-            crops: 'Зерновые культуры', crops_ky: 'Дан өсүмдүктөрү', crops_en: 'Grain crops'
-        },
-        'KGT': {
-            title: 'Таласская область', title_ky: 'Талас облусу', title_en: 'Talas Region',
-            crops: 'Бобовые культуры', crops_ky: 'Буурчак өсүмдүктөрү', crops_en: 'Legumes'
-        }
-    };
-
-    const getTranslation = (item, field) => {
-        if (currentLang === 'ky') return item[field + '_ky'] || item[field] || '';
-        if (currentLang === 'en') return item[field + '_en'] || item[field] || '';
-        return item[field] || '';
-    };
-
-    const tooltip = document.getElementById('map-home-tooltip');
-    const tooltipTitle = document.getElementById('tooltip-home-title');
-    const tooltipCrops = document.getElementById('tooltip-home-crops');
-
-    document.querySelectorAll('#maps-preview .region-path').forEach(path => {
-        const id = path.getAttribute('data-id');
-        const info = regions[id];
-
-        if (info) {
-            path.addEventListener('mouseenter', function() {
-                tooltipTitle.textContent = getTranslation(info, 'title');
-                tooltipCrops.textContent = getTranslation(info, 'crops');
-                tooltip.style.display = 'block';
-            });
-
-            path.addEventListener('mousemove', function(e) {
-                const rect = path.closest('.about-card').getBoundingClientRect();
-                tooltip.style.left = (e.clientX - rect.left + 15) + 'px';
-                tooltip.style.top = (e.clientY - rect.top + 15) + 'px';
-            });
-
-            path.addEventListener('mouseleave', function() {
-                tooltip.style.display = 'none';
-            });
-
-            path.style.cursor = 'pointer';
-
-            const regionSlugs = {
-                'KGB': 'batken', 'KGC': 'chuy', 'KGY': 'issyk_kul', 'KGJ': 'jalal_abad',
-                'KGN': 'naryn', 'KGO': 'osh', 'KGT': 'talas', 'KGGB': 'chuy'
-            };
-            path.addEventListener('click', function() {
-                const slug = regionSlugs[id];
-                if (slug) {
-                    window.location.href = 'regions/' + slug + '.php?lang=' + currentLang;
-                }
-            });
-        }
-    });
-});
-</script>
 
 <?php include 'includes/footer.php'; ?>
