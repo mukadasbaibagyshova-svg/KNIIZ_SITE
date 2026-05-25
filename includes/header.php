@@ -92,12 +92,20 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
                     </ul>
                 </li>
 
+                <!-- Catalog -->
+                <li>
+                    <a href="katalog.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('katalog.php'); ?>">
+                        Каталог сортов
+                    </a>
+                </li>
+
                 <!-- Contacts (no dropdown) -->
                 <li>
                     <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('contacts.php'); ?>">
                         <?php echo t('nav_contacts'); ?>
                     </a>
                 </li>
+
             </ul>
         </nav>
         <button class="burger-button d-lg-none" type="button" aria-label="Open menu" onclick="toggleMobileMenu()">
@@ -155,6 +163,9 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
                     <a href="gallery.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_gallery'); ?></a>
                 </div>
             </div>
+
+            <!-- Catalog -->
+            <a href="katalog.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()">Каталог сортов</a>
 
             <!-- Contacts -->
             <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_contacts'); ?></a>
