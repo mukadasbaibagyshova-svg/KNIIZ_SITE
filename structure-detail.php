@@ -10,8 +10,21 @@ function getInitials($fullName) {
 }
 
 $page_title = t('page_title_structure');
-$page_head = '<link rel="stylesheet" href="assets/css/structure-live.css?v=' . time() . '">';
+$page_head = '<link rel="stylesheet" href="assets/css/dept-detail.css?v=' . time() . '">';
 include 'includes/header.php';
+
+function deptSplitSentences($text) {
+    $text = trim((string) $text);
+    if ($text === '') {
+        return [];
+    }
+    $parts = preg_split('/(?<=[.!?…])\s+/u', $text, -1, PREG_SPLIT_NO_EMPTY);
+    return $parts ?: [$text];
+}
+
+function deptTrimListItem($item) {
+    return rtrim(trim((string) $item), ';.');
+}
 
 $structureDetails = [
     'wheat' => [
@@ -19,24 +32,24 @@ $structureDetails = [
         'hero_image' => 'assets/images/wheet1.jpg',
         'badge' => 'Отдел пшеницы',
         'title' => 'structure_detail_wheat_title',
-        'summary' => 'Отдел селекции и первичного семеноводства пшеницы занимается созданием новых конкурентоспособных сортов мягкой и твердой пшеницы.',
-        'activity' => 'Отдел проводит полный цикл работ: от подбора родительских пар и гибридизации до экологического сортоиспытания.',
+        'summary' => 'Отдел занимается созданием новых конкурентоспособных сортов мягкой и твердой пшеницы, сочетающих высокую урожайность с устойчивостью к биотическим и абиотическим стрессам. Деятельность включает полный цикл: от подбора родительских пар и гибридизации до экологического сортоиспытания. Важнейшим этапом является первичное семеноводство, обеспечивающее сохранение сортовой чистоты и биологических свойств созданных сортов. Отдел формирует основу семенного фонда для агропромышленного комплекса, внедряя в производство инновационные селекционные достижения.',
+        'activity' => '',
         'research' => [
-            'Генетическое улучшение пшеницы.',
-            'Селекция на устойчивость к засухе.',
-            'Изучение мировой коллекции пшеницы.'
+            'Генетическое улучшение пшеницы по показателям продуктивности и качества зерна;',
+            'Селекция на устойчивость к засухе, низким температурам и патогенам (ржавчина, фузариоз и др.);',
+            'Изучение мировой коллекции пшеницы для поиска новых источников ценных признаков;',
+            'Производство оригинальных семян (питомники Р-1, Р-2) и поддержание чистосортности;',
+            'Разработка и оптимизация сортовой агротехники для новых линий.'
         ],
-        'head' => [
-            'name' => 'Азыкова Жылдыз Кадырбековна',
-            'position' => 'Зав. отделом селекции пшеницы',
-            'phone' => '+996 772 123456',
-            'honors' => 'Заслуженный деятель науки КР',
-            'degree' => 'Кандидат сельскохозяйственных наук',
-            'education' => 'Высшее',
-            'image' => 'assets/images/azyikov2.jpg'
+        'results_list' => [
+            'Создана линейка сортов пшеницы с потенциалом урожайности свыше 80–90 ц/га;',
+            'Получены патенты и авторские свидетельства на новые сорта, включенные в Государственный реестр;',
+            'Налажена система производства высококачественных семян высших репродукций для обеспечения нужд семеноводческих хозяйств;',
+            'Разработаны модели сортов, оптимизированные под различные уровни интенсификации земледелия.'
         ],
+        'international' => 'Отдел активно участвует в обмене селекционным материалом в рамках международных программ (например, CIMMYT, ICARDA). Ведется совместное изучение международного питомника пшеницы на предмет устойчивости к стеблевой ржавчине и засухоустойчивости.',
+        'publications' => 'Сотрудники отдела ежегодно публикуют статьи в рецензируемых журналах (ВАК, Scopus), освещая вопросы наследования признаков, результаты экологического испытания и новые методики ускоренной селекции. Подготовлены методические рекомендации по сортовой агротехнике для сельхозпроизводителей.',
         'staff' => [
-            ['name' => 'Азыкова Жылдыз Кадырбековна', 'experience' => '15', 'position' => 'Заведующая отделом', 'degree' => 'к.с.-х.н.', 'title' => 'Старший научный сотрудник', 'education' => 'Высшее'],
             ['name' => 'Токтосунов Мирлан Алмазович', 'experience' => '8', 'position' => 'Старший научный сотрудник', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее'],
             ['name' => 'Кадыров Бакыт Кубанычбекович', 'experience' => '12', 'position' => 'Старший научный сотрудник', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее'],
             ['name' => 'Сыдыкова Айнура Нурлановна', 'experience' => '5', 'position' => 'Научный сотрудник', 'degree' => 'нет', 'title' => 'нет', 'education' => 'Высшее']
@@ -44,7 +57,7 @@ $structureDetails = [
     ],
     'barley' => [
         'photoClass' => 'barley',
-        'hero_image' => 'assets/images/wheet1.jpg',
+        'hero_image' => 'assets/images/ячмень.jpg',
         'badge' => 'Отдел ячменя',
         'title' => 'structure_detail_barley_title',
         'summary' => 'Отдел селекции и первичного семеноводства ячменя — это структурное подразделение Кыргызского научно-исследовательского института земледелия имени К.К.Азыкова, которое занимается созданием новых сортов ячменя и обеспечением их исходным семенным материалом для дальнейшего размножения.',
@@ -97,13 +110,43 @@ $structureDetails = [
         'hero_image' => 'assets/images/corn.jpg',
         'badge' => 'Отдел кукурузы',
         'title' => 'structure_detail_corn_title',
-        'summary' => 'Отдел кукурузы занимается научными исследованиями и селекцией кукурузы.',
+        'summary' => 'Отдел осуществляет научно-исследовательскую деятельность по созданию высокопродуктивных гибридов кукурузы различных групп спелости, адаптированных к местным агроклиматическим условиям. Работа включает поиск и создание новых самоопыленных линий, изучение их комбинационной способности и разработку технологий промышленного семеноводства. Подразделение обеспечивает поддержание генетической чистоты родительских форм и производство семян высших репродукций для нужд аграрного сектора. Отдел активно взаимодействует с научно-исследовательскими центрами по вопросам обмена гермоплазмой и внедрения современных биотехнологических методов в селекционный процесс.',
+        'research' => [
+            'Создание и оценка новых инбредных линий кукурузы как основы для получения гетерозисных гибридов',
+            'Селекция на повышение потенциала урожайности, быструю отдачу влаги зерном при созревании и устойчивость к полеганию',
+            'Изучение генетической устойчивости кукурузы к основным заболеваниям (пузырчатая головня, фузариоз початка) и вредителям',
+            'Совершенствование методов первичного семеноводства для обеспечения высокого качества семян родительских форм',
+            'Разработка сортовых технологий возделывания гибридов на зерно и силос в различных экологических зонах'
+        ],
+        'results_list' => [
+            'Создана серия гибридов кукурузы с потенциалом урожайности зерна 100–120 ц/га и зеленой массы 450–600 ц/га',
+            'Получены патенты на новые селекционные достижения, включенные в Государственный реестр сортов',
+            'Разработана эффективная система поддержания и размножения стерильных аналогов и линий-восстановителей фертильности',
+            'Оптимизированы регламенты предпосевной обработки семян для повышения полевой всхожести в условиях раннего сева'
+        ],
+        'international' => 'Отдел ведет активное сотрудничество с международными институтами (такими как CIMMYT) по испытанию мирового генофонда кукурузы. Осуществляется прием, изучение и использование интродуцированных линий для расширения генетического разнообразия собственной селекционной программы.',
+        'publications' => 'Сотрудники регулярно публикуют результаты исследований в рецензируемых журналах (ВАК, Scopus), освещая вопросы гетерозиса, генетики количественных признаков и технологий семеноводства. Изданы методические рекомендации по особенностям выращивания гибридов кукурузы в условиях изменения климата.',
     ],
     'sugarbeet' => [
         'hero_image' => 'assets/images/svekla.png',
         'badge' => 'Отдел сахарной свеклы',
         'title' => 'structure_detail_sugarbeet_title',
-        'summary' => 'Отдел селекции сахарной свеклы проводит НИР по созданию гибридов.',
+        'summary' => 'Отдел проводит комплексные научно-исследовательские работы по созданию высокопродуктивных гибридов сахарной свеклы на основе использования цитоплазматической мужской стерильности (ЦМС). Деятельность подразделения сосредоточена на селекции компонентов гибридов, сочетающих высокую сахаристость с технологичностью при промышленной переработке. Важнейшим аспектом работы является первичное семеноводство, направленное на сохранение генетической чистоты линий и получение высококачественных семян. Отдел интегрирует современные методы оценки качества корнеплодов и устойчивости к корневым гнилям в селекционный процесс.',
+        'research' => [
+            'Создание новых диплоидных и тетраплоидных многосемянных и односемянных линий-опылителей',
+            'Селекция на повышение дигестии (сахаристости), технологических качеств сока и снижение содержания «вредного» азота',
+            'Оценка и отбор селекционного материала на устойчивость к основным патогенам (церкоспороз, мучнистая роса, корнеед)',
+            'Совершенствование приемов выращивания маточников и высадков для обеспечения максимального выхода кондиционных семян',
+            'Разработка адаптивных технологий возделывания гибридов, минимизирующих потери сахара при хранении в кагатах'
+        ],
+        'results_list' => [
+            'Созданы гибриды сахарной свеклы с потенциальным сбором сахара 8–10 т/га и высокой чистотой сока',
+            'Получены патенты на новые компоненты и гибриды, успешно прошедшие Государственное испытание',
+            'Внедрена система двулетнего цикла семеноводства, гарантирующая высокую всхожесть и односемянность материала',
+            'Разработаны регламенты защиты семенников от вредителей и болезней, обеспечивающие стабильный урожай семян'
+        ],
+        'international' => 'Отдел осуществляет обмен генетическими ресурсами сахарной свеклы с ведущими зарубежными селекционными центрами. Проводятся совместные экологические испытания гибридов для оценки их пластичности в различных почвенно-климатических условиях.',
+        'publications' => 'Результаты исследований сотрудников регулярно публикуются в высокорейтинговых научных изданиях (ВАК, Scopus). Основные публикации посвящены вопросам генетики ЦМС, корреляции массы корнеплода с сахаристостью и технологиям предпосевной подготовки семян.',
     ],
     'fruit_veg' => [
         'hero_image' => 'assets/images/grape.png',
@@ -138,372 +181,285 @@ if (!isset($structureDetails[$itemId])) {
 }
 
 $detail = $structureDetails[$itemId];
+$introImage = $detail['intro_image'] ?? ($detail['hero_image'] ?? '');
+$introSentences = deptSplitSentences($detail['summary'] ?? '');
+if (!empty($detail['activity'])) {
+    $introSentences = array_merge($introSentences, deptSplitSentences($detail['activity']));
+}
+$researchIcons = ['🧬', '🛡️', '🌐', '🌾', '📋', '🔬', '🧪', '📊'];
 ?>
 
-<style>
-/* Modern Detail Page Styling */
-body {
-    background-color: #ffffff;
-}
-.detail-main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #64748b;
-    font-weight: 600;
-    text-decoration: none;
-    margin-bottom: 30px;
-    transition: color 0.2s;
-}
-.back-link:hover {
-    color: #10b981;
-}
+<main class="dept-detail-page" id="main-content">
+<div class="dept-main-content">
 
-/* Half and Half Hero Layout */
-.detail-hero-card {
-    display: flex;
-    flex-wrap: wrap;
-    background: #ffffff;
-    border-radius: 30px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-    overflow: hidden;
-    margin-bottom: 60px;
-    border: 1px solid rgba(0,0,0,0.04);
-}
-.detail-hero-image {
-    flex: 1 1 50%;
-    min-height: 500px;
-    background-size: cover;
-    background-position: center;
-}
-.detail-hero-content {
-    flex: 1 1 50%;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.detail-badge {
-    display: inline-block;
-    padding: 8px 16px;
-    background: #10b981;
-    color: #ffffff;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    align-self: flex-start;
-}
-.detail-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 42px;
-    font-weight: 800;
-    color: #0f172a;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-.detail-summary {
-    font-size: 18px;
-    color: #475569;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-.detail-activity {
-    padding-left: 20px;
-    border-left: 4px solid #10b981;
-    font-size: 16px;
-    color: #64748b;
-    font-style: italic;
-}
-
-/* Staff Section */
-.staff-section-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 32px;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 40px;
-    text-align: center;
-}
-.staff-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-.staff-card {
-    background: #f8fafc;
-    border-radius: 20px;
-    padding: 30px 20px;
-    text-align: center;
-    transition: transform 0.3s;
-    border: 1px solid rgba(0,0,0,0.03);
-}
-.staff-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-.staff-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 20px;
-    border: 4px solid #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-.staff-initials {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    font-weight: 700;
-    font-family: 'Outfit', sans-serif;
-    border: 4px solid #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-.staff-name {
-    font-family: 'Outfit', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 5px;
-}
-.staff-position {
-    color: #10b981;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.staff-details {
-    color: #64748b;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-/* Unified Info Container */
-.unified-info-card {
-    background: #ffffff;
-    border-radius: 30px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-    padding: 60px;
-    border: 1px solid rgba(0,0,0,0.04);
-}
-.info-section {
-    margin-bottom: 40px;
-}
-.info-section:last-child {
-    margin-bottom: 0;
-}
-.info-heading {
-    font-family: 'Outfit', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #10b981;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.info-heading::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: #eaf4eb;
-    border-radius: 6px;
-}
-.info-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.info-list li {
-    padding-left: 24px;
-    position: relative;
-    margin-bottom: 12px;
-    color: #475569;
-    line-height: 1.6;
-}
-.info-list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #10b981;
-    font-size: 20px;
-    font-weight: bold;
-}
-.info-text {
-    color: #475569;
-    line-height: 1.6;
-}
-
-@media (max-width: 992px) {
-    .detail-hero-card {
-        flex-direction: column;
-    }
-    .detail-hero-image {
-        min-height: 300px;
-    }
-    .detail-hero-content {
-        padding: 40px 20px;
-    }
-    .unified-info-card {
-        padding: 40px 20px;
-    }
-}
-</style>
-
-<main class="detail-main">
-    <a href="science.php?lang=<?php echo currentLang(); ?>" class="back-link">&larr; <?php echo t('structure_detail_back'); ?></a>
-
-    <!-- Top Hero Section -->
-    <div class="detail-hero-card">
-        <div class="detail-hero-image" <?php if (!empty($detail['hero_image'])): ?> style="background-image:url('<?php echo $detail['hero_image']; ?>');"<?php endif; ?>></div>
-        <div class="detail-hero-content">
-            <span class="detail-badge"><?php echo $detail['badge'] ?? t($detail['title']); ?></span>
-            <h1 class="detail-title"><?php echo t($detail['title']); ?></h1>
-            <?php if (!empty($detail['summary'])): ?>
-                <p class="detail-summary"><?php echo $detail['summary']; ?></p>
-            <?php endif; ?>
-            <?php if (!empty($detail['activity'])): ?>
-                <div class="detail-activity"><?php echo $detail['activity']; ?></div>
-            <?php endif; ?>
-        </div>
+    <div class="dept-page-header sd-reveal">
+        <!-- <a href="science.php?lang=<?php echo currentLang(); ?>" class="dept-back-link">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <?php echo t('structure_detail_back'); ?>
+        </a> -->
+        <?php if (!empty($detail['badge'])): ?>
+            <!-- <span class="section-tag"><?php echo htmlspecialchars($detail['badge']); ?></span> -->
+        <?php endif; ?>
+        <h1 class="section-title-premium text-dark mb-0"><?php echo t($detail['title']); ?></h1>
     </div>
 
-    <!-- Staff Section -->
-    <?php if (!empty($detail['head']) || !empty($detail['staff'])): ?>
-        <h2 class="staff-section-title">Руководители и Сотрудники</h2>
-        <div class="staff-grid">
-            <!-- Head -->
-            <?php if (!empty($detail['head'])): ?>
-                <div class="staff-card" style="border: 2px solid #10b981;">
-                    <?php if (!empty($detail['head']['image'])): ?>
-                        <img src="<?php echo $detail['head']['image']; ?>" alt="<?php echo $detail['head']['name']; ?>" class="staff-photo">
-                    <?php else: ?>
-                        <div class="staff-initials"><?php echo getInitials($detail['head']['name']); ?></div>
-                    <?php endif; ?>
-                    <h3 class="staff-name"><?php echo $detail['head']['name']; ?></h3>
-                    <p class="staff-position"><?php echo $detail['head']['position']; ?></p>
-                    <div class="staff-details">
-                        <?php if(!empty($detail['head']['degree'])) echo "Степень: " . $detail['head']['degree'] . "<br>"; ?>
-                        <?php if(!empty($detail['head']['honors'])) echo $detail['head']['honors'] . "<br>"; ?>
-                    </div>
+    <!-- Краткое описание + фото -->
+    <?php if (!empty($introSentences) || $introImage): ?>
+    <section class="dept-section dept-intro-section sd-reveal">
+        <h2 class="dept-section-title" id="dept-intro-heading">Краткое описание деятельности отдела</h2>
+        <div class="dept-intro-grid">
+        <div class="dept-intro-text-col">
+            <?php foreach ($introSentences as $sentence):
+                $clean = deptTrimListItem($sentence);
+                if (!preg_match('/[.!?…]$/u', $clean)) {
+                    $clean .= '.';
+                }
+            ?>
+                <p class="dept-intro-text"><?php echo htmlspecialchars($clean); ?></p>
+            <?php endforeach; ?>
+        </div>
+        <div class="dept-intro-photo-col">
+            <?php if (!empty($introImage) && file_exists($introImage)): ?>
+                <img src="<?php echo htmlspecialchars($introImage); ?>" alt="<?php echo htmlspecialchars(t($detail['title'])); ?>">
+            <?php else: ?>
+                <div class="dept-intro-photo-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true">
+                        <rect x="3" y="5" width="18" height="14" rx="2"/>
+                        <circle cx="8.5" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+                        <path d="M3 16l5-5 4 4 5-6 4 7"/>
+                    </svg>
+                    <span>Место для фотографии отдела</span>
                 </div>
             <?php endif; ?>
-            
-            <!-- Staff -->
-            <?php if (!empty($detail['staff'])): 
-                // Skip the first staff member if it's the exact same name as the head
-                $headName = !empty($detail['head']['name']) ? $detail['head']['name'] : '';
-                foreach ($detail['staff'] as $member): 
-                    if ($member['name'] === $headName) continue;
-            ?>
-                <div class="staff-card">
-                    <?php if (!empty($member['image'])): ?>
-                        <img src="<?php echo $member['image']; ?>" alt="<?php echo $member['name']; ?>" class="staff-photo">
-                    <?php else: ?>
-                        <div class="staff-initials"><?php echo getInitials($member['name']); ?></div>
-                    <?php endif; ?>
-                    <h3 class="staff-name"><?php echo $member['name']; ?></h3>
-                    <p class="staff-position"><?php echo $member['position']; ?></p>
-                    <div class="staff-details">
-                        <?php if(!empty($member['degree']) && $member['degree'] !== 'нет') echo "Степень: " . $member['degree'] . "<br>"; ?>
-                        <?php if(!empty($member['experience'])) echo "Опыт работы: " . $member['experience'] . " лет<br>"; ?>
-                    </div>
-                </div>
-            <?php endforeach; endif; ?>
         </div>
+        </div>
+    </section>
     <?php endif; ?>
 
-    <!-- Unified Info Container -->
-    <div class="unified-info-card">
-        
-        <?php if (!empty($detail['goals'])): ?>
-            <div class="info-section">
-                <h3 class="info-heading">Цели отдела</h3>
-                <ul class="info-list">
-                    <?php foreach ($detail['goals'] as $item): ?><li><?php echo $item; ?></li><?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endif; ?>
+    <!-- Руководители и сотрудники -->
+    <?php if (!empty($detail['head']) || !empty($detail['staff'])): ?>
+    <section class="dept-section dept-staff-section sd-reveal">
+        <h2 class="dept-section-title">Руководители и сотрудники</h2>
+        <div class="dept-staff-grid">
+            <?php
+            $renderedStaff = [];
+            if (!empty($detail['head'])):
+                $head = $detail['head'];
+                $renderedStaff[] = $head['name'];
+                $headInitials = getInitials($head['name']);
+            ?>
+                <article class="dept-staff-card is-head">
+                    <?php if (!empty($head['image']) && file_exists($head['image'])): ?>
+                        <img src="<?php echo htmlspecialchars($head['image']); ?>" alt="" class="dept-staff-avatar">
+                    <?php else: ?>
+                        <div class="dept-staff-initials"><?php echo htmlspecialchars($headInitials); ?></div>
+                    <?php endif; ?>
+                    <div class="dept-staff-name"><?php echo htmlspecialchars($head['name']); ?></div>
+                    <div class="dept-staff-position"><?php echo htmlspecialchars($head['position']); ?></div>
+                    <?php if (!empty($head['degree']) || !empty($head['honors'])): ?>
+                        <div class="dept-staff-meta"><?php echo htmlspecialchars(implode(' • ', array_filter([$head['degree'] ?? '', $head['honors'] ?? '']))); ?></div>
+                    <?php endif; ?>
+                    <span class="dept-staff-badge">Руководитель</span>
+                </article>
+            <?php endif; ?>
 
-        <?php if (!empty($detail['research'])): ?>
-            <div class="info-section">
-                <h3 class="info-heading">Основные направления исследований</h3>
-                <ul class="info-list">
-                    <?php foreach ($detail['research'] as $item): ?><li><?php echo $item; ?></li><?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endif; ?>
-
-        <?php if (!empty($detail['results'])): ?>
-            <div class="info-section">
-                <h3 class="info-heading">Ключевые результаты и достижения</h3>
-                <p class="info-text"><?php echo $detail['results']; ?></p>
-            </div>
-        <?php endif; ?>
-
-        <?php if (!empty($detail['projects_current'])): ?>
-            <div class="info-section">
-                <h3 class="info-heading">Текущие научные проекты</h3>
-                <p class="info-text"><?php echo $detail['projects_current']; ?></p>
-            </div>
-        <?php endif; ?>
-
-        <?php if (!empty($detail['projects_completed'])): ?>
-            <div class="info-section">
-                <h3 class="info-heading">Завершенные проекты</h3>
-                <p class="info-text"><?php echo $detail['projects_completed']; ?></p>
-            </div>
-        <?php endif; ?>
-
-        <?php if (!empty($detail['services'])): ?>
-            <div class="info-section">
-                <h3 class="info-heading">Услуги и товары отдела</h3>
-                <ul class="info-list">
-                    <?php foreach ($detail['services'] as $item): ?><li><?php echo $item; ?></li><?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endif; ?>
-        
-        <?php if (!empty($detail['events'])): ?>
-            <div class="info-section">
-                <h3 class="info-heading">Научные мероприятия</h3>
-                <p class="info-text"><?php echo $detail['events']; ?></p>
-            </div>
-        <?php endif; ?>
-
-        <?php if (!empty($detail['perspectives'])): ?>
-            <div class="info-section">
-                <h3 class="info-heading">Перспективы развития</h3>
-                <p class="info-text"><?php echo nl2br($detail['perspectives']); ?></p>
-            </div>
-        <?php endif; ?>
-        
-        <div class="info-section">
-            <h3 class="info-heading">Дополнительная информация</h3>
-            <p class="info-text">
-                <?php if (!empty($detail['infrastructure'])) echo "<strong>Материально-техническая база:</strong> " . $detail['infrastructure'] . "<br><br>"; ?>
-            </p>
+            <?php if (!empty($detail['staff'])):
+                foreach ($detail['staff'] as $member):
+                    if (in_array($member['name'], $renderedStaff, true)) continue;
+                    $renderedStaff[] = $member['name'];
+                    $memberInitials = getInitials($member['name']);
+                    $isHead = !empty($detail['head']['name']) && $member['name'] === $detail['head']['name'];
+            ?>
+                <article class="dept-staff-card<?php echo $isHead ? ' is-head' : ''; ?>">
+                    <?php if (!empty($member['image']) && file_exists($member['image'])): ?>
+                        <img src="<?php echo htmlspecialchars($member['image']); ?>" alt="" class="dept-staff-avatar">
+                    <?php else: ?>
+                        <div class="dept-staff-initials"><?php echo htmlspecialchars($memberInitials); ?></div>
+                    <?php endif; ?>
+                    <div class="dept-staff-name"><?php echo htmlspecialchars($member['name']); ?></div>
+                    <div class="dept-staff-position"><?php echo htmlspecialchars($member['position']); ?></div>
+                    <?php
+                    $meta = [];
+                    if (!empty($member['degree']) && $member['degree'] !== 'нет') $meta[] = $member['degree'];
+                    if (!empty($member['experience'])) $meta[] = 'Опыт: ' . $member['experience'] . ' лет';
+                    if ($meta):
+                    ?>
+                        <div class="dept-staff-meta"><?php echo htmlspecialchars(implode(' • ', $meta)); ?></div>
+                    <?php endif; ?>
+                </article>
+            <?php endforeach; endif; ?>
         </div>
+    </section>
+    <?php endif; ?>
 
+    <!-- Основные направления исследований — карточки -->
+    <?php if (!empty($detail['research'])): ?>
+    <section class="dept-section sd-reveal">
+        <h2 class="dept-section-title">Основные направления исследований</h2>
+        <div class="dept-research-grid">
+            <?php foreach ($detail['research'] as $i => $item): ?>
+                <article class="dept-research-card">
+                    <div class="dept-research-icon" aria-hidden="true"><?php echo $researchIcons[$i % count($researchIcons)]; ?></div>
+                    <p class="dept-research-label"><?php echo htmlspecialchars(deptTrimListItem($item)); ?></p>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <?php endif; ?>
+
+    <!-- Ключевые результаты — карточки -->
+    <?php
+    $hasResults = !empty($detail['results_list']) || !empty($detail['results']);
+    if ($hasResults):
+    ?>
+    <section class="dept-section sd-reveal">
+        <h2 class="dept-section-title">Ключевые результаты и достижения отдела</h2>
+        <?php if (!empty($detail['results_list'])): ?>
+            <div class="dept-results-grid">
+                <?php foreach ($detail['results_list'] as $item): ?>
+                    <article class="dept-result-card">
+                        <div class="dept-result-card__icon" aria-hidden="true">✓</div>
+                        <p class="dept-result-card__text"><?php echo htmlspecialchars(deptTrimListItem($item)); ?></p>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <div class="dept-section-text"><?php echo $detail['results']; ?></div>
+        <?php endif; ?>
+    </section>
+    <?php endif; ?>
+
+    <!-- Международные проекты — карточка -->
+    <?php
+    $hasProjects = !empty($detail['international']) || !empty($detail['projects_current']) || !empty($detail['projects_completed']);
+    if ($hasProjects):
+    ?>
+    <section class="dept-section sd-reveal">
+        <h2 class="dept-section-title">Международные проекты</h2>
+        <div class="dept-feature-cards">
+            <?php if (!empty($detail['international'])): ?>
+                <article class="dept-feature-card dept-feature-card--intl">
+                    <div class="dept-feature-card__icon" aria-hidden="true">🌍</div>
+                    <div class="dept-feature-card__body">
+                        <h3>Сотрудничество и обмен</h3>
+                        <p><?php echo htmlspecialchars($detail['international']); ?></p>
+                    </div>
+                </article>
+            <?php endif; ?>
+            <?php if (!empty($detail['projects_current'])): ?>
+                <article class="dept-feature-card dept-feature-card--intl">
+                    <div class="dept-feature-card__icon" aria-hidden="true">📌</div>
+                    <div class="dept-feature-card__body">
+                        <h3>Текущие научные проекты</h3>
+                        <p><?php echo htmlspecialchars($detail['projects_current']); ?></p>
+                    </div>
+                </article>
+            <?php endif; ?>
+            <?php if (!empty($detail['projects_completed'])): ?>
+                <article class="dept-feature-card dept-feature-card--intl">
+                    <div class="dept-feature-card__icon" aria-hidden="true">✅</div>
+                    <div class="dept-feature-card__body">
+                        <h3>Завершённые проекты</h3>
+                        <p><?php echo htmlspecialchars($detail['projects_completed']); ?></p>
+                    </div>
+                </article>
+            <?php endif; ?>
+        </div>
+    </section>
+    <?php endif; ?>
+
+    <!-- Публикации — карточка -->
+    <?php if (!empty($detail['publications'])): ?>
+    <section class="dept-section sd-reveal">
+        <h2 class="dept-section-title">Публикации отдела</h2>
+        <div class="dept-feature-cards">
+            <article class="dept-feature-card dept-feature-card--pub">
+                <div class="dept-feature-card__icon" aria-hidden="true">📚</div>
+                <div class="dept-feature-card__body">
+                    <h3>Статьи, монографии, рекомендации</h3>
+                    <p><?php echo htmlspecialchars($detail['publications']); ?></p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <?php endif; ?>
+
+    <?php if (!empty($detail['goals'])): ?>
+    <section class="dept-section sd-reveal">
+        <h2 class="dept-section-title">Цели отдела</h2>
+        <ul class="dept-list">
+            <?php foreach ($detail['goals'] as $item): ?>
+                <li><?php echo htmlspecialchars(deptTrimListItem($item)); ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
+    <?php endif; ?>
+
+    <?php if (!empty($detail['perspectives'])): ?>
+    <section class="dept-section sd-reveal">
+        <h2 class="dept-section-title">Перспективы развития</h2>
+        <div class="dept-section-text"><?php echo nl2br(htmlspecialchars($detail['perspectives'])); ?></div>
+    </section>
+    <?php endif; ?>
+
+    <?php if (!empty($detail['services'])): ?>
+    <section class="dept-section sd-reveal">
+        <h2 class="dept-section-title">Услуги и товары отдела</h2>
+        <div class="dept-research-grid">
+            <?php foreach ($detail['services'] as $i => $item): ?>
+                <article class="dept-research-card">
+                    <div class="dept-research-icon" aria-hidden="true"><?php echo $researchIcons[$i % count($researchIcons)]; ?></div>
+                    <p class="dept-research-label"><?php echo htmlspecialchars(deptTrimListItem($item)); ?></p>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <?php endif; ?>
+
+    <?php if (!empty($detail['events'])): ?>
+    <section class="dept-section sd-reveal">
+        <h2 class="dept-section-title">Научные мероприятия</h2>
+        <div class="dept-section-text"><?php echo htmlspecialchars($detail['events']); ?></div>
+    </section>
+    <?php endif; ?>
+
+    <?php if (!empty($detail['infrastructure'])): ?>
+    <section class="dept-section sd-reveal">
+        <h2 class="dept-section-title">Материально-техническая база</h2>
+        <div class="dept-section-text"><?php echo htmlspecialchars($detail['infrastructure']); ?></div>
+    </section>
+    <?php endif; ?>
+
+    <!-- ==================== CTA ==================== -->
+    <div class="dept-cta-section sd-reveal">
+        <h3>Свяжитесь с отделом</h3>
+        <p>Для получения дополнительной информации о деятельности отдела, сотрудничестве или приобретении семенного материала</p>
+        <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="dept-cta-btn">
+            Контакты &rarr;
+        </a>
     </div>
+
+</div>
 </main>
+
+<!-- ==================== Scroll Reveal Script ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const reveals = document.querySelectorAll('.sd-reveal');
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('sd-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+    reveals.forEach(function(el) {
+        observer.observe(el);
+    });
+});
+</script>
 
 <?php include 'includes/footer.php'; ?>

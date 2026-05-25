@@ -10,6 +10,17 @@ function isDropdownActive($files) {
     return in_array($currentFile, $files) ? 'active' : '';
 }
 $languageOptions = getLanguages();
+
+$scienceDeptNav = [
+    ['id' => 'wheat', 'title_key' => 'structure_detail_wheat_title'],
+    ['id' => 'barley', 'title_key' => 'structure_detail_barley_title'],
+    ['id' => 'corn', 'title_key' => 'structure_detail_corn_title'],
+    ['id' => 'sugarbeet', 'title_key' => 'structure_detail_sugarbeet_title'],
+    ['id' => 'fruit_veg', 'title_key' => 'structure_detail_fruit_veg_title'],
+    ['id' => 'soil', 'title_key' => 'structure_detail_soil_title'],
+    ['id' => 'agrochemistry', 'title_key' => 'structure_detail_agrochemistry_title'],
+];
+$scienceNavActive = in_array($currentFile, ['science.php', 'structure-detail.php'], true) ? 'nav-link active' : 'nav-link';
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo htmlspecialchars(currentLang()); ?>">
@@ -69,14 +80,13 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
 
                 <!-- Science (dropdown) -->
                 <li class="dropdown-li" style="position: relative;">
-                    <a href="science.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('science.php'); ?> dropdown-trigger">
+                    <a href="science.php?lang=<?php echo currentLang(); ?>" class="<?php echo $scienceNavActive; ?> dropdown-trigger">
                         <?php echo t('nav_science'); ?> ▾
                     </a>
                     <ul class="dropdown-submenu">
-                        <li><a href="science.php?lang=<?php echo currentLang(); ?>#wheat"><?php echo t('structure_detail_wheat_title'); ?></a></li>
-                        <li><a href="science.php?lang=<?php echo currentLang(); ?>#barley"><?php echo t('structure_detail_barley_title'); ?></a></li>
-                        <li><a href="science.php?lang=<?php echo currentLang(); ?>#sugarbeet"><?php echo t('structure_detail_sugarbeet_title'); ?></a></li>
-                        <li><a href="science.php?lang=<?php echo currentLang(); ?>#soil"><?php echo t('structure_detail_soil_title'); ?></a></li>
+                        <?php foreach ($scienceDeptNav as $deptNav): ?>
+                        <li><a href="structure-detail.php?item=<?php echo $deptNav['id']; ?>&lang=<?php echo currentLang(); ?>"><?php echo t($deptNav['title_key']); ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </li>
 
@@ -139,10 +149,9 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
             <div class="mobile-nav-group mb-3">
                 <button class="mobile-link fw-bold mb-2" style="font-size: 22px; text-align: left; background: transparent; border: none; padding: 0; cursor: pointer; width: 100%;" type="button" onclick="toggleMobileSubmenu(event)"><?php echo t('nav_science'); ?> ▾</button>
                 <div class="mobile-sublinks ps-3" style="display: none; flex-direction: column; gap: 8px;">
-                    <a href="science.php?lang=<?php echo currentLang(); ?>#wheat" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('structure_detail_wheat_title'); ?></a>
-                    <a href="science.php?lang=<?php echo currentLang(); ?>#barley" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('structure_detail_barley_title'); ?></a>
-                    <a href="science.php?lang=<?php echo currentLang(); ?>#sugarbeet" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('structure_detail_sugarbeet_title'); ?></a>
-                    <a href="science.php?lang=<?php echo currentLang(); ?>#soil" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('structure_detail_soil_title'); ?></a>
+                    <?php foreach ($scienceDeptNav as $deptNav): ?>
+                    <a href="structure-detail.php?item=<?php echo $deptNav['id']; ?>&lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t($deptNav['title_key']); ?></a>
+                    <?php endforeach; ?>
                 </div>
             </div>
 

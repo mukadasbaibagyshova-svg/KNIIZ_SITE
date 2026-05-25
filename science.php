@@ -1,7 +1,18 @@
 <?php
 include_once 'includes/lang.php';
 $page_title = t('page_title_science');
+$page_head = '<link rel="stylesheet" href="assets/css/departments.css?v=' . time() . '">';
 include 'includes/header.php';
+
+$dept_tags = [
+    'wheat' => 'Селекция',
+    'barley' => 'Селекция',
+    'corn' => 'Селекция',
+    'fruit_veg' => 'Технологии',
+    'soil' => 'Почвоведение',
+    'agrochemistry' => 'Агрохимия',
+    'sugarbeet' => 'Селекция',
+];
 
 $departments = [
     [
@@ -14,18 +25,18 @@ $departments = [
         'id' => 'barley',
         'title' => t('structure_detail_barley_title'),
         'desc' => 'Селекция и первичное семеноводство ячменя.',
-        'image' => 'assets/images/wheet.png'
+        'image' => 'assets/images/ячмень.jpg'
     ],
     [
         'id' => 'corn',
         'title' => t('structure_detail_corn_title'),
-        'desc' => 'Научные исследования в области селекции гибридов кукурузы.',
+        'desc' => 'Создание высокопродуктивных гибридов кукурузы, первичное семеноводство и селекция инбредных линий.',
         'image' => 'assets/images/corn.jpg'
     ],
     [
         'id' => 'sugarbeet',
         'title' => t('structure_detail_sugarbeet_title'),
-        'desc' => 'Селекция высокосахаристых гибридов сахарной свеклы.',
+        'desc' => 'Селекция гибридов на основе ЦМС, первичное семеноводство и оценка качества корнеплодов.',
         'image' => 'assets/images/svekla.png'
     ],
     [
@@ -184,54 +195,6 @@ body {
     border: 1px solid rgba(0,0,0,0.03);
 }
 
-.management-card {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: all 0.3s ease;
-}
-.management-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-}
-.management-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 700;
-    font-family: 'Outfit', sans-serif;
-    flex-shrink: 0;
-}
-.management-info h4 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 5px;
-}
-.management-info p {
-    color: #10b981;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-.management-info span {
-    color: #64748b;
-    font-size: 14px;
-    display: block;
-}
-
 </style>
 
 <main>
@@ -241,83 +204,48 @@ body {
         <div class="detail-hero-card" style="display: flex; flex-wrap: wrap; background: #ffffff; border-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); overflow: hidden; margin-bottom: 60px; border: 1px solid rgba(0,0,0,0.04);">
             <div class="detail-hero-image" style="flex: 1 1 50%; min-height: 400px; background: url('assets/images/hero1.jpg') center/cover;"></div>
             <div class="detail-hero-content" style="flex: 1 1 50%; padding: 60px; display: flex; flex-direction: column; justify-content: center;">
-                <span class="detail-badge" style="display: inline-block; padding: 8px 16px; background: #10b981; color: #ffffff; border-radius: 30px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; align-self: flex-start;">Институт</span>
+                <!-- <span class="detail-badge" style="display: inline-block; padding: 8px 16px; background: #10b981; color: #ffffff; border-radius: 30px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; align-self: flex-start;">Институт</span> -->
                 <h1 class="detail-title" style="font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 20px;">Кыргызский научно-исследовательский институт земледелия</h1>
                 <p class="detail-summary" style="font-size: 18px; color: #475569; line-height: 1.6; margin-bottom: 30px;">Мы работаем по направлениям селекции, агрономии, почвоведения и семеноводства, чтобы дать стране новые сорта и технологические решения.</p>
             </div>
         </div>
 
         <div class="row g-5">
-            
-            <!-- COLUMN 1: Management (Управление) -->
-            <div class="col-12">
-                <div class="org-section-container">
-                    <div class="text-center mb-5">
-                        <h2 class="org-grid-title">Аппарат управления</h2>
-                    </div>
-                    <div class="row g-4 justify-content-center">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="management-card">
-                                <img src="assets/images/azyikov.jpg" alt="Азыков Болотбек" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #e2ebdc; flex-shrink: 0;">
-                                <div class="management-info">
-                                    <h4>Азыков Болотбек</h4>
-                                    <p>Директор КНИИЗ</p>
-                                    <span>Д.с.-х.н., Профессор</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="management-card">
-                                <div class="management-avatar">КН</div>
-                                <div class="management-info">
-                                    <h4>Карабаев Нургазы</h4>
-                                    <p>Зам. директора по науке</p>
-                                    <span>К.с.-х.н.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="management-card">
-                                <div class="management-avatar">ОА</div>
-                                <div class="management-info">
-                                    <h4>Осмоналиева Айгуль</h4>
-                                    <p>Ученый секретарь</p>
-                                    <span>К.б.н.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- COLUMN 2: Scientific Departments (Отделы) -->
+            <!-- Научно-исследовательские отделы -->
             <div class="col-12">
-                <div class="org-section-container" style="background: #ffffff; border: none; padding: 0;">
-                    <div class="text-center mb-5">
-                        <h2 class="org-grid-title">Научно-исследовательские отделы</h2>
+                <section class="depts-section-embed">
+                    <div class="depts-toolbar">
+                        <h2 class="depts-toolbar__label">Научно-исследовательские отделы</h2>
+                        <span class="depts-toolbar__count">7 подразделений</span>
                     </div>
-                    <div class="row g-4">
-                        <?php 
+                    <div class="depts-grid">
+                        <?php
                         $dept_ids = ['wheat', 'barley', 'corn', 'sugarbeet', 'fruit_veg', 'soil', 'agrochemistry'];
-                        foreach ($departments as $dept): 
-                            if (in_array($dept['id'], $dept_ids)):
+                        $dept_index = 0;
+                        foreach ($departments as $dept):
+                            if (!in_array($dept['id'], $dept_ids, true)) continue;
+                            $dept_index++;
+                            $tag = $dept_tags[$dept['id']] ?? 'НИР';
                         ?>
-                            <div class="col-lg-6 col-12">
-                                <a href="structure-detail.php?item=<?php echo $dept['id']; ?>&lang=<?php echo currentLang(); ?>" class="org-card">
-                                    <img src="<?php echo $dept['image']; ?>" alt="<?php echo $dept['title']; ?>" class="org-card-img">
-                                    <div class="org-card-body">
-                                        <h3 class="org-card-title"><?php echo $dept['title']; ?></h3>
-                                        <p class="org-card-desc"><?php echo $dept['desc']; ?></p>
-                                        <div class="org-card-btn">Подробнее <span>&rarr;</span></div>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php 
-                            endif;
-                        endforeach; 
-                        ?>
+                            <a href="structure-detail.php?item=<?php echo $dept['id']; ?>&lang=<?php echo currentLang(); ?>" class="dept-card-v2">
+                                <div class="dept-card-v2__media">
+                                    <img src="<?php echo htmlspecialchars($dept['image']); ?>" alt="" loading="lazy" decoding="async">
+                                    <span class="dept-card-v2__index"><?php echo str_pad((string) $dept_index, 2, '0', STR_PAD_LEFT); ?></span>
+                                    <span class="dept-card-v2__tag"><?php echo htmlspecialchars($tag); ?></span>
+                                </div>
+                                <div class="dept-card-v2__body">
+                                    <h3 class="dept-card-v2__title"><?php echo htmlspecialchars($dept['title']); ?></h3>
+                                    <p class="dept-card-v2__desc"><?php echo htmlspecialchars($dept['desc']); ?></p>
+                                    <span class="dept-card-v2__link">
+                                        Подробнее
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </span>
+                                </div>
+                            </a>
+                        <?php endforeach; ?>
                     </div>
-                </div>
+                </section>
             </div>
 
             <!-- COLUMN 3: Branches (Филиалы) -->

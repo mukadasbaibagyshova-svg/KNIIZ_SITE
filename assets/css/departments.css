@@ -1,0 +1,362 @@
+/* ==========================================================================
+   Departments listing — science.php
+   ========================================================================== */
+
+.depts-page {
+    background: var(--bg-alt, #f8faf7);
+}
+
+/* ── Hero ── */
+.depts-hero {
+    position: relative;
+    padding: 72px 0 64px;
+    background:
+        linear-gradient(135deg, rgba(7, 37, 19, 0.92) 0%, rgba(12, 62, 33, 0.88) 55%, rgba(22, 92, 52, 0.85) 100%),
+        url('../images/wheet1.jpg') center / cover no-repeat;
+    overflow: hidden;
+}
+
+.depts-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.22), transparent 45%),
+        radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.06), transparent 40%);
+    pointer-events: none;
+}
+
+.depts-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.depts-hero .section-tag {
+    background: rgba(255, 255, 255, 0.14);
+    color: #d1fae5;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.depts-hero__title {
+    font-family: var(--font-headings, 'Outfit', sans-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    max-width: 720px;
+}
+
+.depts-hero__lead {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 640px;
+    margin: 0;
+}
+
+/* ── Main section ── */
+.depts-main {
+    padding: 56px 0 88px;
+}
+
+/* Institute strip */
+.depts-institute {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    background: #fff;
+    border: 1px solid rgba(12, 62, 33, 0.08);
+    border-radius: var(--border-radius-lg, 24px);
+    box-shadow: var(--shadow-sm, 0 4px 6px rgba(12, 62, 33, 0.05));
+}
+
+.depts-institute__icon {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--primary-color, #0c3e21), var(--primary-light, #165c34));
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(12, 62, 33, 0.2);
+}
+
+.depts-institute__name {
+    font-family: var(--font-headings, 'Outfit', sans-serif);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary-color, #0c3e21);
+    margin: 0 0 6px;
+    line-height: 1.25;
+}
+
+.depts-institute__meta {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-muted, #475569);
+    line-height: 1.5;
+}
+
+.depts-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.depts-toolbar__label {
+    font-family: var(--font-headings, 'Outfit', sans-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color, #0c3e21);
+    margin: 0;
+}
+
+.depts-toolbar__count {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted, #475569);
+    background: #fff;
+    border: 1px solid rgba(12, 62, 33, 0.1);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-full, 9999px);
+}
+
+/* ── Grid & cards ── */
+.depts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.dept-card-v2 {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border-radius: var(--border-radius-lg, 24px);
+    border: 1px solid rgba(12, 62, 33, 0.07);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm, 0 4px 6px rgba(12, 62, 33, 0.05));
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: deptCardIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dept-card-v2:nth-child(1) { animation-delay: 0.05s; }
+.dept-card-v2:nth-child(2) { animation-delay: 0.1s; }
+.dept-card-v2:nth-child(3) { animation-delay: 0.15s; }
+.dept-card-v2:nth-child(4) { animation-delay: 0.2s; }
+.dept-card-v2:nth-child(5) { animation-delay: 0.25s; }
+.dept-card-v2:nth-child(6) { animation-delay: 0.3s; }
+.dept-card-v2:nth-child(7) { animation-delay: 0.35s; }
+.dept-card-v2:nth-child(8) { animation-delay: 0.4s; }
+
+@keyframes deptCardIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dept-card-v2:hover {
+    transform: translateY(-8px);
+    border-color: rgba(16, 185, 129, 0.35);
+    box-shadow: 0 20px 40px rgba(12, 62, 33, 0.12);
+    color: inherit;
+}
+
+.dept-card-v2__media {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.dept-card-v2__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dept-card-v2:hover .dept-card-v2__media img {
+    transform: scale(1.06);
+}
+
+.dept-card-v2__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 35%, rgba(7, 37, 19, 0.55) 100%);
+    pointer-events: none;
+}
+
+.dept-card-v2__index {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    font-family: var(--font-headings, 'Outfit', sans-serif);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #fff;
+    background: rgba(7, 37, 19, 0.55);
+    backdrop-filter: blur(8px);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dept-card-v2__tag {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    z-index: 2;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #ecfdf5;
+    background: var(--accent-color, #10b981);
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.dept-card-v2__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 22px 24px 24px;
+}
+
+.dept-card-v2__title {
+    font-family: var(--font-headings, 'Outfit', sans-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark, #0f172a);
+    line-height: 1.35;
+    margin: 0 0 10px;
+    transition: color 0.25s ease;
+}
+
+.dept-card-v2:hover .dept-card-v2__title {
+    color: var(--primary-color, #0c3e21);
+}
+
+.dept-card-v2__desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted, #475569);
+    margin: 0 0 18px;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.dept-card-v2__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--accent-color, #10b981);
+    margin-top: auto;
+}
+
+.dept-card-v2__link svg {
+    transition: transform 0.25s ease;
+}
+
+.dept-card-v2:hover .dept-card-v2__link svg {
+    transform: translateX(4px);
+}
+
+/* Branch variant */
+.dept-card-v2--branch .dept-card-v2__tag {
+    background: #3b82f6;
+}
+
+/* Science page embed */
+.depts-section-embed {
+    padding: 0;
+    background: transparent;
+}
+
+.depts-section-embed .depts-toolbar {
+    margin-bottom: 24px;
+}
+
+.depts-section-embed .depts-grid {
+    gap: 24px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+    .depts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .depts-hero {
+        padding: 52px 0 44px;
+    }
+
+    .depts-main {
+        padding: 40px 0 64px;
+    }
+
+    .depts-institute {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+    }
+
+    .depts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dept-card-v2__media {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .depts-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .dept-card-v2 {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .dept-card-v2:hover {
+        transform: none;
+    }
+
+    .dept-card-v2:hover .dept-card-v2__media img {
+        transform: none;
+    }
+}

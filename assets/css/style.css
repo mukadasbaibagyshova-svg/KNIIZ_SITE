@@ -306,7 +306,7 @@ a:hover {
     z-index: 1010;
 }
 
-.country-dropdown:hover .country-menu {
+.country-dropdown.open .country-menu {
     display: block;
 }
 
@@ -2000,3 +2000,12 @@ section {
     }
 }
 
+/* ==========================================================================
+   Header Overlap Fix (Dynamically targets all siblings of a solid header)
+   ========================================================================== */
+.site-header.header-solid ~ main,
+.site-header.header-solid ~ .organization-page,
+.site-header.header-solid ~ .structure-page,
+.site-header.header-solid ~ .dept-detail-page {
+    padding-top: 100px !important;
+}
