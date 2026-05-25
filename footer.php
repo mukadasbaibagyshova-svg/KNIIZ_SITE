@@ -19,7 +19,7 @@
         <div class="footer-section">
             <h3>Контакты</h3>
             <ul>
-                <li>Адрес: г. Бишкек, Кыргызстан</li>
+                <li>Адрес: <a href="https://2gis.kg/bishkek/firm/70000001021237453" target="_blank" rel="noopener noreferrer">Кыргызская Республика, г. Бишкек, ул. Тимура Фрунзе 100/1</a></li>
                 <li>Телефон: +996 (312) XX-XX-XX</li>
                 <li>Email: info@kniiz.kg</li>
             </ul>

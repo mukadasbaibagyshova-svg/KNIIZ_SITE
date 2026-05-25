@@ -17,12 +17,46 @@ include 'includes/header.php';
         $all_news = file_exists($news_file) ? json_decode(file_get_contents($news_file), true) : [];
         if ($all_news):
             foreach ($all_news as $news):
+                // Extract text for current language
+                $full_text = $news['text'];
+                $display_text = $full_text;
+                
+                // Split text by language separators
+                $sections = preg_split('/\r?\n\*+\r?\n/', $full_text);
+                
+                // Try to match current language
+                if (currentLang() === 'ky') {
+                    // Kyrgyz - first section before ***
+                    $display_text = isset($sections[0]) ? $sections[0] : $full_text;
+                } elseif (currentLang() === 'ru') {
+                    // Russian - second section after first ***
+                    $display_text = isset($sections[1]) ? $sections[1] : $full_text;
+                } elseif (currentLang() === 'en') {
+                    // English - third section after second *** (if exists)
+                    $display_text = isset($sections[2]) ? $sections[2] : $full_text;
+                }
+                
+                // Get title and clean it
+                $title = $news['title'];
+                if (currentLang() !== 'ky') {
+                    // For Russian/English, extract title from text if available
+                    $first_line = strtok($display_text, "\r\n");
+                    if (!empty($first_line) && strlen($first_line) > 5) {
+                        $title = $first_line;
+                    }
+                }
+                
                 // Краткое описание (первые 180 символов)
-                $desc = mb_substr(strip_tags($news['text']), 0, 180, 'UTF-8');
-                if (mb_strlen($news['text'], 'UTF-8') > 180) $desc .= '...';
+                $desc = mb_substr(strip_tags($display_text), 0, 180, 'UTF-8');
+                if (mb_strlen($display_text, 'UTF-8') > 180) $desc .= '...';
                 $img = !empty($news['images'][0]) ? $upload_dir . htmlspecialchars($news['images'][0]) : 'assets/images/no-image.png';
                 $category = isset($news['category']) ? htmlspecialchars($news['category']) : 'Новости';
-                $news_json = htmlspecialchars(json_encode($news, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), ENT_QUOTES, 'UTF-8');
+                
+                // Store original news data but with language-specific text
+                $news_display = $news;
+                $news_display['text'] = $display_text;
+                $news_display['title'] = $title;
+                $news_json = htmlspecialchars(json_encode($news_display, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), ENT_QUOTES, 'UTF-8');
         ?>
             <div class="news-card" data-news='<?= $news_json ?>' data-upload-dir="<?= $upload_dir ?>">
                 <div class="news-card-img">
@@ -30,7 +64,7 @@ include 'includes/header.php';
                 </div>
                 <div class="news-card-body">
                     <div class="news-card-category"><?= $category ?></div>
-                    <div class="news-card-title"><?= htmlspecialchars($news['title']) ?></div>
+                    <div class="news-card-title"><?= htmlspecialchars($title) ?></div>
                     <div class="news-card-desc"><?= htmlspecialchars($desc) ?></div>
                     <button class="news-more">Узнать больше</button>
                 </div>

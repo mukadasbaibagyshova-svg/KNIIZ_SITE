@@ -21,7 +21,7 @@ include 'includes/header.php';
                         <h3 class="h5 mb-3" style="font-family: var(--font-headings); font-weight: 700; color: var(--primary-color);"><?php echo t('contacts_address_title'); ?></h3>
                         <p class="text-secondary d-flex align-items-start gap-2 mb-0">
                             <span class="fs-5">📍</span>
-                            <span>Кыргызская Республика, г. Бишкек, ул. Тимура Фрунзе 100/1</span>
+                            <a href="https://maps.google.com/maps?q=Бишкек+Тимура+Фрунзе+100" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary" style="transition: color 0.3s;">Кыргызская Республика, г. Бишкек, ул. Тимура Фрунзе 100/1</a>
                         </p>
                     </div>
 
@@ -51,6 +51,20 @@ include 'includes/header.php';
                             <span class="fs-5">⏰</span>
                             <span>Понедельник – Пятница: 9:00 – 18:00</span>
                         </p>
+                    </div>
+
+                    <hr class="my-4" style="border-color: rgba(12, 62, 33, 0.08);">
+
+                    <div>
+                        <h3 class="h5 mb-3" style="font-family: var(--font-headings); font-weight: 700; color: var(--primary-color);">Социальные сети</h3>
+                        <div class="d-flex gap-3">
+                            <a href="https://www.facebook.com/KyrgyzNIIzemledel" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="font-size: 24px; transition: opacity 0.3s;" title="Facebook">
+                                f
+                            </a>
+                            <a href="https://www.youtube.com/@KyrgyzResearchInstitute" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="font-size: 24px; transition: opacity 0.3s;" title="YouTube">
+                                ▶
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,6 +101,18 @@ include 'includes/header.php';
 .form-control:focus {
     border-color: var(--accent-color) !important;
     box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1) !important;
+}
+a[href^="https://maps"],
+a[href^="https://www.facebook"],
+a[href^="https://www.youtube"] {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+a[href^="https://maps"]:hover,
+a[href^="https://www.facebook"]:hover,
+a[href^="https://www.youtube"]:hover {
+    color: var(--accent-color);
+    opacity: 0.8;
 }
 </style>
 

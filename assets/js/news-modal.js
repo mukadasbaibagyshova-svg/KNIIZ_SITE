@@ -19,22 +19,25 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('news-modal-title').textContent = news.title;
         document.getElementById('news-modal-date').textContent = news.date;
         document.getElementById('news-modal-text').textContent = news.text;
-        // Show modal
+        // Show modal (with animation)
         overlay.style.display = 'block';
         modal.style.display = 'flex';
+        // small delay to allow CSS transitions
         setTimeout(() => {
             overlay.classList.add('active');
             modal.classList.add('active');
+            // ensure modal content doesn't allow background scroll if desired
         }, 10);
     }
 
     function closeModal() {
         overlay.classList.remove('active');
         modal.classList.remove('active');
+        // wait for CSS transition to finish before hiding from layout
         setTimeout(() => {
             overlay.style.display = 'none';
             modal.style.display = 'none';
-        }, 200);
+        }, 250);
     }
 
     function renderGallery() {
@@ -66,12 +69,57 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     closeBtn && closeBtn.addEventListener('click', closeModal);
+    // Clicking on overlay (backdrop) should close the modal
     overlay && overlay.addEventListener('click', closeModal);
 
-    // Card click handler
+    // Clicking on modal wrapper (outside content) should also close the modal
+    modal && modal.addEventListener('click', function (e) {
+        // If user clicks on modal background/wrapper, close
+        closeModal();
+    });
+
+    // Stop propagation for clicks inside actual content areas so they DON'T close
+    var modalContent = modal ? modal.querySelector('.news-modal-content') : null;
+    var galleryWrap = modal ? modal.querySelector('.news-modal-gallery-wrap') : null;
+    if (modalContent) {
+        modalContent.addEventListener('click', function (e) { e.stopPropagation(); });
+    }
+    if (galleryWrap) {
+        galleryWrap.addEventListener('click', function (e) { e.stopPropagation(); });
+    }
+
+    // Close on ESC key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+            // only close if modal is currently visible
+            if (modal && modal.classList.contains('active')) {
+                closeModal();
+            }
+        }
+    });
+
+    // Card click handler - make entire card clickable
+    document.querySelectorAll('.news-card').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+            // Don't open modal if clicking on a link inside the card
+            if (e.target.tagName === 'A') return;
+            
+            const news = JSON.parse(card.dataset.news);
+            // Fix image paths
+            if (news.images && news.images.length) {
+                news.images = news.images.map(function (img) {
+                    return card.dataset.uploadDir + img;
+                });
+            }
+            openModal(news);
+        });
+    });
+
+    // Also keep the button click handler for compatibility
     document.querySelectorAll('.news-card .news-more').forEach(function (btn) {
         btn.addEventListener('click', function (e) {
             e.preventDefault();
+            e.stopPropagation();
             const card = btn.closest('.news-card');
             const news = JSON.parse(card.dataset.news);
             // Fix image paths
