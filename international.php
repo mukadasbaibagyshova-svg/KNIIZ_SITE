@@ -8,7 +8,7 @@ include 'includes/header.php';
     <div class="container">
         <!-- Header -->
         <div class="mb-5 text-center">
-            <span class="section-tag"><?php echo t('nav_about'); ?></span>
+            
             <h1 class="section-title-premium text-dark mb-3"><?php echo t('nav_international'); ?></h1>
             <p class="section-subtitle-premium text-muted mx-auto" style="max-width: 760px;">Международное сотрудничество и партнерства КНИИЗ</p>
         </div>

@@ -8,7 +8,6 @@ include 'includes/header.php';
     <div class="container">
         <!-- Header -->
         <div class="mb-5 text-center">
-            <span class="section-tag"><?php echo t('nav_contacts'); ?></span>
             <h1 class="section-title-premium text-dark mb-3"><?php echo t('contacts_title'); ?></h1>
             <p class="section-subtitle-premium text-muted mx-auto" style="max-width: 760px;"><?php echo t('contacts_text'); ?></p>
         </div>

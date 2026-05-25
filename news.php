@@ -5,10 +5,13 @@ include 'includes/header.php';
 ?>
 
 
-<main>
+<main class="py-5">
     <div class="container">
-        <h2><?php echo t('news_title'); ?></h2>
-        <p><?php echo t('news_intro'); ?></p>
+        <!-- Header -->
+        <div class="mb-5 text-center">
+            <h1 class="section-title-premium text-dark mb-3"><?php echo t('news_title'); ?></h1>
+            <p class="section-subtitle-premium text-muted mx-auto"><?php echo t('news_intro'); ?></p>
+        </div>
 
         <section class="news-grid">
         <?php
@@ -66,7 +69,6 @@ include 'includes/header.php';
                     <div class="news-card-category"><?= $category ?></div>
                     <div class="news-card-title"><?= htmlspecialchars($title) ?></div>
                     <div class="news-card-desc"><?= htmlspecialchars($desc) ?></div>
-                    <button class="news-more">Узнать больше</button>
                 </div>
             </div>
         <?php endforeach;

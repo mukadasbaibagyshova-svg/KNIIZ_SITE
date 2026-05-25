@@ -11,7 +11,6 @@ include 'includes/header.php';
 <section class="kataog-hero-section" id="main-content">
     <div class="katalog-hero-overlay"></div>
     <div class="container katalog-hero-inner">
-        <span class="section-tag" style="color: var(--accent-color); margin-bottom: 14px; display: inline-block;">КНИИЗ — Каталог</span>
         <h1 class="katalog-hero-title">
             Сорта сельскохозяйственных<br>культур Кыргызстана
         </h1>

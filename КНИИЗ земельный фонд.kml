@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1fEYZ6cv19Kpz82sFs-2h8PCvEktXFhXj">
+	<name>КНИИЗ земельный фонд</name>
+	<gx:CascadingStyle kml:id="__managed_style_22D2148B753F9561515F">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>5.3328</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1FFEF0D9DB3F9561515F">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.5552</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_257B81D85E3F9561516C">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffb73a67</color>
+				<width>5.8812</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>05b73a67</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_3002FC55CD3F9561515C">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff5053ef</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1DAE0608D73F9561515E">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.5552</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0666A4F1A13F9561515E">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1DAE0608D73F9561515E</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2827AF1C613F9561515E</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_4A09F086EC3F9561515C">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff5053ef</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_23C704FE813F9561515C">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_3002FC55CD3F9561515C</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_4A09F086EC3F9561515C</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="__managed_style_0473AA719F3F95615160">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1067360AA93F95615160</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2781A4A65C3F95615160</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_2781A4A65C3F95615160">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff9f3f30</color>
+				<width>5.3328</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>409f3f30</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_06E1EAED763F9561516E">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff0051e6</color>
+				<width>3.6984</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>000051e6</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_21B98659C23F95615159">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff5b18c2</color>
+				<width>8.2812</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>005b18c2</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1217814BE73F95615159">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff5b18c2</color>
+				<width>5.5208</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>005b18c2</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_08E9D9B6763F9561515F">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1FFEF0D9DB3F9561515F</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_22D2148B753F9561515F</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="__managed_style_033265FA063F95615159">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1217814BE73F95615159</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_21B98659C23F95615159</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_2827AF1C613F9561515E">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>5.3328</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_4035EFB04E3F9561516C">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff0051e6</color>
+				<width>2.4656</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>000051e6</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1067360AA93F95615160">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff9f3f30</color>
+				<width>3.5552</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>409f3f30</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1FC6B582B13F9561516C">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffb73a67</color>
+				<width>3.9208</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>05b73a67</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_06A5F9AB883F9561516C">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1FC6B582B13F9561516C</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_257B81D85E3F9561516C</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="__managed_style_3792D9F66F3F9561516C">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_4035EFB04E3F9561516C</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_06E1EAED763F9561516E</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_16980941C43F95615154">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_09248A89183F95615156">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0D7E9E9D5E3F95615154">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_16980941C43F95615154</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_09248A89183F95615156</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder id="5C6DBACCDF000001">
+		<name>ИОСС</name>
+		<styleUrl>#__managed_style_0D7E9E9D5E3F95615154</styleUrl>
+		<Placemark id="5C6DBACCDF000002">
+			<name>поле</name>
+			<description>талаа</description>
+			<styleUrl>#__managed_style_06A5F9AB883F9561516C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							78.3511199,42.4734144,0 78.3532012,42.4646773,0 78.3544887,42.4645981,0 78.35648430000001,42.4643765,0 78.3682431,42.4668775,0 78.3669127,42.4746489,0 78.3511199,42.4734144,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBACCDF000003">
+			<name>плодовые деревья</name>
+			<styleUrl>#__managed_style_033265FA063F95615159</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							78.36386229999999,42.4734784,0 78.358705,42.4731531,0 78.3593058,42.4695761,0 78.3646488,42.4700984,0 78.36386229999999,42.4734784,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBACCDF000004">
+			<name>Корпус</name>
+			<styleUrl>#__managed_style_3792D9F66F3F9561516C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							78.34269980000001,42.4740178,0 78.343113,42.4728861,0 78.34435209999999,42.472993,0 78.34409460000001,42.4741563,0 78.34269980000001,42.4740178,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+	<Folder id="5C6DBC1239000001">
+		<name>ЖАНЫ ПАХТА 482 га</name>
+		<styleUrl>#__managed_style_0D7E9E9D5E3F95615154</styleUrl>
+		<Placemark id="5C6DBC1239000002">
+			<name>285 КОНТУР. 110 ГА</name>
+			<LookAt>
+				<longitude>74.31626626323283</longitude>
+				<latitude>43.11331600358429</latitude>
+				<altitude>597.3618800468481</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>6326.911304119276</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.30513278360928,43.10641436954269,0 74.30678473404417,43.10786238607971,0 74.30843682929276,43.1091495621772,0 74.30854663389937,43.10931034904562,0 74.30467786308952,43.11398009160963,0 74.30390538724556,43.11389959854947,0 74.30186790779752,43.11285196557544,0 74.29905080694776,43.11232796148251,0 74.29607433756786,43.11160258544811,0 74.2934831887147,43.11132027720137,0 74.29106409928046,43.11011240986103,0 74.29149814900933,43.1085410561566,0 74.28764583388785,43.10705172927582,0 74.28825736929768,43.10636849224052,0 74.30408801492669,43.10331646212242,0 74.30430719179517,43.10480529777615,0 74.30458122785956,43.1056494072423,0 74.30513278360928,43.10641436954269,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBC1239000003">
+			<name>285 КОНТУ 7,0 ГА</name>
+			<LookAt>
+				<longitude>74.31517791160555</longitude>
+				<latitude>43.11837701630797</latitude>
+				<altitude>596.0518649755928</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>2835.423644583207</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.31007866052093,43.1187473093575,0 74.31213542967987,43.11533445370394,0 74.31386735959046,43.11582288244854,0 74.31112012455009,43.12004751232032,0 74.31000802502805,43.11945121509135,0 74.31007866052093,43.1187473093575,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBC1239000004">
+			<name>252 КОГТУР. 64,7 ГА</name>
+			<LookAt>
+				<longitude>74.26749435490539</longitude>
+				<latitude>43.1108196936168</latitude>
+				<altitude>592.4232064044346</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>5787.054209732451</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.28739966858909,43.10759878976789,0 74.29090807979871,43.10884352434732,0 74.29019591843277,43.11031132624794,0 74.29078762538225,43.11089619548816,0 74.29218678023398,43.11212299842582,0 74.29230781149208,43.11355986366782,0 74.28661892913139,43.1203760566823,0 74.2859629843264,43.12000792389329,0 74.28181640169572,43.11738965502794,0 74.28739966858909,43.10759878976789,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBC1239000005">
+			<name>251 КОНТУР . 29,3 ГА</name>
+			<LookAt>
+				<longitude>74.29052322572201</longitude>
+				<latitude>43.11594426174195</latitude>
+				<altitude>594.060015783539</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>2521.583744746749</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.29006093336731,43.11710795070132,0 74.29272071092623,43.11380189511266,0 74.2932691584716,43.11369022777154,0 74.29370981297629,43.11394634402813,0 74.29641159938795,43.114636597336,0 74.29806321391449,43.11548655390824,0 74.30086999308496,43.11583956355346,0 74.29881835423924,43.11897141623947,0 74.29213055681869,43.11778420648253,0 74.29006093336731,43.11710795070132,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBC1239000006">
+			<name>174 КОНТУР. 66,9 ГА</name>
+			<LookAt>
+				<longitude>74.30622764861386</longitude>
+				<latitude>43.15554910060387</latitude>
+				<altitude>575.2723059218162</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>7187.714735727059</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.29669725954929,43.16092262708327,0 74.29061068971201,43.15785849014286,0 74.28911031089744,43.15566217540964,0 74.28899348565,43.15342186977345,0 74.28899018599225,43.15282697158579,0 74.29017795975216,43.15140864926732,0 74.30233976983401,43.15625807417609,0 74.29976823632747,43.16110690190288,0 74.29669725954929,43.16092262708327,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBC1239000007">
+			<name>239 КОНТУР. 47,1 ГА</name>
+			<LookAt>
+				<longitude>74.29293373716582</longitude>
+				<latitude>43.1370464014697</latitude>
+				<altitude>582.5288671128093</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>4743.887201312464</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.2828105666873,43.13184439996368,0 74.28297442880771,43.12991332702923,0 74.28462498110748,43.13060529579827,0 74.28648498040413,43.13138969996316,0 74.28834424391449,43.13184126568227,0 74.29012065272964,43.13211027526565,0 74.2921894453611,43.13259546923847,0 74.29665663471484,43.13374087967717,0 74.29942779998733,43.13458614323903,0 74.30372656168055,43.13663852618601,0 74.29764797180444,43.13766490778533,0 74.29061686213748,43.13515941001644,0 74.2828105666873,43.13184439996368,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBC1239000008">
+			<name>236 КОНТУР. 70 ГА</name>
+			<LookAt>
+				<longitude>74.29529709569248</longitude>
+				<latitude>43.13715034800395</latitude>
+				<altitude>585.8304227521799</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>5751.58246998908</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.27681286734338,43.14046517949431,0 74.27613072107501,43.1374965673684,0 74.28912370645801,43.13526394941388,0 74.29630051260608,43.13779010312702,0 74.28902038670813,43.13943955759342,0 74.28922187339674,43.14013538622219,0 74.27661023592783,43.14251796560434,0 74.27681286734338,43.14046517949431,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBC1239000009">
+			<name>292 КОНТУР. 27.5 ГА</name>
+			<LookAt>
+				<longitude>74.3026098988599</longitude>
+				<latitude>43.11614955955787</latitude>
+				<altitude>594.0070465843809</altitude>
+				<heading>0</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>1999.685952289437</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.30200015696394,43.11337195995995,0 74.30577114117095,43.11506422052548,0 74.31040500596617,43.11736495874802,0 74.30967282825488,43.11859980153128,0 74.30879502291381,43.11834319768113,0 74.30834319888935,43.11829279049214,0 74.3079951619146,43.11816579269271,0 74.30665266702736,43.11736424655741,0 74.30296160971467,43.11561062603386,0 74.29975661374465,43.11516654804232,0 74.29858774172108,43.11491121007591,0 74.29564469971598,43.113575416254,0 74.29634052646924,43.11175746961616,0 74.30200015696394,43.11337195995995,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBC123900000A">
+			<name>КОНТУР 30. 33.05 ГА</name>
+			<LookAt>
+				<longitude>74.27470889893003</longitude>
+				<latitude>43.20028110010379</latitude>
+				<altitude>567.3340398947416</altitude>
+				<heading>2.166625411686297</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>3580.686557961744</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.2695607802148,43.19927209041143,0 74.27034051526415,43.1986575853463,0 74.27100584335561,43.19822868705906,0 74.27176586544951,43.19718433004005,0 74.27306111058472,43.19564375915608,0 74.27389215467207,43.1947777861246,0 74.27746020457329,43.20074221642068,0 74.27531582576685,43.20230978715472,0 74.27543757072974,43.20223803788594,0 74.27253497107172,43.20428118159372,0 74.27265693270128,43.20420864211321,0 74.27240847275118,43.20426207819593,0 74.27253497573105,43.20428117990297,0 74.2695607802148,43.19927209041143,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="5C6DBC123900000B">
+			<name>КОНТУР 3. 26 ГА</name>
+			<LookAt>
+				<longitude>74.27764823032054</longitude>
+				<latitude>43.16326608884933</latitude>
+				<altitude>570.8129824049295</altitude>
+				<heading>2.166625412684235</heading>
+				<tilt>0</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>3395.420033184928</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_23C704FE813F9561515C</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							74.27542264518884,43.16091756006192,0 74.27355437323132,43.16546471807616,0 74.26777527696194,43.16372181919948,0 74.26994147207692,43.15923079094593,0 74.27542264518884,43.16091756006192,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+	<Folder id="5C6DC90CEE000001">
+		<name>КОСС 239 га</name>
+		<styleUrl>#__managed_style_0D7E9E9D5E3F95615154</styleUrl>
+		<Folder id="5C6DC90CEF000002">
+			<name>КОСС</name>
+			<styleUrl>#__managed_style_0D7E9E9D5E3F95615154</styleUrl>
+			<Placemark id="5C6DC90CEF000003">
+				<name>КОСС по сахарной свекле, главное здание</name>
+				<LookAt>
+					<longitude>74.34194239448023</longitude>
+					<latitude>42.89978769146689</latitude>
+					<altitude>707.4147653034991</altitude>
+					<heading>350.5533301181843</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>227.0780332730646</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_0666A4F1A13F9561515E</styleUrl>
+				<Point>
+					<coordinates>74.3421542599703,42.899862793888,706.9967316245918</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="5C6DC90CEF000004">
+				<name>КОСС </name>
+				<LookAt>
+					<longitude>74.34203368005774</longitude>
+					<latitude>42.89986014235248</latitude>
+					<altitude>707.2167114452009</altitude>
+					<heading>15.83663550589644</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>262.745994572615</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_0666A4F1A13F9561515E</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								74.34221011271926,42.90001447240226,0 74.34225425778828,42.90000536051385,0 74.34206029996385,42.89964656945102,0 74.34203420120988,42.89965898957761,0 74.34197519826327,42.89953737880307,0 74.34239855235769,42.89942127607063,0 74.34245744383885,42.89953397961605,0 74.34221232417345,42.89959035710061,0 74.34246352221199,42.90010185836541,0 74.34228235842991,42.90015809070095,0 74.34221011271926,42.90001447240226,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="0031BEC2C33F92BC368C">
+				<name>74 га</name>
+				<LookAt>
+					<longitude>74.35500108040155</longitude>
+					<latitude>42.90000398008261</latitude>
+					<altitude>708.6327237400968</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>2437.599064493843</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_08E9D9B6763F9561515F</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								74.34863286692968,42.90396032339544,0 74.34884778209812,42.90037303228708,0 74.34969455008662,42.90001922290118,0 74.36176570997941,42.89784051999289,0 74.36468941435838,42.89727496875789,0 74.36254904993812,42.90233819879452,0 74.35015275660101,42.90410870617052,0 74.34863286692968,42.90396032339544,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C6DC90CEF000005">
+				<name>60 га</name>
+				<LookAt>
+					<longitude>74.35578117602562</longitude>
+					<latitude>42.89662700270613</latitude>
+					<altitude>710.442859719942</altitude>
+					<heading>15.85237088783633</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>3535.576274459018</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_0666A4F1A13F9561515E</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								74.35191700168011,42.89907190624803,0 74.35082251277005,42.89941222425263,0 74.35032506411821,42.89960657792172,0 74.34968491513905,42.89973653041537,0 74.34913011071183,42.89921880759744,0 74.35269981946337,42.88983132670663,0 74.35404409088126,42.88983665069404,0 74.35431597744916,42.89061947048767,0 74.35905977822934,42.89279420864359,0 74.36486421548285,42.89570985070645,0 74.36498421382386,42.89627062541303,0 74.36461148786177,42.89688634463009,0 74.35585343469124,42.8983827482549,0 74.35390504411671,42.89875616389502,0 74.35191700168011,42.89907190624803,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="064743CA413F92C0D346">
+				<name>41га</name>
+				<LookAt>
+					<longitude>74.32346760791009</longitude>
+					<latitude>42.90970040687466</latitude>
+					<altitude>696.4290654082654</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>2844.755131506245</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_08E9D9B6763F9561515F</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								74.32704037501634,42.90914747260427,0 74.32787085536241,42.90760290315452,0 74.32806569689525,42.90611545134244,0 74.3285312264215,42.90530980488511,0 74.32874830899163,42.90334034004063,0 74.32825899503223,42.90271439448836,0 74.32864772477029,42.90114220606117,0 74.33020923792864,42.90141088322907,0 74.3306529482891,42.9034121500332,0 74.33141056283364,42.90428862073868,0 74.33151059083015,42.90758038630742,0 74.3321023910176,42.90933424897035,0 74.33181592827913,42.91229323349458,0 74.33057112790564,42.9132110964651,0 74.32976519546712,42.91443543348891,0 74.32758022579813,42.91317450201423,0 74.32596276966882,42.91166537682739,0 74.32704037501634,42.90914747260427,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="06753260303F92C1F597">
+				<name>64 га</name>
+				<LookAt>
+					<longitude>74.3178996804227</longitude>
+					<latitude>42.90910182243512</latitude>
+					<altitude>694.4023077030085</altitude>
+					<heading>354.2694667822286</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>2846.749146734364</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_08E9D9B6763F9561515F</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								74.31765094345332,42.90966021089362,0 74.31788037662609,42.90870380500686,0 74.31820696808722,42.9076403659037,0 74.31727349721305,42.90711005022472,0 74.31704963315877,42.90661200874244,0 74.31649129136098,42.90599388353819,0 74.31670272002822,42.90528514721058,0 74.31808756336643,42.90405906808265,0 74.32026398979632,42.90136598403063,0 74.32161000064228,42.89861980816462,0 74.32430536082389,42.90184906950276,0 74.32532063736377,42.90390102892471,0 74.32600830714215,42.90619143154861,0 74.3267428876909,42.90658514920126,0 74.32249034930248,42.90991791774474,0 74.31992080300479,42.9105276547485,0 74.31859901636815,42.9111554169648,0 74.31765094345332,42.90966021089362,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="5C6DC90CEF000008">
+				<name>Зерноток склад КОСС</name>
+				<LookAt>
+					<longitude>74.34011550184321</longitude>
+					<latitude>42.89778729220154</latitude>
+					<altitude>707.3136294441032</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>313.9123993672547</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_0666A4F1A13F9561515E</styleUrl>
+				<Point>
+					<coordinates>74.34009640883254,42.89724479479715,707.961818233693</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark id="09D0DCC7A33F92BC6638">
+				<name>13га</name>
+				<LookAt>
+					<longitude>74.35500108040155</longitude>
+					<latitude>42.90000398008261</latitude>
+					<altitude>708.6327237400968</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>2437.599064493843</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_0D7E9E9D5E3F95615154</styleUrl>
+				<LineString>
+					<coordinates>
+						74.35986995399836,42.90260189215083,0 74.36168214481594,42.89799388957308,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark id="0D12D9B5273F92BCE6F8">
+				<name>КОСС</name>
+				<LookAt>
+					<longitude>74.35430914748136</longitude>
+					<latitude>42.89994258472594</latitude>
+					<altitude>708.631047284134</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>2437.600733280997</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_0D7E9E9D5E3F95615154</styleUrl>
+				<LineString>
+					<coordinates>
+						74.35682752144304,42.90298635720882,0 74.35715780853546,42.89876104668589,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark id="5C6DC90CEF000009">
+				<name>Склад</name>
+				<LookAt>
+					<longitude>74.34010510222771</longitude>
+					<latitude>42.89732095393047</latitude>
+					<altitude>707.4219144045969</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>131.9291785493442</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_0666A4F1A13F9561515E</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								74.33995995605632,42.89722592617313,0 74.34005354328015,42.8972726912115,0 74.33987525782629,42.89742430269052,0 74.33982746571741,42.89739731750139,0 74.33979335220275,42.89737210429416,0 74.33995995605632,42.89722592617313,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark id="02294F56D83F92BE542B">
+				<name>Путь без названия</name>
+				<LookAt>
+					<longitude>74.34709173923356</longitude>
+					<latitude>42.89648170192407</latitude>
+					<altitude>709.1383305561504</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>2823.405039500795</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_0D7E9E9D5E3F95615154</styleUrl>
+				<LineString>
+					<coordinates>
+						74.35542130345695,42.89833154791753,0 74.35776275458461,42.89251893813336,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark id="5C6DC90CEF00000A">
+				<name>Территория склада</name>
+				<LookAt>
+					<longitude>74.34010510222771</longitude>
+					<latitude>42.89732095402555</latitude>
+					<altitude>707.421904973136</altitude>
+					<heading>0</heading>
+					<tilt>0</tilt>
+					<gx:fovy>35</gx:fovy>
+					<range>131.9291901381439</range>
+					<altitudeMode>absolute</altitudeMode>
+				</LookAt>
+				<styleUrl>#__managed_style_0666A4F1A13F9561515E</styleUrl>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								74.33995309635056,42.89719327138464,0 74.34004221721462,42.8971035961845,0 74.34040067690739,42.89735564865286,0 74.34022548321339,42.89740704232807,0 74.34010739440147,42.89748845538678,0 74.33995704728706,42.89740377122195,0 74.34008446086416,42.89728861119904,0 74.33995309635056,42.89719327138464,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+	</Folder>
+	<Folder id="0F8F1A604F3F92CB8C6F">
+		<name>Атай</name>
+		<styleUrl>#__managed_style_0D7E9E9D5E3F95615154</styleUrl>
+		<Placemark id="00D72573863F92CD9384">
+			<name>13га</name>
+			<LookAt>
+				<longitude>73.88218314972545</longitude>
+				<latitude>41.34277235474966</latitude>
+				<altitude>1513.147713252381</altitude>
+				<heading>7.510517414361199</heading>
+				<tilt>0.3109724077022372</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>1713.593903564906</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_0473AA719F3F95615160</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							73.8757774405906,41.34165108314057,0 73.87663808972432,41.34181477888386,0 73.87891985644524,41.34199024523808,0 73.88032012002542,41.34219060676006,0 73.88105773377495,41.34247601657208,0 73.88194899633098,41.34248052915022,0 73.88321923491468,41.34269337344769,0 73.88396079451316,41.3430242512251,0 73.88485238801545,41.3430613007338,0 73.88734712136333,41.34355189278217,0 73.88714475402728,41.34392565112637,0 73.8868224713744,41.3443852296587,0 73.88607431998204,41.34502374686661,0 73.88381889590401,41.34441534131869,0 73.87790214457601,41.34280104876726,0 73.87573099430954,41.34211452306519,0 73.87370750088138,41.34122026603548,0 73.8757774405906,41.34165108314057,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="0E11E515A73F92CE7E4C">
+			<name>Многоугольник без названия</name>
+			<LookAt>
+				<longitude>73.87410294149556</longitude>
+				<latitude>41.34180110861982</latitude>
+				<altitude>1523.542802751863</altitude>
+				<heading>7.505866519842466</heading>
+				<tilt>0.3109154877805995</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>546.879489796047</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_0473AA719F3F95615160</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							73.87494654093884,41.34216326303878,0 73.87479260143337,41.34216445846399,0 73.87338896722461,41.34194451579361,0 73.87327830358002,41.34208774073031,0 73.87302625959404,41.34215915643224,0 73.87273544544212,41.34212308593024,0 73.87262285037092,41.34200044821446,0 73.87270153631007,41.34179015854911,0 73.87264356126597,41.34160170673564,0 73.87267611627516,41.3412709548641,0 73.87288413904187,41.34111689748225,0 73.87307382500543,41.3411234333246,0 73.8732961826078,41.34118760721343,0 73.87567672488487,41.34220451872942,0 73.87566451560738,41.3422918628305,0 73.87494654093884,41.34216326303878,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="0CF61FC0F23F92D4B361">
+			<name>32</name>
+			<LookAt>
+				<longitude>73.83920175840981</longitude>
+				<latitude>41.3106828920582</latitude>
+				<altitude>1726.999614879777</altitude>
+				<heading>7.482072892438254</heading>
+				<tilt>0.311015950616188</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>2606.478284840123</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_0473AA719F3F95615160</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							73.84626984234252,41.30668611775375,0 73.84725749701497,41.30831498512961,0 73.8471746805978,41.3089601632741,0 73.84657548777385,41.30970825767069,0 73.84603040190527,41.31021184511682,0 73.84575452137115,41.31143456991201,0 73.84504363451292,41.31179655174915,0 73.84520589494218,41.31211656120417,0 73.84501869855595,41.31277690438521,0 73.84525287171439,41.31302986913428,0 73.84491547646601,41.31461801227562,0 73.84456162303637,41.31510621037529,0 73.84382447443264,41.31598800698426,0 73.84317167566707,41.31581755113814,0 73.84341098693079,41.31525874716122,0 73.84319186425932,41.31477577114574,0 73.84362752079761,41.3140980808497,0 73.84376163256333,41.3132401645247,0 73.84409454744215,41.31285586430857,0 73.84432095819869,41.31157272849478,0 73.84382644590056,41.31160887880069,0 73.84346773119888,41.31261109719631,0 73.84093336213523,41.31261953234586,0 73.84090770086682,41.31164785567873,0 73.8409649793974,41.31085958282492,0 73.84201836934261,41.31089005526125,0 73.84207621408891,41.3106345308553,0 73.84209090769602,41.30933309667688,0 73.84211184880343,41.30661885893753,0 73.84297251717419,41.30654708331451,0 73.84404999703087,41.30612306551386,0 73.84466485095714,41.30606179522917,0 73.84543867952652,41.30595798141417,0 73.84618126654942,41.30601233596586,0 73.84626984234252,41.30668611775375,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="07B377C9883F92D708FB">
+			<name>35 га</name>
+			<LookAt>
+				<longitude>73.85237129095432</longitude>
+				<latitude>41.29894928128618</latitude>
+				<altitude>1772.519677259807</altitude>
+				<heading>7.492154075952186</heading>
+				<tilt>0.3109448157203017</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>1148.401560738712</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_0473AA719F3F95615160</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							73.84851504921289,41.29828390930911,0 73.84930268821905,41.29405876352074,0 73.85458713326315,41.29479908787834,0 73.85528804594033,41.29703905862061,0 73.85522285192565,41.29795561848378,0 73.85450288678211,41.29801199333385,0 73.8539534730424,41.29757121848106,0 73.85365583960545,41.29761677872341,0 73.85317120442619,41.29771518811154,0 73.85224062963168,41.29664358067138,0 73.85285905765402,41.29907377704817,0 73.85264483334377,41.29913102031471,0 73.85220996752837,41.29857998451487,0 73.85199413053193,41.2987376561027,0 73.8523192628867,41.29988915513999,0 73.85236938536218,41.30069293110492,0 73.85211439745588,41.30074737537005,0 73.85184129725181,41.30022182032658,0 73.8514699355478,41.30027316193404,0 73.85142572429935,41.30081306412627,0 73.85168180358866,41.30227009043679,0 73.85163852397659,41.30265333114905,0 73.85127224871454,41.30361545079505,0 73.850980357163,41.30363411459739,0 73.85069255183642,41.30306768127199,0 73.85039082561815,41.30266177895813,0 73.85016766245327,41.30174734604432,0 73.85050728979746,41.30110382136649,0 73.85023562090578,41.29996129324806,0 73.85001398383582,41.29943819355129,0 73.8498226671567,41.29848137248906,0 73.84851504921289,41.29828390930911,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark id="0FC3B726543F92D993C0">
+			<name>45 га</name>
+			<LookAt>
+				<longitude>73.85194000327192</longitude>
+				<latitude>41.27001614091863</latitude>
+				<altitude>1886.702046800917</altitude>
+				<heading>7.494374387111044</heading>
+				<tilt>0.3109823222539042</tilt>
+				<gx:fovy>35</gx:fovy>
+				<range>1917.414003918821</range>
+				<altitudeMode>absolute</altitudeMode>
+			</LookAt>
+			<styleUrl>#__managed_style_0473AA719F3F95615160</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							73.8503217287427,41.27178302664911,0 73.8497652451796,41.27051002161333,0 73.84898218935689,41.26851214462015,0 73.84874820785932,41.26721101413514,0 73.84799838335448,41.26622511819116,0 73.84803298443521,41.26554264025433,0 73.84799021735603,41.26493855392547,0 73.84804381868943,41.26435222454035,0 73.84765632988029,41.26256951834802,0 73.8477111563143,41.26199595575515,0 73.84838908246647,41.26246160239373,0 73.84889714157737,41.26214071655312,0 73.85186499820608,41.26384836502667,0 73.85305260722885,41.26501010392093,0 73.85395391199991,41.26554462469569,0 73.85427973405149,41.26598280064366,0 73.85587231489346,41.26626393705903,0 73.85748018907231,41.26685083899268,0 73.85829122440482,41.26842413421543,0 73.85621943250885,41.27015271113717,0 73.85554714654718,41.27058734645669,0 73.85439453703972,41.27120416824376,0 73.85389851248317,41.27153828149763,0 73.85112376528932,41.2728144567165,0 73.8503217287427,41.27178302664911,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
