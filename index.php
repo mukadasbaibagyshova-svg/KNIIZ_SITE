@@ -54,7 +54,6 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <span class="section-tag"><?php echo t('about_title'); ?></span>
                     <h2 class="section-title-premium mb-4"><?php echo t('about_title'); ?></h2>
                     <p class="text-muted mb-4 fs-5" style="line-height: 1.8;"><?php echo t('about_text'); ?></p>
                     
@@ -62,7 +61,7 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                     <div class="row g-4 mt-2">
                         <div class="col-sm-6">
                             <div class="stat-box">
-                                <span class="stat-number">100+</span>
+                                <span class="stat-number">90+</span>
                                 <span class="stat-label">Лет научных исследований</span>
                             </div>
                         </div>
@@ -80,8 +79,8 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                         </div>
                         <div class="col-sm-6">
                             <div class="stat-box">
-                                <span class="stat-number">25</span>
-                                <span class="stat-label">Докторов и кандидатов наук</span>
+                                <span class="stat-number">1350 га</span>
+                                <span class="stat-label">Земельный фонд</span>
                             </div>
                         </div>
                     </div>
@@ -101,7 +100,6 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
     <section id="news" class="py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="section-tag"><?php echo t('news_title'); ?></span>
                 <h2 class="section-title-premium"><?php echo t('news_title'); ?></h2>
                 <p class="section-subtitle-premium"><?php echo t('news_intro'); ?></p>
             </div>
@@ -173,7 +171,6 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <span class="section-tag"><?php echo t('maps_title'); ?></span>
                     <h2 class="section-title-premium mb-4"><?php echo t('maps_title'); ?></h2>
                     <p class="text-muted fs-5 mb-4"><?php echo t('maps_text'); ?></p>
                     <p class="text-muted mb-4"><?php echo t('maps_description_1'); ?> <?php echo t('maps_description_2'); ?></p>
@@ -192,7 +189,6 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
     <section id="gallery" class="py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="section-tag"><?php echo t('gallery_title'); ?></span>
                 <h2 class="section-title-premium"><?php echo t('gallery_title'); ?></h2>
                 <p class="section-subtitle-premium"><?php echo t('gallery_text'); ?></p>
             </div>

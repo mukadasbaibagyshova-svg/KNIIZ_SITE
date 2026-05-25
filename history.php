@@ -8,7 +8,7 @@ include 'includes/header.php';
     <div class="container">
         <!-- Заголовок и подзаголовок -->
         <div class="mb-5 text-center">
-            <span class="section-tag"><?php echo t('nav_history'); ?></span>
+           
             <h1 class="section-title-premium text-dark mb-3">История Института Земледелия имени К.К. Азыкова</h1>
             <p class="section-subtitle-premium text-muted mx-auto" style="max-width: 760px;">Летопись научных открытий и селекционных достижений с момента основания.</p>
         </div>

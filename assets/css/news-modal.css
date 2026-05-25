@@ -87,8 +87,8 @@
     position: fixed;
     z-index: 1001;
     left: 0; top: 0; right: 0; bottom: 0;
-    background: rgba(40, 50, 50, 0.38);
-    transition: opacity 0.2s;
+    background: rgba(40, 50, 50, 0.42);
+    transition: opacity 250ms cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
 }
 .news-modal-overlay.active {
@@ -103,12 +103,10 @@
     left: 0;
     justify-content: flex-end;
     align-items: stretch;
-    transition: opacity 0.2s, transform 0.2s;
-    opacity: 0;
+    opacity: 1;
 }
 .news-modal.active {
     display: flex;
-    opacity: 1;
 }
 .news-modal-gallery-wrap {
     background: #f4f6f1;
@@ -171,6 +169,10 @@
     box-shadow: 0 2px 16px rgba(33,108,61,0.07);
     overflow-y: auto;
     max-height: 100vh;
+    /* initial animated state */
+    transform: translateY(12px) scale(0.99);
+    opacity: 0;
+    transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease;
 }
 .news-modal-close {
     position: absolute;
@@ -213,4 +215,10 @@
     .news-modal { flex-direction: column; }
     .news-modal-gallery-wrap { min-width: 100vw; max-width: 100vw; min-height: 180px; }
     .news-modal-content { min-width: 0; max-width: 100vw; padding: 18px 8px 18px 8px; }
+}
+
+/* When modal parent has active state, animate content into view */
+.news-modal.active .news-modal-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
 }

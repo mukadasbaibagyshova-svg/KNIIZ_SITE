@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap');
 
 /* Design Tokens & CSS Variables */
 :root {
@@ -21,8 +21,8 @@
     --text-light: #f8fafc;            /* Off-white */
     
     /* Typography */
-    --font-headings: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-headings: 'Outfit', 'Noto Sans', sans-serif;
+    --font-body: 'Inter', 'Noto Sans', sans-serif;
     
     /* Shadows & Borders */
     --shadow-sm: 0 4px 6px -1px rgba(12, 62, 33, 0.05), 0 2px 4px -1px rgba(12, 62, 33, 0.03);
@@ -135,10 +135,16 @@ a:hover {
 
 .map-page {
     display: grid;
-    grid-template-columns: 1.75fr 1fr;
+    grid-template-columns: 1fr 320px;
     gap: 32px;
     align-items: start;
     margin-top: 32px;
+}
+
+@media (max-width: 1024px) {
+    .map-page {
+        grid-template-columns: 1fr;
+    }
 }
 
 .map-legend {
@@ -388,6 +394,7 @@ a:hover {
     margin: 12px 0 0 0;
     opacity: 0;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
 }
 .dropdown-submenu::before {
     content: '';
@@ -405,6 +412,18 @@ a:hover {
     display: block;
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), pointer-events 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Create hover zone that includes the dropdown */
+.dropdown-li::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 20px;
+    pointer-events: auto;
 }
 .dropdown-submenu a {
     display: block;
@@ -1173,6 +1192,366 @@ section {
     padding-left: 4px;
 }
 
+.site-footer .footer-address-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+.site-footer .footer-address-link:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   Documents page — accordion blocks
+   ========================================================================== */
+.documents-accordion-grid {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.documents-accordion-item {
+    border: 1px solid var(--primary-color);
+    border-radius: 14px;
+    background: #faf8f3;
+    overflow: hidden;
+}
+
+.documents-accordion-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    padding: 18px 22px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.documents-accordion-btn:hover,
+.documents-accordion-btn:focus-visible {
+    background: rgba(12, 62, 33, 0.04);
+    outline: none;
+}
+
+.documents-accordion-btn:not(.collapsed) {
+    border-bottom: 1px solid rgba(12, 62, 33, 0.12);
+}
+
+.documents-accordion-title {
+    font-family: var(--font-headings);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    line-height: 1.35;
+}
+
+.documents-accordion-chevron {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #9ca3af;
+    border-bottom: 2px solid #9ca3af;
+    transform: rotate(45deg);
+    margin-top: -4px;
+    transition: transform 0.25s ease, border-color 0.2s ease;
+}
+
+.documents-accordion-btn:not(.collapsed) .documents-accordion-chevron {
+    transform: rotate(-135deg);
+    margin-top: 4px;
+    border-color: var(--primary-color);
+}
+
+.documents-accordion-body {
+    padding: 16px 22px 20px;
+}
+
+.documents-accordion-empty {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.documents-file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.documents-file-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(12, 62, 33, 0.14);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.documents-file-link:hover {
+    color: var(--primary-color);
+    border-color: var(--accent-color);
+    background: rgba(16, 185, 129, 0.06);
+    box-shadow: var(--shadow-sm);
+}
+
+.documents-file-icon {
+    flex-shrink: 0;
+    min-width: 42px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: rgba(12, 62, 33, 0.08);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.documents-file-name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.documents-file-action {
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+@media (max-width: 991px) {
+    .documents-accordion-title {
+        font-size: 14px;
+    }
+
+    .documents-accordion-btn {
+        padding: 16px 18px;
+    }
+}
+
+/* ==========================================================================
+   Administration page
+   ========================================================================== */
+.admin-page {
+    background: var(--bg-alt);
+}
+
+.admin-section {
+    max-width: 960px;
+    margin: 0 auto 48px;
+}
+
+.admin-section-title {
+    font-family: var(--font-headings);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.admin-section-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.admin-section-divider {
+    max-width: 960px;
+    margin: 0 auto 48px;
+    border: none;
+    border-top: 3px solid #d1d5db;
+    opacity: 1;
+}
+
+.admin-leadership-chart {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.admin-leadership-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.admin-leadership-lines {
+    position: relative;
+    height: 48px;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.admin-line {
+    position: absolute;
+    background: #9ca3af;
+}
+
+.admin-line--down {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 24px;
+    transform: translateX(-50%);
+}
+
+.admin-line--split {
+    top: 24px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+}
+
+.admin-line--split::before,
+.admin-line--split::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 24px;
+    background: #9ca3af;
+}
+
+.admin-line--split::before {
+    left: 0;
+}
+
+.admin-line--split::after {
+    right: 0;
+}
+
+.admin-leadership-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.admin-person-card {
+    display: block;
+    padding: 22px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 14px;
+    background: #faf8f3;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.admin-person-card--link:hover {
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    color: inherit;
+}
+
+.admin-person-card--lead {
+    min-width: 260px;
+    max-width: 320px;
+}
+
+.admin-person-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(12, 62, 33, 0.12);
+    margin: 0 auto 14px;
+    display: block;
+}
+
+.admin-person-photo--sm {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 12px;
+}
+
+.admin-person-avatar {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    font-family: var(--font-headings);
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-person-card--lead .admin-person-avatar,
+.admin-person-card--lead .admin-person-photo {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 16px;
+}
+
+.admin-person-role {
+    font-family: var(--font-headings);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.admin-person-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.admin-person-meta,
+.admin-person-branch {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 0;
+    line-height: 1.45;
+}
+
+.admin-person-branch {
+    margin-top: 8px;
+}
+
+@media (max-width: 767px) {
+    .admin-leadership-row {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-line--split {
+        display: none;
+    }
+
+    .admin-leadership-lines {
+        height: 24px;
+    }
+
+    .admin-person-card--lead {
+        min-width: 0;
+        width: 100%;
+        max-width: none;
+    }
+}
+
 .newsletter-box {
     display: flex;
     gap: 8px;
@@ -1330,5 +1709,294 @@ section {
 .mobile-nav-group {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 16px;
+}
+
+/* ==========================================================================
+   Person Card (administration page — hierarchical card layout)
+   ========================================================================== */
+
+/* ── Section wrapper ── */
+.hier-section {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hier-section-label {
+    font-family: var(--font-headings);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 32px;
+    position: relative;
+    padding-bottom: 12px;
+}
+.hier-section-label::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.hier-divider {
+    max-width: 980px;
+    margin: 0 auto 48px;
+    border: none;
+    border-top: 2px solid rgba(12,62,33,0.1);
+    opacity: 1;
+}
+
+/* ── Department block ── */
+.dept-block {
+    background: #fff;
+    border: 1px solid rgba(12,62,33,0.08);
+    border-radius: 16px;
+    padding: 28px 24px 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 12px rgba(12,62,33,0.05);
+}
+
+.dept-block__title {
+    font-family: var(--font-headings);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(16,185,129,0.25);
+}
+
+/* ── Sub-department block ── */
+.dept-sub-block {
+    margin-top: 20px;
+    padding: 16px 18px;
+    background: rgba(16,185,129,0.04);
+    border-left: 3px solid rgba(16,185,129,0.4);
+    border-radius: 0 10px 10px 0;
+}
+
+.dept-sub-block__title {
+    font-family: var(--font-headings);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+    opacity: 0.8;
+}
+
+/* ── Hierarchy rows ── */
+.hier-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.hier-row {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.hier-row--2 { grid-template-columns: repeat(2, 1fr); }
+.hier-row--3 { grid-template-columns: repeat(3, 1fr); }
+.hier-row--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ── Connector lines ── */
+.hier-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+    height: 36px;
+    position: relative;
+}
+.hier-line-v {
+    width: 2px;
+    height: 18px;
+    background: rgba(12,62,33,0.2);
+}
+.hier-line-h {
+    height: 2px;
+    width: 60%;
+    background: rgba(12,62,33,0.2);
+}
+.hier-line-v-pair,
+.hier-line-v-group {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+.hier-line-v-pair .hier-line-v,
+.hier-line-v-group .hier-line-v {
+    height: 18px;
+}
+
+/* ── Person Card ── */
+.pcard {
+    background: #fff;
+    border: 1.5px solid rgba(12,62,33,0.12);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 14px 16px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+.pcard::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.pcard:hover {
+    box-shadow: 0 8px 24px rgba(12,62,33,0.12);
+    transform: translateY(-3px);
+    border-color: rgba(16,185,129,0.35);
+}
+.pcard:hover::before {
+    opacity: 1;
+}
+
+/* Photo */
+.pcard__photo {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(12,62,33,0.1);
+    display: block;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}
+
+/* Avatar (initials fallback) */
+.pcard__avatar {
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    font-family: var(--font-headings);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 12px;
+}
+
+/* Card body */
+.pcard__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+.pcard__name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.35;
+    margin: 0;
+}
+
+.pcard__role {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* ── Size variants ── */
+
+/* Large (Director) */
+.pcard--lg {
+    padding: 28px 20px 22px;
+    max-width: 300px;
+    width: 100%;
+}
+.pcard--lg .pcard__photo { width: 110px; height: 110px; }
+.pcard--lg .pcard__avatar { width: 110px; height: 110px; font-size: 30px; }
+.pcard--lg .pcard__name { font-size: 17px; }
+.pcard--lg .pcard__role {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* Medium (deputy / dept head) */
+.pcard--md {
+    max-width: 220px;
+    width: 100%;
+}
+.pcard--md .pcard__photo { width: 80px; height: 80px; }
+.pcard--md .pcard__avatar { width: 80px; height: 80px; font-size: 22px; }
+.pcard--md .pcard__name { font-size: 14px; }
+.pcard--md .pcard__role { font-size: 12px; }
+
+/* Small (staff member) */
+.pcard--sm {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 14px 14px;
+    gap: 12px;
+}
+.pcard--sm .pcard__photo {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+.pcard--sm .pcard__avatar {
+    width: 52px; height: 52px;
+    font-size: 16px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+.pcard--sm .pcard__body {
+    align-items: flex-start;
+}
+.pcard--sm .pcard__name { font-size: 13px; }
+.pcard--sm .pcard__role { font-size: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .hier-row--4 { grid-template-columns: repeat(2, 1fr); }
+    .hier-row--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .hier-row--2,
+    .hier-row--3,
+    .hier-row--4 {
+        grid-template-columns: 1fr;
+    }
+    .pcard--sm {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .pcard--sm .pcard__body {
+        align-items: center;
+    }
+    .dept-block {
+        padding: 18px 14px 14px;
+    }
 }
 
