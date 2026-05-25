@@ -20,8 +20,9 @@ $languageOptions = getLanguages();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
     <?php if (!empty($page_head)) { echo $page_head; } ?>
+<link rel="stylesheet" href="assets/css/agro-map-dark.css" media="(prefers-color-scheme: dark)">
 </head>
-<body>
+<body<?php echo !empty($body_class) ? ' class="' . htmlspecialchars($body_class) . '"' : ''; ?>>
 <a class="skip-link" href="#main-content"><?php echo t('top_navigation'); ?></a>
 <?php
 $isHome = (basename($_SERVER['SCRIPT_NAME']) === 'index.php');
