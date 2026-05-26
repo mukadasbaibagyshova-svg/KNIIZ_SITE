@@ -6,9 +6,21 @@ $availableLangs = [
 ];
 $defaultLang = "ru";
 $currentLang = $defaultLang;
+
+// Приоритет: GET параметр > Cookie > Дефолт
 if (!empty($_GET["lang"]) && array_key_exists($_GET["lang"], $availableLangs)) {
     $currentLang = $_GET["lang"];
-    setcookie("lang", $currentLang, time() + 30 * 24 * 3600, "/");
+    // Установить cookie на 30 дней, с правильным путем
+    $cookie_expire = time() + 30 * 24 * 60 * 60;
+    // Используем явные параметры для совместимости со всеми браузерами
+    setcookie("lang", $currentLang, [
+        "expires" => $cookie_expire,
+        "path" => "/",
+        "domain" => "",
+        "secure" => false,
+        "httponly" => false,
+        "samesite" => "Lax",
+    ]);
 } elseif (
     !empty($_COOKIE["lang"]) &&
     array_key_exists($_COOKIE["lang"], $availableLangs)
@@ -27,6 +39,56 @@ $_lang = [
             "Он посвятил свою жизнь развитию селекции, агрохимии и семеноводства, укрепляя связь науки и практики на благо страны.",
         "about_azyikov_vision" =>
             "Его наследие продолжает вдохновлять новые поколения учёных и специалистов.",
+        "about_azyikov_portrait_alt" =>
+            "Портрет Азыкова Кулии Казакбаевича",
+        "about_azyikov_history1_alt" =>
+            "Историческая фотография института земледелия",
+        "about_azyikov_history2_alt" =>
+            "Фотография научного наследия института",
+        "azyikov_video_alt" =>
+            "Видео об Азыкове Кулии Казакбаевиче",
+        "about_azyikov_top_text" =>
+            "С именем Азыкова Кулии Казакбаевича неразрывно связаны выдающиеся достижения в области сельскохозяйственной науки Кыргызстана. Создание мощной материально-технической базы на основе двух небольших опытных станций вблизи города Фрунзе, преобразование их в крупное Научно-производственное объединение с высоким научным и производственным потенциалом, а также развитие прибыльного хозяйства — всё это стало результатом деятельности этого выдающегося учёного и коллектива, который он возглавлял.
+
+С 1963 по 1989 год Азыков Кулия Казакбаевич возглавлял Научно-производственное объединение «Институт земледелия». Крупные достижения института за годы его руководства, значительный хозяйственный потенциал, десятки научных открытий и подготовка высококвалифицированных кадров стали результатом его целеустремлённой работы и таланта организатора.
+
+Азыков Кулия Казакбаевич родился в 1911 году в селе Талаа-Булак Кочкорского района. Стремление к знаниям привело его после окончания Фрунзенского сельскохозяйственного техникума в Среднеазиатский экономический институт. Затем он работал научным сотрудником Среднеазиатского государственного планово-экономического исследовательского института. В ноябре 1939 года был призван в ряды Красной армии, а в декабре 1945 года вернулся в Киргизию.",
+        "about_azyikov_block1_text" =>
+            "В 1956 году Государственная селекционная станция по зерновым культурам и Республиканская плодоовощная станция были объединены в единый научно-исследовательский институт. Работая в Управлении делами Совета Министров, заместителем министра сельского хозяйства и начальником Иссык-Кульского областного управления сельского хозяйства, Азыков Кулия Казакбаевич в 1959 году был переведён в Кыргызский научно-исследовательский институт земледелия. В 1960 году он защитил кандидатскую диссертацию. В 1963 году был назначен директором Научно-исследовательского института земледелия.
+
+Стремясь доказать на практике, что правильное сочетание науки и производства способствует развитию сельского хозяйства, Азыков Кулия Казакбаевич в 1971 году организовал при институте первый в истории Кыргызстана селекционный центр. Центр занимался не только испытанием новых сортов, необходимых сельскому хозяйству, но и выведением собственных высокоурожайных сортов.",
+        "about_azyikov_block2_text" =>
+            "В 1975 году институт был реорганизован в Научно-производственное объединение. В его состав вошли: Научно-исследовательский институт земледелия, Свекловичная опытная станция, Ошская и Иссык-Кульская опытные станции, Нарынский и Куршабский опорные пункты, экспериментально-опытное хозяйство, совхоз имени 50-летия СССР, совхоз «Кургарт», 11 плодопитомнических совхозов и другие хозяйства.
+
+Под руководством генерального директора Азыкова Кулии Казакбаевича некогда небольшой институт превратился в одну из крупнейших научно-производственных систем Советского Союза.
+
+Объединение занималось выведением новых сортов сельскохозяйственных культур, обеспечивало колхозы и совхозы высококачественными семенами зерновых культур, картофеля, сахарной свёклы, овощей и саженцами плодовых деревьев. Оно стало признанным центром разработки и внедрения передовых технологий орошения, применения удобрений, механизированной обработки почвы, а также научных методов защиты растений от вредителей и болезней.",
+        "about_azyikov_bottom_text" =>
+            "Деятельность объединения была известна не только в СССР, но и за его пределами. В 1980 году Научно-производственное объединение под руководством Азыкова Кулии Казакбаевича обрабатывало 140 тысяч гектаров земли, из которых 33 тысячи гектаров составляла пашня, а 2700 гектаров — фруктовые сады и виноградники. Были выведены десятки новых сортов сельскохозяйственных культур, испытаны высокоурожайные сорта и разработаны адаптированные технологии выращивания для различных регионов Кыргызстана.
+
+В составе объединения действовали 26 научно-исследовательских отделов и лабораторий, занимавшихся селекцией зерновых культур, овощей, картофеля, плодовых культур и винограда. Научные коллективы проводили масштабную работу по созданию новых сортов и адаптации перспективных сортов к климатическим условиям Кыргызстана.
+
+Ежегодно объединение производило тысячи тонн элитных семян ячменя и пшеницы, семян кукурузы высокой репродукции, картофеля, многолетних трав, овощных культур и миллионы саженцев плодовых деревьев, обеспечивая ими хозяйства республики.
+
+Особых успехов достигла лаборатория виноградарства, благодаря которой были районированы 18 новых сортов винограда. Были разработаны агротехнические приёмы выращивания винограда на сложных почвах, а также методы повышения урожайности и улучшения качества продукции. Научные сотрудники объединения получили десятки авторских свидетельств и опубликовали более 200 научных трудов всесоюзного значения.
+
+В институте работали известные учёные: А. К. Филипповский, А. И. Чернецов, Г. А. Кузьмин, Ж. А. Акималиев, И. Д. Корнев, Н. Г. Корнеева, Н. М. Кузнецов и многие другие. Под руководством Азыкова Кулии Казакбаевича институт стал гордостью не только республики, но и всей советской аграрной науки.
+
+В научно-исследовательском институте работали 372 научных сотрудника, среди которых были 2 доктора наук и 80 кандидатов наук. За годы деятельности были успешно защищены 2 докторские и 62 кандидатские диссертации.
+
+Большое внимание уделялось совершенствованию методов повышения урожайности сельскохозяйственных культур. Учёными объединения были разработаны эффективные агротехнические приёмы выращивания озимой пшеницы, ячменя, кукурузы, сахарной свёклы, а также методы рационального использования оросительных систем.
+
+Выведенные объединением сорта пшеницы «Ош Т-1», «Киргизская-16», «Киргизская юбилейная», «Киргизская-100», «Эритроспермум-80», сорта ячменя «Нутанс-45», «Нутанс-970», «Нарын-27», а также гибриды кукурузы «Чуйский-47», «Чуйский-466» и «Чуйский-62» получили высокую оценку по урожайности и качеству не только в Кыргызстане, но и в других республиках СССР.
+
+Передовые технологии защиты плодовых деревьев, выращивания овощных культур и винограда, разработанные научными подразделениями объединения, успешно применялись в республиках Средней Азии, на Кавказе, в Крыму и на Украине.
+
+Помимо научной деятельности объединение являлось крупным сельскохозяйственным производителем, поставлявшим государству зерно, сахарную свёклу, мясо и молоко. В хозяйствах объединения содержались тысячи голов крупного и мелкого рогатого скота, свиней и лошадей. Годовой объём сельскохозяйственной продукции превышал 50 миллионов сомов, а чистая прибыль составляла около 6 миллионов сомов.
+
+За выдающиеся достижения в науке и сельском хозяйстве Научно-производственное объединение, возглавляемое Азыковым Кулией Казакбаевичем, было удостоено высоких государственных наград СССР и Кыргызской ССР. Двум работникам объединения было присвоено звание Героя Социалистического Труда, десятки сотрудников награждены орденами и медалями.
+
+Сам Азыков Кулия Казакбаевич был награждён медалями «За победу над Германией», «20 лет Победы в Великой Отечественной войне», «За трудовую доблесть», двумя орденами Красной Звезды, орденом «Знак Почёта», а также удостоен звания «Заслуженный агроном Киргизской ССР» и Государственной премии СССР.
+
+В 1991 году по предложению ВАСХНИЛ Фрунзенский городской исполнительный комитет принял решение об установке мемориальной доски Азыкову Кулии Казакбаевичу на здании Кыргызского научно-производственного объединения.",
         "page_title_maps" => "Карты",
         "page_title_products" => "Продукция",
         "page_title_news" => "Новости",
@@ -456,6 +518,52 @@ $_lang = [
         "docs_postanovlenie_file_2" => "Токтом Институт переименование",
         "docs_empty" => "Документы в этом разделе скоро будут добавлены.",
         "docs_download" => "Скачать PDF",
+        "docs_open" => "Открыть PDF",
+        "meta_desc_katalog" =>
+            "Каталог сельскохозяйственных сортов, разработанных КНИИЗ: пшеница, ячмень, кукуруза и другие.",
+        "meta_keys_katalog" =>
+            "каталог сортов, сорта пшеницы, сорта ячменя, сорта кукурузы, КНИИЗ",
+        "page_title_katalog" => "Каталог сортов",
+        "katalog_hero_title" => "Сорта сельскохозяйственных культур Кыргызстана",
+        "katalog_hero_desc" =>
+            "Научно обоснованные сорта, выведенные Кыргызским НИИ земледелия для всех агроклиматических зон республики.",
+        "katalog_stat_barley_count" => "Сортов ячменя",
+        "katalog_stat_first_rayon" => "Первый районированный сорт",
+        "katalog_stat_yield" => "Макс. урожайность",
+        "katalog_filter_title" => "Фильтр",
+        "katalog_filter_reset" => "Сбросить",
+        "katalog_search_label" => "Поиск по названию",
+        "katalog_search_placeholder" => "Нутанс, Таалай...",
+        "katalog_filter_culture_label" => "Культура",
+        "katalog_filter_all" => "Все",
+        "katalog_filter_culture_barley" => "Ячмень",
+        "katalog_filter_culture_wheat" => "Пшеница",
+        "katalog_filter_season_label" => "Тип посева",
+        "katalog_filter_season_spring" => "Яровой",
+        "katalog_filter_season_winter" => "Озимый",
+        "katalog_filter_maturity_label" => "Скороспелость",
+        "katalog_filter_maturity_early" => "Ранний",
+        "katalog_filter_maturity_mid_early" => "Среднеранний",
+        "katalog_filter_maturity_mid" => "Среднеспелый",
+        "katalog_filter_drought_label" => "Засухоустойчивость",
+        "katalog_filter_drought_high" => "Высокая",
+        "katalog_filter_drought_medium" => "Средняя",
+        "katalog_filter_count_prefix" => "Показано:",
+        "katalog_filter_count_suffix" => "сортов",
+        "katalog_results_title" => "Каталог сортов",
+        "katalog_results_count_empty" => "0 сортов найдено",
+        "katalog_results_phrase" => "{{count}} сортов найдено",
+        "katalog_sort_name" => "По названию А-Я",
+        "katalog_sort_yield_desc" => "По урожайности ↓",
+        "katalog_sort_yield_asc" => "По урожайности ↑",
+        "katalog_sort_year" => "По году допуска",
+        "stat_mass" => "Масса 1000 зерён",
+        "stat_yield" => "Потенц. урожайность",
+        "stat_protein" => "Белок в зерне",
+        "stat_year" => "Допущен к использованию",
+        "more_details" => "Подробнее →",
+        "katalog_no_results_title" => "Сорта не найдены",
+        "katalog_no_results_text" => "Попробуйте изменить параметры фильтра",
     ],
     "en" => [
         "page_title_home" => "Home",
@@ -467,6 +575,56 @@ $_lang = [
             "He dedicated his career to breeding, agrochemistry and seed production while strengthening the link between science and practice.",
         "about_azyikov_vision" =>
             "His legacy continues to inspire new generations of scientists and agronomists.",
+        "about_azyikov_portrait_alt" =>
+            "Portrait of Azykov Kuliya Kazakbaevich",
+        "about_azyikov_history1_alt" =>
+            "Historical photograph of the Institute of Agriculture",
+        "about_azyikov_history2_alt" =>
+            "Photograph of the Institute's scientific heritage",
+        "azyikov_video_alt" =>
+            "Video about Azykov Kuliya Kazakbaevich",
+        "about_azyikov_top_text" =>
+            "The name of Azykov Kuliya Kazakbaevich is inextricably linked with outstanding achievements in the field of agricultural science in Kyrgyzstan. The creation of a powerful material and technical base based on two small experimental stations near the city of Frunze, their transformation into a large Scientific Production Association with high scientific and production potential, and the development of a profitable economy — all this was the result of the activities of this outstanding scientist and the team he led.
+
+From 1963 to 1989, Azykov Kuliya Kazakbaevich headed the Scientific Production Association 'Institute of Agriculture'. The major achievements of the institute during his leadership, its significant production potential, dozens of scientific discoveries and the training of highly qualified personnel were the result of his purposeful work and organizational talent.
+
+Azykov Kuliya Kazakbaevich was born in 1911 in the village of Talaa-Bulak, Kochkor district. His pursuit of knowledge led him, after graduating from the Frunze Agricultural College, to the Central Asian Economic Institute. He then worked as a research associate at the Central Asian State Institute of Planning and Economics. In November 1939 he was drafted into the Red Army, and in December 1945 he returned to Kyrgyzstan.",
+        "about_azyikov_block1_text" =>
+            "In 1956, the State Breeding Station for Grain Crops and the Republican Fruit and Vegetable Station were merged into a single research institute. While working in the Office of the Council of Ministers, as Deputy Minister of Agriculture and head of the Issyk-Kul Regional Agriculture Department, Azykov Kuliya Kazakbaevich was transferred to the Kyrgyz Research Institute of Agriculture in 1959. In 1960 he defended his candidate dissertation. In 1963 he was appointed director of the Research Institute of Agriculture.
+
+Seeking to prove in practice that the right combination of science and production contributes to the development of agriculture, Azykov Kuliya Kazakbaevich organized the first breeding center in the history of Kyrgyzstan at the institute in 1971. The center was engaged not only in testing new varieties needed by agriculture, but also in breeding its own high-yield varieties.",
+        "about_azyikov_block2_text" =>
+            "In 1975, the institute was reorganized into a Scientific Production Association. Its composition included: the Research Institute of Agriculture, the Sugar Beet Experimental Station, the Osh and Issyk-Kul Experimental Stations, the Naryn and Kurshab support points, the experimental-production farm, the state farm named after the 50th anniversary of the USSR, the 'Kurgart' state farm, 11 fruit nursery state farms and other farms.
+
+Under the leadership of General Director Azykov Kuliya Kazakbaevich, the once small institute became one of the largest scientific-production systems of the Soviet Union.
+
+The association engaged in breeding new agricultural crop varieties, supplied collective and state farms with high-quality seeds of grain crops, potatoes, sugar beets, vegetables and fruit tree seedlings. It became a recognized center for developing and implementing advanced technologies for irrigation, fertilizer application, mechanized soil cultivation, as well as scientific methods of plant protection against pests and diseases.",
+        "about_azyikov_bottom_text" =>
+            "The association's activities were known not only in the USSR, but also beyond its borders. In 1980, under the leadership of Azykov Kuliya Kazakbaevich, the Scientific Production Association cultivated 140,000 hectares of land, of which 33,000 hectares were arable land, and 2,700 hectares were fruit orchards and vineyards. Dozens of new agricultural crop varieties were bred, high-yield varieties were tested, and adapted cultivation technologies were developed for various regions of Kyrgyzstan.
+
+The association included 26 research departments and laboratories engaged in breeding grain crops, vegetables, potatoes, fruit crops and grapes. Research teams carried out large-scale work on creating new varieties and adapting promising varieties to the climatic conditions of Kyrgyzstan.
+
+Each year, the association produced thousands of tons of elite barley and wheat seeds, high-reproduction corn seeds, potatoes, perennial grass seeds, vegetable crops and millions of fruit tree seedlings, supplying them to the republic's farms.
+
+The viticulture laboratory achieved special success, thanks to which 18 new grape varieties were zoned. Agrotechnical techniques for growing grapes on difficult soils were developed, as well as methods to increase yields and improve product quality. The association's researchers received dozens of author certificates and published more than 200 scientific works of all-Union significance.
+
+Well-known scientists worked at the institute: A. K. Filippovsky, A. I. Chernetsov, G. A. Kuzmin, Zh. A. Akimaliev, I. D. Kornev, N. G. Korneeva, N. M. Kuznetsov and many others. Under the leadership of Azykov Kuliya Kazakbaevich, the institute became the pride not only of the republic, but of the entire Soviet agricultural science.
+
+The research institute employed 372 research staff, including 2 doctors of science and 80 candidates of science. During its operation, 2 doctoral and 62 candidate dissertations were successfully defended.
+
+Great attention was paid to improving methods of increasing agricultural crop yields. The association's scientists developed effective agrotechnical techniques for growing winter wheat, barley, corn, sugar beet, as well as methods for the rational use of irrigation systems.
+
+The varieties bred by the association, such as wheat “Osh T-1”, “Kyrgyzskaya-16”, “Kyrgyzskaya Jubileynaya”, “Kyrgyzskaya-100”, “Erythrospermum-80”, barley varieties “Nutans-45”, “Nutans-970”, “Naryn-27”, and corn hybrids “Chuy-47”, “Chuy-466” and “Chuy-62” received high marks for yield and quality not only in Kyrgyzstan, but also in other Soviet republics.
+
+Advanced technologies for protecting fruit trees, growing vegetables and grapes developed by the association's scientific units were successfully applied in the republics of Central Asia, the Caucasus, Crimea and Ukraine.
+
+In addition to scientific activities, the association was a large agricultural producer supplying the state with grain, sugar beet, meat and milk. The association's farms held thousands of heads of large and small cattle, pigs and horses. The annual volume of agricultural products exceeded 50 million som, and net profit was about 6 million som.
+
+For outstanding achievements in science and agriculture, the Scientific Production Association led by Azykov Kuliya Kazakbaevich received high government awards of the USSR and the Kyrgyz SSR. Two of the association's employees were bestowed the title Hero of Socialist Labor, and dozens of staff were awarded orders and medals.
+
+Azykov Kuliya Kazakbaevich himself was awarded medals “For the Victory over Germany”, “20 Years of Victory in the Great Patriotic War”, “For Labor Valor”, two Orders of the Red Star, the Order of the Badge of Honor, and was also awarded the title “Honored Agronomist of the Kyrgyz SSR” and the USSR State Prize.
+
+In 1991, at the proposal of VASKhNIL, the Frunze city executive committee adopted a decision to install a memorial plaque to Azykov Kuliya Kazakbaevich on the building of the Kyrgyz Scientific Production Association.",
         "page_title_maps" => "Maps",
         "page_title_products" => "Products",
         "page_title_news" => "News",
@@ -890,6 +1048,106 @@ $_lang = [
         "docs_postanovlenie_file_2" => "Resolution on KG",
         "docs_empty" => "Documents in this section will be added soon.",
         "docs_download" => "Download PDF",
+        "docs_open" => "Open PDF",
+        "season_spring" => "Spring",
+        "season_winter" => "Winter",
+        "meta_desc_history" =>
+            "History of the Kyrgyz Scientific Research Institute of Agriculture named after K.K. Azykov — from founding in 1956 to the present day.",
+        "meta_keys_history" =>
+            "KNIIZ history, institute history, Kyrgyz institute of agriculture",
+        "meta_desc_international" =>
+            "International cooperation and partnerships of the Kyrgyz Scientific Research Institute of Agriculture.",
+        "meta_keys_international" =>
+            "KNIIZ international cooperation, FAO, CGIAR, Kyrgyzstan agriculture",
+        "meta_desc_katalog" =>
+            "Catalog of agricultural crop varieties developed by KNIIZ: wheat, barley, corn and others.",
+        "meta_keys_katalog" =>
+            "varieties catalog, wheat varieties, barley varieties, corn varieties, KNIIZ",
+        "page_title_katalog" => "Varieties Catalog",
+        "katalog_hero_title" => "Varieties of agricultural crops of Kyrgyzstan",
+        "katalog_hero_desc" =>
+            "Scientifically based varieties developed by the Kyrgyz Research Institute of Agriculture for all agroclimatic zones of the republic.",
+        "katalog_stat_barley_count" => "Barley varieties",
+        "katalog_stat_first_rayon" => "First zoned variety",
+        "katalog_stat_yield" => "Max yield",
+        "katalog_filter_title" => "Filter",
+        "katalog_filter_reset" => "Reset",
+        "katalog_search_label" => "Search by name",
+        "katalog_search_placeholder" => "Nutans, Taaly...",
+        "katalog_filter_culture_label" => "Culture",
+        "katalog_filter_all" => "All",
+        "katalog_filter_culture_barley" => "Barley",
+        "katalog_filter_culture_wheat" => "Wheat",
+        "katalog_filter_season_label" => "Sowing type",
+        "katalog_filter_season_spring" => "Spring",
+        "katalog_filter_season_winter" => "Winter",
+        "katalog_filter_maturity_label" => "Maturity",
+        "katalog_filter_maturity_early" => "Early",
+        "katalog_filter_maturity_mid_early" => "Mid-early",
+        "katalog_filter_maturity_mid" => "Mid",
+        "katalog_filter_drought_label" => "Drought resistance",
+        "katalog_filter_drought_high" => "High",
+        "katalog_filter_drought_medium" => "Medium",
+        "katalog_filter_count_prefix" => "Shown:",
+        "katalog_filter_count_suffix" => "varieties",
+        "katalog_results_title" => "Varieties Catalog",
+        "katalog_results_count_empty" => "0 varieties found",
+        "katalog_sort_name" => "By name A-Z",
+        "katalog_sort_yield_desc" => "By yield ↓",
+        "katalog_sort_yield_asc" => "By yield ↑",
+        "katalog_sort_year" => "By admission year",
+        "stat_mass" => "Thousand-kernel weight",
+        "stat_yield" => "Potential yield",
+        "stat_protein" => "Protein in grain",
+        "stat_year" => "Approved for use",
+        "more_details" => "More details →",
+        "katalog_no_results_title" => "No varieties found",
+        "katalog_no_results_text" => "Try changing the filter options",
+        "page_title_international" => "International Cooperation",
+        "intl_title" => "International Cooperation",
+        "intl_subtitle" =>
+            "International partnerships and cooperation of the Institute",
+        "intl_partners_title" => "International Partners",
+        "intl_partners_fao" => "Food and Agriculture Organization (FAO)",
+        "intl_partners_cgiar" =>
+            "CGIAR — Consultative Group on International Agricultural Research",
+        "intl_partners_universities" =>
+            "Leading universities and research centers worldwide",
+        "intl_partners_regional" => "Regional agricultural organizations",
+        "intl_directions_title" => "Areas of Cooperation",
+        "intl_direction_1" =>
+            "Exchange of scientific knowledge and technologies",
+        "intl_direction_2" => "Joint research projects",
+        "intl_direction_3" => "Training and professional development",
+        "intl_direction_4" =>
+            "Participation in international conferences and seminars",
+        "intl_projects_title" => "Recent Projects",
+        "intl_fao_project" => "FAO Global Programme \"Doctors for Soils\"",
+        "intl_fao_desc" =>
+            "The Institute actively participates in the implementation of the FAO global programme aimed at sustainable soil management and improving land fertility in Kyrgyzstan.",
+        "intl_contact_title" => "Interested in Cooperation?",
+        "intl_contact_desc" =>
+            "The Institute is open to new partnerships and cooperation with international organizations, research centers and educational institutions.",
+        "intl_contact_btn" => "Contact Us",
+        "history_page_subtitle" =>
+            "Main stages of the institute's formation, development of scientific areas and strengthening of its material and technical base.",
+        "history_block1_year" => "1956",
+        "history_block1_tag" => "Founding of the institute",
+        "history_block1_title" => "Establishment and organizational formation",
+        "history_block2_year" => "1956–1970s",
+        "history_block2_tag" => "Scientific directions",
+        "history_block2_title" => "Development of scientific themes",
+        "history_block3_year" => "Active growth period",
+        "history_block3_tag" => "Team and production results",
+        "history_block3_title" =>
+            "Scale of scientific and production activities",
+        "azyikov_page_subtitle" =>
+            "The name of Azykov Kuliya Kazakbaevich is inextricably linked with outstanding achievements in the field of agricultural science in Kyrgyzstan.",
+        "azyikov_video_badge" => "YouTube video",
+        "azyikov_video_title" => "Video about Azykov Kuliya Kazakbaevich",
+        "azyikov_video_desc" =>
+            "Material about the life, scientific activities and contribution of Azykov Kuliya Kazakbaevich to the development of agricultural science in Kyrgyzstan.",
+        "azyikov_video_btn" => "Watch on YouTube",
     ],
     "ky" => [
         "page_title_home" => "Башкы бет",
@@ -901,6 +1159,56 @@ $_lang = [
             "Ал өмүрүн селекция, агрохимия жана үрөнчүлүккө арнап, илим менен практика арасындагы байланышты бекемдеген.",
         "about_azyikov_vision" =>
             "Анын мурасы жаңы муун агрономдорду жана илимпоздорду шыктандырууда.",
+        "about_azyikov_portrait_alt" =>
+            "Азыкoв Кулия Казакбаевичтин сүрөтү",
+        "about_azyikov_history1_alt" =>
+            "Земледелие институтунун тарыхый сүрөтү",
+        "about_azyikov_history2_alt" =>
+            "Институттун илимий мурастарынын сүрөтү",
+        "azyikov_video_alt" =>
+            "Азыкoв Кулия Казакбаевич жөнүндө видео",
+        "about_azyikov_top_text" =>
+            "С именем Азыкова Кулии Казакбаевича неразрывно связаны выдающиеся достижения в области сельскохозяйственной науки Кыргызстана. Создание мощной материально-технической базы на основе двух небольших опытных станций вблизи города Фрунзе, преобразование их в крупное Научно-производственное объединение с высоким научным и производственным потенциалом, а также развитие прибыльного хозяйства — всё это стало результатом деятельности этого выдающегося учёного и коллектива, который он возглавлял.
+
+С 1963 по 1989 год Азыков Кулия Казакбаевич возглавлял Научно-производственное объединение «Институт земледелия». Крупные достижения института за годы его руководства, значительный хозяйственный потенциал, десятки научных открытий и подготовка высококвалифицированных кадров стали результатом его целеустремлённой работы и таланта организатора.
+
+Азыков Кулия Казакбаевич родился в 1911 году в селе Талаа-Булак Кочкорского района. Стремление к знаниям привело его после окончания Фрунзенского сельскохозяйственного техникума в Среднеазиатский экономический институт. Затем он работал научным сотрудником Среднеазиатского государственного планово-экономического исследовательского института. В ноябре 1939 года был призван в ряды Красной армии, а в декабре 1945 года вернулся в Киргизию.",
+        "about_azyikov_block1_text" =>
+            "В 1956 году Государственная селекционная станция по зерновым культурам и Республиканская плодоовощная станция были объединены в единый научно-исследовательский институт. Работая в Управлении делами Совета Министров, заместителем министра сельского хозяйства и начальником Иссык-Кульского областного управления сельского хозяйства, Азыков Кулия Казакбаевич в 1959 году был переведён в Кыргызский научно-исследовательский институт земледелия. В 1960 году он защитил кандидатскую диссертацию. В 1963 году был назначен директором Научно-исследовательского института земледелия.
+
+Стремясь доказать на практике, что правильное сочетание науки и производства способствует развитию сельского хозяйства, Азыков Кулия Казакбаевич в 1971 году организовал при институте первый в истории Кыргызстана селекционный центр. Центр занимался не только испытанием новых сортов, необходимых сельскому хозяйству, но и выведением собственных высокоурожайных сортов.",
+        "about_azyikov_block2_text" =>
+            "В 1975 году институт был реорганизован в Научно-производственное объединение. В его состав вошли: Научно-исследовательский институт земледелия, Свекловичная опытная станция, Ошская и Иссык-Кульская опытные станции, Нарынский и Куршабский опорные пункты, экспериментально-опытное хозяйство, совхоз имени 50-летия СССР, совхоз «Кугарт», 11 плодопитомнических совхозов и другие хозяйства.
+
+Под руководством генерального директора Азыкова Кулии Казакбаевича некогда небольшой институт превратился в одну из крупнейших научно-производственных систем Советского Союза.
+
+Объединение занималось выведением новых сортов сельскохозяйственных культур, обеспечивало колхозы и совхозы высококачественными семенами зерновых культур, картофеля, сахарной свёклы, овощей и саженцами плодовых деревьев. Оно стало признанным центром разработки и внедрения передовых технологий орошения, применения удобрений, механизированной обработки почвы, а также научных методов защиты растений от вредителей и болезней.",
+        "about_azyikov_bottom_text" =>
+            "Деятельность объединения была известна не только в СССР, но и за его пределами. В 1980 году Научно-производственное объединение под руководством Азыкова Кулии Казакбаевича обрабатывало 140 тысяч гектаров земли, из которых 33 тысячи гектаров составляла пашня, а 2700 гектаров — фруктовые сады и виноградники. Были выведены десятки новых сортов сельскохозяйственных культур, испытаны высокоурожайные сорта и разработаны адаптированные технологии выращивания для различных регионов Кыргызстана.
+
+В составе объединения действовали 26 научно-исследовательских отделов и лабораторий, занимавшихся селекцией зерновых культур, овощей, картофеля, плодовых культур и винограда. Научные коллективы проводили масштабную работу по созданию новых сортов и адаптации перспективных сортов к климатическим условиям Кыргызстана.
+
+Ежегодно объединение производило тысячи тонн элитных семян ячменя и пшеницы, семян кукурузы высокой репродукции, картофеля, многолетних трав, овощных культур и миллионы саженцев плодовых деревьев, обеспечивая ими хозяйства республики.
+
+Особых успехов достигла лаборатория виноградарства, благодаря которой были районированы 18 новых сортов винограда. Были разработаны агротехнические приёмы выращивания винограда на сложных почвах, а также методы повышения урожайности и улучшения качества продукции. Научные сотрудники объединения получили десятки авторских свидетельств и опубликовали более 200 научных трудов всесоюзного значения.
+
+В институте работали известные учёные: А. К. Филипповский, А. И. Чернецов, Г. А. Кузьмин, Ж. А. Акималиев, И. Д. Корнев, Н. Г. Корнеева, Н. М. Кузнецов и многие другие. Под руководством Азыкова Кулии Казакбаевича институт стал гордостью не только республики, но и всей советской аграрной науки.
+
+В научно-исследовательском институте работали 372 научных сотрудника, среди которых были 2 доктора наук и 80 кандидатов наук. За годы деятельности были успешно защищены 2 докторские и 62 кандидатские диссертации.
+
+Большое внимание уделялось совершенствованию методов повышения урожайности сельскохозяйственных культур. Учёными объединения были разработаны эффективные агротехнические приёмы выращивания озимой пшеницы, ячменя, кукурузы, сахарной свёклы, а также методы рационального использования оросительных систем.
+
+Выведенные объединением сорта пшеницы «Ош Т-1», «Киргизская-16», «Киргизская юбилейная», «Киргизская-100», «Эритроспермум-80», сорта ячменя «Нутанс-45», «Нутанс-970», «Нарын-27», а также гибриды кукурузы «Чуйский-47», «Чуйский-466» и «Чуйский-62» получили высокую оценку по урожайности и качеству не только в Кыргызстане, но и в других республиках СССР.
+
+Передовые технологии защиты плодовых деревьев, выращивания овощных культур и винограда, разработанные научными подразделениями объединения, успешно применялись в республиках Средней Азии, на Кавказе, в Крыму и на Украине.
+
+Помимо научной деятельности объединение являлось крупным сельскохозяйственным производителем, поставлявшим государству зерно, сахарную свёклу, мясо и молоко. В хозяйствах объединения содержались тысячи голов крупного и мелкого рогатого скота, свиней и лошадей. Годовой объём сельскохозяйственной продукции превышал 50 миллионов сомов, а чистая прибыль составляла около 6 миллионов сомов.
+
+За выдающиеся достижения в науке и сельском хозяйстве Научно-производственное объединение, возглавляемое Азыковым Кулией Казакбаевичем, было удостоено высоких государственных наград СССР и Кыргызской ССР. Двум работникам объединения было присвоено звание Героя Социалистического Труда, десятки сотрудников награждены орденами и медалями.
+
+Сам Азыков Кулия Казакбаевич был награждён медалями «За победу над Германией», «20 лет Победы в Великой Отечественной войне», «За трудовую доблесть», двумя орденами Красной Звезды, орденом «Знак Почёта», а также удостоен звания «Заслуженный агроном Киргизской ССР» и Государственной премии СССР.
+
+В 1991 году по предложению ВАСХНИЛ Фрунзенский городской исполнительный комитет принял решение об установке мемориальной доски Азыкову Кулии Казакбаевичу на здании Кыргызского научно-производственного объединения.",
         "page_title_maps" => "Карталар",
         "page_title_products" => "Өнүмдөр",
         "page_title_news" => "Билдирүүлөр",
@@ -1328,8 +1636,105 @@ $_lang = [
         "docs_postanovlenie_file_1" => "Постановление Институт переименование",
         "docs_postanovlenie_file_2" => "Токтом Институт переименование",
         "docs_empty" => "Бул бөлүмдөгү документтер жакында кошулат.",
-        "docs_download" => "PDF жүктөп алуу",
-        "docs_open" => "PDF ачуу",
+        "docs_download" => "PDF жүктөп алу",
+        "docs_open" => "PDF ачу",
+        "season_spring" => "Язгылык",
+        "season_winter" => "Кышкылык",
+        "meta_desc_history" =>
+            "Кыргыз дыйканчылык илимий-изилдөө институтунун тарыхы — 1956-жылдан бүгүнкү күнгө чейин.",
+        "meta_keys_history" =>
+            "КНИИЗ тарыхы, институттун тарыхы, Кыргыз дыйканчылык институту",
+        "meta_desc_international" =>
+            "Кыргыз дыйканчылык илимий-изилдөө институтунун эл аралык кызматташуусу жана өнөктөштүгү.",
+        "meta_keys_international" =>
+            "КНИИЗ эл аралык кызматташуу, ФАО, CGIAR, Кыргызстан айыл чарбасы",
+        "meta_desc_katalog" =>
+            "КНИИЗ тарабынан иштелип чыгарылган эгин сортторунун каталогу.",
+        "meta_keys_katalog" =>
+            "сорттор каталогу, буудай сорттору, арпа сорттору, жүгөрү сорттору, КНИИЗ",
+        "page_title_katalog" => "Сорттор каталогу",
+        "katalog_hero_title" => "Кыргызстандын айыл чарба өсүмдүктөрүнүн сорттору",
+        "katalog_hero_desc" =>
+            "Кыргыз илимий-изилдөө дыйканчылык институту тарабынан республиканыӊ бардык агроклиматикалык зоналары үчүн иштелип чыккан илимий негизделген сорттор.",
+        "katalog_stat_barley_count" => "Арпа сорттору",
+        "katalog_stat_first_rayon" => "Биринчи районирленген сорт",
+        "katalog_stat_yield" => "Макс. түшүмдүүлүгү",
+        "katalog_filter_title" => "Фильтр",
+        "katalog_filter_reset" => "Тазалоо",
+        "katalog_search_label" => "Аты боюнча издөө",
+        "katalog_search_placeholder" => "Нутанс, Таалай...",
+        "katalog_filter_culture_label" => "Маданият",
+        "katalog_filter_all" => "Бардыгы",
+        "katalog_filter_culture_barley" => "Арпа",
+        "katalog_filter_culture_wheat" => "Буудай",
+        "katalog_filter_season_label" => "Экөө түрү",
+        "katalog_filter_season_spring" => "Жазгы",
+        "katalog_filter_season_winter" => "Кышкы",
+        "katalog_filter_maturity_label" => "Тезирээк",
+        "katalog_filter_maturity_early" => "Эрте",
+        "katalog_filter_maturity_mid_early" => "Орто эрте",
+        "katalog_filter_maturity_mid" => "Орто",
+        "katalog_filter_drought_label" => "Кургакчилдыкка туруштук",
+        "katalog_filter_drought_high" => "Жогорку",
+        "katalog_filter_drought_medium" => "Орто",
+        "katalog_filter_count_prefix" => "Көрсөтүлдү:",
+        "katalog_filter_count_suffix" => "сорттор",
+        "katalog_results_title" => "Сорттор каталогу",
+        "katalog_results_count_empty" => "0 сорт табылган жок",
+        "katalog_sort_name" => "Аталышы боюнча А-Я",
+        "katalog_sort_yield_desc" => "Түшүмдүүлүк боюнча ↓",
+        "katalog_sort_yield_asc" => "Түшүмдүүлүк боюнча ↑",
+        "katalog_sort_year" => "Жылды киргизүү боюнча",
+        "stat_mass" => "1000 дандын массасы",
+        "stat_yield" => "Потенциалдуу түшүмдүүлүк",
+        "stat_protein" => "Данедеги белок",
+        "stat_year" => "Колдонууга киргизилген",
+        "more_details" => "Толугураак →",
+        "katalog_no_results_title" => "Сорттор табылган жок",
+        "katalog_no_results_text" => "Фильтр параметрлерин өзгөртүп көрүңүз",
+        "page_title_international" => "Эл аралык кызматташуу",
+        "intl_subtitle" =>
+            "Институттун эл аралык өнөктөштүгү жана кызматташуусу",
+        "intl_partners_title" => "Эл аралык өнөктөштүктөр",
+        "intl_partners_fao" => "Азык-түлүк жана айыл чарба уюму (ФАО)",
+        "intl_partners_cgiar" =>
+            "CGIAR — Эл аралык айыл чарба изилдөөлөрү боюнча консультативдик топ",
+        "intl_partners_universities" =>
+            "Дүйнөнүн алдыңкы университеттери жана илимий борборлору",
+        "intl_partners_regional" => "Аймактык айыл чарба уюмдары",
+        "intl_directions_title" => "Кызматташуу багыттары",
+        "intl_direction_1" => "Илимий билим жана технологиялар менен алмашуу",
+        "intl_direction_2" => "Биргелешкен изилдөө долбоорлору",
+        "intl_direction_3" => "Окутуу жана квалификацияны жогорулатуу",
+        "intl_direction_4" =>
+            "Эл аралык конференцияларга жана семинарларга катышуу",
+        "intl_projects_title" => "Акыркы долбоорлор",
+        "intl_fao_project" =>
+            "ФАО глобалдык программасы «Топурактын дарыгерлери»",
+        "intl_fao_desc" =>
+            "Институт Кыргызстандагы топурак ресурстарын туруктуу башкарууга жана жер берекесин жогорулатууга багытталган ФАО глобалдык программасын ишке ашырууга жигердүү катышат.",
+        "intl_contact_title" => "Кызматташуу менен кызыгасызбы?",
+        "intl_contact_desc" =>
+            "Институт эл аралык уюмдар, илимий борборлор жана билим берүү мекемелери менен жаңы өнөктөштүктөргө жана кызматташууга даяр.",
+        "intl_contact_btn" => "Биз менен байланышыңыз",
+        "history_page_subtitle" =>
+            "Институттун калыптануусунун, илимий багыттардын өнүгүүсүнүн жана материалдык-техникалык базанын чыңалуусунун негизги этаптары.",
+        "history_block1_year" => "1956-жыл",
+        "history_block1_tag" => "Институттун негизделиши",
+        "history_block1_title" => "Түзүлүшү жана уюштуруу калыптануусу",
+        "history_block2_year" => "1956–1970-жылдар",
+        "history_block2_tag" => "Илимий багыттар",
+        "history_block2_title" => "Илимий тематиканын өнүгүүсү",
+        "history_block3_year" => "Активдүү өсүш мезгили",
+        "history_block3_tag" => "Жамаат жана өндүрүштүк жыйынтыктар",
+        "history_block3_title" => "Илимий-өндүрүштүк ишмердүүлүктүн масштабы",
+        "azyikov_page_subtitle" =>
+            "Азыков Кулия Казакбаевичтин аты Кыргызстандын айыл чарба илиминдеги выдающийся жетишкендиктер менен ажырагысыз байланышта.",
+        "azyikov_video_badge" => "YouTube видео",
+        "azyikov_video_title" => "Азыков Кулия Казакбаевич жөнүндө видео",
+        "azyikov_video_desc" =>
+            "Азыков Кулия Казакбаевичтин жашоосу, илимий ишмердүүлүгү жана Кыргызстандын айыл чарба илиминин өнүгүүсүнө кошкон салымы жөнүндө материал.",
+        "azyikov_video_btn" => "YouTubeда көрүү",
     ],
 ];
 
@@ -1356,27 +1761,37 @@ if (is_file($__langOverridesFile)) {
 
 function t($key, $default = "")
 {
-    global $_lang, $currentLang;
+    global $_lang, $currentLang, $availableLangs;
+
+    // Проверка доступности языка
+    if (!isset($_lang[$currentLang])) {
+        $currentLang = "ru"; // Fallback к русскому
+    }
+
+    // Если ключ есть в текущем языке — вернуть его
     if (isset($_lang[$currentLang][$key])) {
         return $_lang[$currentLang][$key];
     }
 
-    // Если нет перевода на текущем языке — используем русский, но фиксируем "пропуск",
-    // чтобы можно было доперевести через админку.
-    if (isset($_lang["ru"][$key])) {
+    // Если нет перевода на текущем языке — используем русский, но логируем пропуск
+    if ($currentLang !== "ru" && isset($_lang["ru"][$key])) {
         _logMissingTranslation($currentLang, $key);
         return $_lang["ru"][$key];
     }
 
+    // Если нет и в русском - логируем и возвращаем дефолт или ключ
     _logMissingTranslation("ru", $key);
-    return $default;
+    return $default ?: $key;
 }
 
 function _logMissingTranslation($lang, $key)
 {
-    // Стараемся не раздувать файл логов: пишем только новые ключи.
+    // Логируем пропущенные переводы только в dev-режиме
+    // Файл: database/lang_missing.json
+
     $file = __DIR__ . "/../database/lang_missing.json";
     $data = [];
+
     if (is_file($file)) {
         $raw = file_get_contents($file);
         $decoded = json_decode($raw, true);
@@ -1384,39 +1799,87 @@ function _logMissingTranslation($lang, $key)
             $data = $decoded;
         }
     }
+
     if (!isset($data[$lang])) {
         $data[$lang] = [];
     }
+
+    // Добавляем ключ если его еще нет
     if (!in_array($key, $data[$lang], true)) {
         $data[$lang][] = $key;
-        file_put_contents(
+
+        // Сортируем для удобства
+        sort($data[$lang]);
+
+        // Пишем обратно в файл
+        @file_put_contents(
             $file,
-            json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT),
+            json_encode(
+                $data,
+                JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_FORCE_OBJECT,
+            ),
+            LOCK_EX,
         );
     }
 }
 
 function langUrl($langCode)
 {
+    // Безопасная проверка кода языка
+    global $availableLangs;
+    if (!array_key_exists($langCode, $availableLangs)) {
+        return $_SERVER["REQUEST_URI"];
+    }
+
     $url = $_SERVER["REQUEST_URI"];
     $parts = parse_url($url);
     $query = [];
+
     if (!empty($parts["query"])) {
         parse_str($parts["query"], $query);
     }
+
     $query["lang"] = $langCode;
     $newQuery = http_build_query($query);
-    return ($parts["path"] ?? "") . "?" . $newQuery;
+
+    $newUrl = ($parts["path"] ?? "/") . "?" . $newQuery;
+    return htmlspecialchars($newUrl, ENT_QUOTES, "UTF-8");
 }
 
 function currentLang()
 {
     global $currentLang;
-    return $currentLang;
+    return isset($currentLang) ? $currentLang : "ru";
 }
 
 function getLanguages()
 {
     global $availableLangs;
     return $availableLangs;
+}
+
+/**
+ * Генерирует URL с переключением на другой язык
+ * Сохраняет все текущие параметры запроса
+ */
+function switchLangUrl($langCode)
+{
+    global $availableLangs;
+    if (!array_key_exists($langCode, $availableLangs)) {
+        return langUrl("ru");
+    }
+    return langUrl($langCode);
+}
+
+/**
+ * Возвращает имя языка на его собственном языке
+ */
+function getLangName($langCode)
+{
+    $names = [
+        "ru" => "Русский",
+        "en" => "English",
+        "ky" => "Кыргызча",
+    ];
+    return $names[$langCode] ?? $langCode;
 }

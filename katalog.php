@@ -1,6 +1,6 @@
 <?php
 include_once "includes/lang.php";
-$page_title = "Каталог сортов";
+$page_title = t("page_title_katalog");
 $page_description = t("meta_desc_katalog");
 $page_keywords = t("meta_keys_katalog");
 $page_head = '<link rel="stylesheet" href="assets/css/katalog.css">';
@@ -14,23 +14,23 @@ include "includes/header.php";
     <div class="katalog-hero-overlay"></div>
     <div class="container katalog-hero-inner">
         <h1 class="katalog-hero-title">
-            Сорта сельскохозяйственных<br>культур Кыргызстана
+            <?php echo t("katalog_hero_title"); ?>
         </h1>
         <p class="katalog-hero-desc">
-            Научно обоснованные сорта, выведенные Кыргызским НИИ земледелия для всех агроклиматических зон республики
+            <?php echo t("katalog_hero_desc"); ?>
         </p>
         <div class="katalog-hero-stats">
             <div class="katalog-hero-stat">
                 <span class="stat-num">20+</span>
-                <span class="stat-lbl">Сортов ячменя</span>
+                <span class="stat-lbl"><?php echo t("katalog_stat_barley_count"); ?></span>
             </div>
             <div class="katalog-hero-stat">
                 <span class="stat-num">1972</span>
-                <span class="stat-lbl">Первый районированный сорт</span>
+                <span class="stat-lbl"><?php echo t("katalog_stat_first_rayon"); ?></span>
             </div>
             <div class="katalog-hero-stat">
                 <span class="stat-num">85 ц/га</span>
-                <span class="stat-lbl">Макс. урожайность</span>
+                <span class="stat-lbl"><?php echo t("katalog_stat_yield"); ?></span>
             </div>
         </div>
     </div>
@@ -48,62 +48,62 @@ include "includes/header.php";
                 <div class="sidebar-inner">
 
                     <div class="sidebar-header">
-                        <span class="sidebar-title">🌾 Фильтр</span>
-                        <button class="sidebar-reset" id="resetFilters" onclick="resetAllFilters()">Сбросить</button>
+                        <span class="sidebar-title">🌾 <?php echo t("katalog_filter_title"); ?></span>
+                        <button class="sidebar-reset" id="resetFilters" onclick="resetAllFilters()"><?php echo t("katalog_filter_reset"); ?></button>
                     </div>
 
                     <!-- SEARCH -->
                     <div class="filter-group">
-                        <label class="filter-group-label">Поиск по названию</label>
+                        <label class="filter-group-label"><?php echo t("katalog_search_label"); ?></label>
                         <div class="filter-search-wrap">
-                            <input type="text" id="searchSort" class="filter-search-input" placeholder="Нутанс, Таалай..." oninput="filterCards()">
+                            <input type="text" id="searchSort" class="filter-search-input" placeholder="<?php echo t("katalog_search_placeholder"); ?>" oninput="filterCards()">
                             <span class="filter-search-icon">🔍</span>
                         </div>
                     </div>
 
                     <!-- CULTURE -->
                     <div class="filter-group">
-                        <label class="filter-group-label">Культура</label>
+                        <label class="filter-group-label"><?php echo t("katalog_filter_culture_label"); ?></label>
                         <div class="filter-chips" id="cultureFilter">
-                            <button class="filter-chip active" data-value="all" onclick="setFilter('culture','all',this)">Все</button>
-                            <button class="filter-chip" data-value="barley" onclick="setFilter('culture','barley',this)">🌾 Ячмень</button>
-                            <button class="filter-chip" data-value="wheat" onclick="setFilter('culture','wheat',this)">🌿 Пшеница</button>
+                            <button class="filter-chip active" data-value="all" onclick="setFilter('culture','all',this)"><?php echo t("katalog_filter_all"); ?></button>
+                            <button class="filter-chip" data-value="barley" onclick="setFilter('culture','barley',this)">🌾 <?php echo t("katalog_filter_culture_barley"); ?></button>
+                            <button class="filter-chip" data-value="wheat" onclick="setFilter('culture','wheat',this)">🌿 <?php echo t("katalog_filter_culture_wheat"); ?></button>
                         </div>
                     </div>
 
                     <!-- SEASON -->
                     <div class="filter-group">
-                        <label class="filter-group-label">Тип посева</label>
+                        <label class="filter-group-label"><?php echo t("katalog_filter_season_label"); ?></label>
                         <div class="filter-chips" id="seasonFilter">
-                            <button class="filter-chip active" data-value="all" onclick="setFilter('season','all',this)">Все</button>
-                            <button class="filter-chip" data-value="spring" onclick="setFilter('season','spring',this)">☀️ Яровой</button>
-                            <button class="filter-chip" data-value="winter" onclick="setFilter('season','winter',this)">❄️ Озимый</button>
+                            <button class="filter-chip active" data-value="all" onclick="setFilter('season','all',this)"><?php echo t("katalog_filter_all"); ?></button>
+                            <button class="filter-chip" data-value="spring" onclick="setFilter('season','spring',this)">☀️ <?php echo t("katalog_filter_season_spring"); ?></button>
+                            <button class="filter-chip" data-value="winter" onclick="setFilter('season','winter',this)">❄️ <?php echo t("katalog_filter_season_winter"); ?></button>
                         </div>
                     </div>
 
                     <!-- MATURITY -->
                     <div class="filter-group">
-                        <label class="filter-group-label">Скороспелость</label>
+                        <label class="filter-group-label"><?php echo t("katalog_filter_maturity_label"); ?></label>
                         <div class="filter-chips" id="maturityFilter">
-                            <button class="filter-chip active" data-value="all" onclick="setFilter('maturity','all',this)">Все</button>
-                            <button class="filter-chip" data-value="early" onclick="setFilter('maturity','early',this)">Ранний</button>
-                            <button class="filter-chip" data-value="mid-early" onclick="setFilter('maturity','mid-early',this)">Среднеранний</button>
-                            <button class="filter-chip" data-value="mid" onclick="setFilter('maturity','mid',this)">Среднеспелый</button>
+                            <button class="filter-chip active" data-value="all" onclick="setFilter('maturity','all',this)"><?php echo t("katalog_filter_all"); ?></button>
+                            <button class="filter-chip" data-value="early" onclick="setFilter('maturity','early',this)"><?php echo t("katalog_filter_maturity_early"); ?></button>
+                            <button class="filter-chip" data-value="mid-early" onclick="setFilter('maturity','mid-early',this)"><?php echo t("katalog_filter_maturity_mid_early"); ?></button>
+                            <button class="filter-chip" data-value="mid" onclick="setFilter('maturity','mid',this)"><?php echo t("katalog_filter_maturity_mid"); ?></button>
                         </div>
                     </div>
 
                     <!-- DROUGHT RESISTANCE -->
                     <div class="filter-group">
-                        <label class="filter-group-label">Засухоустойчивость</label>
+                        <label class="filter-group-label"><?php echo t("katalog_filter_drought_label"); ?></label>
                         <div class="filter-chips" id="droughtFilter">
-                            <button class="filter-chip active" data-value="all" onclick="setFilter('drought','all',this)">Все</button>
-                            <button class="filter-chip" data-value="high" onclick="setFilter('drought','high',this)">Высокая</button>
-                            <button class="filter-chip" data-value="medium" onclick="setFilter('drought','medium',this)">Средняя</button>
+                            <button class="filter-chip active" data-value="all" onclick="setFilter('drought','all',this)"><?php echo t("katalog_filter_all"); ?></button>
+                            <button class="filter-chip" data-value="high" onclick="setFilter('drought','high',this)"><?php echo t("katalog_filter_drought_high"); ?></button>
+                            <button class="filter-chip" data-value="medium" onclick="setFilter('drought','medium',this)"><?php echo t("katalog_filter_drought_medium"); ?></button>
                         </div>
                     </div>
 
                     <div class="filter-count-wrap">
-                        <span class="filter-count-text">Показано: <strong id="visibleCount">0</strong> сортов</span>
+                        <span class="filter-count-text"><?php echo t("katalog_filter_count_prefix"); ?> <strong id="visibleCount">0</strong> <?php echo t("katalog_filter_count_suffix"); ?></span>
                     </div>
 
                 </div>
@@ -115,15 +115,15 @@ include "includes/header.php";
                 <!-- RESULTS BAR -->
                 <div class="katalog-results-bar">
                     <div class="katalog-results-info">
-                        <h2 class="katalog-results-title">Каталог сортов</h2>
-                        <span class="katalog-results-count" id="totalCount">0 сортов найдено</span>
+                        <h2 class="katalog-results-title"><?php echo t("katalog_results_title"); ?></h2>
+                        <span class="katalog-results-count" id="totalCount"><?php echo str_replace('{{count}}', '0', t("katalog_results_phrase")); ?></span>
                     </div>
                     <div class="katalog-sort-wrap">
                         <select class="katalog-sort-select" id="sortSelect" onchange="sortCards()">
-                            <option value="name">По названию А-Я</option>
-                            <option value="yield-desc">По урожайности ↓</option>
-                            <option value="yield-asc">По урожайности ↑</option>
-                            <option value="year">По году допуска</option>
+                            <option value="name"><?php echo t("katalog_sort_name"); ?></option>
+                            <option value="yield-desc"><?php echo t("katalog_sort_yield_desc"); ?></option>
+                            <option value="yield-asc"><?php echo t("katalog_sort_yield_asc"); ?></option>
+                            <option value="year"><?php echo t("katalog_sort_year"); ?></option>
                         </select>
                     </div>
                 </div>
@@ -131,9 +131,9 @@ include "includes/header.php";
                 <!-- NO RESULTS MESSAGE -->
                 <div class="katalog-no-results" id="noResults" style="display:none;">
                     <div class="no-results-icon">🌱</div>
-                    <h3>Сорта не найдены</h3>
-                    <p>Попробуйте изменить параметры фильтра</p>
-                    <button class="btn-premium btn-premium-accent mt-3" onclick="resetAllFilters()">Сбросить фильтры</button>
+                    <h3><?php echo t("katalog_no_results_title"); ?></h3>
+                    <p><?php echo t("katalog_no_results_text"); ?></p>
+                    <button class="btn-premium btn-premium-accent mt-3" onclick="resetAllFilters()"><?php echo t("katalog_filter_reset"); ?></button>
                 </div>
 
                 <!-- CARDS GRID -->
@@ -315,7 +315,7 @@ include "includes/header.php";
                             </div>
                             <div class="sort-card-properties">
                                 <?php foreach (
-                                    $v["properties"]["ru"]
+                                    $v["properties"][$currentLang] ?? $v["properties"]["ru"]
                                     as $prop
                                 ): ?>
                                     <span class="sort-prop"><?php echo htmlspecialchars(
@@ -378,6 +378,7 @@ const sortData = <?php echo json_encode($sortData, JSON_UNESCAPED_UNICODE); ?>;
    FILTER STATE
    ================================================================ */
 const filters = { culture: 'all', season: 'all', maturity: 'all', drought: 'all' };
+const katalogResultsPhrase = "<?php echo addslashes(t("katalog_results_phrase")); ?>";
 
 function setFilter(type, value, el) {
     filters[type] = value;
@@ -417,7 +418,7 @@ function filterCards() {
     });
 
     document.getElementById('visibleCount').textContent = visible;
-    document.getElementById('totalCount').textContent = visible + ' сорт' + pluralRu(visible);
+    document.getElementById('totalCount').textContent = katalogResultsPhrase.replace('{{count}}', visible);
     document.getElementById('noResults').style.display = visible === 0 ? 'flex' : 'none';
 }
 
@@ -463,7 +464,7 @@ function openModal(id) {
     document.getElementById('modalName').textContent = d.name;
     document.getElementById('modalBadges').innerHTML =
         `<span class="sort-badge ${d.seasonClass}">${d.season}</span>
-         <span class="sort-badge sort-badge-barley">Ячмень</span>`;
+         <span class="sort-badge sort-badge-barley">${d.type}</span>`;
 
     document.getElementById('modalGrid').innerHTML = d.stats.map(s =>
         `<div class="modal-stat">

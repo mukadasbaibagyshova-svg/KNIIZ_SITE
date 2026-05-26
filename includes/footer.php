@@ -3,17 +3,41 @@
         <div class="row gy-4 align-items-center">
             <!-- Column 1: Brand & Contacts -->
             <div class="col-lg-4">
-                <h3 class="mb-3 fw-bold" style="color: var(--accent-color); font-family: var(--font-headings);"><?php echo t('logo'); ?></h3>
-                <p class="mb-4" style="font-size: 14px; opacity: 0.8; line-height: 1.6;"><?php echo t('footer_about_line1'); ?></p>
-                
+                <h3 class="mb-3 fw-bold" style="color: var(--accent-color); font-family: var(--font-headings);"><?php echo t(
+                    "logo",
+                ); ?></h3>
+                <p class="mb-4" style="font-size: 14px; opacity: 0.8; line-height: 1.6;"><?php echo t(
+                    "footer_about_line1",
+                ); ?></p>
+
                 <div style="font-size: 14.5px; opacity: 0.9; line-height: 1.7;" class="mb-4">
-                    <p class="mb-2"><strong>📍 <?php echo t('contacts_address_label'); ?>:</strong> <a href="<?php echo t('contacts_address_link'); ?>" target="_blank" rel="noopener noreferrer" class="footer-address-link"><?php echo t('contacts_address_value'); ?></a></p>
-                    <p class="mb-2"><strong>📞 <?php echo t('contacts_phone_label'); ?>:</strong> <?php echo t('contacts_phone_value'); ?></p>
-                    <p class="mb-2"><strong>📠 <?php echo t('contacts_fax_label'); ?>:</strong> <?php echo t('contacts_fax_value'); ?></p>
-                    <p class="mb-2"><strong>✉️ <?php echo t('contacts_email_label_text'); ?>:</strong> <a href="mailto:<?php echo t('contacts_email_value'); ?>" class="footer-address-link"><?php echo t('contacts_email_value'); ?></a></p>
-                    <p class="mb-0"><strong>🕒 <?php echo t('contacts_workhours_label'); ?>:</strong> <?php echo t('contacts_workhours_value'); ?></p>
+                    <p class="mb-2"><strong>📍 <?php echo t(
+                        "contacts_address_label",
+                    ); ?>:</strong> <a href="<?php echo t(
+    "contacts_address_link",
+); ?>" target="_blank" rel="noopener noreferrer" class="footer-address-link"><?php echo t(
+    "contacts_address_value",
+); ?></a></p>
+                    <p class="mb-2"><strong>📞 <?php echo t(
+                        "contacts_phone_label",
+                    ); ?>:</strong> <?php echo t("contacts_phone_value"); ?></p>
+                    <p class="mb-2"><strong>📠 <?php echo t(
+                        "contacts_fax_label",
+                    ); ?>:</strong> <?php echo t("contacts_fax_value"); ?></p>
+                    <p class="mb-2"><strong>✉️ <?php echo t(
+                        "contacts_email_label_text",
+                    ); ?>:</strong> <a href="mailto:<?php echo t(
+    "contacts_email_value",
+); ?>" class="footer-address-link"><?php echo t(
+    "contacts_email_value",
+); ?></a></p>
+                    <p class="mb-0"><strong>🕒 <?php echo t(
+                        "contacts_workhours_label",
+                    ); ?>:</strong> <?php echo t(
+    "contacts_workhours_value",
+); ?></p>
                 </div>
-                
+
                 <div class="d-flex gap-3">
                     <a href="https://www.facebook.com/KyrgyzNIIzemledel" target="_blank" rel="noopener noreferrer" class="icon-button d-flex align-items-center justify-content-center" aria-label="Facebook" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; text-decoration: none; transition: 0.3s;">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -21,10 +45,10 @@
                     <a href="https://www.youtube.com/@KyrgyzResearchInstitute" target="_blank" rel="noopener noreferrer" class="icon-button d-flex align-items-center justify-content-center" aria-label="YouTube" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: white; text-decoration: none; transition: 0.3s;">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                     </a>
-                    
+
                 </div>
             </div>
-            
+
             <!-- Column 2: 2GIS Widget Map -->
             <div class="col-lg-8">
                 <style>
@@ -41,32 +65,13 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom text-center pt-4 mt-5 border-top border-white-10" style="opacity: 0.6; font-size: 13px;">
-            <?php echo t('footer_copyright'); ?>
+            <?php echo t("footer_copyright"); ?>
         </div>
     </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdown = document.querySelector('.country-dropdown');
-    const trigger = document.querySelector('.country-trigger');
-    
-    if (dropdown && trigger) {
-        trigger.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            dropdown.classList.toggle('open');
-        });
-        
-        document.addEventListener('click', function (e) {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove('open');
-            }
-        });
-    }
-});
-</script>
+
 </body>
 </html>

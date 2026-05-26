@@ -562,7 +562,11 @@ function toggleCountryDropdown(event) {
     if (!dropdown) {
         return;
     }
-    dropdown.classList.toggle('open');
+    const isOpen = dropdown.classList.contains('open');
+    closeCountryDropdown();
+    if (!isOpen) {
+        dropdown.classList.add('open');
+    }
 }
 
 function closeCountryDropdown() {
@@ -585,7 +589,7 @@ document.addEventListener('click', function(event) {
     if (!event.target.closest('.about-dropdown-li')) {
         closeDesktopDropdowns();
     }
-    if (!event.target.closest('.country-dropdown')) {
+    if (!event.target.closest('.country-dropdown') && !event.target.closest('.country-trigger')) {
         closeCountryDropdown();
     }
     const mobileMenu = document.getElementById('mobileMenu');
