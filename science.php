@@ -8,60 +8,68 @@ $dept_tags = [
     'wheat' => 'Селекция',
     'barley' => 'Селекция',
     'corn' => 'Селекция',
-    'fruit_veg' => 'Технологии',
     'soil' => 'Почвоведение',
-    'agrochemistry' => 'Агрохимия',
+    'genetic_resources' => 'Технологии',
     'sugarbeet' => 'Селекция',
+    'fruit_veg' => 'Технологии',
+    'fiber' => 'Селекция',
+    'potato' => 'Селекция',
 ];
 
 $departments = [
     [
         'id' => 'wheat',
         'title' => t('structure_detail_wheat_title'),
-        'desc' => 'Разработка новых конкурентоспособных сортов пшеницы.',
+        'desc' => 'Разработка новых конкурентоспособных сортов пшеницы и поддержание оригинального семеноводства.',
         'image' => 'assets/images/wheet1.jpg'
     ],
     [
         'id' => 'barley',
         'title' => t('structure_detail_barley_title'),
-        'desc' => 'Селекция и первичное семеноводство ячменя.',
+        'desc' => 'Селекция и первичное семеноводство ячменя, создание высокопродуктивных адаптированных сортов.',
         'image' => 'assets/images/ячмень.jpg'
     ],
     [
         'id' => 'corn',
         'title' => t('structure_detail_corn_title'),
-        'desc' => 'Создание высокопродуктивных гибридов кукурузы, первичное семеноводство и селекция инбредных линий.',
+        'desc' => 'Создание высокопродуктивных гибридов кукурузы, селекция инбредных линий.',
         'image' => 'assets/images/corn.jpg'
+    ],
+    [
+        'id' => 'soil',
+        'title' => t('structure_detail_soil_title'),
+        'desc' => 'Изучение почвенных ресурсов, методов сохранения и повышения плодородия земель.',
+        'image' => 'assets/images/hero2.jpg'
+    ],
+    [
+        'id' => 'genetic_resources',
+        'title' => t('structure_detail_genetic_resources_title'),
+        'desc' => 'Сохранение, документирование и использование генетических ресурсов растений, оценка качества зерна.',
+        'image' => 'assets/images/about-photo.jpg'
     ],
     [
         'id' => 'sugarbeet',
         'title' => t('structure_detail_sugarbeet_title'),
-        'desc' => 'Селекция гибридов на основе ЦМС, первичное семеноводство и оценка качества корнеплодов.',
+        'desc' => 'Селекция высокосахаристых гибридов сахарной свеклы на стерильной основе.',
         'image' => 'assets/images/svekla.png'
     ],
     [
         'id' => 'fruit_veg',
         'title' => t('structure_detail_fruit_veg_title'),
-        'desc' => 'Разработка инновационных технологий выращивания плодоовощных культур.',
+        'desc' => 'Разработка инновационных технологий выращивания и размножения плодово-ягодных культур.',
         'image' => 'assets/images/grape.png'
     ],
     [
-        'id' => 'soil',
-        'title' => t('structure_detail_soil_title'),
-        'desc' => 'Изучение почвенных ресурсов и методов повышения плодородия.',
-        'image' => 'assets/images/potato.png'
-    ],
-    [
-        'id' => 'agrochemistry',
-        'title' => t('structure_detail_agrochemistry_title'),
-        'desc' => 'Анализ питательных веществ и систем удобрений.',
+        'id' => 'fiber',
+        'title' => t('structure_detail_fiber_title'),
+        'desc' => 'Селекция и семеноводство хлопчатника, улучшение технологических свойств волокна.',
         'image' => 'assets/images/hlopok.png'
     ],
     [
-        'id' => 'issyk',
-        'title' => t('structure_detail_issyk_title'),
-        'desc' => 'Научные исследования в Иссык-Кульском регионе.',
-        'image' => 'assets/images/hlopoknapole.png'
+        'id' => 'potato',
+        'title' => t('structure_detail_potato_title'),
+        'desc' => 'Научные исследования в области селекции и безвирусного семеноводства картофеля.',
+        'image' => 'assets/images/potato.png'
     ]
 ];
 ?>
@@ -217,11 +225,11 @@ body {
                 <section class="depts-section-embed">
                     <div class="depts-toolbar">
                         <h2 class="depts-toolbar__label">Научно-исследовательские отделы</h2>
-                        <span class="depts-toolbar__count">7 подразделений</span>
+                        <span class="depts-toolbar__count">9 подразделений</span>
                     </div>
                     <div class="depts-grid">
                         <?php
-                        $dept_ids = ['wheat', 'barley', 'corn', 'sugarbeet', 'fruit_veg', 'soil', 'agrochemistry'];
+                        $dept_ids = ['wheat', 'barley', 'corn', 'soil', 'genetic_resources', 'sugarbeet', 'fruit_veg', 'fiber', 'potato'];
                         $dept_index = 0;
                         foreach ($departments as $dept):
                             if (!in_array($dept['id'], $dept_ids, true)) continue;

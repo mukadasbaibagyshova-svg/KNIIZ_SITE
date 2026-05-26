@@ -15,10 +15,12 @@ $scienceDeptNav = [
     ['id' => 'wheat', 'title_key' => 'structure_detail_wheat_title'],
     ['id' => 'barley', 'title_key' => 'structure_detail_barley_title'],
     ['id' => 'corn', 'title_key' => 'structure_detail_corn_title'],
+    ['id' => 'soil', 'title_key' => 'structure_detail_soil_title'],
+    ['id' => 'genetic_resources', 'title_key' => 'structure_detail_genetic_resources_title'],
     ['id' => 'sugarbeet', 'title_key' => 'structure_detail_sugarbeet_title'],
     ['id' => 'fruit_veg', 'title_key' => 'structure_detail_fruit_veg_title'],
-    ['id' => 'soil', 'title_key' => 'structure_detail_soil_title'],
-    ['id' => 'agrochemistry', 'title_key' => 'structure_detail_agrochemistry_title'],
+    ['id' => 'fiber', 'title_key' => 'structure_detail_fiber_title'],
+    ['id' => 'potato', 'title_key' => 'structure_detail_potato_title'],
 ];
 $scienceNavActive = in_array($currentFile, ['science.php', 'structure-detail.php'], true) ? 'nav-link active' : 'nav-link';
 ?>
@@ -36,6 +38,57 @@ $scienceNavActive = in_array($currentFile, ['science.php', 'structure-detail.php
     .search-highlight { background: rgba(255, 236, 179, 0.8); border-radius: 8px; padding: 0.1rem 0.2rem; }
     .search-status { margin-top: 0.75rem; font-size: 0.95rem; opacity: 0.95; }
     .search-status.no-results { color: #f43f5e; }
+
+    /* Nested Dropdown styles for "История" */
+    .nested-dropdown {
+        position: relative;
+        width: 100%;
+    }
+    .nested-dropdown-trigger {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+    }
+    .nested-dropdown-trigger .arrow {
+        font-size: 10px;
+        margin-left: 6px;
+        transition: transform 0.25s ease;
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .nested-dropdown.open .nested-dropdown-trigger .arrow {
+        transform: rotate(90deg);
+        color: var(--accent-color);
+    }
+    .nested-submenu {
+        max-height: 0;
+        overflow: hidden;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        opacity: 0;
+        width: 100%;
+    }
+    .nested-dropdown.open .nested-submenu {
+        max-height: 200px;
+        opacity: 1;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    .nested-submenu a {
+        padding-left: 36px !important;
+        font-size: 13.5px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+    .nested-submenu a:hover,
+    .nested-submenu a.active {
+        padding-left: 40px !important;
+        color: #ffffff !important;
+        background: rgba(16, 185, 129, 0.15) !important;
+    }
 </style>
 </head>
 <body<?php echo !empty($body_class) ? ' class="' . htmlspecialchars($body_class) . '"' : ''; ?>>
@@ -70,13 +123,20 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
                     </a>
                 </li>
 
-                <!-- About (dropdown) -->
                 <li class="dropdown-li" style="position: relative;">
                     <a href="#" class="dropdown-trigger">
                         <?php echo t('nav_about'); ?> ▾
                     </a>
                     <ul class="dropdown-submenu">
-                        <li><a href="history.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_history'); ?></a></li>
+                        <li class="nested-dropdown">
+                            <a href="#" class="nested-dropdown-trigger" onclick="toggleNestedDropdown(event)">
+                                <?php echo t('nav_about_history'); ?> <span class="arrow">▶</span>
+                            </a>
+                            <ul class="nested-submenu">
+                                <li><a href="history.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_history'); ?></a></li>
+                                <li><a href="about.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_about_azyikov'); ?></a></li>
+                            </ul>
+                        </li>
                         <li><a href="maps.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_maps'); ?></a></li>
                         <li><a href="administration.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_administration'); ?></a></li>
                         <li><a href="documents.php?lang=<?php echo currentLang(); ?>"><?php echo t('nav_documents'); ?></a></li>
@@ -152,7 +212,13 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
             <div class="mobile-nav-group mb-3">
                 <button class="mobile-link fw-bold mb-2" style="font-size: 22px; text-align: left; background: transparent; border: none; padding: 0; cursor: pointer; width: 100%;" type="button" onclick="toggleMobileSubmenu(event)"><?php echo t('nav_about'); ?> ▾</button>
                 <div class="mobile-sublinks ps-3" style="display: none; flex-direction: column; gap: 8px;">
-                    <a href="history.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_history'); ?></a>
+                    <div class="mobile-nav-group mb-2">
+                        <button class="mobile-link fw-bold mb-2" style="font-size: 20px; text-align: left; background: transparent; border: none; padding: 0; cursor: pointer; width: 100%;" type="button" onclick="toggleMobileSubmenu(event)"><?php echo t('nav_about_history'); ?> ▾</button>
+                        <div class="mobile-sublinks ps-3" style="display: none; flex-direction: column; gap: 8px;">
+                            <a href="history.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_history'); ?></a>
+                            <a href="about.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_about_azyikov'); ?></a>
+                        </div>
+                    </div>
                     <a href="maps.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_maps'); ?></a>
                     <a href="administration.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_administration'); ?></a>
                     <a href="documents.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t('nav_documents'); ?></a>
@@ -195,6 +261,13 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
 </div>
 
 <script>
+function toggleNestedDropdown(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const item = event.currentTarget.closest('.nested-dropdown');
+    item.classList.toggle('open');
+}
+
 function changeLang(lang) {
     const url = new URL(window.location.href);
     url.searchParams.set('lang', lang);
@@ -268,6 +341,7 @@ function searchOnCurrentPage(query) {
 const pageSearchRoutes = <?php echo json_encode([
     ['href' => 'index.php', 'keys' => [t('nav_home'), t('top_search'), 'home', 'главная', 'башкы бет'] ],
     ['href' => 'history.php', 'keys' => [t('nav_history'), t('nav_about'), 'history', 'история', 'тарых'] ],
+    ['href' => 'about.php', 'keys' => [t('nav_about_azyikov'), t('nav_about'), 'azyikov', 'азиков', 'kuliya', 'кулия'] ],
     ['href' => 'maps.php', 'keys' => [t('nav_maps'), 'map', 'карта', 'карты', 'карталар', 'станция', 'станции', 'жер фонду'] ],
     ['href' => 'science.php', 'keys' => [t('nav_science'), 'science', 'наука', 'илим', 'отделы', 'departments', 'бөлүмдөр', 'научные отделы', 'илимий бөлүмдөр'] ],
     ['href' => 'structure-detail.php?item=wheat', 'keys' => [t('structure_detail_wheat_title'), 'wheat', 'пшеница', 'жүгөрү', 'будай'] ],
@@ -277,6 +351,9 @@ const pageSearchRoutes = <?php echo json_encode([
     ['href' => 'structure-detail.php?item=fruit_veg', 'keys' => [t('structure_detail_fruit_veg_title'), 'fruit', 'vegetable', 'овощные', 'жемиш', 'жашылча'] ],
     ['href' => 'structure-detail.php?item=agrochemistry', 'keys' => [t('structure_detail_agrochemistry_title'), 'agrochemistry', 'агрохимия'] ],
     ['href' => 'structure-detail.php?item=soil', 'keys' => [t('structure_detail_soil_title'), 'soil', 'почвоведение', 'топурак таануу'] ],
+    ['href' => 'structure-detail.php?item=genetic_resources', 'keys' => [t('structure_detail_genetic_resources_title'), 'genetic', 'генетические', 'ресурсы', 'генетикалык'] ],
+    ['href' => 'structure-detail.php?item=fiber', 'keys' => [t('structure_detail_fiber_title'), 'fiber', 'хлопок', 'волокно', 'була'] ],
+    ['href' => 'structure-detail.php?item=potato', 'keys' => [t('structure_detail_potato_title'), 'potato', 'картофель', 'картошка'] ],
     ['href' => 'administration.php', 'keys' => [t('nav_administration'), 'administration', 'администрация', 'администрация', 'отделы', 'departments', 'бөлүмдөр'] ],
     ['href' => 'documents.php', 'keys' => [t('nav_documents'), 'documents', 'документы', 'документтер'] ],
     ['href' => 'international.php', 'keys' => [t('nav_international'), 'international', 'международная', 'эл аралык'] ],
@@ -385,6 +462,14 @@ function handleSearchQueryParam() {
 window.addEventListener('DOMContentLoaded', function () {
     setupSearchHandlers();
     handleSearchQueryParam();
+
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.main-nav')) {
+            document.querySelectorAll('.nested-dropdown.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+        }
+    });
 });
 
 window.addEventListener('scroll', function () {
