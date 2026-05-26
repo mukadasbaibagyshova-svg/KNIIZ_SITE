@@ -47,7 +47,6 @@ include 'includes/header.php';
         </div>
 
 
-
         <section class="agro-land-fund mb-5">
 
             <?php include __DIR__ . '/includes/map/land-fund-widget.php'; ?>

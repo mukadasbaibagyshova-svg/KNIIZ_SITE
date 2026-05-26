@@ -7,11 +7,11 @@
                 <p class="mb-4" style="font-size: 14px; opacity: 0.8; line-height: 1.6;"><?php echo t('footer_about_line1'); ?></p>
                 
                 <div style="font-size: 14.5px; opacity: 0.9; line-height: 1.7;" class="mb-4">
-                    <p class="mb-2"><strong>📍 Адрес:</strong> <a href="https://2gis.kg/bishkek/firm/70000001021237453" target="_blank" rel="noopener noreferrer" class="footer-address-link">Кыргызская Республика, г. Бишкек, ул. Тимура Фрунзе 100/1</a></p>
-                    <p class="mb-2"><strong>📞 Тел:</strong> 0(312) 41 71 54</p>
-                    <p class="mb-2"><strong>📠 Факс:</strong> 0(312) 41 79 08</p>
-                    <p class="mb-2"><strong>✉️ Email:</strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nauca.zemledel%40gmail.com" target="_blank" rel="noopener noreferrer" class="footer-address-link">nauca.zemledel@gmail.com</a></p>
-                    <p class="mb-0"><strong>🕒 График работы:</strong> Понедельник – Пятница: 9:00 – 18:00</p>
+                    <p class="mb-2"><strong>📍 <?php echo t('contacts_address_label'); ?>:</strong> <a href="<?php echo t('contacts_address_link'); ?>" target="_blank" rel="noopener noreferrer" class="footer-address-link"><?php echo t('contacts_address_value'); ?></a></p>
+                    <p class="mb-2"><strong>📞 <?php echo t('contacts_phone_label'); ?>:</strong> <?php echo t('contacts_phone_value'); ?></p>
+                    <p class="mb-2"><strong>📠 <?php echo t('contacts_fax_label'); ?>:</strong> <?php echo t('contacts_fax_value'); ?></p>
+                    <p class="mb-2"><strong>✉️ <?php echo t('contacts_email_label_text'); ?>:</strong> <a href="mailto:<?php echo t('contacts_email_value'); ?>" class="footer-address-link"><?php echo t('contacts_email_value'); ?></a></p>
+                    <p class="mb-0"><strong>🕒 <?php echo t('contacts_workhours_label'); ?>:</strong> <?php echo t('contacts_workhours_value'); ?></p>
                 </div>
                 
                 <div class="d-flex gap-3">

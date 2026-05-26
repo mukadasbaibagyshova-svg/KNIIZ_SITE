@@ -1,0 +1,896 @@
+{
+    "leadership": [
+        {
+            "name": {
+                "ru": "Усубалиев Биржан Кубатович",
+                "ky": "Усубалиев Биржан Кубатович",
+                "en": "Usubaliev Birzhan Kubatovich"
+            },
+            "role": {
+                "ru": "Директор",
+                "ky": "Директор",
+                "en": "Director"
+            },
+            "email": "nauca.zemledel@gmail.com",
+            "image": "",
+            "grade": "director"
+        },
+        {
+            "name": {
+                "ru": "Исаев Кутман Мукашевич",
+                "ky": "Исаев Кутман Мукашевич",
+                "en": "Isaev Kutman Mukashevich"
+            },
+            "role": {
+                "ru": "Заместитель директора",
+                "ky": "Директордун орун басары",
+                "en": "Deputy Director"
+            },
+            "email": "ar.riva@mail.ru",
+            "image": "",
+            "grade": "deputy"
+        },
+        {
+            "name": {
+                "ru": "Федичкина Ирина Григорьевна",
+                "ky": "Федичкина Ирина Григорьевна",
+                "en": "Fedichkina Irina Grigorievna"
+            },
+            "role": {
+                "ru": "Ученый секретарь",
+                "ky": "Илимий катчы",
+                "en": "Scientific Secretary"
+            },
+            "email": "irinaf.kniiz@gmail.com",
+            "image": "",
+            "grade": "secretary"
+        }
+    ],
+    "admin_support": [
+        {
+            "name": {
+                "ru": "Алыбаева Тамара Жанадиловна",
+                "ky": "Алыбаева Тамара Жанадиловна",
+                "en": "Alybaeva Tamara Zhanadilovna"
+            },
+            "role": {
+                "ru": "Заведующий отделом административной поддержки",
+                "ky": "Административдик колдоо бөлүмүнүн башчысы",
+                "en": "Head of Administrative Support Department"
+            },
+            "email": "tamara.jan@inbox.ru",
+            "image": "",
+            "grade": "head"
+        },
+        {
+            "name": {
+                "ru": "Сопакунова Нуржамал Жумаковна",
+                "ky": "Сопакунова Нуржамал Жумаковна",
+                "en": "Sopakunova Nurzhamal Zhumakovna"
+            },
+            "role": {
+                "ru": "Главный бухгалтер",
+                "ky": "Башкы бухгалтер",
+                "en": "Chief Accountant"
+            },
+            "email": "nurjamal.kniiz@gmail.com",
+            "image": "",
+            "grade": "staff"
+        },
+        {
+            "name": {
+                "ru": "Назаркулова Зарима Шактыбековна",
+                "ky": "Назаркулова Зарима Шактыбековна",
+                "en": "Nazarkulova Zarima Shaktybekovna"
+            },
+            "role": {
+                "ru": "Редактор-корректор",
+                "ky": "Редактор-корректор",
+                "en": "Editor and Proofreader"
+            },
+            "email": "zari.kniiz@gmail.com",
+            "image": "",
+            "grade": "staff"
+        },
+        {
+            "name": {
+                "ru": "Орозов Аманбек Ибрагимович",
+                "ky": "Орозов Аманбек Ибрагимович",
+                "en": "Orozov Amanbek Ibragimovich"
+            },
+            "role": {
+                "ru": "IT специалист",
+                "ky": "IT адиси",
+                "en": "IT Specialist"
+            },
+            "email": "amanbek.kniiz@gmail.com",
+            "image": "",
+            "grade": "staff"
+        },
+        {
+            "name": {
+                "ru": "Кожоев Жаныбек Кокумбекович",
+                "ky": "Кожоев Жаныбек Кокумбекович",
+                "en": "Kozhoev Zhanybek Kokumbekovich"
+            },
+            "role": {
+                "ru": "Инженер",
+                "ky": "Инженер",
+                "en": "Engineer"
+            },
+            "email": "salamattyk09ik.gov@gmail.com",
+            "image": "",
+            "grade": "staff"
+        }
+    ],
+    "departments": {
+        "wheat": {
+            "title": {
+                "ru": "Отдел селекции и первичного семеноводства пшеницы",
+                "ky": "Буудайдын селекциясы жана баштапкы үрөнчүлүк бөлүмү",
+                "en": "Department of Wheat Breeding and Primary Seed Production"
+            },
+            "icon": "🌾",
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Пахомеев Олег Владимирович",
+                        "ky": "Пахомеев Олег Владимирович",
+                        "en": "Pakhomeev Oleg Vladimirovich"
+                    },
+                    "role": {
+                        "ru": "Заведующий отдела",
+                        "ky": "Бөлүм башчысы",
+                        "en": "Head of Department"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "head"
+                },
+                {
+                    "name": {
+                        "ru": "Ибрагимова Василя Санкеевна",
+                        "ky": "Ибрагимова Василя Санкеевна",
+                        "en": "Ibragimova Vasily Sankeevna"
+                    },
+                    "role": {
+                        "ru": "Старший научный сотрудник",
+                        "ky": "Улуу илимий кызматкер",
+                        "en": "Senior Researcher"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "researcher"
+                },
+                {
+                    "name": {
+                        "ru": "Амергамзаев Али Гусенович",
+                        "ky": "Амергамзаев Али Гусенович",
+                        "en": "Amergamzaev Ali Gusenovich"
+                    },
+                    "role": {
+                        "ru": "Старший научный сотрудник",
+                        "ky": "Улуу илимий кызматкер",
+                        "en": "Senior Researcher"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "researcher"
+                },
+                {
+                    "name": {
+                        "ru": "Исакова Ибадат Сабиржановна",
+                        "ky": "Исакова Ибадат Сабиржановна",
+                        "en": "Isakova Ibadat Sabirzhanovna"
+                    },
+                    "role": {
+                        "ru": "Научный сотрудник",
+                        "ky": "Илимий кызматкер",
+                        "en": "Researcher"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "researcher"
+                }
+            ]
+        },
+        "barley": {
+            "title": {
+                "ru": "Отдел селекции и первичного семеноводства ячменя",
+                "ky": "Арпанын селекциясы жана баштапкы үрөнчүлүк бөлүмү",
+                "en": "Department of Barley Breeding and Primary Seed Production"
+            },
+            "icon": "🌱",
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Иманалиев Бакытбек Табылдыевич",
+                        "ky": "Иманалиев Бакытбек Табылдыевич",
+                        "en": "Imanaliev Bakytbek Tabyldievich"
+                    },
+                    "role": {
+                        "ru": "Заведующий отделом",
+                        "ky": "Бөлүм башчысы",
+                        "en": "Head of Department"
+                    },
+                    "email": "bakytbek_imanaliev@mail.ru",
+                    "image": "assets\/images\/imanalievbakytbek.png",
+                    "grade": "head"
+                },
+                {
+                    "name": {
+                        "ru": "Кузнецова Валентина Леонидовна",
+                        "ky": "Кузнецова Валентина Леонидовна",
+                        "en": "Kuznetsova Valentina Leonidovna"
+                    },
+                    "role": {
+                        "ru": "Старший лаборант",
+                        "ky": "Улуу лаборант",
+                        "en": "Senior Laboratory Assistant"
+                    },
+                    "email": "",
+                    "image": "assets\/images\/valentina.png",
+                    "grade": "staff"
+                },
+                {
+                    "name": {
+                        "ru": "Немцова Любовь Васильевна",
+                        "ky": "Немцова Любовь Васильевна",
+                        "en": "Nemtsova Lyubov Vasilievna"
+                    },
+                    "role": {
+                        "ru": "Старший лаборант",
+                        "ky": "Улуу лаборант",
+                        "en": "Senior Laboratory Assistant"
+                    },
+                    "email": "",
+                    "image": "assets\/images\/love.png",
+                    "grade": "staff"
+                }
+            ]
+        },
+        "corn": {
+            "title": {
+                "ru": "Отдел селекции и первичного семеноводства кукурузы",
+                "ky": "Жүгөрүнүн селекциясы жана баштапкы үрөнчүлүк бөлүмү",
+                "en": "Department of Corn Breeding and Primary Seed Production"
+            },
+            "icon": "🌽",
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Гочадзе Гедия Сайдуллаевна",
+                        "ky": "Гочадзе Гедия Сайдуллаевна",
+                        "en": "Gochadze Gediya Saidullaevna"
+                    },
+                    "role": {
+                        "ru": "Старший лаборант",
+                        "ky": "Улуу лаборант",
+                        "en": "Senior Laboratory Assistant"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                },
+                {
+                    "name": {
+                        "ru": "Седоев Сальвар Камалович",
+                        "ky": "Седоев Сальвар Камалович",
+                        "en": "Sedoev Salvar Kamalovich"
+                    },
+                    "role": {
+                        "ru": "Старший агроном",
+                        "ky": "Улуу агроном",
+                        "en": "Senior Agronomist"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                }
+            ]
+        },
+        "genetic_resources": {
+            "title": {
+                "ru": "Группа генетических ресурсов растений и лаборатория технологии",
+                "ky": "Өсүмдүктөрдүн генетикалык ресурстары тобу жана технология лабораториясы",
+                "en": "Plant Genetic Resources Group and Technology Laboratory"
+            },
+            "icon": "🧪",
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Кулназаров Калман Кулназарович",
+                        "ky": "Кулназаров Калман Кулназарович",
+                        "en": "Kulnazarov Kalman Kulnazarovich"
+                    },
+                    "role": {
+                        "ru": "Заведующий отделом",
+                        "ky": "Бөлүм башчысы",
+                        "en": "Head of Department"
+                    },
+                    "email": "kulnazarovkalman@mail.ru",
+                    "image": "assets\/images\/kulnazarovkalman.png",
+                    "grade": "head"
+                },
+                {
+                    "name": {
+                        "ru": "Чыналиев Мухтар Турдубекович",
+                        "ky": "Чыналиев Мухтар Турдубекович",
+                        "en": "Chynaliev Mukhtar Turdubekovich"
+                    },
+                    "role": {
+                        "ru": "Старший научный сотрудник",
+                        "ky": "Улуу илимий кызматкер",
+                        "en": "Senior Researcher"
+                    },
+                    "email": "mchynaliev505@gmail.com",
+                    "image": "",
+                    "grade": "researcher"
+                },
+                {
+                    "name": {
+                        "ru": "Кадырбаев Урмат Кадырбаевич",
+                        "ky": "Кадырбаев Урмат Кадырбаевич",
+                        "en": "Kadyrbaev Urmat Kadyrbaevich"
+                    },
+                    "role": {
+                        "ru": "Старший научный сотрудник",
+                        "ky": "Улуу илимий кызматкер",
+                        "en": "Senior Researcher"
+                    },
+                    "email": "Urmat.kniiz@gmail.com",
+                    "image": "",
+                    "grade": "researcher"
+                },
+                {
+                    "name": {
+                        "ru": "Турсуналиева Бегимай Мирзаолимовна",
+                        "ky": "Турсуналиева Бегимай Мирзаолимовна",
+                        "en": "Tursunalieva Begimai Mirzaolimovna"
+                    },
+                    "role": {
+                        "ru": "Старший научный сотрудник",
+                        "ky": "Улуу илимий кызматкер",
+                        "en": "Senior Researcher"
+                    },
+                    "email": "kniiz.begimai@gmail.com",
+                    "image": "",
+                    "grade": "researcher"
+                },
+                {
+                    "name": {
+                        "ru": "Вагина Галина Петровна",
+                        "ky": "Вагина Галина Петровна",
+                        "en": "Vagina Galina Petrovna"
+                    },
+                    "role": {
+                        "ru": "Старший лаборант",
+                        "ky": "Улуу лаборант",
+                        "en": "Senior Laboratory Assistant"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                },
+                {
+                    "name": {
+                        "ru": "Насирова Асель Турусбековна",
+                        "ky": "Насирова Асель Турусбековна",
+                        "en": "Nasirova Asel Turusbekovna"
+                    },
+                    "role": {
+                        "ru": "Старший лаборант",
+                        "ky": "Улуу лаборант",
+                        "en": "Senior Laboratory Assistant"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                }
+            ]
+        },
+        "soil_science": {
+            "title": {
+                "ru": "Отдел почвоведения",
+                "ky": "Топурак таануу бөлүмү",
+                "en": "Soil Science Department"
+            },
+            "icon": "🪨",
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Исмаилов Турусбек Асанкадырович",
+                        "ky": "Исмаилов Турусбек Асанкадырович",
+                        "en": "Ismailov Turusbek Asankadyrovich"
+                    },
+                    "role": {
+                        "ru": "Заведующий отдела",
+                        "ky": "Бөлүм башчысы",
+                        "en": "Head of Department"
+                    },
+                    "email": "turusbeki@mail.ru",
+                    "image": "",
+                    "grade": "head"
+                },
+                {
+                    "name": {
+                        "ru": "Мусаева Гульсун Мусаевна",
+                        "ky": "Мусаева Гульсун Мусаевна",
+                        "en": "Musaeva Gulsun Musaevna"
+                    },
+                    "role": {
+                        "ru": "Старший научный сотрудник",
+                        "ky": "Улуу илимий кызматкер",
+                        "en": "Senior Researcher"
+                    },
+                    "email": "musa-eva1950@mail.ru",
+                    "image": "",
+                    "grade": "researcher"
+                },
+                {
+                    "name": {
+                        "ru": "Худайбергенов Рустам Сапязович",
+                        "ky": "Худайбергенов Рустам Сапязович",
+                        "en": "Khudaibergenov Rustam Sapyazovich"
+                    },
+                    "role": {
+                        "ru": "Старший научный сотрудник",
+                        "ky": "Улуу илимий кызматкер",
+                        "en": "Senior Researcher"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "researcher"
+                }
+            ]
+        }
+    },
+    "branches": [
+        {
+            "id": "sugarbeet_station",
+            "title": {
+                "ru": "№1 Кыргызская опытно-селекционная станция по сахарной свекле (Кыргызское научно-производственное объединение по земледелию)",
+                "ky": "№1 Кант кызылчасы боюнча кыргыз тажрыйба-селекциялык станциясы (Кыргыз дыйканчылык илимий-өндүрүштүк бирикмеси)",
+                "en": "No. 1 Kyrgyz Experimental Breeding Station for Sugar Beet (Kyrgyz Scientific-Industrial Association of Agriculture)"
+            },
+            "location": "Сокулукский р-н, с. Первомайское",
+            "has_sub_staff": true,
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Есеналиев Кубанычбек Дженишбекович",
+                        "ky": "Есеналиев Кубанычбек Дженишбекович",
+                        "en": "Esenaliev Kubanychbek Dzhenishbekovich"
+                    },
+                    "role": {
+                        "ru": "Директор",
+                        "ky": "Директор",
+                        "en": "Director"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "director"
+                },
+                {
+                    "name": {
+                        "ru": "Аккулуков Талантбек Мараимович",
+                        "ky": "Аккулуков Талантбек Мараимович",
+                        "en": "Akkulukov Talantbek Maraimovich"
+                    },
+                    "role": {
+                        "ru": "Заместитель директора",
+                        "ky": "Директордун орун басары",
+                        "en": "Deputy Director"
+                    },
+                    "email": "",
+                    "image": "assets\/images\/akkulakov.png",
+                    "grade": "deputy"
+                },
+                {
+                    "name": {
+                        "ru": "Мусина Каныкей Кубанычбековна",
+                        "ky": "Мусина Каныкей Кубанычбековна",
+                        "en": "Musina Kanykey Kubanychbekovna"
+                    },
+                    "role": {
+                        "ru": "Главный бухгалтер",
+                        "ky": "Башкы бухгалтер",
+                        "en": "Chief Accountant"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                },
+                {
+                    "name": {
+                        "ru": "Тараненко Татьяна Алексеевна",
+                        "ky": "Тараненко Татьяна Алексеевна",
+                        "en": "Taranenko Tatyana Alekseevna"
+                    },
+                    "role": {
+                        "ru": "Главный агроном",
+                        "ky": "Башкы агроном",
+                        "en": "Chief Agronomist"
+                    },
+                    "email": "",
+                    "image": "assets\/images\/taranenko.png",
+                    "grade": "staff"
+                },
+                {
+                    "name": {
+                        "ru": "Ганагина Людмила Николаевна",
+                        "ky": "Ганагина Людмила Николаевна",
+                        "en": "Ganagina Lyudmila Nikolaevna"
+                    },
+                    "role": {
+                        "ru": "Инспектор отдела кадров",
+                        "ky": "Кадрлар бөлүмүнүн инспектору",
+                        "en": "HR Inspector"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                }
+            ],
+            "sub_departments": [
+                {
+                    "title": {
+                        "ru": "Отдел плодово-ягодных культур",
+                        "ky": "Мөмө-жемиш өсүмдүктөрү бөлүмү",
+                        "en": "Department of Fruit and Berry Crops"
+                    },
+                    "staff": [
+                        {
+                            "name": {
+                                "ru": "Джуманалиева Айнура Эсеналиевна",
+                                "ky": "Джуманалиева Айнура Эсеналиевна",
+                                "en": "Dzhumanalieva Ainura Esenalievna"
+                            },
+                            "role": {
+                                "ru": "Старший научный сотрудник",
+                                "ky": "Улуу илимий кызматкер",
+                                "en": "Senior Researcher"
+                            },
+                            "email": "ainura.kniiz@mail.ru",
+                            "image": "",
+                            "grade": "researcher"
+                        },
+                        {
+                            "name": {
+                                "ru": "Тажаматова Салтанат Касымовна",
+                                "ky": "Тажаматова Салтанат Касымовна",
+                                "en": "Tazhamatova Saltanat Kasymovna"
+                            },
+                            "role": {
+                                "ru": "Научный сотрудник",
+                                "ky": "Илимий кызматкер",
+                                "en": "Researcher"
+                            },
+                            "email": "",
+                            "image": "",
+                            "grade": "researcher"
+                        }
+                    ]
+                },
+                {
+                    "title": {
+                        "ru": "Отдел по сахарной свекле",
+                        "ky": "Кант кызылчасы бөлүмү",
+                        "en": "Sugar Beet Department"
+                    },
+                    "staff": [
+                        {
+                            "name": {
+                                "ru": "Качибеков Уланбек Байтилешович",
+                                "ky": "Качибеков Уланбек Байтилешович",
+                                "en": "Kachibekov Ulanbek Baitileshovich"
+                            },
+                            "role": {
+                                "ru": "Заведующий отделом",
+                                "ky": "Бөлүм башчысы",
+                                "en": "Head of Department"
+                            },
+                            "email": "",
+                            "image": "",
+                            "grade": "head"
+                        },
+                        {
+                            "name": {
+                                "ru": "Назарова Лайлихан Сагынбековна",
+                                "ky": "Назарова Лайлихан Сагынбековна",
+                                "en": "Nazarova Lailikhan Sagynbekovna"
+                            },
+                            "role": {
+                                "ru": "Старший лаборант",
+                                "ky": "Улуу лаборант",
+                                "en": "Senior Laboratory Assistant"
+                            },
+                            "email": "",
+                            "image": "",
+                            "grade": "staff"
+                        },
+                        {
+                            "name": {
+                                "ru": "Есенкулова Елизавета Манапаевна",
+                                "ky": "Есенкулова Елизавета Манапаевна",
+                                "en": "Esenkulova Elizaveta Manapaevna"
+                            },
+                            "role": {
+                                "ru": "Старший лаборант",
+                                "ky": "Улуу лаборант",
+                                "en": "Senior Laboratory Assistant"
+                            },
+                            "email": "",
+                            "image": "",
+                            "grade": "staff"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cotton_station",
+            "title": {
+                "ru": "Кыргызская опытная станция по хлопководству",
+                "ky": "Кыргыз пахтачылык тажрыйба станциясы",
+                "en": "Kyrgyz Experimental Station for Cotton Growing"
+            },
+            "location": "Кара-Сууйский р-н",
+            "has_sub_staff": true,
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Матаев Маматкадыр Маматкадырович",
+                        "ky": "Матаев Маматкадыр Маматкадырович",
+                        "en": "Mataev Mamatkadyr Mamatkadyrovich"
+                    },
+                    "role": {
+                        "ru": "Директор",
+                        "ky": "Директор",
+                        "en": "Director"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "director"
+                },
+                {
+                    "name": {
+                        "ru": "Сансызбаев Абдилла Зулпукарович",
+                        "ky": "Сансызбаев Абдилла Зулпукарович",
+                        "en": "Sansyzbaev Abdilla Zulpukarovich"
+                    },
+                    "role": {
+                        "ru": "Главный агроном-механик",
+                        "ky": "Башкы агроном-механик",
+                        "en": "Chief Agronomist-Mechanic"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                },
+                {
+                    "name": {
+                        "ru": "Эргешева Чынара Дарбановна",
+                        "ky": "Эргешева Чынара Дарбановна",
+                        "en": "Ergesheva Chynara Darbanovna"
+                    },
+                    "role": {
+                        "ru": "Главный бухгалтер",
+                        "ky": "Башкы бухгалтер",
+                        "en": "Chief Accountant"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                },
+                {
+                    "name": {
+                        "ru": "Тургунбаев Алимжан Ташболотович",
+                        "ky": "Тургунбаев Алимжан Ташболотович",
+                        "en": "Turgunbaev Alimzhan Tashbolotovich"
+                    },
+                    "role": {
+                        "ru": "Заведующий отделом элиты",
+                        "ky": "Элита бөлүмүнүн башчысы",
+                        "en": "Head of Elite Department"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "head"
+                },
+                {
+                    "name": {
+                        "ru": "Маматова Карамат",
+                        "ky": "Маматова Карамат",
+                        "en": "Mamatova Karamat"
+                    },
+                    "role": {
+                        "ru": "Старший лаборант",
+                        "ky": "Улуу лаборант",
+                        "en": "Senior Laboratory Assistant"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                },
+                {
+                    "name": {
+                        "ru": "Ысмаилова Гулзада Токтобаевна",
+                        "ky": "Ысмаилова Гулзада Токтобаевна",
+                        "en": "Ismailova Gulzada Toktobaevna"
+                    },
+                    "role": {
+                        "ru": "Старший лаборант",
+                        "ky": "Улуу лаборант",
+                        "en": "Senior Laboratory Assistant"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "staff"
+                }
+            ]
+        },
+        {
+            "id": "zhany_pakhta",
+            "title": {
+                "ru": "№ 2 Государственное семеноводческое хозяйство «Жаны - Пахта»",
+                "ky": "№ 2 «Жаңы-Пахта» мамлекеттик үрөнчүлүк чарбасы",
+                "en": "No. 2 State Seed-Growing Farm \"Zhany-Pakhta\""
+            },
+            "location": "Сокулукский р-н",
+            "has_sub_staff": false,
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Алмасбеков Кубат Алмасбекович",
+                        "ky": "Алмасбеков Кубат Алмасбекович",
+                        "en": "Almasbekov Kubat Almasbekovich"
+                    },
+                    "role": {
+                        "ru": "Директор",
+                        "ky": "Директор",
+                        "en": "Director"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "director"
+                }
+            ]
+        },
+        {
+            "id": "issyk_kul_station",
+            "title": {
+                "ru": "№ 3 Иссык-Кульская опытно-селекционная станция",
+                "ky": "№ 3 Ысык-Көл тажрыйба-селекциялык станциясы",
+                "en": "No. 3 Issyk-Kul Experimental Breeding Station"
+            },
+            "location": "Иссык-Кульская область",
+            "has_sub_staff": false,
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Осмонов Дайырбек Турсунгазиевич",
+                        "ky": "Осмонов Дайырбек Турсунгазиевич",
+                        "en": "Osmonov Daiyrbek Tursungazievich"
+                    },
+                    "role": {
+                        "ru": "Директор",
+                        "ky": "Директор",
+                        "en": "Director"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "director"
+                }
+            ]
+        },
+        {
+            "id": "naryn_station",
+            "title": {
+                "ru": "Нарынская опытная станция",
+                "ky": "Нарын тажрыйба станциясы",
+                "en": "Naryn Experimental Station"
+            },
+            "location": "Нарынская область",
+            "has_sub_staff": false,
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Эралиева Асел Муканбетовна",
+                        "ky": "Эралиева Асел Муканбетовна",
+                        "en": "Eralieva Asel Mukanbetovna"
+                    },
+                    "role": {
+                        "ru": "Директор",
+                        "ky": "Директор",
+                        "en": "Director"
+                    },
+                    "email": "",
+                    "image": "assets\/images\/asel.png",
+                    "grade": "director"
+                }
+            ]
+        },
+        {
+            "id": "burgundy_station",
+            "title": {
+                "ru": "№ 6 Бургундинский опорный пункт",
+                "ky": "№ 6 Бүргөндү таяныч пункту",
+                "en": "No. 6 Burgundy Support Point"
+            },
+            "location": "Кадамжайский р-н",
+            "has_sub_staff": false,
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Юзбаев Бахтияр Абдыхалилович",
+                        "ky": "Юзбаев Бахтияр Абдыхалилович",
+                        "en": "Yuzbaev Bakhtiyar Abdykhalilovich"
+                    },
+                    "role": {
+                        "ru": "Директор",
+                        "ky": "Директор",
+                        "en": "Director"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "director"
+                }
+            ]
+        },
+        {
+            "id": "atay_farm",
+            "title": {
+                "ru": "Семеноводческое хозяйство «Атай»",
+                "ky": "«Атай» үрөнчүлүк чарбасы",
+                "en": "Seed-Growing Farm \"Atay\""
+            },
+            "location": "Чуйская область",
+            "has_sub_staff": false,
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Сакеев Жыргалбек Керимжанович",
+                        "ky": "Сакеев Жыргалбек Керимжанович",
+                        "en": "Sakeev Zhyrgalbek Kerimzhanovich"
+                    },
+                    "role": {
+                        "ru": "Директор",
+                        "ky": "Директор",
+                        "en": "Director"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "director"
+                }
+            ]
+        },
+        {
+            "id": "ak_altyn_farm",
+            "title": {
+                "ru": "Семеноводческое хозяйство «Ак-Алтын»",
+                "ky": "«Ак-Алтын» үрөнчүлүк чарбасы",
+                "en": "Seed-Growing Farm \"Ak-Altyn\""
+            },
+            "location": "Ошская область",
+            "has_sub_staff": false,
+            "staff": [
+                {
+                    "name": {
+                        "ru": "Усобаев Акылбек Сатыбалдыевич",
+                        "ky": "Усобаев Акылбек Сатыбалдыевич",
+                        "en": "Usobaev Akylbek Satybaldievich"
+                    },
+                    "role": {
+                        "ru": "Директор",
+                        "ky": "Директор",
+                        "en": "Director"
+                    },
+                    "email": "",
+                    "image": "",
+                    "grade": "director"
+                }
+            ]
+        }
+    ]
+}

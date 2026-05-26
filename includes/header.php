@@ -104,9 +104,9 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
             <div class="country-dropdown">
                 <button type="button" class="country-trigger"><?php echo t('top_lang_selector'); ?> ▾</button>
                 <div class="country-menu">
-                    <button type="button" class="country-item" onclick="changeLang('en')"><?php echo t('lang_en'); ?></button>
-                    <button type="button" class="country-item" onclick="changeLang('ru')"><?php echo t('lang_ru'); ?></button>
-                    <button type="button" class="country-item" onclick="changeLang('ky')"><?php echo t('lang_ky'); ?></button>
+                    <button type="button" class="country-item" onclick="changeLang('en')">🇬🇧 <?php echo t('lang_en'); ?></button>
+                    <button type="button" class="country-item" onclick="changeLang('ru')">🇷🇺 <?php echo t('lang_ru'); ?></button>
+                    <button type="button" class="country-item" onclick="changeLang('ky')">🇰🇬 <?php echo t('lang_ky'); ?></button>
                 </div>
             </div>
         </div>
@@ -170,7 +170,7 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
                 <!-- Catalog -->
                 <li>
                     <a href="katalog.php?lang=<?php echo currentLang(); ?>" class="<?php echo navClass('katalog.php'); ?>">
-                        Каталог сортов
+                        <?php echo t('nav_catalog'); ?>
                     </a>
                 </li>
 
@@ -246,16 +246,16 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
             </div>
 
             <!-- Catalog -->
-            <a href="katalog.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()">Каталог сортов</a>
+            <a href="katalog.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_catalog'); ?></a>
 
             <!-- Contacts -->
             <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="mobile-link mb-3 fw-bold" style="font-size: 22px; text-align: left;" onclick="toggleMobileMenu()"><?php echo t('nav_contacts'); ?></a>
         </nav>
         <div class="mobile-subtitle" style="text-align: left; margin-top: 20px;"><?php echo t('top_lang_selector'); ?></div>
         <div class="d-flex flex-column gap-2">
-            <button class="mobile-link border-0 bg-transparent py-1" style="font-size: 18px; text-align: left;" type="button" onclick="changeLang('en')"><?php echo t('lang_en'); ?></button>
-            <button class="mobile-link border-0 bg-transparent py-1" style="font-size: 18px; text-align: left;" type="button" onclick="changeLang('ru')"><?php echo t('lang_ru'); ?></button>
-            <button class="mobile-link border-0 bg-transparent py-1" style="font-size: 18px; text-align: left;" type="button" onclick="changeLang('ky')"><?php echo t('lang_ky'); ?></button>
+            <button class="mobile-link border-0 bg-transparent py-1" style="font-size: 18px; text-align: left;" type="button" onclick="changeLang('en')">🇬🇧 <?php echo t('lang_en'); ?></button>
+            <button class="mobile-link border-0 bg-transparent py-1" style="font-size: 18px; text-align: left;" type="button" onclick="changeLang('ru')">🇷🇺 <?php echo t('lang_ru'); ?></button>
+            <button class="mobile-link border-0 bg-transparent py-1" style="font-size: 18px; text-align: left;" type="button" onclick="changeLang('ky')">🇰🇬 <?php echo t('lang_ky'); ?></button>
         </div>
     </div>
 </div>

@@ -10,7 +10,7 @@ include 'includes/header.php';
         <div class="mb-5 text-center">
             
             <h1 class="section-title-premium text-dark mb-3"><?php echo t('nav_international'); ?></h1>
-            <p class="section-subtitle-premium text-muted mx-auto" style="max-width: 760px;">Международное сотрудничество и партнерства КНИИЗ</p>
+            <p class="section-subtitle-premium text-muted mx-auto" style="max-width: 760px;">Международное сотрудничество и партнерства Институт</p>
         </div>
 
         <!-- Partnership Sections -->
@@ -71,14 +71,14 @@ include 'includes/header.php';
             <h2 class="h4 mb-4" style="font-family: var(--font-headings); font-weight: 700; color: var(--primary-color);">Последние проекты</h2>
             <div class="card border-0 shadow-sm p-4 bg-white" style="border-radius: 20px;">
                 <h3 class="h5 mb-2" style="font-family: var(--font-headings); font-weight: 700; color: var(--primary-color);">Глобальная программа ФАО "Доктора для почв"</h3>
-                <p class="text-secondary mb-0">КНИИЗ активно участвует в реализации глобальной программы ФАО, направленной на устойчивое управление почвенными ресурсами и повышение плодородия земель в Кыргызстане.</p>
+                <p class="text-secondary mb-0">Институт активно участвует в реализации глобальной программы ФАО, направленной на устойчивое управление почвенными ресурсами и повышение плодородия земель в Кыргызстане.</p>
             </div>
         </div>
 
         <!-- Contact Info -->
         <div class="mt-5 p-4 bg-light" style="border-radius: 20px;">
             <h3 class="h5 mb-3" style="font-family: var(--font-headings); font-weight: 700; color: var(--primary-color);">Заинтересованы в сотрудничестве?</h3>
-            <p class="text-secondary mb-3">КНИИЗ открыт для новых партнерств и сотрудничества с международными организациями, научными центрами и образовательными учреждениями.</p>
+            <p class="text-secondary mb-3">Институт открыт для новых партнерств и сотрудничества с международными организациями, научными центрами и образовательными учреждениями.</p>
             <a href="contacts.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent" style="padding: 10px 20px;">Свяжитесь с нами</a>
         </div>
     </div>
