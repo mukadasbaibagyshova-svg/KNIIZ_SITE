@@ -1,0 +1,824 @@
+[
+    {
+        "id": "v_1",
+        "name": {
+            "ru": "Нарын 27",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "spring",
+        "maturity": "mid",
+        "drought": "high",
+        "yield_num": "63.4",
+        "year_num": "1972",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень яровой • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "45,4–50,2 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "63,4 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "13,8–17,1%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 1972 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: высокая"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "naryn27",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_2",
+        "name": {
+            "ru": "Нутанс 970",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "spring",
+        "maturity": "early",
+        "drought": "high",
+        "yield_num": "35.4",
+        "year_num": "1974",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень яровой • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "43,0–47,7 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "35,4 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "15,8–16,0%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 1974 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: высокая"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "nutans970",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_3",
+        "name": {
+            "ru": "Нутанс 89",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "spring",
+        "maturity": "mid-early",
+        "drought": "medium",
+        "yield_num": "82",
+        "year_num": "1994",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень яровой • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "46,6–53,0 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "82,0 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "12,8–15,5%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 1994 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: средняя",
+                "🚿 Орошаемые земли"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "nutans89",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_4",
+        "name": {
+            "ru": "Таалай",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "spring",
+        "maturity": "early",
+        "drought": "high",
+        "yield_num": "58",
+        "year_num": "1997",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень яровой • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "44,7–47,5 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "58,0 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "14,1%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 1997 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: хорошая",
+                "🏔️ Богарные земли"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "taalay",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_5",
+        "name": {
+            "ru": "Бестам",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "spring",
+        "maturity": "mid-early",
+        "drought": "high",
+        "yield_num": "43.1",
+        "year_num": "2003",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень яровой • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "48,6–53,2 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "43,1 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "15,2%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2003 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: выше средней",
+                "🏔️ Богарные земли"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "bestam",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_6",
+        "name": {
+            "ru": "Кылым",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "spring",
+        "maturity": "mid-early",
+        "drought": "high",
+        "yield_num": "46",
+        "year_num": "2003",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень яровой • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "45,6–48,2 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "46 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "13,7%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2003 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: выше средней"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "kylym",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_7",
+        "name": {
+            "ru": "Максат",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "spring",
+        "maturity": "mid",
+        "drought": "high",
+        "yield_num": "74",
+        "year_num": "2006",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень яровой • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "44,5–48,7 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "74 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "13,3–15,1%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2006 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: выше средней",
+                "🔄 Универсальный"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "maksat",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_8",
+        "name": {
+            "ru": "Ватан",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "spring",
+        "maturity": "mid-early",
+        "drought": "medium",
+        "yield_num": "48.5",
+        "year_num": "2008",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень яровой • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "46,0–49,1 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "48,5 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "13,3–14,1%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2008 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "🔄 Универсальный",
+                "⛰️ Высокогорье"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "vatan",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_9",
+        "name": {
+            "ru": "Владлен",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "spring",
+        "maturity": "mid-early",
+        "drought": "high",
+        "yield_num": "55",
+        "year_num": "2012",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень яровой • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "47–53 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "55 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "14,8%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2012 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: высокая",
+                "🏔️ Богарные земли"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "vladlen",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_10",
+        "name": {
+            "ru": "Альта",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "winter",
+        "maturity": "early",
+        "drought": "high",
+        "yield_num": "68",
+        "year_num": "2007",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень озимый • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "49,8–56,3 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "68,0 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "13,5%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2007 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: высокая",
+                "❄️ Морозостойкий"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "alta",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_11",
+        "name": {
+            "ru": "Адель",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "winter",
+        "maturity": "early",
+        "drought": "medium",
+        "yield_num": "56",
+        "year_num": "2007",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень озимый • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "48 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "56,0 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "13,0–15,5%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2007 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "❄️ Морозостойкий"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "adel",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_12",
+        "name": {
+            "ru": "Гаухар",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "winter",
+        "maturity": "mid-early",
+        "drought": "high",
+        "yield_num": "85.3",
+        "year_num": "2005",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень озимый • Паллидум",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "38,9–46,7 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "85,3 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "10,7–13,6%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2005 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: высокая",
+                "❄️ Морозостойкий"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "gaukhar",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_13",
+        "name": {
+            "ru": "Белек",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "winter",
+        "maturity": "early",
+        "drought": "high",
+        "yield_num": "84.7",
+        "year_num": "2014",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень озимый • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "52,5 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "84,7 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "10,7–14,3%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2014 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: высокая",
+                "❄️ Морозостойкий"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "belek",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    },
+    {
+        "id": "v_14",
+        "name": {
+            "ru": "Жеңиш 60",
+            "en": "",
+            "ky": ""
+        },
+        "culture": "barley",
+        "season": "winter",
+        "maturity": "early",
+        "drought": "high",
+        "yield_num": "58.6",
+        "year_num": "2008",
+        "image": "barley_field.png",
+        "type": {
+            "ru": "Ячмень озимый • Нутанс",
+            "en": "",
+            "ky": ""
+        },
+        "description": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        },
+        "mass": {
+            "ru": "52,3–55,8 г",
+            "en": "",
+            "ky": ""
+        },
+        "yield_text": {
+            "ru": "58,6 ц/га",
+            "en": "",
+            "ky": ""
+        },
+        "protein": {
+            "ru": "13,3–14,6%",
+            "en": "",
+            "ky": ""
+        },
+        "year_text": {
+            "ru": "с 2008 г.",
+            "en": "",
+            "ky": ""
+        },
+        "properties": {
+            "ru": [
+                "💧 Засухоустойчивость: высокая",
+                "❄️ Морозостойкий"
+            ],
+            "en": [],
+            "ky": []
+        },
+        "modal_key": "jenish60",
+        "seeding": {
+            "ru": "",
+            "en": "",
+            "ky": ""
+        }
+    }
+]

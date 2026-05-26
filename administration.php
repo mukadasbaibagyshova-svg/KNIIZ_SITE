@@ -15,13 +15,16 @@ if (!function_exists('getInitials')) {
     }
 }
 
-// Multilingual dataset of employees
-$staff_data = [
-    // 1. Leadership (Руководство)
-    'leadership' => [
-        [
-            'name' => [
-                'ru' => 'Усубалиев Биржан Кубатович',
+// Load staff data from JSON (editable via admin panel)
+$admin_json_file = __DIR__ . '/database/administration.json';
+$staff_data = is_file($admin_json_file) ? json_decode(file_get_contents($admin_json_file), true) : [];
+if (!is_array($staff_data)) $staff_data = [];
+
+$lang = currentLang();
+?>
+
+
+
                 'ky' => 'Усубалиев Биржан Кубатович',
                 'en' => 'Usubaliev Birzhan Kubatovich'
             ],

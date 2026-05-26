@@ -28,10 +28,10 @@ include 'includes/header.php';
             <p class="section-subtitle-premium mx-auto" style="max-width: 760px;"><?php echo t('maps_text'); ?></p>
         </div>
 
-        <!-- Земельный фонд КНИИЗ (KML) -->
+        <!-- Земельный фонд Институт (KML) -->
         <section class="agro-land-fund mb-5">
             <div class="agro-land-fund-layout">
-                <div id="kml-map" class="agro-land-fund-map" data-kml-url="assets/data/kniiz-land-fund.kml" role="application" aria-label="Карта земельного фонда КНИИЗ"></div>
+                <div id="kml-map" class="agro-land-fund-map" data-kml-url="assets/data/kniiz-land-fund.kml" role="application" aria-label="Карта земельного фонда Институт"></div>
                 <aside id="agro-land-fund-legend" class="agro-land-fund-legend agro-card">
                     <h3 class="agro-land-fund-legend-title h6 mb-3">Хозяйства</h3>
                     <ul class="agro-land-fund-stations list-unstyled mb-0">

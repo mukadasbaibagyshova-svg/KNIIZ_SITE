@@ -1,5 +1,7 @@
 <?php
 include_once 'includes/lang.php';
+include_once 'includes/news_helpers.php';
+include_once 'includes/site_images.php';
 $page_title = t('page_title_home');
 include 'includes/header.php';
 
@@ -16,16 +18,16 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
         <div id="heroCarousel" class="carousel slide carousel-fade position-absolute w-100 h-100" data-bs-ride="carousel" data-bs-interval="2000" style="z-index: 0; top:0; left:0;">
             <div class="carousel-inner w-100 h-100">
                 <div class="carousel-item active w-100 h-100">
-                    <img src="assets/images/hero1.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 1">
+                    <img src="<?php echo siteImage('index.hero1', 'assets/images/hero1.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 1">
                 </div>
                 <div class="carousel-item w-100 h-100">
-                    <img src="assets/images/hero2.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 2">
+                    <img src="<?php echo siteImage('index.hero2', 'assets/images/hero2.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 2">
                 </div>
                 <div class="carousel-item w-100 h-100">
-                    <img src="assets/images/hero3.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 3">
+                    <img src="<?php echo siteImage('index.hero3', 'assets/images/hero3.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 3">
                 </div>
                 <div class="carousel-item w-100 h-100">
-                    <img src="assets/images/wheet1.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 4">
+                    <img src="<?php echo siteImage('index.hero4', 'assets/images/wheet1.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 4">
                 </div>
             </div>
             <!-- Overlay to darken the images for text readability -->
@@ -62,32 +64,32 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                         <div class="col-sm-6">
                             <div class="stat-box">
                                 <span class="stat-number">90+</span>
-                                <span class="stat-label">Лет научных исследований</span>
+                                <span class="stat-label"><?php echo t('index_stat_years'); ?></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="stat-box">
                                 <span class="stat-number">50+</span>
-                                <span class="stat-label">Научных сотрудников</span>
+                                <span class="stat-label"><?php echo t('index_stat_staff'); ?></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="stat-box">
                                 <span class="stat-number">70+</span>
-                                <span class="stat-label">Научных публикаций</span>
+                                <span class="stat-label"><?php echo t('index_stat_publications'); ?></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="stat-box">
                                 <span class="stat-number">1350 га</span>
-                                <span class="stat-label">Земельный фонд</span>
+                                <span class="stat-label"><?php echo t('index_stat_landfund'); ?></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-card position-relative overflow-hidden shadow-lg" style="border-radius: 24px;">
-                        <img src="assets/images/about-photo.jpg" alt="<?php echo t('about_title'); ?>" class="img-fluid w-100" style="object-fit: cover; min-height: 480px;">
+                        <img src="<?php echo siteImage('index.about_photo', 'assets/images/about-photo.jpg'); ?>" alt="<?php echo t('about_title'); ?>" class="img-fluid w-100" style="object-fit: cover; min-height: 480px;">
                     </div>
                 </div>
             </div>
@@ -112,10 +114,15 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                 $latest_news = array_slice($all_news, 0, 3);
                 if ($latest_news):
                     foreach ($latest_news as $news):
-                        $desc = mb_substr(strip_tags($news['text']), 0, 150, 'UTF-8');
-                        if (mb_strlen($news['text'], 'UTF-8') > 150) $desc .= '...';
+                        $text = newsGetText($news, currentLang());
+                        $title = newsGetTitle($news, currentLang());
+                        $desc = mb_substr(strip_tags($text), 0, 150, 'UTF-8');
+                        if (mb_strlen($text, 'UTF-8') > 150) $desc .= '...';
                         $img = !empty($news['images'][0]) ? $upload_dir . htmlspecialchars($news['images'][0]) : 'assets/images/wheet1.jpg';
-                        $news_json = htmlspecialchars(json_encode($news, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), ENT_QUOTES, 'UTF-8');
+                        $news_display = $news;
+                        $news_display['text'] = $text;
+                        $news_display['title'] = $title;
+                        $news_json = htmlspecialchars(json_encode($news_display, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), ENT_QUOTES, 'UTF-8');
                 ?>
                     <div class="col-lg-4 col-md-6">
                         <div class="news-card news-card-premium" data-news='<?= $news_json ?>' data-upload-dir="<?= $upload_dir ?>">
@@ -123,15 +130,15 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                                 <span class="news-date"><?= htmlspecialchars($news['date']) ?></span>
                             </div>
                             <div class="news-body-premium">
-                                <h3 class="news-title-premium"><?= htmlspecialchars($news['title']) ?></h3>
+                                <h3 class="news-title-premium"><?= htmlspecialchars($title) ?></h3>
                                 <p class="news-desc-premium"><?= htmlspecialchars($desc) ?></p>
-                                <button type="button" class="news-more news-link-premium border-0 bg-transparent text-success fw-bold p-0">Подробнее &rarr;</button>
+                                <button type="button" class="news-more news-link-premium border-0 bg-transparent text-success fw-bold p-0"><?php echo t('news_more'); ?> &rarr;</button>
                             </div>
                         </div>
                     </div>
                 <?php endforeach;
                 else:
-                    echo '<p class="text-center text-muted">Пока нет новостей.</p>';
+                    echo '<p class="text-center text-muted">' . t('news_empty') . '</p>';
                 endif;
                 ?>
             </div>
@@ -158,7 +165,7 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                                               class="region-path region-<?php echo strtolower($id); ?>" />
                                     <?php endforeach; ?>
                                 <?php else: ?>
-                                    <text x="400" y="200" text-anchor="middle" fill="#ccc">Error loading map paths</text>
+                                    <text x="400" y="200" text-anchor="middle" fill="#ccc"><?php echo htmlspecialchars(t('index_map_load_error')); ?></text>
                                 <?php endif; ?>
                             </svg>
                         </div>
@@ -175,11 +182,11 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                     <p class="text-muted fs-5 mb-4"><?php echo t('maps_text'); ?></p>
                     <p class="text-muted mb-4"><?php echo t('maps_description_1'); ?> <?php echo t('maps_description_2'); ?></p>
                     <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="badge bg-emerald-soft text-success py-2 px-3 fw-semibold">Чуй: Свекла</span>
-                        <span class="badge bg-emerald-soft text-success py-2 px-3 fw-semibold">Ош: Зерновые</span>
-                        <span class="badge bg-emerald-soft text-success py-2 px-3 fw-semibold">Баткен: Хлопок</span>
+                        <span class="badge bg-emerald-soft text-success py-2 px-3 fw-semibold"><?php echo t('index_badge_chuy'); ?></span>
+                        <span class="badge bg-emerald-soft text-success py-2 px-3 fw-semibold"><?php echo t('index_badge_osh'); ?></span>
+                        <span class="badge bg-emerald-soft text-success py-2 px-3 fw-semibold"><?php echo t('index_badge_batken'); ?></span>
                     </div>
-                    <a href="maps.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent">Открыть полную карту</a>
+                    <a href="maps.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent"><?php echo t('index_open_full_map'); ?></a>
                 </div>
             </div>
         </div>
@@ -205,59 +212,59 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                 </div>
                 <div class="carousel-inner" style="height: 500px;">
                     <div class="carousel-item active h-100">
-                        <img src="assets/images/wheet1.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Посевы пшеницы">
+                        <img src="<?php echo siteImage('index.gallery1', 'assets/images/wheet1.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery1_alt')); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;">Научные посевы</h5>
-                            <p class="mb-0 text-white-50">Выведение и испытание новых сортов пшеницы, устойчивых к климатическим условиям Кыргызстана.</p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery1_title'); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t('index_gallery1_text'); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="assets/images/hlopoknapole.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Сбор хлопка">
+                        <img src="<?php echo siteImage('index.gallery2', 'assets/images/hlopoknapole.png'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery2_alt')); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;">Технические культуры</h5>
-                            <p class="mb-0 text-white-50">Исследования хлопка и других технических культур на южных опытных станциях института.</p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery2_title'); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t('index_gallery2_text'); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="assets/images/svekla.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Сахарная свекла">
+                        <img src="<?php echo siteImage('index.gallery3', 'assets/images/svekla.png'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery3_alt')); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;">Сахарная свекла</h5>
-                            <p class="mb-0 text-white-50">Селекция высокосахаристых гибридов и первичное семеноводство для отечественных аграриев.</p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery3_title'); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t('index_gallery3_text'); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="assets/images/potato.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Почвоведение">
+                        <img src="<?php echo siteImage('index.gallery4', 'assets/images/potato.png'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery4_alt')); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;">Исследования почв</h5>
-                            <p class="mb-0 text-white-50">Анализ состава почв, разработка рекомендаций по сохранению плодородия и агрохимии.</p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery4_title'); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t('index_gallery4_text'); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="assets/images/corn.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Кукуруза">
+                        <img src="<?php echo siteImage('index.gallery5', 'assets/images/corn.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery5_alt')); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;">Поля кукурузы</h5>
-                            <p class="mb-0 text-white-50">Гибриды кукурузы отечественной селекции с высоким потенциалом урожайности.</p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery5_title'); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t('index_gallery5_text'); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="assets/images/about-photo.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Лаборатория">
+                        <img src="<?php echo siteImage('index.gallery6', 'assets/images/about-photo.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery6_alt')); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;">Современные лаборатории</h5>
-                            <p class="mb-0 text-white-50">Научно-исследовательские биотехнологические центры и фитосанитарный контроль.</p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery6_title'); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t('index_gallery6_text'); ?></p>
                         </div>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon p-3 bg-dark bg-opacity-25 rounded-circle" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span class="visually-hidden"><?php echo t('carousel_prev'); ?></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon p-3 bg-dark bg-opacity-25 rounded-circle" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                    <span class="visually-hidden"><?php echo t('carousel_next'); ?></span>
                 </button>
             </div>
             <div class="text-center mt-5">
-                <a href="gallery.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent">Посмотреть больше</a>
+                <a href="gallery.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent"><?php echo t('index_gallery_more'); ?></a>
             </div>
         </div>
     </section>
@@ -268,22 +275,22 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
             <div class="row g-5">
                 <div class="col-lg-5">
                     <div class="contact-sidebar-premium">
-                        <h3>Контактная информация</h3>
-                        <p class="mb-4" style="opacity: 0.85;">Свяжитесь с нами любым удобным способом</p>
+                        <h3><?php echo t('index_contacts_title'); ?></h3>
+                        <p class="mb-4" style="opacity: 0.85;"><?php echo t('index_contacts_subtitle'); ?></p>
                         
                         <div class="contact-meta-item">
                             <div class="contact-meta-icon">📍</div>
                             <div class="contact-meta-text">
-                                <strong>Адрес</strong>
-                                <p>Кыргызская Республика, г. Бишкек, ул. Тимура Фрунзе 100/1</p>
+                                <strong><?php echo t('contacts_address_label'); ?></strong>
+                                <p><?php echo t('contacts_address_value'); ?></p>
                             </div>
                         </div>
                         
                         <div class="contact-meta-item">
                             <div class="contact-meta-icon">📞</div>
                             <div class="contact-meta-text">
-                                <strong>Телефон / Факс</strong>
-                                <p>Тел: 0(312) 41 71 54<br>Факс: 0(312) 41 79 08</p>
+                                <strong><?php echo t('index_phonefax_label'); ?></strong>
+                                <p><?php echo t('contacts_phone_label'); ?>: <?php echo t('contacts_phone_value'); ?><br><?php echo t('contacts_fax_label'); ?>: <?php echo t('contacts_fax_value'); ?></p>
                             </div>
                         </div>
                         
@@ -291,15 +298,15 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                             <div class="contact-meta-icon">✉️</div>
                             <div class="contact-meta-text">
                                 <strong>Email</strong>
-                                <p><a href="mailto:nauca.zemledel@gmail.com" style="color: #10b981;">nauca.zemledel@gmail.com</a></p>
+                                <p><a href="mailto:<?php echo t('contacts_email_value'); ?>" style="color: #10b981;"><?php echo t('contacts_email_value'); ?></a></p>
                             </div>
                         </div>
                         
                         <div class="contact-meta-item">
                             <div class="contact-meta-icon">🕒</div>
                             <div class="contact-meta-text">
-                                <strong>График работы</strong>
-                                <p>Понедельник – Пятница: 9:00 – 18:00</p>
+                                <strong><?php echo t('contacts_workhours_label'); ?></strong>
+                                <p><?php echo t('contacts_workhours_value'); ?></p>
                             </div>
                         </div>
 
@@ -323,18 +330,18 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                 <div class="col-lg-7">
                     <div class="contact-form-container">
                         <h3 class="mb-4" style="font-family: var(--font-headings); font-weight: 700;"><?php echo t('contacts_form_title'); ?></h3>
-                        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Сообщение отправлено!');">
+                        <form action="contacts.php?lang=<?php echo currentLang(); ?>" method="POST">
                             <div class="mb-3">
                                 <label for="form-name" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t('contacts_name'); ?></label>
-                                <input type="text" id="form-name" class="input-field" placeholder="Иван Иванов" required>
+                                <input type="text" id="form-name" name="name" class="input-field" placeholder="<?php echo htmlspecialchars(t('index_form_name_ph')); ?>" required>
                             </div>
                             <div class="mb-3">
                                 <label for="form-email" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t('contacts_email_label'); ?></label>
-                                <input type="email" id="form-email" class="input-field" placeholder="ivan@example.com" required>
+                                <input type="email" id="form-email" name="email" class="input-field" placeholder="<?php echo htmlspecialchars(t('index_form_email_ph')); ?>" required>
                             </div>
                             <div class="mb-4">
                                 <label for="form-msg" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t('contacts_message'); ?></label>
-                                <textarea id="form-msg" rows="5" class="textarea-field" placeholder="Введите ваше сообщение..." required></textarea>
+                                <textarea id="form-msg" name="message" rows="5" class="textarea-field" placeholder="<?php echo htmlspecialchars(t('index_form_message_ph')); ?>" required></textarea>
                             </div>
                             <button type="submit" class="btn-premium btn-premium-accent px-5"><?php echo t('contacts_send'); ?></button>
                         </form>

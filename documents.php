@@ -68,13 +68,12 @@ $documentSections = [
                                     <a
                                         href="<?php echo htmlspecialchars($file['path']); ?>"
                                         class="documents-file-link"
-                                        download="<?php echo htmlspecialchars($file['filename']); ?>"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
                                         <span class="documents-file-icon" aria-hidden="true">PDF</span>
                                         <span class="documents-file-name"><?php echo htmlspecialchars($file['label']); ?></span>
-                                        <span class="documents-file-action"><?php echo t('docs_download'); ?></span>
+                                        <span class="documents-file-action"><?php echo t('docs_open'); ?></span>
                                     </a>
                                 </li>
                                 <?php endforeach; ?>
