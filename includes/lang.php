@@ -33,6 +33,33 @@ $_lang = [
         "page_title_gallery" => "Галерея",
         "page_title_structure" => "Структура",
         "structure_detail_back" => "Вернуться к разделу «Наука»",
+        "structure_detail_intro" => "Краткое описание деятельности отдела",
+        "structure_detail_photo_placeholder" => "Место для фотографии отдела",
+        "structure_detail_staff_title" => "Руководители и сотрудники",
+        "structure_detail_head" => "Руководитель",
+        "structure_detail_experience" => "Опыт:",
+        "structure_detail_years" => "лет",
+        "structure_detail_research_title" =>
+            "Основные направления исследований",
+        "structure_detail_results_title" =>
+            "Ключевые результаты и достижения отдела",
+        "structure_detail_international_title" => "Международные проекты",
+        "structure_detail_international_coop" => "Сотрудничество и обмен",
+        "structure_detail_projects_current" => "Текущие научные проекты",
+        "structure_detail_projects_completed" => "Завершённые проекты",
+        "structure_detail_publications_title" => "Публикации отдела",
+        "structure_detail_publications_desc" =>
+            "Статьи, монографии, рекомендации",
+        "structure_detail_goals_title" => "Цели отдела",
+        "structure_detail_perspectives_title" => "Перспективы развития",
+        "structure_detail_services_title" => "Услуги и товары отдела",
+        "structure_detail_events_title" => "Научные мероприятия",
+        "structure_detail_infrastructure_title" =>
+            "Материально-техническая база",
+        "structure_detail_cta_title" => "Свяжитесь с отделом",
+        "structure_detail_cta_desc" =>
+            "Для получения дополнительной информации о деятельности отдела, сотрудничестве или приобретении семенного материала.",
+        "structure_detail_cta_btn" => "Контакты",
         "structure_detail_wheat_title" =>
             "Отдел селекции и первичного семеноводства пшеницы",
         "structure_detail_barley_title" =>
@@ -446,6 +473,33 @@ $_lang = [
         "page_title_gallery" => "Gallery",
         "page_title_structure" => "Structure",
         "structure_detail_back" => "Back to Science",
+        "structure_detail_intro" =>
+            "Brief description of the department's activities",
+        "structure_detail_photo_placeholder" => "Department photo placeholder",
+        "structure_detail_staff_title" => "Management and staff",
+        "structure_detail_head" => "Head",
+        "structure_detail_experience" => "Experience:",
+        "structure_detail_years" => "years",
+        "structure_detail_research_title" => "Main research areas",
+        "structure_detail_results_title" =>
+            "Key results and achievements of the department",
+        "structure_detail_international_title" => "International projects",
+        "structure_detail_international_coop" => "Cooperation and exchange",
+        "structure_detail_projects_current" => "Current research projects",
+        "structure_detail_projects_completed" => "Completed projects",
+        "structure_detail_publications_title" => "Department publications",
+        "structure_detail_publications_desc" =>
+            "Articles, monographs, recommendations",
+        "structure_detail_goals_title" => "Department goals",
+        "structure_detail_perspectives_title" => "Development perspectives",
+        "structure_detail_services_title" => "Department services and products",
+        "structure_detail_events_title" => "Scientific events",
+        "structure_detail_infrastructure_title" =>
+            "Material and technical base",
+        "structure_detail_cta_title" => "Contact the department",
+        "structure_detail_cta_desc" =>
+            "For additional information about the department's activities, cooperation or purchasing seed material.",
+        "structure_detail_cta_btn" => "Contacts",
         "structure_detail_wheat_title" =>
             "Department of Wheat Breeding and Primary Seed Production",
         "structure_detail_barley_title" =>
@@ -853,6 +907,34 @@ $_lang = [
         "page_title_gallery" => "Галерея",
         "page_title_structure" => "Түзүм",
         "structure_detail_back" => "«Илим» бөлүмүнө кайтуу",
+        "structure_detail_intro" =>
+            "Бөлүмдүн ишмердүүлүгүнүн кыскача сүрөттөлүшү",
+        "structure_detail_photo_placeholder" => "Бөлүмдүн сүрөтү үчүн орун",
+        "structure_detail_staff_title" => "Жетекчилер жана кызматкерлер",
+        "structure_detail_head" => "Жетекчи",
+        "structure_detail_experience" => "Тажрыйба:",
+        "structure_detail_years" => "жыл",
+        "structure_detail_research_title" => "Изилдөөнүн негизги багыттары",
+        "structure_detail_results_title" =>
+            "Бөлүмдүн негизги жыйынтыктары жана жетишкендиктери",
+        "structure_detail_international_title" => "Эл аралык долбоорлор",
+        "structure_detail_international_coop" => "Кызматташуу жана алмашуу",
+        "structure_detail_projects_current" => "Учурдагы илимий долбоорлор",
+        "structure_detail_projects_completed" => "Аяктаган долбоорлор",
+        "structure_detail_publications_title" => "Бөлүмдүн жарыяланымдары",
+        "structure_detail_publications_desc" =>
+            "Макалалар, монографиялар, сунуштар",
+        "structure_detail_goals_title" => "Бөлүмдүн максаттары",
+        "structure_detail_perspectives_title" => "Өнүгүү келечеги",
+        "structure_detail_services_title" =>
+            "Бөлүмдүн кызматтары жана товарлары",
+        "structure_detail_events_title" => "Илимий иш-чаралар",
+        "structure_detail_infrastructure_title" =>
+            "Материалдык-техникалык база",
+        "structure_detail_cta_title" => "Бөлүм менен байланышыңыз",
+        "structure_detail_cta_desc" =>
+            "Бөлүмдүн ишмердүүлүгү, кызматташуу же үрөн материалын алуу боюнча кошумча маалымат үчүн.",
+        "structure_detail_cta_btn" => "Контакттар",
         "structure_detail_wheat_title" =>
             "Буудай селекциясы жана баштапкы үрөнчүлүк бөлүмү",
         "structure_detail_barley_title" =>

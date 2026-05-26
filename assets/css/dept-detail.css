@@ -24,7 +24,9 @@
 .sd-reveal {
     opacity: 0;
     transform: translateY(14px);
-    transition: opacity 0.45s ease, transform 0.45s ease;
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
 }
 
 .sd-reveal.sd-visible {
@@ -34,15 +36,19 @@
 
 /* ── Page header (no background) ── */
 .dept-main-content {
-    max-width: 1100px;
+    max-width: 1160px;
     margin: 0 auto;
-    padding: 20px 28px 56px;
+    padding: 24px 28px 64px;
 }
 
 .dept-page-header {
-    margin-bottom: 14px;
-    padding-top: 4px;
+    margin-bottom: 18px;
+    padding: 28px 32px;
     text-align: center;
+    background: var(--bg-light);
+    border: 1px solid rgba(12, 62, 33, 0.08);
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
 }
 
 .dept-page-header .dept-back-link {
@@ -81,11 +87,16 @@
 
 /* ── Sections ── */
 .dept-section {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    padding: 26px 28px;
+    background: var(--bg-light);
+    border: 1px solid rgba(12, 62, 33, 0.08);
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
 }
 
 .dept-intro-section {
-    margin-bottom: 0;
+    margin-bottom: 16px;
 }
 
 .dept-staff-section {
@@ -93,20 +104,34 @@
 }
 
 .dept-section-title {
-    font-size: 1.25rem;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.35rem;
+    font-weight: 800;
     color: var(--primary-color);
-    margin: 0 0 8px;
-    padding-bottom: 4px;
-    border-bottom: 2px solid rgba(16, 185, 129, 0.2);
-    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    letter-spacing: -0.015em;
+}
+
+.dept-section-title::before {
+    content: "";
+    width: 36px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        var(--accent-color),
+        var(--primary-color)
+    );
+    flex-shrink: 0;
 }
 
 /* ── Intro: heading + text + image ── */
 .dept-intro-grid {
     display: grid;
     grid-template-columns: 1fr min(360px, 40%);
-    gap: 24px;
+    gap: 28px;
     align-items: start;
 }
 
@@ -119,10 +144,10 @@
 
 .dept-intro-text {
     font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 16.5px;
+    line-height: 1.78;
     color: var(--text-muted);
-    margin: 0 0 8px;
+    margin: 0 0 12px;
 }
 
 .dept-intro-text:last-child {
@@ -130,17 +155,18 @@
 }
 
 .dept-intro-photo-col {
-    border-radius: var(--border-radius-md, 16px);
+    border-radius: 20px;
     overflow: hidden;
-    min-height: 220px;
+    min-height: 260px;
     background: #e2e8f0;
     border: 1px solid rgba(12, 62, 33, 0.08);
+    box-shadow: var(--shadow-sm);
 }
 
 .dept-intro-photo-col img {
     width: 100%;
     height: 100%;
-    min-height: 220px;
+    min-height: 260px;
     object-fit: cover;
     display: block;
 }
@@ -176,19 +202,23 @@
 }
 
 .dept-research-card {
-    background: var(--bg-light);
+    background: var(--bg-alt);
     border: 1px solid rgba(12, 62, 33, 0.08);
-    border-radius: var(--border-radius-md, 16px);
-    padding: 16px;
+    border-radius: 18px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    gap: 12px;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s;
 }
 
 .dept-research-card:hover {
     border-color: rgba(16, 185, 129, 0.3);
     box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
 }
 
 .dept-research-icon {
@@ -216,17 +246,17 @@
 .dept-results-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
 }
 
 .dept-result-card {
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    background: var(--bg-light);
+    background: var(--bg-alt);
     border: 1px solid rgba(12, 62, 33, 0.08);
-    border-radius: var(--border-radius-md, 16px);
-    padding: 14px 16px;
+    border-radius: 18px;
+    padding: 16px 18px;
 }
 
 .dept-result-card__icon {
@@ -261,9 +291,9 @@
     display: flex;
     gap: 16px;
     align-items: flex-start;
-    background: var(--bg-light);
-    border-radius: var(--border-radius-md, 16px);
-    padding: 16px 18px;
+    background: var(--bg-alt);
+    border-radius: 18px;
+    padding: 18px 20px;
     border: 1px solid rgba(12, 62, 33, 0.08);
 }
 
@@ -309,11 +339,21 @@
 }
 
 .dept-staff-card {
-    background: var(--bg-light);
+    background: var(--bg-alt);
     border: 1px solid rgba(12, 62, 33, 0.08);
-    border-radius: var(--border-radius-md, 16px);
-    padding: 18px 14px 16px;
+    border-radius: 18px;
+    padding: 20px 16px 18px;
     text-align: center;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.dept-staff-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: rgba(16, 185, 129, 0.25);
 }
 
 .dept-staff-card.is-head {
@@ -406,7 +446,7 @@
 }
 
 .dept-list li::before {
-    content: '✓';
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--accent-color);
@@ -417,18 +457,23 @@
 
 .dept-section-text {
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.75;
     color: var(--text-muted);
 }
 
 /* ── CTA ── */
 .dept-cta-section {
-    margin-top: 12px;
-    padding: 24px 20px;
-    background: var(--primary-color);
-    border-radius: var(--border-radius-md, 16px);
+    margin-top: 18px;
+    padding: 30px 24px;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--primary-light)
+    );
+    border-radius: 24px;
     color: #fff;
     text-align: center;
+    box-shadow: var(--shadow-md);
 }
 
 .dept-cta-section h3 {
@@ -486,10 +531,12 @@
 
     .dept-page-header {
         margin-bottom: 12px;
+        padding: 22px 18px;
     }
 
     .dept-section {
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        padding: 20px 18px;
     }
 
     .dept-intro-section {

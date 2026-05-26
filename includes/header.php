@@ -17,13 +17,15 @@ $scienceDeptNav = [
     ["id" => "wheat", "title_key" => "structure_detail_wheat_title"],
     ["id" => "barley", "title_key" => "structure_detail_barley_title"],
     ["id" => "corn", "title_key" => "structure_detail_corn_title"],
-    ["id" => "sugarbeet", "title_key" => "structure_detail_sugarbeet_title"],
-    ["id" => "fruit_veg", "title_key" => "structure_detail_fruit_veg_title"],
     ["id" => "soil", "title_key" => "structure_detail_soil_title"],
     [
-        "id" => "agrochemistry",
-        "title_key" => "structure_detail_agrochemistry_title",
+        "id" => "genetic_resources",
+        "title_key" => "structure_detail_genetic_resources_title",
     ],
+    ["id" => "sugarbeet", "title_key" => "structure_detail_sugarbeet_title"],
+    ["id" => "fruit_veg", "title_key" => "structure_detail_fruit_veg_title"],
+    ["id" => "fiber", "title_key" => "structure_detail_fiber_title"],
+    ["id" => "potato", "title_key" => "structure_detail_potato_title"],
 ];
 $scienceNavActive = in_array(
     $currentFile,
@@ -153,6 +155,74 @@ $scienceNavActive = in_array(
     .search-highlight { background: rgba(255, 236, 179, 0.8); border-radius: 8px; padding: 0.1rem 0.2rem; }
     .search-status { margin-top: 0.75rem; font-size: 0.95rem; opacity: 0.95; }
     .search-status.no-results { color: #f43f5e; }
+
+    .dropdown-trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .dropdown-arrow,
+    .nested-arrow,
+    .mobile-arrow {
+        display: inline-block;
+        transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    .dropdown-li.open > .dropdown-trigger .dropdown-arrow,
+    .nested-dropdown.open > .nested-dropdown-trigger .nested-arrow,
+    .mobile-nav-group.open > button .mobile-arrow {
+        transform: rotate(90deg);
+        color: var(--accent-color);
+    }
+
+    .dropdown-li.open .dropdown-submenu {
+        display: block;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+    }
+
+    .nested-dropdown + li {
+        margin-top: 2px;
+    }
+
+    .nested-dropdown-trigger {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .nested-submenu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease, opacity 0.25s ease, margin 0.25s ease;
+    }
+
+    .nested-dropdown.open > .nested-submenu {
+        max-height: 180px;
+        opacity: 1;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .nested-submenu a {
+        padding-left: 34px !important;
+        font-size: 13.5px !important;
+        color: rgba(255, 255, 255, 0.72) !important;
+    }
+
+    .nested-submenu a:hover,
+    .nested-submenu a.active {
+        padding-left: 38px !important;
+        color: #fff !important;
+        background: rgba(16, 185, 129, 0.16) !important;
+    }
 </style>
 </head>
 <body<?php echo !empty($body_class)
@@ -180,14 +250,26 @@ $headerClass = $isHome ? "site-header" : "site-header header-solid";
                 </li>
 
                 <!-- About (dropdown) -->
-                <li class="dropdown-li" style="position: relative;">
+                <li class="dropdown-li about-dropdown-li" style="position: relative;" onmouseleave="closeAboutNestedSubmenu()">
                     <a href="#" class="dropdown-trigger">
                         <?php echo t("nav_about"); ?> ▾
                     </a>
                     <ul class="dropdown-submenu">
-                        <li><a href="history.php?lang=<?php echo currentLang(); ?>"><?php echo t(
+                        <li class="nested-dropdown">
+                            <a href="#" class="nested-dropdown-trigger" onclick="toggleNestedDropdown(event)">
+                                <?php echo t(
+                                    "nav_about_history",
+                                ); ?> <span class="nested-arrow">▶</span>
+                            </a>
+                            <ul class="nested-submenu">
+                                <li><a href="history.php?lang=<?php echo currentLang(); ?>"><?php echo t(
     "nav_history",
 ); ?></a></li>
+                                <li><a href="about.php?lang=<?php echo currentLang(); ?>"><?php echo t(
+    "nav_about_azyikov",
+); ?></a></li>
+                            </ul>
+                        </li>
                         <li><a href="maps.php?lang=<?php echo currentLang(); ?>"><?php echo t(
     "nav_maps",
 ); ?></a></li>
@@ -259,7 +341,7 @@ $headerClass = $isHome ? "site-header" : "site-header header-solid";
                 "top_search",
             ); ?></button>
             <div class="country-dropdown">
-                <button type="button" class="country-trigger"><?php echo t(
+                <button type="button" class="country-trigger" onclick="toggleCountryDropdown(event)"><?php echo t(
                     "top_lang_selector",
                 ); ?> ▾</button>
                 <div class="country-menu">
@@ -312,11 +394,21 @@ $headerClass = $isHome ? "site-header" : "site-header header-solid";
             <div class="mobile-nav-group mb-3">
                 <button class="mobile-link fw-bold mb-2" style="font-size: 22px; text-align: left; background: transparent; border: none; padding: 0; cursor: pointer; width: 100%;" type="button" onclick="toggleMobileSubmenu(event)"><?php echo t(
                     "nav_about",
-                ); ?> ▾</button>
+                ); ?> <span class="mobile-arrow">▶</span></button>
                 <div class="mobile-sublinks ps-3" style="display: none; flex-direction: column; gap: 8px;">
-                    <a href="history.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t(
+                    <div class="mobile-nav-group mb-2" style="border-bottom: 0; padding-bottom: 0;">
+                        <button class="mobile-sublink border-0 bg-transparent py-1" style="width: 100%; display: flex; justify-content: space-between; align-items: center;" type="button" onclick="toggleMobileSubmenu(event)"><?php echo t(
+                            "nav_about_history",
+                        ); ?> <span class="mobile-arrow">▶</span></button>
+                        <div class="mobile-sublinks ps-3" style="display: none; flex-direction: column; gap: 8px;">
+                            <a href="history.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t(
     "nav_history",
 ); ?></a>
+                            <a href="about.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t(
+    "nav_about_azyikov",
+); ?></a>
+                        </div>
+                    </div>
                     <a href="maps.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t(
     "nav_maps",
 ); ?></a>
@@ -336,7 +428,7 @@ $headerClass = $isHome ? "site-header" : "site-header header-solid";
             <div class="mobile-nav-group mb-3">
                 <button class="mobile-link fw-bold mb-2" style="font-size: 22px; text-align: left; background: transparent; border: none; padding: 0; cursor: pointer; width: 100%;" type="button" onclick="toggleMobileSubmenu(event)"><?php echo t(
                     "nav_science",
-                ); ?> ▾</button>
+                ); ?> <span class="mobile-arrow">▶</span></button>
                 <div class="mobile-sublinks ps-3" style="display: none; flex-direction: column; gap: 8px;">
                     <?php foreach ($scienceDeptNav as $deptNav): ?>
                     <a href="structure-detail.php?item=<?php echo $deptNav[
@@ -352,7 +444,7 @@ $headerClass = $isHome ? "site-header" : "site-header header-solid";
             <div class="mobile-nav-group mb-3">
                 <button class="mobile-link fw-bold mb-2" style="font-size: 22px; text-align: left; background: transparent; border: none; padding: 0; cursor: pointer; width: 100%;" type="button" onclick="toggleMobileSubmenu(event)"><?php echo t(
                     "nav_media",
-                ); ?> ▾</button>
+                ); ?> <span class="mobile-arrow">▶</span></button>
                 <div class="mobile-sublinks ps-3" style="display: none; flex-direction: column; gap: 8px;">
                     <a href="news.php?lang=<?php echo currentLang(); ?>" class="mobile-sublink" onclick="toggleMobileMenu()"><?php echo t(
     "nav_news",
@@ -397,23 +489,110 @@ function changeLang(lang) {
     window.location.href = url.toString();
 }
 
-function toggleMobileMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
+function closeDesktopDropdowns() {
+    document.querySelectorAll('.dropdown-li.open').forEach(function(item) {
+        item.classList.remove('open');
+    });
+    document.querySelectorAll('.nested-dropdown.open').forEach(function(item) {
+        item.classList.remove('open');
+    });
+}
+
+function toggleDesktopDropdown(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const trigger = event.currentTarget;
+    const item = trigger.closest('.dropdown-li');
+    if (!item) {
+        return;
+    }
+    const wasOpen = item.classList.contains('open');
+    closeDesktopDropdowns();
+    if (!wasOpen) {
+        item.classList.add('open');
+    }
+}
+
+function toggleNestedDropdown(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const trigger = event.currentTarget;
+    const item = trigger.closest('.nested-dropdown');
+    if (!item) {
+        return;
+    }
+    item.classList.toggle('open');
+}
+
+function closeMobileSubmenus() {
+    document.querySelectorAll('.mobile-nav-group.open').forEach(function(group) {
+        group.classList.remove('open');
+    });
+    document.querySelectorAll('.mobile-sublinks').forEach(function(menu) {
+        menu.style.display = 'none';
+    });
+}
+
+function toggleMobileMenu(forceState) {
+    const menu = document.getElementById('mobileMenu');
+    const shouldOpen = typeof forceState === 'boolean' ? forceState : !menu.classList.contains('open');
+    menu.classList.toggle('open', shouldOpen);
+    if (!shouldOpen) {
+        closeMobileSubmenus();
+    }
 }
 
 function toggleMobileSubmenu(event) {
     event.preventDefault();
     event.stopPropagation();
-    const btn = event.target.closest('button');
+    const btn = event.currentTarget;
+    const group = btn.closest('.mobile-nav-group');
     const submenu = btn.nextElementSibling;
-    if (submenu && submenu.classList.contains('mobile-sublinks')) {
-        submenu.style.display = submenu.style.display === 'none' ? 'flex' : 'none';
+    if (group && submenu && submenu.classList.contains('mobile-sublinks')) {
+        const isOpen = group.classList.contains('open');
+        group.classList.toggle('open', !isOpen);
+        submenu.style.display = isOpen ? 'none' : 'flex';
     }
+}
+
+function toggleCountryDropdown(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const dropdown = event.currentTarget.closest('.country-dropdown');
+    if (!dropdown) {
+        return;
+    }
+    dropdown.classList.toggle('open');
+}
+
+function closeCountryDropdown() {
+    document.querySelectorAll('.country-dropdown.open').forEach(function(dropdown) {
+        dropdown.classList.remove('open');
+    });
 }
 
 function toggleSearchPopup() {
     document.getElementById('searchPopup').classList.toggle('open');
 }
+
+function closeAboutNestedSubmenu() {
+    document.querySelectorAll('.about-dropdown-li .nested-dropdown.open').forEach(function(item) {
+        item.classList.remove('open');
+    });
+}
+
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.about-dropdown-li')) {
+        closeDesktopDropdowns();
+    }
+    if (!event.target.closest('.country-dropdown')) {
+        closeCountryDropdown();
+    }
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu.classList.contains('open') && event.target === mobileMenu) {
+        toggleMobileMenu(false);
+    }
+});
 
 function normalizeSearchText(value) {
     return String(value || '').trim().toLowerCase();
