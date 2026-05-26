@@ -1,76 +1,73 @@
 <?php
-include_once 'includes/lang.php';
-$page_title = t('page_title_science');
-$page_head = '<link rel="stylesheet" href="assets/css/departments.css?v=' . time() . '">';
-include 'includes/header.php';
+include_once "includes/lang.php";
+$page_title = t("page_title_science");
+$page_description = t("meta_desc_science");
+$page_keywords = t("meta_keys_science");
+$page_head =
+    '<link rel="stylesheet" href="assets/css/departments.css?v=' .
+    time() .
+    '">';
+include "includes/header.php";
 
 $dept_tags = [
-    'wheat' => 'Селекция',
-    'barley' => 'Селекция',
-    'corn' => 'Селекция',
-    'soil' => 'Почвоведение',
-    'genetic_resources' => 'Технологии',
-    'sugarbeet' => 'Селекция',
-    'fruit_veg' => 'Технологии',
-    'fiber' => 'Селекция',
-    'potato' => 'Селекция',
+    "wheat" => t("science_dept_tag_breeding"),
+    "barley" => t("science_dept_tag_breeding"),
+    "corn" => t("science_dept_tag_breeding"),
+    "fruit_veg" => t("science_dept_tag_technology"),
+    "soil" => t("science_dept_tag_soil"),
+    "agrochemistry" => t("science_dept_tag_agro"),
+    "sugarbeet" => t("science_dept_tag_breeding"),
 ];
 
 $departments = [
     [
-        'id' => 'wheat',
-        'title' => t('structure_detail_wheat_title'),
-        'desc' => 'Разработка новых конкурентоспособных сортов пшеницы и поддержание оригинального семеноводства.',
-        'image' => 'assets/images/wheet1.jpg'
+        "id" => "wheat",
+        "title" => t("structure_detail_wheat_title"),
+        "desc" => t("science_dept_desc_wheat"),
+        "image" => "assets/images/wheet1.jpg",
     ],
     [
-        'id' => 'barley',
-        'title' => t('structure_detail_barley_title'),
-        'desc' => 'Селекция и первичное семеноводство ячменя, создание высокопродуктивных адаптированных сортов.',
-        'image' => 'assets/images/ячмень.jpg'
+        "id" => "barley",
+        "title" => t("structure_detail_barley_title"),
+        "desc" => t("science_dept_desc_barley"),
+        "image" => "assets/images/ячмень.jpg",
     ],
     [
-        'id' => 'corn',
-        'title' => t('structure_detail_corn_title'),
-        'desc' => 'Создание высокопродуктивных гибридов кукурузы, селекция инбредных линий.',
-        'image' => 'assets/images/corn.jpg'
+        "id" => "corn",
+        "title" => t("structure_detail_corn_title"),
+        "desc" => t("science_dept_desc_corn"),
+        "image" => "assets/images/corn.jpg",
     ],
     [
-        'id' => 'soil',
-        'title' => t('structure_detail_soil_title'),
-        'desc' => 'Изучение почвенных ресурсов, методов сохранения и повышения плодородия земель.',
-        'image' => 'assets/images/hero2.jpg'
+        "id" => "sugarbeet",
+        "title" => t("structure_detail_sugarbeet_title"),
+        "desc" => t("science_dept_desc_sugarbeet"),
+        "image" => "assets/images/svekla.png",
     ],
     [
-        'id' => 'genetic_resources',
-        'title' => t('structure_detail_genetic_resources_title'),
-        'desc' => 'Сохранение, документирование и использование генетических ресурсов растений, оценка качества зерна.',
-        'image' => 'assets/images/about-photo.jpg'
+        "id" => "fruit_veg",
+        "title" => t("structure_detail_fruit_veg_title"),
+        "desc" => t("science_dept_desc_fruit_veg"),
+        "image" => "assets/images/grape.png",
     ],
     [
-        'id' => 'sugarbeet',
-        'title' => t('structure_detail_sugarbeet_title'),
-        'desc' => 'Селекция высокосахаристых гибридов сахарной свеклы на стерильной основе.',
-        'image' => 'assets/images/svekla.png'
+        "id" => "soil",
+        "title" => t("structure_detail_soil_title"),
+        "desc" => t("science_dept_desc_soil"),
+        "image" => "assets/images/potato.png",
     ],
     [
-        'id' => 'fruit_veg',
-        'title' => t('structure_detail_fruit_veg_title'),
-        'desc' => 'Разработка инновационных технологий выращивания и размножения плодово-ягодных культур.',
-        'image' => 'assets/images/grape.png'
+        "id" => "agrochemistry",
+        "title" => t("structure_detail_agrochemistry_title"),
+        "desc" => t("science_dept_desc_agro"),
+        "image" => "assets/images/hlopok.png",
     ],
     [
-        'id' => 'fiber',
-        'title' => t('structure_detail_fiber_title'),
-        'desc' => 'Селекция и семеноводство хлопчатника, улучшение технологических свойств волокна.',
-        'image' => 'assets/images/hlopok.png'
+        "id" => "issyk",
+        "title" => t("structure_detail_issyk_title"),
+        "desc" => t("science_dept_desc_issyk"),
+        "image" => "assets/images/hlopoknapole.png",
     ],
-    [
-        'id' => 'potato',
-        'title' => t('structure_detail_potato_title'),
-        'desc' => 'Научные исследования в области селекции и безвирусного семеноводства картофеля.',
-        'image' => 'assets/images/potato.png'
-    ]
 ];
 ?>
 
@@ -207,14 +204,18 @@ body {
 
 <main>
     <div class="org-container">
-        
+
         <!-- TOP CARD: Institute Name -->
         <div class="detail-hero-card" style="display: flex; flex-wrap: wrap; background: #ffffff; border-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); overflow: hidden; margin-bottom: 60px; border: 1px solid rgba(0,0,0,0.04);">
             <div class="detail-hero-image" style="flex: 1 1 50%; min-height: 400px; background: url('assets/images/hero1.jpg') center/cover;"></div>
             <div class="detail-hero-content" style="flex: 1 1 50%; padding: 60px; display: flex; flex-direction: column; justify-content: center;">
                 <!-- <span class="detail-badge" style="display: inline-block; padding: 8px 16px; background: #10b981; color: #ffffff; border-radius: 30px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; align-self: flex-start;">Институт</span> -->
-                <h1 class="detail-title" style="font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 20px;">Кыргызский научно-исследовательский институт земледелия</h1>
-                <p class="detail-summary" style="font-size: 18px; color: #475569; line-height: 1.6; margin-bottom: 30px;">Мы работаем по направлениям селекции, агрономии, почвоведения и семеноводства, чтобы дать стране новые сорта и технологические решения.</p>
+                <h1 class="detail-title" style="font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 20px;"><?php echo t(
+                    "science_hero_title",
+                ); ?></h1>
+                <p class="detail-summary" style="font-size: 18px; color: #475569; line-height: 1.6; margin-bottom: 30px;"><?php echo t(
+                    "science_hero_desc",
+                ); ?></p>
             </div>
         </div>
 
@@ -224,34 +225,66 @@ body {
             <div class="col-12">
                 <section class="depts-section-embed">
                     <div class="depts-toolbar">
-                        <h2 class="depts-toolbar__label">Научно-исследовательские отделы</h2>
-                        <span class="depts-toolbar__count">9 подразделений</span>
+                        <h2 class="depts-toolbar__label"><?php echo t(
+                            "science_departments_title",
+                        ); ?></h2>
+                        <span class="depts-toolbar__count"><?php echo t(
+                            "science_departments_count",
+                        ); ?></span>
                     </div>
                     <div class="depts-grid">
                         <?php
-                        $dept_ids = ['wheat', 'barley', 'corn', 'soil', 'genetic_resources', 'sugarbeet', 'fruit_veg', 'fiber', 'potato'];
+                        $dept_ids = [
+                            "wheat",
+                            "barley",
+                            "corn",
+                            "sugarbeet",
+                            "fruit_veg",
+                            "soil",
+                            "agrochemistry",
+                        ];
                         $dept_index = 0;
                         foreach ($departments as $dept):
-                            if (!in_array($dept['id'], $dept_ids, true)) continue;
+
+                            if (!in_array($dept["id"], $dept_ids, true)) {
+                                continue;
+                            }
                             $dept_index++;
-                            $tag = $dept_tags[$dept['id']] ?? 'НИР';
-                        ?>
-                            <a href="structure-detail.php?item=<?php echo $dept['id']; ?>&lang=<?php echo currentLang(); ?>" class="dept-card-v2">
+                            $tag = $dept_tags[$dept["id"]] ?? "НИР";
+                            ?>
+                            <a href="structure-detail.php?item=<?php echo $dept[
+                                "id"
+                            ]; ?>&lang=<?php echo currentLang(); ?>" class="dept-card-v2">
                                 <div class="dept-card-v2__media">
-                                    <img src="<?php echo htmlspecialchars($dept['image']); ?>" alt="" loading="lazy" decoding="async">
-                                    <span class="dept-card-v2__index"><?php echo str_pad((string) $dept_index, 2, '0', STR_PAD_LEFT); ?></span>
-                                    <span class="dept-card-v2__tag"><?php echo htmlspecialchars($tag); ?></span>
+                                    <img src="<?php echo htmlspecialchars(
+                                        $dept["image"],
+                                    ); ?>" alt="" loading="lazy" decoding="async">
+                                    <span class="dept-card-v2__index"><?php echo str_pad(
+                                        (string) $dept_index,
+                                        2,
+                                        "0",
+                                        STR_PAD_LEFT,
+                                    ); ?></span>
+                                    <span class="dept-card-v2__tag"><?php echo htmlspecialchars(
+                                        $tag,
+                                    ); ?></span>
                                 </div>
                                 <div class="dept-card-v2__body">
-                                    <h3 class="dept-card-v2__title"><?php echo htmlspecialchars($dept['title']); ?></h3>
-                                    <p class="dept-card-v2__desc"><?php echo htmlspecialchars($dept['desc']); ?></p>
+                                    <h3 class="dept-card-v2__title"><?php echo htmlspecialchars(
+                                        $dept["title"],
+                                    ); ?></h3>
+                                    <p class="dept-card-v2__desc"><?php echo htmlspecialchars(
+                                        $dept["desc"],
+                                    ); ?></p>
                                     <span class="dept-card-v2__link">
-                                        Подробнее
+                                        <?php echo t("science_btn_more"); ?>
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                                     </span>
                                 </div>
                             </a>
-                        <?php endforeach; ?>
+                        <?php
+                        endforeach;
+                        ?>
                     </div>
                 </section>
             </div>
@@ -260,103 +293,69 @@ body {
             <div class="col-12">
                 <div class="org-section-container mt-5">
                     <div class="text-center mb-5">
-                        <h2 class="org-grid-title">Региональные филиалы</h2>
+                        <h2 class="org-grid-title"><?php echo t(
+                            "science_branches_title",
+                        ); ?></h2>
                     </div>
                     <div class="row g-4 justify-content-center">
-                        <?php 
-                        $regional_branches = [
-                            [
-                                'title' => 'ГП Кыргызская опытно-селекционная станция по сахарной свекле',
-                                'address' => 'Чуйская область, Сокулукский район, с. Первомайское',
-                                'activity' => 'Первичное семеноводство, производство семян сахарной свеклы и других культур',
-                                'area' => '147,0 га',
-                                'director' => 'Есеналиев Кубанычбек Дженишбекович',
-                                'phone' => '0553 730 335',
-                                'image' => 'assets/images/svekla.png'
-                            ],
-                            [
-                                'title' => 'ГП Семеноводческое хозяйство «Жаны-Пахта»',
-                                'address' => 'Чуйская область, Сокулукский район, с. Жаны-Пахта',
-                                'activity' => 'Семеноводство сельхозкультур высших репродукций, земледелие',
-                                'area' => '482,0 га',
-                                'director' => 'Эргешов Арзымат Нурмаматович',
-                                'phone' => '0705 619 915',
-                                'image' => 'assets/images/wheet.png'
-                            ],
-                            [
-                                'title' => 'ГП Кыргызская опытная станция по хлопководству',
-                                'address' => 'Ошская область, Кара-Суйский район, с. Большевик',
-                                'activity' => 'Первичное семеноводство хлопчатника и зерновых культур',
-                                'area' => '286,0 га',
-                                'director' => 'Ырысов Абдиашим Толонович',
-                                'phone' => '0556 140 660',
-                                'image' => 'assets/images/hlopok.png'
-                            ],
-                            [
-                                'title' => 'ГП Иссык-Кульская опытно-селекционная станция',
-                                'address' => 'Иссык-Кульская область, Ак-Суйский район, с. Челпек',
-                                'activity' => 'Семеноводство картофеля, производство сельхозкультур',
-                                'area' => '102,0 га',
-                                'director' => 'Осмонов Дайырбек Турсунгазиевич',
-                                'phone' => '0709 650 412',
-                                'image' => 'assets/images/potato.png'
-                            ],
-                            [
-                                'title' => 'ГУ Нарынская опытная станция',
-                                'address' => 'Нарынская область, г. Нарын',
-                                'activity' => 'Внедрение высокопродуктивных сортов сельхозкультур, земледелие',
-                                'area' => '31,09 га',
-                                'director' => 'Эралиева Асел Муканбетовна',
-                                'phone' => '0700 052 309',
-                                'image' => 'assets/images/wheet1.jpg'
-                            ],
-                            [
-                                'title' => 'ГП Бургандинский опорный пункт',
-                                'address' => 'Баткенская область, Кадамжайский район, с. Кыргыз Кыштак',
-                                'activity' => 'Производство плодовых, косточковых культур и винограда',
-                                'area' => '24,95 га',
-                                'director' => 'Юзбаев Бахтияр Абдыхалилович',
-                                'phone' => '0507 379 188',
-                                'image' => 'assets/images/grape.png'
-                            ],
-                            [
-                                'title' => 'ГУ Семеноводческое хозяйство «Атай»',
-                                'address' => 'Жалал-Абадская область, Тогуз-Тороуский район, с. Атай',
-                                'activity' => 'Семеноводческое хозяйство',
-                                'area' => '125,8 га',
-                                'director' => 'Сакеев Жыргалбек Керимжанович',
-                                'phone' => '0706 341 145',
-                                'image' => 'assets/images/corn.jpg'
-                            ],
-                            [
-                                'title' => 'ГП Семеноводческое хозяйство «Ак-Алтын»',
-                                'address' => 'Ошская область, Кара-Суйский район, Кашкар Кыштак а/о, с. Кенжегул',
-                                'activity' => 'Семеноводческое хозяйство',
-                                'area' => '57,0 га',
-                                'director' => 'Усобаев Акылбек Сатыбалдыевич',
-                                'phone' => '0550 170 164',
-                                'image' => 'assets/images/hlopoknapole.png'
-                            ]
-                        ];
-                        
-                        foreach ($regional_branches as $branch):
-                        ?>
+                        <?php
+                        $lang = currentLang();
+                        $branchesFile = "database/branches_{$lang}.json";
+                        if (!file_exists($branchesFile)) {
+                            $branchesFile = "database/branches_ru.json";
+                        }
+                        $regional_branches = json_decode(
+                            file_get_contents($branchesFile),
+                            true,
+                        );
+                        if (!$regional_branches) {
+                            $regional_branches = [];
+                        }
+
+                        foreach ($regional_branches as $branch): ?>
                             <div class="col-lg-6 col-12">
                                 <div class="org-card" style="cursor: default;">
-                                    <img src="<?php echo $branch['image']; ?>" alt="<?php echo $branch['title']; ?>" class="org-card-img">
+                                    <img src="<?php echo htmlspecialchars(
+                                        $branch["image"],
+                                    ); ?>" alt="<?php echo htmlspecialchars(
+    $branch["title"],
+); ?>" class="org-card-img">
                                     <div class="org-card-body">
-                                        <h3 class="org-card-title"><?php echo $branch['title']; ?></h3>
+                                        <h3 class="org-card-title"><?php echo htmlspecialchars(
+                                            $branch["title"],
+                                        ); ?></h3>
                                         <div class="org-card-desc">
-                                            <p class="mb-1"><strong>Адрес:</strong> <?php echo $branch['address']; ?></p>
-                                            <p class="mb-1"><strong>Деятельность:</strong> <?php echo $branch['activity']; ?></p>
-                                            <p class="mb-1"><strong>Площадь:</strong> <?php echo $branch['area']; ?></p>
-                                            <p class="mb-1"><strong>Руководитель:</strong> <?php echo $branch['director']; ?></p>
-                                            <p class="mb-0"><strong>Телефон:</strong> <?php echo $branch['phone']; ?></p>
+                                            <p class="mb-1"><strong><?php echo t(
+                                                "science_branch_address",
+                                            ); ?>:</strong> <?php echo htmlspecialchars(
+    $branch["address"],
+); ?></p>
+                                            <p class="mb-1"><strong><?php echo t(
+                                                "science_branch_activity",
+                                            ); ?>:</strong> <?php echo htmlspecialchars(
+    $branch["activity"],
+); ?></p>
+                                            <p class="mb-1"><strong><?php echo t(
+                                                "science_branch_area",
+                                            ); ?>:</strong> <?php echo htmlspecialchars(
+    $branch["area"],
+); ?></p>
+                                            <p class="mb-1"><strong><?php echo t(
+                                                "science_branch_director",
+                                            ); ?>:</strong> <?php echo htmlspecialchars(
+    $branch["director"],
+); ?></p>
+                                            <p class="mb-0"><strong><?php echo t(
+                                                "science_branch_phone",
+                                            ); ?>:</strong> <?php echo htmlspecialchars(
+    $branch["phone"],
+); ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                        <?php endforeach;
+                        ?>
                     </div>
                 </div>
             </div>
@@ -365,4 +364,4 @@ body {
     </div>
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include "includes/footer.php"; ?>

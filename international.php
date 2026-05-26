@@ -1,15 +1,19 @@
 <?php
-include_once 'includes/lang.php';
-$page_title = t('nav_international');
-include 'includes/header.php';
+include_once "includes/lang.php";
+$page_title = t("nav_international");
+$page_description = t("meta_desc_international");
+$page_keywords = t("meta_keys_international");
+include "includes/header.php";
 ?>
 
 <main class="py-5">
     <div class="container">
         <!-- Header -->
         <div class="mb-5 text-center">
-            
-            <h1 class="section-title-premium text-dark mb-3"><?php echo t('nav_international'); ?></h1>
+
+            <h1 class="section-title-premium text-dark mb-3"><?php echo t(
+                "nav_international",
+            ); ?></h1>
             <p class="section-subtitle-premium text-muted mx-auto" style="max-width: 760px;">Международное сотрудничество и партнерства Институт</p>
         </div>
 
@@ -84,4 +88,4 @@ include 'includes/header.php';
     </div>
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include "includes/footer.php"; ?>

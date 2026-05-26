@@ -1,0 +1,23 @@
+# Windows reserved device name — cannot be indexed by Git
+nul
+NUL
+
+# Sensitive config — never commit
+config/admin_config.php
+config/database.php
+
+# Uploaded files
+uploads/
+
+# Database JSON (optional, may contain personal data)
+database/feedback.json
+database/lang_missing.json
+database/image_overrides.json
+database/lang_overrides.json
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.cursor/
+*.log

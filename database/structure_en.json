@@ -1,0 +1,142 @@
+{
+    "wheat": {
+        "photoClass": "wheat",
+        "hero_image": "assets/images/wheet1.jpg",
+        "badge": "Wheat Department",
+        "title": "structure_detail_wheat_title",
+        "summary": "The department is engaged in creating new competitive varieties of soft and hard wheat combining high yield with resistance to biotic and abiotic stresses. Activities include the full cycle: from selecting parent pairs and hybridization to ecological variety testing. Primary seed production is the most important stage, ensuring the preservation of variety purity and biological properties of created varieties. The department forms the basis of the seed fund for the agro-industrial complex, introducing innovative breeding achievements into production.",
+        "activity": "",
+        "research": [
+            "Genetic improvement of wheat in terms of productivity and grain quality;",
+            "Breeding for resistance to drought, low temperatures, and pathogens (rust, fusarium, etc.);",
+            "Study of the global wheat collection to find new sources of valuable traits;",
+            "Production of original seeds (P-1, P-2 nurseries) and maintaining variety purity;",
+            "Development and optimization of variety agrotechnology for new lines."
+        ],
+        "results_list": [
+            "A line of wheat varieties with a yield potential of over 80–90 c/ha was created;",
+            "Patents and author certificates for new varieties included in the State Register were obtained;",
+            "A system for producing high-quality seeds of higher reproductions was established to meet the needs of seed farms;",
+            "Variety models optimized for various levels of farming intensification were developed."
+        ],
+        "international": "The department actively participates in the exchange of breeding material within the framework of international programs (e.g., CIMMYT, ICARDA). Joint study of the international wheat nursery is being conducted for resistance to stem rust and drought tolerance.",
+        "publications": "The department's staff annually publish articles in peer-reviewed journals (VAK, Scopus), covering issues of trait inheritance, ecological testing results, and new methods of accelerated breeding. Methodological recommendations on variety agrotechnology for agricultural producers have been prepared.",
+        "staff": [
+            {"name": "Mirlan Toktosunov", "experience": "8", "position": "Senior Researcher", "degree": "none", "title": "none", "education": "Higher"},
+            {"name": "Bakyt Kadyrov", "experience": "12", "position": "Senior Researcher", "degree": "none", "title": "none", "education": "Higher"},
+            {"name": "Ainura Sydykova", "experience": "5", "position": "Researcher", "degree": "none", "title": "none", "education": "Higher"}
+        ]
+    },
+    "barley": {
+        "photoClass": "barley",
+        "hero_image": "assets/images/ячмень.jpg",
+        "badge": "Barley Department",
+        "title": "structure_detail_barley_title",
+        "summary": "The Department of Barley Breeding and Primary Seed Production is a structural subdivision of the Kyrgyz Scientific Research Institute of Agriculture named after K.K. Azykov, which is engaged in creating new barley varieties and providing them with primary seed material for further propagation.",
+        "activity": "The department carries out the development and implementation of new crop varieties characterized by high yield, resistance to adverse conditions, and compliance with production requirements. The main areas of work include hybridization, selection of promising lines, organization of field trials, and scientific and methodological support of the breeding process. The division ensures obtaining and maintaining the purity of the primary seed material (superelite, elite) necessary for further propagation and transfer to farms. The department's activities are aimed at strengthening the seed base, increasing the efficiency of the agricultural sector, and ensuring food security of the country.",
+        "research": [
+            "Creation of new varieties - Development of barley varieties with high yield, resistance to diseases, drought, and other stress factors.",
+            "Genetic and breeding research - Study of trait heritability, hybridization, and selection of promising lines.",
+            "Grain quality - Study of nutritional value, technological properties, and suitability of varieties for the food and feed industry.",
+            "Primary seed production - Obtaining and maintaining the purity of the primary seed material (superelite, elite), controlling variety identity.",
+            "Adaptation to regional conditions - Evaluation of varieties in various agro-climatic zones to identify the most resistant and productive forms.",
+            "Phytosanitary research - Development of methods for protection against diseases and pests, increasing plant immunity."
+        ],
+        "projects_current": "Implementation of research work on the topic: 'Create new low-cost barley varieties adapted to environmental stress factors and having a high level of economically valuable traits and conduct ecological variety testing'.",
+        "projects_completed": "2019-2021 research work completed on the topic: 'Create barley varieties for irrigated and rain-fed lands, resistant to environmental stress factors and having a high level of economically valuable traits, and conduct ecological testing'. 2022-2025 research work completed 'Create barley varieties for irrigated and rain-fed lands, resistant to environmental stress factors and having a high level of economically valuable traits and conduct ecological testing'.",
+        "results": "Spring barley varieties Naryn 27, Nutans 970, Nutans 89, Taalaay, Bestam, Vatan, Vladlen, Kylym, Maksat and new varieties, winter barley varieties Ardak, Zhenish 60, Gauhar, Belek, Adel, Alta were developed. In 2025, new promising spring barley varieties with working numbers 7100/5 and 7012 were developed.",
+        "events": "12.07.2025 Field Day on the topic Features of cultivation of grain and feed crops in the highlands of Kyrgyzstan.",
+        "perspectives": "In the next 3–5 years, the department's activities will focus on the following areas:\n- Breeding: development of new barley varieties resistant to abiotic stresses and major diseases, with increased yield potential.\n- Primary seed production: improvement of the seed certification and quality control system, expansion of production areas.\n- Infrastructure and personnel: modernization of the laboratory base, training of young specialists, and professional development of employees.\n- Economic sustainability: participation in state and international programs, attracting grant funds.\nExpected result: formation of competitive varieties, growth of certified seed volumes, and strengthening of the scientific and production potential of the department on a national and regional scale.",
+        "head": {
+            "name": "Bakytbek Imanaliev",
+            "position": "Head of Department",
+            "phone": "+996 505 011019",
+            "honors": "Honored Worker, September 6, 2025",
+            "degree": "Master of Agronomy",
+            "education": "Higher",
+            "image": "assets/images/imanalievbakytbek.png"
+        },
+        "staff": [
+            {"name": "Bakytbek Imanaliev", "experience": "7", "position": "Head of Dept", "degree": "none", "title": "none", "education": "Higher", "image": "assets/images/imanalievbakytbek.png"},
+            {"name": "Talantbek Akkulakov", "experience": "2.5", "position": "Senior Researcher", "degree": "none", "title": "none", "education": "Higher", "image": "assets/images/akkulakov.png"},
+            {"name": "Asel Eralieva", "experience": "22", "position": "Senior Researcher", "degree": "none", "title": "none", "education": "Higher", "image": "assets/images/asel.png"},
+            {"name": "Tatyana Taranenko", "experience": "1", "position": "Researcher", "degree": "none", "title": "none", "education": "Higher", "image": "assets/images/taranenko.png"},
+            {"name": "Valentina Kuznetsova", "experience": "24", "position": "Senior Lab Assistant", "degree": "none", "title": "none", "education": "Vocational", "image": "assets/images/valentina.png"},
+            {"name": "Lyubov Nemtsova", "experience": "17", "position": "Senior Lab Assistant", "degree": "none", "title": "none", "education": "Vocational", "image": "assets/images/love.png"}
+        ],
+        "infrastructure": "Breeding nurseries are located on the territory of the Kyrgyz Scientific and Production Association for Agriculture in Pervomaiskoye village, Sokuluk district, Chuy region.",
+        "services": [
+            "Scientific and analytical services: Genetic and morphological analysis of varieties; Laboratory tests of seed quality; Examination of varietal crops.",
+            "Production services and goods: Sale of original and elite barley seeds; Provision of seedlings and collection samples; Creation of demonstration plots.",
+            "Consulting services: Methodological support for farmers; Consultations on seed production organization and certification; Preparation of recommendations.",
+            "Educational and informational services: Holding seminars, trainings; Publication of methodological materials; Organization of scientific and practical conferences.",
+            "Additional areas: Participation in international projects; Development of innovative technologies; Formation of a seed bank and variety database."
+        ]
+    },
+    "corn": {
+        "hero_image": "assets/images/corn.jpg",
+        "badge": "Corn Department",
+        "title": "structure_detail_corn_title",
+        "summary": "The department carries out research activities to create highly productive corn hybrids of various maturity groups adapted to local agro-climatic conditions. The work includes finding and creating new inbred lines, studying their combining ability, and developing commercial seed production technologies. The division ensures maintaining the genetic purity of parent forms and producing seeds of higher reproductions for the needs of the agricultural sector. The department actively interacts with research centers on germplasm exchange and the implementation of modern biotechnological methods in the breeding process.",
+        "research": [
+            "Creation and evaluation of new inbred corn lines as a basis for obtaining heterotic hybrids",
+            "Breeding for increased yield potential, fast moisture release by grain during maturation, and lodging resistance",
+            "Study of genetic resistance of corn to major diseases (smut, ear fusarium) and pests",
+            "Improvement of primary seed production methods to ensure high quality of parent form seeds",
+            "Development of varietal technologies for cultivating hybrids for grain and silage in various ecological zones"
+        ],
+        "results_list": [
+            "A series of corn hybrids with a grain yield potential of 100–120 c/ha and green mass of 450–600 c/ha was created",
+            "Patents for new breeding achievements included in the State Register of varieties were obtained",
+            "An effective system for maintaining and propagating sterile analogs and fertility restorer lines was developed",
+            "Regulations for pre-sowing seed treatment to increase field germination under early sowing conditions were optimized"
+        ],
+        "international": "The department actively collaborates with international institutes (such as CIMMYT) on testing the global corn gene pool. The reception, study, and use of introduced lines to expand the genetic diversity of its own breeding program are carried out.",
+        "publications": "Employees regularly publish research results in peer-reviewed journals (VAK, Scopus), covering issues of heterosis, genetics of quantitative traits, and seed production technologies. Methodological recommendations on the features of growing corn hybrids under climate change conditions have been published."
+    },
+    "sugarbeet": {
+        "hero_image": "assets/images/svekla.png",
+        "badge": "Sugar Beet Department",
+        "title": "structure_detail_sugarbeet_title",
+        "summary": "The department conducts comprehensive research on creating highly productive sugar beet hybrids based on the use of cytoplasmic male sterility (CMS). The division's activities are focused on breeding hybrid components combining high sugar content with manufacturability in industrial processing. The most important aspect of the work is primary seed production, aimed at preserving the genetic purity of lines and obtaining high-quality seeds. The department integrates modern methods for assessing root quality and resistance to root rots into the breeding process.",
+        "research": [
+            "Creation of new diploid and tetraploid multigerm and monogerm pollinator lines",
+            "Breeding for increased digestion (sugar content), technological qualities of juice, and reduction of 'harmful' nitrogen content",
+            "Evaluation and selection of breeding material for resistance to major pathogens (cercospora, powdery mildew, root eater)",
+            "Improvement of methods for growing mother roots and stecklings to ensure maximum yield of certified seeds",
+            "Development of adaptive technologies for cultivating hybrids that minimize sugar losses during storage in clamps"
+        ],
+        "results_list": [
+            "Sugar beet hybrids with a potential sugar yield of 8–10 t/ha and high juice purity were created",
+            "Patents for new components and hybrids successfully passed State testing were obtained",
+            "A biennial seed production cycle system ensuring high germination and monogermity of the material was implemented",
+            "Regulations for protecting seed plants from pests and diseases, ensuring a stable seed crop, were developed"
+        ],
+        "international": "The department exchanges sugar beet genetic resources with leading foreign breeding centers. Joint ecological tests of hybrids are carried out to assess their plasticity in various soil and climatic conditions.",
+        "publications": "The research results of employees are regularly published in high-ranking scientific journals (VAK, Scopus). The main publications are devoted to the genetics of CMS, the correlation of root weight with sugar content, and pre-sowing seed preparation technologies."
+    },
+    "fruit_veg": {
+        "hero_image": "assets/images/grape.png",
+        "badge": "Fruit & Vegetable Dept.",
+        "title": "structure_detail_fruit_veg_title",
+        "summary": "The fruit and vegetable department develops technologies for growing fruit and vegetable crops."
+    },
+    "soil": {
+        "hero_image": "assets/images/potato.png",
+        "badge": "Soil Science Dept.",
+        "title": "structure_detail_soil_title",
+        "summary": "The soil science department studies soil properties, fertility, and restoration methods."
+    },
+    "agrochemistry": {
+        "hero_image": "assets/images/hlopok.png",
+        "badge": "Agrochemistry Dept.",
+        "title": "structure_detail_agrochemistry_title",
+        "summary": "The agrochemistry department researches fertilizers, agrochemical processes, and recommendations."
+    },
+    "issyk": {
+        "hero_image": "assets/images/hlopoknapole.png",
+        "badge": "Issyk-Kul Branch",
+        "title": "structure_detail_issyk_title",
+        "summary": "The Issyk-Kul branch is a regional scientific and experimental center."
+    }
+}

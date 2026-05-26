@@ -1,5 +1,17 @@
 {
     "ru": [
-        "nav_catalog"
+        "nav_catalog",
+        "season_spring",
+        "stat_mass",
+        "stat_yield",
+        "stat_protein",
+        "stat_year",
+        "more_details",
+        "season_winter",
+        "meta_desc_home",
+        "meta_desc_history",
+        "meta_keys_history",
+        "meta_desc_katalog",
+        "meta_keys_katalog"
     ]
 }
