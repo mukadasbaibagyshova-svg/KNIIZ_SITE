@@ -46,35 +46,11 @@ include 'includes/header.php';
 
         </div>
 
-<<<<<<< HEAD
-        <!-- Земельный фонд Институт (KML) -->
-        <section class="agro-land-fund mb-5">
-            <div class="agro-land-fund-layout">
-                <div id="kml-map" class="agro-land-fund-map" data-kml-url="assets/data/kniiz-land-fund.kml" role="application" aria-label="Карта земельного фонда Институт"></div>
-                <aside id="agro-land-fund-legend" class="agro-land-fund-legend agro-card">
-                    <h3 class="agro-land-fund-legend-title h6 mb-3">Хозяйства</h3>
-                    <ul class="agro-land-fund-stations list-unstyled mb-0">
-                        <?php foreach ($land_stations as $station):
-                            $color = $land_station_colors[$station['folder']] ?? '#10b981';
-                        ?>
-                        <li>
-                            <button type="button" class="agro-land-fund-station-btn" data-folder="<?php echo htmlspecialchars($station['folder']); ?>">
-                                <span class="agro-land-fund-swatch" style="background:<?php echo htmlspecialchars($color); ?>"></span>
-                                <span class="agro-land-fund-station-name"><?php echo htmlspecialchars($station['title']); ?></span>
-                            </button>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </aside>
-            </div>
-=======
-
 
         <section class="agro-land-fund mb-5">
 
             <?php include __DIR__ . '/includes/map/land-fund-widget.php'; ?>
 
->>>>>>> 645899170361508fe5ea255e9eea9791c656358a
         </section>
 
 
