@@ -3,12 +3,17 @@ include_once 'includes/lang.php';
 include_once 'includes/news_helpers.php';
 include_once 'includes/site_images.php';
 $page_title = t('page_title_home');
-include 'includes/header.php';
+$page_head = require __DIR__ . '/includes/map/land-fund-assets.php';
 
-// Read geographic paths for regions
-$pathsFile = file_exists('data/kyrgyzstan_regions.json') ? 'data/kyrgyzstan_regions.json' : 'scratch/extracted_paths.json';
-$paths_json = file_exists($pathsFile) ? file_get_contents($pathsFile) : '';
-$paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
+$land_station_colors = [
+    'ИОСС' => '#2dc0fb',
+    'ЖАНЫ ПАХТА 482 га' => '#10b981',
+    'КОСС 239 га' => '#b73a67',
+    'Атай' => '#e9c46a',
+];
+$land_stations = require __DIR__ . '/includes/map/land-stations.php';
+
+include 'includes/header.php';
 ?>
 
 <main id="main-content">
@@ -145,9 +150,10 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
         </div>
     </section>
 
-    <!-- SECTION 4: Research Maps & Laboratories -->
-    <section id="maps-preview" class="bg-light py-5">
+    <!-- SECTION 4: Земельный фонд — интерактивная карта -->
+    <section id="maps-preview" class="home-land-fund-section py-5 bg-light">
         <div class="container">
+<<<<<<< HEAD
             <div class="row align-items-center g-5">
                 <div class="col-lg-7">
                     <div class="about-card shadow-md p-4 bg-white" style="border-radius: 24px; position: relative;">
@@ -188,6 +194,18 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
                     </div>
                     <a href="maps.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent"><?php echo t('index_open_full_map'); ?></a>
                 </div>
+=======
+            <div class="text-center mb-4">
+                <h2 class="section-title-premium mb-3"><?php echo t('maps_title'); ?></h2>
+                <p class="section-subtitle-premium mx-auto mb-0" style="max-width: 720px;"><?php echo t('maps_text'); ?></p>
+            </div>
+            <?php
+            $map_id = 'kml-map-home';
+            include __DIR__ . '/includes/map/land-fund-widget.php';
+            ?>
+            <div class="text-center mt-4">
+                <a href="maps.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent">Подробнее о станциях</a>
+>>>>>>> 645899170361508fe5ea255e9eea9791c656358a
             </div>
         </div>
     </section>
@@ -371,6 +389,7 @@ $paths_data = !empty($paths_json) ? json_decode($paths_json, true) : [];
 <link rel="stylesheet" href="assets/css/news-modal.css?v=<?php echo time(); ?>">
 <script src="assets/js/news-modal.js"></script>
 
+<<<<<<< HEAD
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const currentLang = '<?php echo currentLang(); ?>';
@@ -458,3 +477,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <?php include 'includes/footer.php'; ?>
+=======
+<?php include 'includes/footer.php'; ?>
+>>>>>>> 645899170361508fe5ea255e9eea9791c656358a

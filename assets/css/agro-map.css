@@ -470,6 +470,38 @@ body.agro-dashboard-page main.agro-dashboard {
     margin-top: 6px;
 }
 
+/* ── Карта на главной странице ── */
+.home-land-fund-section .agro-land-fund-map {
+    min-height: 480px;
+    height: 480px;
+}
+
+.home-land-fund-section .agro-card {
+    background: var(--bg-light, #fff);
+    border: 1px solid rgba(12, 62, 33, 0.08);
+    border-radius: var(--border-radius-md, 16px);
+    box-shadow: var(--shadow-md);
+}
+
+.home-land-fund-section .agro-land-fund-station-btn {
+    color: var(--text-dark, #0f172a);
+}
+
+.home-land-fund-section .agro-land-fund-station-btn:hover,
+.home-land-fund-section .agro-land-fund-station-btn.is-active {
+    color: var(--primary-color, #0c3e21);
+    background: rgba(16, 185, 129, 0.1);
+    box-shadow: inset 3px 0 0 var(--accent-color, #10b981);
+}
+
+.home-land-fund-section .agro-land-fund-legend-title {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted, #475569);
+}
+
 /* ── Maps page (светлая тема, как на остальном сайте) ── */
 body.maps-page {
     background: var(--bg-alt, #f8faf7);

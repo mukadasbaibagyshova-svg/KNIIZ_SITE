@@ -32,6 +32,11 @@ $scienceNavActive = in_array($currentFile, ['science.php', 'structure-detail.php
     <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
     <?php if (!empty($page_head)) { echo $page_head; } ?>
 <link rel="stylesheet" href="assets/css/agro-map-dark.css" media="(prefers-color-scheme: dark)">
+<style>
+    .search-highlight { background: rgba(255, 236, 179, 0.8); border-radius: 8px; padding: 0.1rem 0.2rem; }
+    .search-status { margin-top: 0.75rem; font-size: 0.95rem; opacity: 0.95; }
+    .search-status.no-results { color: #f43f5e; }
+</style>
 </head>
 <body<?php echo !empty($body_class) ? ' class="' . htmlspecialchars($body_class) . '"' : ''; ?>>
 <a class="skip-link" href="#main-content"><?php echo t('top_navigation'); ?></a>
@@ -131,6 +136,7 @@ $headerClass = $isHome ? 'site-header' : 'site-header header-solid';
             <label for="searchQuery" class="search-label"><?php echo t('search_placeholder'); ?></label>
             <input id="searchQuery" type="search" placeholder="<?php echo t('search_placeholder'); ?>..." class="form-control search-popup-input">
             <button type="button" class="btn-premium btn-premium-accent search-submit"><?php echo t('search_placeholder'); ?></button>
+            <div id="searchStatus" class="search-status" aria-live="polite"></div>
         </div>
     </div>
 </div>
@@ -212,6 +218,174 @@ function toggleMobileSubmenu(event) {
 function toggleSearchPopup() {
     document.getElementById('searchPopup').classList.toggle('open');
 }
+
+function normalizeSearchText(value) {
+    return String(value || '').trim().toLowerCase();
+}
+
+function clearSearchHighlights() {
+    document.querySelectorAll('.search-highlight').forEach(function(el) {
+        el.classList.remove('search-highlight');
+    });
+}
+
+function isVisibleElement(element) {
+    return element.offsetParent !== null && getComputedStyle(element).visibility !== 'hidden';
+}
+
+function getSearchableElements() {
+    const selectors = 'h1,h2,h3,h4,h5,h6,p,li,dt,dd,a,button,span,article,section,header,main';
+    return Array.from(document.querySelectorAll(selectors)).filter(function(el) {
+        return el.textContent && normalizeSearchText(el.textContent).length > 0 && isVisibleElement(el) && !el.closest('.search-popup');
+    });
+}
+
+function scrollToElement(element) {
+    if (!element) {
+        return;
+    }
+    clearSearchHighlights();
+    element.classList.add('search-highlight');
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function searchOnCurrentPage(query) {
+    const normalizedQuery = normalizeSearchText(query);
+    if (!normalizedQuery) {
+        return false;
+    }
+    const elements = getSearchableElements();
+    const match = elements.find(function(el) {
+        return normalizeSearchText(el.innerText).includes(normalizedQuery);
+    });
+    if (match) {
+        scrollToElement(match);
+        return true;
+    }
+    return false;
+}
+
+const pageSearchRoutes = <?php echo json_encode([
+    ['href' => 'index.php', 'keys' => [t('nav_home'), t('top_search'), 'home', 'главная', 'башкы бет'] ],
+    ['href' => 'history.php', 'keys' => [t('nav_history'), t('nav_about'), 'history', 'история', 'тарых'] ],
+    ['href' => 'maps.php', 'keys' => [t('nav_maps'), 'map', 'карта', 'карты', 'карталар', 'станция', 'станции', 'жер фонду'] ],
+    ['href' => 'science.php', 'keys' => [t('nav_science'), 'science', 'наука', 'илим', 'отделы', 'departments', 'бөлүмдөр', 'научные отделы', 'илимий бөлүмдөр'] ],
+    ['href' => 'structure-detail.php?item=wheat', 'keys' => [t('structure_detail_wheat_title'), 'wheat', 'пшеница', 'жүгөрү', 'будай'] ],
+    ['href' => 'structure-detail.php?item=barley', 'keys' => [t('structure_detail_barley_title'), 'barley', 'ячмень', 'арпа'] ],
+    ['href' => 'structure-detail.php?item=sugarbeet', 'keys' => [t('structure_detail_sugarbeet_title'), 'sugar beet', 'сахарная свекла', ' кант кызылчасы'] ],
+    ['href' => 'structure-detail.php?item=corn', 'keys' => [t('structure_detail_corn_title'), 'corn', 'кукуруза', 'буудай'] ],
+    ['href' => 'structure-detail.php?item=fruit_veg', 'keys' => [t('structure_detail_fruit_veg_title'), 'fruit', 'vegetable', 'овощные', 'жемиш', 'жашылча'] ],
+    ['href' => 'structure-detail.php?item=agrochemistry', 'keys' => [t('structure_detail_agrochemistry_title'), 'agrochemistry', 'агрохимия'] ],
+    ['href' => 'structure-detail.php?item=soil', 'keys' => [t('structure_detail_soil_title'), 'soil', 'почвоведение', 'топурак таануу'] ],
+    ['href' => 'administration.php', 'keys' => [t('nav_administration'), 'administration', 'администрация', 'администрация', 'отделы', 'departments', 'бөлүмдөр'] ],
+    ['href' => 'documents.php', 'keys' => [t('nav_documents'), 'documents', 'документы', 'документтер'] ],
+    ['href' => 'international.php', 'keys' => [t('nav_international'), 'international', 'международная', 'эл аралык'] ],
+    ['href' => 'news.php', 'keys' => [t('nav_news'), 'news', 'новости', 'билдирүүлөр'] ],
+    ['href' => 'gallery.php', 'keys' => [t('nav_gallery'), 'gallery', 'галерея', 'галерея'] ],
+    ['href' => 'contacts.php', 'keys' => [t('nav_contacts'), 'contacts', 'контакты', 'контакттар'] ],
+    ['href' => 'katalog.php', 'keys' => ['каталог', 'catalog', 'katalog', 'сортов', 'сорттор'] ],
+]) ?>;
+
+function getSearchStatusElement() {
+    return document.getElementById('searchStatus');
+}
+
+function setSearchStatus(message, isError) {
+    const status = getSearchStatusElement();
+    if (!status) return;
+    status.textContent = message;
+    status.classList.toggle('no-results', Boolean(isError));
+}
+
+function searchPageRoutes(query) {
+    const normalizedQuery = normalizeSearchText(query);
+    if (!normalizedQuery) {
+        return false;
+    }
+    let bestMatch = null;
+    let bestScore = 0;
+    pageSearchRoutes.forEach(function(route) {
+        let score = 0;
+        route.keys.forEach(function(key) {
+            if (normalizeSearchText(key).includes(normalizedQuery)) {
+                score += 1;
+            }
+        });
+        if (score > bestScore) {
+            bestScore = score;
+            bestMatch = route;
+        }
+    });
+    if (bestMatch && bestScore > 0) {
+        const pageUrl = new URL(bestMatch.href, window.location.origin);
+        const currentPath = window.location.pathname.replace(/^\/+/, '');
+        const targetPath = pageUrl.pathname.replace(/^\/+/, '');
+        if (targetPath === currentPath) {
+            return false;
+        }
+        pageUrl.searchParams.set('search', query);
+        pageUrl.searchParams.set('lang', '<?php echo currentLang(); ?>');
+        window.location.href = pageUrl.toString();
+        return true;
+    }
+    return false;
+}
+
+function runSearch(query) {
+    const normalizedQuery = normalizeSearchText(query);
+    if (!normalizedQuery) {
+        setSearchStatus('<?php echo t('search_placeholder'); ?>...');
+        return;
+    }
+    clearSearchHighlights();
+    const foundOnPage = searchOnCurrentPage(normalizedQuery);
+    if (foundOnPage) {
+        setSearchStatus('<?php echo t('search_page_match'); ?>: "' + query + '"');
+        return;
+    }
+    if (searchPageRoutes(normalizedQuery)) {
+        return;
+    }
+    setSearchStatus('<?php echo t('search_no_results'); ?>');
+}
+
+function setupSearchHandlers() {
+    const searchQuery = document.getElementById('searchQuery');
+    const searchSubmit = document.querySelector('.search-submit');
+    if (!searchQuery || !searchSubmit) {
+        return;
+    }
+    searchSubmit.addEventListener('click', function() {
+        runSearch(searchQuery.value);
+    });
+    searchQuery.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            runSearch(searchQuery.value);
+        }
+    });
+}
+
+function handleSearchQueryParam() {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('search');
+    if (!query) {
+        return;
+    }
+    const searchQuery = document.getElementById('searchQuery');
+    if (searchQuery) {
+        searchQuery.value = query;
+    }
+    const foundOnPage = searchOnCurrentPage(query);
+    if (foundOnPage) {
+        setSearchStatus('<?php echo t('search_page_match'); ?>: "' + query + '"');
+    }
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+    setupSearchHandlers();
+    handleSearchQueryParam();
+});
 
 window.addEventListener('scroll', function () {
     const header = document.querySelector('.site-header');
