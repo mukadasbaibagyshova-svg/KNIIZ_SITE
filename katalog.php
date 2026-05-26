@@ -1,8 +1,10 @@
 <?php
-include_once 'includes/lang.php';
+include_once "includes/lang.php";
 $page_title = "Каталог сортов";
+$page_description = t("meta_desc_katalog");
+$page_keywords = t("meta_keys_katalog");
 $page_head = '<link rel="stylesheet" href="assets/css/katalog.css">';
-include 'includes/header.php';
+include "includes/header.php";
 ?>
 
 <!-- ============================================================
@@ -138,88 +140,202 @@ include 'includes/header.php';
                 <div class="cards-grid" id="cardsGrid">
 
                     <?php
-                    $katalog_file = __DIR__ . '/database/katalog.json';
-                    $varieties = is_file($katalog_file) ? json_decode(file_get_contents($katalog_file), true) : [];
-                    if (!is_array($varieties)) $varieties = [];
-                    
+                    $katalog_file = __DIR__ . "/database/katalog.json";
+                    $varieties = is_file($katalog_file)
+                        ? json_decode(file_get_contents($katalog_file), true)
+                        : [];
+                    if (!is_array($varieties)) {
+                        $varieties = [];
+                    }
+
                     // sortData will be built here for the JS modal
                     $sortData = [];
 
-                    foreach ($varieties as $v): 
-                        $name = $v['name'][$currentLang] ?? $v['name']['ru'];
-                        $type = $v['type'][$currentLang] ?? $v['type']['ru'];
-                        $desc = $v['description'][$currentLang] ?? $v['description']['ru'];
-                        $mass = $v['mass'][$currentLang] ?? $v['mass']['ru'];
-                        $yield_t = $v['yield_text'][$currentLang] ?? $v['yield_text']['ru'];
-                        $prot = $v['protein'][$currentLang] ?? $v['protein']['ru'];
-                        $year_t = $v['year_text'][$currentLang] ?? $v['year_text']['ru'];
-                        
-                        $modalKey = $v['modal_key'] ?? $v['id'];
+                    foreach ($varieties as $v):
+
+                        $name = $v["name"][$currentLang] ?? $v["name"]["ru"];
+                        $type = $v["type"][$currentLang] ?? $v["type"]["ru"];
+                        $desc =
+                            $v["description"][$currentLang] ??
+                            $v["description"]["ru"];
+                        $mass = $v["mass"][$currentLang] ?? $v["mass"]["ru"];
+                        $yield_t =
+                            $v["yield_text"][$currentLang] ??
+                            $v["yield_text"]["ru"];
+                        $prot =
+                            $v["protein"][$currentLang] ?? $v["protein"]["ru"];
+                        $year_t =
+                            $v["year_text"][$currentLang] ??
+                            $v["year_text"]["ru"];
+
+                        $modalKey = $v["modal_key"] ?? $v["id"];
                         $sortData[$modalKey] = [
-                            'name' => $name,
-                            'type' => $type,
-                            'season' => $v['season'] === 'spring' ? t('season_spring', 'Яровой') : t('season_winter', 'Озимый'),
-                            'seasonClass' => $v['season'] === 'spring' ? 'sort-badge-spring' : 'sort-badge-winter',
-                            'stats' => [
-                                ['icon' => '📦', 'val' => $mass, 'label' => t('stat_mass', 'Масса 1000 зерён')],
-                                ['icon' => '🌾', 'val' => $yield_t, 'label' => t('stat_yield', 'Потенц. урожайность')],
-                                ['icon' => '🧬', 'val' => $prot, 'label' => t('stat_protein', 'Белок в зерне')],
-                                ['icon' => '📅', 'val' => $year_t, 'label' => t('stat_year', 'Допущен к использованию')]
+                            "name" => $name,
+                            "type" => $type,
+                            "season" =>
+                                $v["season"] === "spring"
+                                    ? t("season_spring", "Яровой")
+                                    : t("season_winter", "Озимый"),
+                            "seasonClass" =>
+                                $v["season"] === "spring"
+                                    ? "sort-badge-spring"
+                                    : "sort-badge-winter",
+                            "stats" => [
+                                [
+                                    "icon" => "📦",
+                                    "val" => $mass,
+                                    "label" => t(
+                                        "stat_mass",
+                                        "Масса 1000 зерён",
+                                    ),
+                                ],
+                                [
+                                    "icon" => "🌾",
+                                    "val" => $yield_t,
+                                    "label" => t(
+                                        "stat_yield",
+                                        "Потенц. урожайность",
+                                    ),
+                                ],
+                                [
+                                    "icon" => "🧬",
+                                    "val" => $prot,
+                                    "label" => t(
+                                        "stat_protein",
+                                        "Белок в зерне",
+                                    ),
+                                ],
+                                [
+                                    "icon" => "📅",
+                                    "val" => $year_t,
+                                    "label" => t(
+                                        "stat_year",
+                                        "Допущен к использованию",
+                                    ),
+                                ],
                             ],
-                            'desc' => $desc,
-                            'seeding' => $v['seeding'][$currentLang] ?? $v['seeding']['ru']
+                            "desc" => $desc,
+                            "seeding" =>
+                                $v["seeding"][$currentLang] ??
+                                $v["seeding"]["ru"],
                         ];
-                    ?>
+                        ?>
                     <article class="sort-card"
-                        data-culture="<?php echo htmlspecialchars($v['culture']); ?>"
-                        data-season="<?php echo htmlspecialchars($v['season']); ?>"
-                        data-maturity="<?php echo htmlspecialchars($v['maturity']); ?>"
-                        data-drought="<?php echo htmlspecialchars($v['drought']); ?>"
-                        data-yield="<?php echo htmlspecialchars($v['yield_num']); ?>"
-                        data-year="<?php echo htmlspecialchars($v['year_num']); ?>"
+                        data-culture="<?php echo htmlspecialchars(
+                            $v["culture"],
+                        ); ?>"
+                        data-season="<?php echo htmlspecialchars(
+                            $v["season"],
+                        ); ?>"
+                        data-maturity="<?php echo htmlspecialchars(
+                            $v["maturity"],
+                        ); ?>"
+                        data-drought="<?php echo htmlspecialchars(
+                            $v["drought"],
+                        ); ?>"
+                        data-yield="<?php echo htmlspecialchars(
+                            $v["yield_num"],
+                        ); ?>"
+                        data-year="<?php echo htmlspecialchars(
+                            $v["year_num"],
+                        ); ?>"
                         data-name="<?php echo htmlspecialchars($name); ?>">
+                        <?php
+                        // Если путь уже содержит uploads/ или начинается с ../ — используем как есть
+                        // Иначе считаем что это просто имя файла в assets/images/
+                        $img_path = $v["image"] ?? "barley_field.png";
+                        if (
+                            strpos($img_path, "uploads/") !== false ||
+                            strpos($img_path, "http") === 0
+                        ) {
+                            $img_src = $img_path;
+                        } else {
+                            $img_src = "assets/images/" . ltrim($img_path, "/");
+                        }
+                        ?>
                         <div class="sort-card-image">
-                            <img src="<?php echo 'assets/images/' . htmlspecialchars($v['image']); ?>" alt="<?php echo htmlspecialchars($name); ?>" loading="lazy">
+                            <img src="<?php echo htmlspecialchars(
+                                $img_src,
+                            ); ?>" alt="<?php echo htmlspecialchars(
+    $name,
+); ?>" loading="lazy">
                             <div class="sort-card-badges">
-                                <span class="sort-badge <?php echo $v['season'] === 'spring' ? 'sort-badge-spring' : 'sort-badge-winter'; ?>">
-                                    <?php echo $v['season'] === 'spring' ? t('season_spring', 'Яровой') : t('season_winter', 'Озимый'); ?>
+                                <span class="sort-badge <?php echo $v[
+                                    "season"
+                                ] === "spring"
+                                    ? "sort-badge-spring"
+                                    : "sort-badge-winter"; ?>">
+                                    <?php echo $v["season"] === "spring"
+                                        ? t("season_spring", "Яровой")
+                                        : t("season_winter", "Озимый"); ?>
                                 </span>
                             </div>
                         </div>
                         <div class="sort-card-body">
-                            <div class="sort-card-type"><?php echo htmlspecialchars($type); ?></div>
-                            <h3 class="sort-card-name"><?php echo htmlspecialchars($name); ?></h3>
-                            <p class="sort-card-desc"><?php echo htmlspecialchars(mb_substr($desc, 0, 100)) . '...'; ?></p>
+                            <div class="sort-card-type"><?php echo htmlspecialchars(
+                                $type,
+                            ); ?></div>
+                            <h3 class="sort-card-name"><?php echo htmlspecialchars(
+                                $name,
+                            ); ?></h3>
+                            <p class="sort-card-desc"><?php echo htmlspecialchars(
+                                mb_substr($desc, 0, 100),
+                            ) . "..."; ?></p>
                             <div class="sort-card-stats">
                                 <div class="sort-stat">
                                     <span class="sort-stat-icon">📦</span>
-                                    <span class="sort-stat-val"><?php echo htmlspecialchars($mass); ?></span>
-                                    <span class="sort-stat-label"><?php echo t('stat_mass', 'Масса 1000 зерён'); ?></span>
+                                    <span class="sort-stat-val"><?php echo htmlspecialchars(
+                                        $mass,
+                                    ); ?></span>
+                                    <span class="sort-stat-label"><?php echo t(
+                                        "stat_mass",
+                                        "Масса 1000 зерён",
+                                    ); ?></span>
                                 </div>
                                 <div class="sort-stat">
                                     <span class="sort-stat-icon">🌾</span>
-                                    <span class="sort-stat-val"><?php echo htmlspecialchars($yield_t); ?></span>
-                                    <span class="sort-stat-label"><?php echo t('stat_yield', 'Урожайность'); ?></span>
+                                    <span class="sort-stat-val"><?php echo htmlspecialchars(
+                                        $yield_t,
+                                    ); ?></span>
+                                    <span class="sort-stat-label"><?php echo t(
+                                        "stat_yield",
+                                        "Урожайность",
+                                    ); ?></span>
                                 </div>
                                 <div class="sort-stat">
                                     <span class="sort-stat-icon">📅</span>
-                                    <span class="sort-stat-val"><?php echo htmlspecialchars($year_t); ?></span>
-                                    <span class="sort-stat-label"><?php echo t('stat_year', 'Допущен'); ?></span>
+                                    <span class="sort-stat-val"><?php echo htmlspecialchars(
+                                        $year_t,
+                                    ); ?></span>
+                                    <span class="sort-stat-label"><?php echo t(
+                                        "stat_year",
+                                        "Допущен",
+                                    ); ?></span>
                                 </div>
                             </div>
                             <div class="sort-card-properties">
-                                <?php foreach($v['properties']['ru'] as $prop): ?>
-                                    <span class="sort-prop"><?php echo htmlspecialchars($prop); ?></span>
+                                <?php foreach (
+                                    $v["properties"]["ru"]
+                                    as $prop
+                                ): ?>
+                                    <span class="sort-prop"><?php echo htmlspecialchars(
+                                        $prop,
+                                    ); ?></span>
                                 <?php endforeach; ?>
                             </div>
                             <div class="sort-card-footer">
                                 <a href="#" class="sort-detail-btn" onclick="openModal('<?php echo $modalKey; ?>'); return false;">
-                                    <?php echo t('more_details', 'Подробнее →'); ?>
+                                    <?php echo t(
+                                        "more_details",
+                                        "Подробнее →",
+                                    ); ?>
                                 </a>
                             </div>
                         </div>
                     </article>
-                    <?php endforeach; ?>
+                    <?php
+                    endforeach;
+                    ?>
 
                 </div><!-- /.cards-grid -->
 
@@ -248,7 +364,7 @@ include 'includes/header.php';
     </div>
 </div>
 
-<?php include 'includes/footer.php'; ?>
+<?php include "includes/footer.php"; ?>
 
 <script>
 /* ================================================================

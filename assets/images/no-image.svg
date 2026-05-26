@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="280" viewBox="0 0 400 280">
+  <rect width="400" height="280" fill="#f0f4f0"/>
+  <rect x="140" y="80" width="120" height="90" rx="8" fill="#c8d8c8"/>
+  <circle cx="165" cy="108" r="14" fill="#a0b8a0"/>
+  <polygon points="140,170 185,120 220,150 255,110 280,170" fill="#b0c8b0"/>
+  <text x="200" y="210" font-family="Arial,sans-serif" font-size="14" fill="#88a888" text-anchor="middle">Нет фото</text>
+</svg>

@@ -1,0 +1,74 @@
+[
+    {
+        "title": "SE Kyrgyz Experimental Breeding Station for Sugar Beet",
+        "address": "Chuy region, Sokuluk district, Pervomayskoye village",
+        "activity": "Primary seed production, production of sugar beet seeds and other crops",
+        "area": "147.0 ha",
+        "director": "Kubanychbek Esenaliev",
+        "phone": "0553 730 335",
+        "image": "assets/images/svekla.png"
+    },
+    {
+        "title": "SE Seed Farm «Jany-Pakhta»",
+        "address": "Chuy region, Sokuluk district, Jany-Pakhta village",
+        "activity": "Seed production of higher reproduction crops, agriculture",
+        "area": "482.0 ha",
+        "director": "Arzymat Ergeshov",
+        "phone": "0705 619 915",
+        "image": "assets/images/wheet.png"
+    },
+    {
+        "title": "SE Kyrgyz Experimental Station for Cotton Growing",
+        "address": "Osh region, Kara-Suu district, Bolshevik village",
+        "activity": "Primary seed production of cotton and grain crops",
+        "area": "286.0 ha",
+        "director": "Abdiashim Yrysov",
+        "phone": "0556 140 660",
+        "image": "assets/images/hlopok.png"
+    },
+    {
+        "title": "SE Issyk-Kul Experimental Breeding Station",
+        "address": "Issyk-Kul region, Ak-Suu district, Chelpek village",
+        "activity": "Potato seed production, crop production",
+        "area": "102.0 ha",
+        "director": "Daiyrbek Osmonov",
+        "phone": "0709 650 412",
+        "image": "assets/images/potato.png"
+    },
+    {
+        "title": "SI Naryn Experimental Station",
+        "address": "Naryn region, Naryn city",
+        "activity": "Introduction of highly productive crop varieties, agriculture",
+        "area": "31.09 ha",
+        "director": "Asel Eralieva",
+        "phone": "0700 052 309",
+        "image": "assets/images/wheet1.jpg"
+    },
+    {
+        "title": "SE Burgandin Stronghold",
+        "address": "Batken region, Kadamjay district, Kyrgyz Kyshtak village",
+        "activity": "Production of fruit, stone fruit crops and grapes",
+        "area": "24.95 ha",
+        "director": "Bakhtiyar Yuzbaev",
+        "phone": "0507 379 188",
+        "image": "assets/images/grape.png"
+    },
+    {
+        "title": "SI Seed Farm «Atay»",
+        "address": "Jalal-Abad region, Toguz-Toro district, Atay village",
+        "activity": "Seed farming",
+        "area": "125.8 ha",
+        "director": "Jyrgalbek Sakeev",
+        "phone": "0706 341 145",
+        "image": "assets/images/corn.jpg"
+    },
+    {
+        "title": "SE Seed Farm «Ak-Altyn»",
+        "address": "Osh region, Kara-Suu district, Kashkar Kyshtak aiyl okmotu, Kenzhegul village",
+        "activity": "Seed farming",
+        "area": "57.0 ha",
+        "director": "Akylbek Usobaev",
+        "phone": "0550 170 164",
+        "image": "assets/images/hlopoknapole.png"
+    }
+]

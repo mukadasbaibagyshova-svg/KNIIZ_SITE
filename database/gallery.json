@@ -1,0 +1,47 @@
+[
+  {
+    "image": "assets/images/hero1.jpg",
+    "title": {"ru": "Поля института", "en": "Institute Fields", "ky": "Институттун талаалары"},
+    "category": {"ru": "Общее", "en": "General", "ky": "Жалпы"}
+  },
+  {
+    "image": "assets/images/hero2.jpg",
+    "title": {"ru": "Разнообразие культур", "en": "Diversity of Crops", "ky": "Өсүмдүктөрдүн ар түрдүүлүгү"},
+    "category": {"ru": "Культуры", "en": "Crops", "ky": "Эгиндер"}
+  },
+  {
+    "image": "assets/images/hero3.jpg",
+    "title": {"ru": "Пшеница и кукуруза", "en": "Wheat and Corn", "ky": "Буудай жана жүгөрү"},
+    "category": {"ru": "Посевы", "en": "Crops", "ky": "Айдоолор"}
+  },
+  {
+    "image": "assets/images/wheet1.jpg",
+    "title": {"ru": "Селекционные питомники пшеницы", "en": "Wheat Breeding Nurseries", "ky": "Буудай селекциялык питомниктери"},
+    "category": {"ru": "Зерновые", "en": "Grains", "ky": "Дан өсүмдүктөрү"}
+  },
+  {
+    "image": "assets/images/corn.jpg",
+    "title": {"ru": "Гибридные посевы кукурузы", "en": "Hybrid Corn Crops", "ky": "Гибриддик жүгөрү айдоолору"},
+    "category": {"ru": "Кукуруза", "en": "Corn", "ky": "Жүгөрү"}
+  },
+  {
+    "image": "assets/images/grape.png",
+    "title": {"ru": "Исследования плодоовощных культур", "en": "Fruit and Vegetable Research", "ky": "Мөмө-жашылча изилдөөлөрү"},
+    "category": {"ru": "Садоводство", "en": "Horticulture", "ky": "Бакча чарба"}
+  },
+  {
+    "image": "assets/images/potato.png",
+    "title": {"ru": "Сортоиспытания картофеля", "en": "Potato Variety Trials", "ky": "Картөшкө сортторун сынак"},
+    "category": {"ru": "Картофель", "en": "Potato", "ky": "Картошко"}
+  },
+  {
+    "image": "assets/images/hlopok.png",
+    "title": {"ru": "Агрохимия и селекция хлопка", "en": "Cotton Agrochemistry and Breeding", "ky": "Пахта агрохимиясы жана селекциясы"},
+    "category": {"ru": "Технические культуры", "en": "Industrial Crops", "ky": "Техникалык өсүмдүктөр"}
+  },
+  {
+    "image": "assets/images/svekla.png",
+    "title": {"ru": "Селекция сахарной свеклы", "en": "Sugar Beet Breeding", "ky": "Кант кызылчасын селекциялоо"},
+    "category": {"ru": "Сахарная свекла", "en": "Sugar Beet", "ky": "Кант кызылчасы"}
+  }
+]

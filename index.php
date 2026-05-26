@@ -1,15 +1,12 @@
 <?php
-<<<<<<< HEAD
 include_once "includes/lang.php";
+include_once "includes/news_helpers.php";
+include_once "includes/site_images.php";
 $page_title = t("page_title_home");
+$page_description = t("meta_desc_home");
+$page_keywords = t("meta_keys_home");
+$og_image = "assets/images/hero1.jpg";
 $page_head = require __DIR__ . "/includes/map/land-fund-assets.php";
-=======
-include_once 'includes/lang.php';
-include_once 'includes/news_helpers.php';
-include_once 'includes/site_images.php';
-$page_title = t('page_title_home');
-$page_head = require __DIR__ . '/includes/map/land-fund-assets.php';
->>>>>>> 6296ae5ee820ebc0dc5edf01369d28d8e236b0fc
 
 $land_station_colors = [
     "ИОСС" => "#2dc0fb",
@@ -29,16 +26,28 @@ include "includes/header.php";
         <div id="heroCarousel" class="carousel slide carousel-fade position-absolute w-100 h-100" data-bs-ride="carousel" data-bs-interval="2000" style="z-index: 0; top:0; left:0;">
             <div class="carousel-inner w-100 h-100">
                 <div class="carousel-item active w-100 h-100">
-                    <img src="<?php echo siteImage('index.hero1', 'assets/images/hero1.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 1">
+                    <img src="<?php echo siteImage(
+                        "index.hero1",
+                        "assets/images/hero1.jpg",
+                    ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 1">
                 </div>
                 <div class="carousel-item w-100 h-100">
-                    <img src="<?php echo siteImage('index.hero2', 'assets/images/hero2.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 2">
+                    <img src="<?php echo siteImage(
+                        "index.hero2",
+                        "assets/images/hero2.jpg",
+                    ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 2">
                 </div>
                 <div class="carousel-item w-100 h-100">
-                    <img src="<?php echo siteImage('index.hero3', 'assets/images/hero3.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 3">
+                    <img src="<?php echo siteImage(
+                        "index.hero3",
+                        "assets/images/hero3.jpg",
+                    ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 3">
                 </div>
                 <div class="carousel-item w-100 h-100">
-                    <img src="<?php echo siteImage('index.hero4', 'assets/images/wheet1.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 4">
+                    <img src="<?php echo siteImage(
+                        "index.hero4",
+                        "assets/images/wheet1.jpg",
+                    ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="Institute image 4">
                 </div>
             </div>
             <!-- Overlay to darken the images for text readability -->
@@ -83,38 +92,45 @@ include "includes/header.php";
                         <div class="col-sm-6">
                             <div class="stat-box">
                                 <span class="stat-number">90+</span>
-                                <span class="stat-label"><?php echo t('index_stat_years'); ?></span>
+                                <span class="stat-label"><?php echo t(
+                                    "index_stat_years",
+                                ); ?></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="stat-box">
                                 <span class="stat-number">50+</span>
-                                <span class="stat-label"><?php echo t('index_stat_staff'); ?></span>
+                                <span class="stat-label"><?php echo t(
+                                    "index_stat_staff",
+                                ); ?></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="stat-box">
                                 <span class="stat-number">70+</span>
-                                <span class="stat-label"><?php echo t('index_stat_publications'); ?></span>
+                                <span class="stat-label"><?php echo t(
+                                    "index_stat_publications",
+                                ); ?></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="stat-box">
                                 <span class="stat-number">1350 га</span>
-                                <span class="stat-label"><?php echo t('index_stat_landfund'); ?></span>
+                                <span class="stat-label"><?php echo t(
+                                    "index_stat_landfund",
+                                ); ?></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-card position-relative overflow-hidden shadow-lg" style="border-radius: 24px;">
-<<<<<<< HEAD
-                        <img src="assets/images/about-photo.jpg" alt="<?php echo t(
-                            "about_title",
-                        ); ?>" class="img-fluid w-100" style="object-fit: cover; min-height: 480px;">
-=======
-                        <img src="<?php echo siteImage('index.about_photo', 'assets/images/about-photo.jpg'); ?>" alt="<?php echo t('about_title'); ?>" class="img-fluid w-100" style="object-fit: cover; min-height: 480px;">
->>>>>>> 6296ae5ee820ebc0dc5edf01369d28d8e236b0fc
+                        <img src="<?php echo siteImage(
+                            "index.about_photo",
+                            "assets/images/about-photo.jpg",
+                        ); ?>" alt="<?php echo t(
+    "about_title",
+); ?>" class="img-fluid w-100" style="object-fit: cover; min-height: 480px;">
                     </div>
                 </div>
             </div>
@@ -145,41 +161,28 @@ include "includes/header.php";
                 $latest_news = array_slice($all_news, 0, 3);
                 if ($latest_news):
                     foreach ($latest_news as $news):
-<<<<<<< HEAD
 
-                        $desc = mb_substr(
-                            strip_tags($news["text"]),
-                            0,
-                            150,
-                            "UTF-8",
-                        );
-                        if (mb_strlen($news["text"], "UTF-8") > 150) {
+                        $text = newsGetText($news, currentLang());
+                        $title = newsGetTitle($news, currentLang());
+                        $desc = mb_substr(strip_tags($text), 0, 150, "UTF-8");
+                        if (mb_strlen($text, "UTF-8") > 150) {
                             $desc .= "...";
                         }
                         $img = !empty($news["images"][0])
                             ? $upload_dir . htmlspecialchars($news["images"][0])
                             : "assets/images/wheet1.jpg";
+                        $news_display = $news;
+                        $news_display["text"] = $text;
+                        $news_display["title"] = $title;
                         $news_json = htmlspecialchars(
                             json_encode(
-                                $news,
+                                $news_display,
                                 JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES,
                             ),
                             ENT_QUOTES,
                             "UTF-8",
                         );
                         ?>
-=======
-                        $text = newsGetText($news, currentLang());
-                        $title = newsGetTitle($news, currentLang());
-                        $desc = mb_substr(strip_tags($text), 0, 150, 'UTF-8');
-                        if (mb_strlen($text, 'UTF-8') > 150) $desc .= '...';
-                        $img = !empty($news['images'][0]) ? $upload_dir . htmlspecialchars($news['images'][0]) : 'assets/images/wheet1.jpg';
-                        $news_display = $news;
-                        $news_display['text'] = $text;
-                        $news_display['title'] = $title;
-                        $news_json = htmlspecialchars(json_encode($news_display, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), ENT_QUOTES, 'UTF-8');
-                ?>
->>>>>>> 6296ae5ee820ebc0dc5edf01369d28d8e236b0fc
                     <div class="col-lg-4 col-md-6">
                         <div class="news-card news-card-premium" data-news='<?= $news_json ?>' data-upload-dir="<?= $upload_dir ?>">
                             <div class="news-img-box" style="background: url('<?= $img ?>') center/cover;">
@@ -188,26 +191,24 @@ include "includes/header.php";
                                 ) ?></span>
                             </div>
                             <div class="news-body-premium">
-<<<<<<< HEAD
                                 <h3 class="news-title-premium"><?= htmlspecialchars(
-                                    $news["title"],
+                                    $title,
                                 ) ?></h3>
                                 <p class="news-desc-premium"><?= htmlspecialchars(
                                     $desc,
                                 ) ?></p>
-                                <button type="button" class="news-more news-link-premium border-0 bg-transparent text-success fw-bold p-0">Подробнее &rarr;</button>
-=======
-                                <h3 class="news-title-premium"><?= htmlspecialchars($title) ?></h3>
-                                <p class="news-desc-premium"><?= htmlspecialchars($desc) ?></p>
-                                <button type="button" class="news-more news-link-premium border-0 bg-transparent text-success fw-bold p-0"><?php echo t('news_more'); ?> &rarr;</button>
->>>>>>> 6296ae5ee820ebc0dc5edf01369d28d8e236b0fc
+                                <button type="button" class="news-more news-link-premium border-0 bg-transparent text-success fw-bold p-0"><?php echo t(
+                                    "news_more",
+                                ); ?> &rarr;</button>
                             </div>
                         </div>
                     </div>
                 <?php
                     endforeach;
                 else:
-                    echo '<p class="text-center text-muted">' . t('news_empty') . '</p>';
+                    echo '<p class="text-center text-muted">' .
+                        t("news_empty") .
+                        "</p>";
                 endif;
                 ?>
             </div>
@@ -230,7 +231,9 @@ include "includes/header.php";
             include __DIR__ . "/includes/map/land-fund-widget.php";
             ?>
             <div class="text-center mt-4">
-                <a href="maps.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent"><?php echo t('index_open_full_map'); ?></a>
+                <a href="maps.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent"><?php echo t(
+    "index_open_full_map",
+); ?></a>
             </div>
         </div>
     </section>
@@ -259,59 +262,119 @@ include "includes/header.php";
                 </div>
                 <div class="carousel-inner" style="height: 500px;">
                     <div class="carousel-item active h-100">
-                        <img src="<?php echo siteImage('index.gallery1', 'assets/images/wheet1.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery1_alt')); ?>">
+                        <img src="<?php echo siteImage(
+                            "index.gallery1",
+                            "assets/images/wheet1.jpg",
+                        ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(
+    t("index_gallery1_alt"),
+); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery1_title'); ?></h5>
-                            <p class="mb-0 text-white-50"><?php echo t('index_gallery1_text'); ?></p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t(
+                                "index_gallery1_title",
+                            ); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t(
+                                "index_gallery1_text",
+                            ); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="<?php echo siteImage('index.gallery2', 'assets/images/hlopoknapole.png'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery2_alt')); ?>">
+                        <img src="<?php echo siteImage(
+                            "index.gallery2",
+                            "assets/images/hlopoknapole.png",
+                        ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(
+    t("index_gallery2_alt"),
+); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery2_title'); ?></h5>
-                            <p class="mb-0 text-white-50"><?php echo t('index_gallery2_text'); ?></p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t(
+                                "index_gallery2_title",
+                            ); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t(
+                                "index_gallery2_text",
+                            ); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="<?php echo siteImage('index.gallery3', 'assets/images/svekla.png'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery3_alt')); ?>">
+                        <img src="<?php echo siteImage(
+                            "index.gallery3",
+                            "assets/images/svekla.png",
+                        ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(
+    t("index_gallery3_alt"),
+); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery3_title'); ?></h5>
-                            <p class="mb-0 text-white-50"><?php echo t('index_gallery3_text'); ?></p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t(
+                                "index_gallery3_title",
+                            ); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t(
+                                "index_gallery3_text",
+                            ); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="<?php echo siteImage('index.gallery4', 'assets/images/potato.png'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery4_alt')); ?>">
+                        <img src="<?php echo siteImage(
+                            "index.gallery4",
+                            "assets/images/potato.png",
+                        ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(
+    t("index_gallery4_alt"),
+); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery4_title'); ?></h5>
-                            <p class="mb-0 text-white-50"><?php echo t('index_gallery4_text'); ?></p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t(
+                                "index_gallery4_title",
+                            ); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t(
+                                "index_gallery4_text",
+                            ); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="<?php echo siteImage('index.gallery5', 'assets/images/corn.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery5_alt')); ?>">
+                        <img src="<?php echo siteImage(
+                            "index.gallery5",
+                            "assets/images/corn.jpg",
+                        ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(
+    t("index_gallery5_alt"),
+); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery5_title'); ?></h5>
-                            <p class="mb-0 text-white-50"><?php echo t('index_gallery5_text'); ?></p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t(
+                                "index_gallery5_title",
+                            ); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t(
+                                "index_gallery5_text",
+                            ); ?></p>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <img src="<?php echo siteImage('index.gallery6', 'assets/images/about-photo.jpg'); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(t('index_gallery6_alt')); ?>">
+                        <img src="<?php echo siteImage(
+                            "index.gallery6",
+                            "assets/images/about-photo.jpg",
+                        ); ?>" class="d-block w-100 h-100" style="object-fit: cover;" alt="<?php echo htmlspecialchars(
+    t("index_gallery6_alt"),
+); ?>">
                         <div class="carousel-caption d-none d-md-block p-4 rounded-4" style="background: rgba(12, 62, 33, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); max-width: 500px; margin-bottom: 20px; left: 50px; text-align: left;">
-                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t('index_gallery6_title'); ?></h5>
-                            <p class="mb-0 text-white-50"><?php echo t('index_gallery6_text'); ?></p>
+                            <h5 class="fw-bold text-success mb-2" style="color: var(--accent-color) !important;"><?php echo t(
+                                "index_gallery6_title",
+                            ); ?></h5>
+                            <p class="mb-0 text-white-50"><?php echo t(
+                                "index_gallery6_text",
+                            ); ?></p>
                         </div>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon p-3 bg-dark bg-opacity-25 rounded-circle" aria-hidden="true"></span>
-                    <span class="visually-hidden"><?php echo t('carousel_prev'); ?></span>
+                    <span class="visually-hidden"><?php echo t(
+                        "carousel_prev",
+                    ); ?></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon p-3 bg-dark bg-opacity-25 rounded-circle" aria-hidden="true"></span>
-                    <span class="visually-hidden"><?php echo t('carousel_next'); ?></span>
+                    <span class="visually-hidden"><?php echo t(
+                        "carousel_next",
+                    ); ?></span>
                 </button>
             </div>
             <div class="text-center mt-5">
-                <a href="gallery.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent"><?php echo t('index_gallery_more'); ?></a>
+                <a href="gallery.php?lang=<?php echo currentLang(); ?>" class="btn-premium btn-premium-accent"><?php echo t(
+    "index_gallery_more",
+); ?></a>
             </div>
         </div>
     </section>
@@ -319,67 +382,63 @@ include "includes/header.php";
     <!-- SECTION 6: Contact Section -->
     <section id="contacts" class="py-5">
         <div class="container">
-<<<<<<< HEAD
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="contact-form-container">
-                        <h3 class="mb-4" style="font-family: var(--font-headings); font-weight: 700;"><?php echo t(
-                            "contacts_form_title",
-                        ); ?></h3>
-                        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Сообщение отправлено!');">
-                            <div class="mb-3">
-                                <label for="form-name" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t(
-                                    "contacts_name",
-                                ); ?></label>
-                                <input type="text" id="form-name" class="input-field" placeholder="Иван Иванов" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="form-email" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t(
-                                    "contacts_email_label",
-                                ); ?></label>
-                                <input type="email" id="form-email" class="input-field" placeholder="ivan@example.com" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="form-msg" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t(
-                                    "contacts_message",
-                                ); ?></label>
-                                <textarea id="form-msg" rows="5" class="textarea-field" placeholder="Введите ваше сообщение..." required></textarea>
-=======
             <div class="row g-5">
                 <div class="col-lg-5">
                     <div class="contact-sidebar-premium">
-                        <h3><?php echo t('index_contacts_title'); ?></h3>
-                        <p class="mb-4" style="opacity: 0.85;"><?php echo t('index_contacts_subtitle'); ?></p>
-                        
+                        <h3><?php echo t("index_contacts_title"); ?></h3>
+                        <p class="mb-4" style="opacity: 0.85;"><?php echo t(
+                            "index_contacts_subtitle",
+                        ); ?></p>
+
                         <div class="contact-meta-item">
                             <div class="contact-meta-icon">📍</div>
                             <div class="contact-meta-text">
-                                <strong><?php echo t('contacts_address_label'); ?></strong>
-                                <p><?php echo t('contacts_address_value'); ?></p>
+                                <strong><?php echo t(
+                                    "contacts_address_label",
+                                ); ?></strong>
+                                <p><?php echo t(
+                                    "contacts_address_value",
+                                ); ?></p>
                             </div>
                         </div>
-                        
+
                         <div class="contact-meta-item">
                             <div class="contact-meta-icon">📞</div>
                             <div class="contact-meta-text">
-                                <strong><?php echo t('index_phonefax_label'); ?></strong>
-                                <p><?php echo t('contacts_phone_label'); ?>: <?php echo t('contacts_phone_value'); ?><br><?php echo t('contacts_fax_label'); ?>: <?php echo t('contacts_fax_value'); ?></p>
+                                <strong><?php echo t(
+                                    "index_phonefax_label",
+                                ); ?></strong>
+                                <p><?php echo t(
+                                    "contacts_phone_label",
+                                ); ?>: <?php echo t(
+    "contacts_phone_value",
+); ?><br><?php echo t("contacts_fax_label"); ?>: <?php echo t(
+    "contacts_fax_value",
+); ?></p>
                             </div>
                         </div>
-                        
+
                         <div class="contact-meta-item">
                             <div class="contact-meta-icon">✉️</div>
                             <div class="contact-meta-text">
                                 <strong>Email</strong>
-                                <p><a href="mailto:<?php echo t('contacts_email_value'); ?>" style="color: #10b981;"><?php echo t('contacts_email_value'); ?></a></p>
+                                <p><a href="mailto:<?php echo t(
+                                    "contacts_email_value",
+                                ); ?>" style="color: #10b981;"><?php echo t(
+    "contacts_email_value",
+); ?></a></p>
                             </div>
                         </div>
-                        
+
                         <div class="contact-meta-item">
                             <div class="contact-meta-icon">🕒</div>
                             <div class="contact-meta-text">
-                                <strong><?php echo t('contacts_workhours_label'); ?></strong>
-                                <p><?php echo t('contacts_workhours_value'); ?></p>
+                                <strong><?php echo t(
+                                    "contacts_workhours_label",
+                                ); ?></strong>
+                                <p><?php echo t(
+                                    "contacts_workhours_value",
+                                ); ?></p>
                             </div>
                         </div>
 
@@ -399,23 +458,36 @@ include "includes/header.php";
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-7">
                     <div class="contact-form-container">
-                        <h3 class="mb-4" style="font-family: var(--font-headings); font-weight: 700;"><?php echo t('contacts_form_title'); ?></h3>
+                        <h3 class="mb-4" style="font-family: var(--font-headings); font-weight: 700;"><?php echo t(
+                            "contacts_form_title",
+                        ); ?></h3>
                         <form action="contacts.php?lang=<?php echo currentLang(); ?>" method="POST">
                             <div class="mb-3">
-                                <label for="form-name" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t('contacts_name'); ?></label>
-                                <input type="text" id="form-name" name="name" class="input-field" placeholder="<?php echo htmlspecialchars(t('index_form_name_ph')); ?>" required>
+                                <label for="form-name" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t(
+                                    "contacts_name",
+                                ); ?></label>
+                                <input type="text" id="form-name" name="name" class="input-field" placeholder="<?php echo htmlspecialchars(
+                                    t("index_form_name_ph"),
+                                ); ?>" required>
                             </div>
                             <div class="mb-3">
-                                <label for="form-email" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t('contacts_email_label'); ?></label>
-                                <input type="email" id="form-email" name="email" class="input-field" placeholder="<?php echo htmlspecialchars(t('index_form_email_ph')); ?>" required>
+                                <label for="form-email" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t(
+                                    "contacts_email_label",
+                                ); ?></label>
+                                <input type="email" id="form-email" name="email" class="input-field" placeholder="<?php echo htmlspecialchars(
+                                    t("index_form_email_ph"),
+                                ); ?>" required>
                             </div>
                             <div class="mb-4">
-                                <label for="form-msg" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t('contacts_message'); ?></label>
-                                <textarea id="form-msg" name="message" rows="5" class="textarea-field" placeholder="<?php echo htmlspecialchars(t('index_form_message_ph')); ?>" required></textarea>
->>>>>>> 6296ae5ee820ebc0dc5edf01369d28d8e236b0fc
+                                <label for="form-msg" class="form-label fw-semibold text-secondary" style="font-size: 14px;"><?php echo t(
+                                    "contacts_message",
+                                ); ?></label>
+                                <textarea id="form-msg" name="message" rows="5" class="textarea-field" placeholder="<?php echo htmlspecialchars(
+                                    t("index_form_message_ph"),
+                                ); ?>" required></textarea>
                             </div>
                             <button type="submit" class="btn-premium btn-premium-accent px-5"><?php echo t(
                                 "contacts_send",
@@ -447,9 +519,4 @@ include "includes/header.php";
 <link rel="stylesheet" href="assets/css/news-modal.css?v=<?php echo time(); ?>">
 <script src="assets/js/news-modal.js"></script>
 
-<<<<<<< HEAD
 <?php include "includes/footer.php"; ?>
-=======
-<?php include 'includes/footer.php'; ?>
-
->>>>>>> 6296ae5ee820ebc0dc5edf01369d28d8e236b0fc
